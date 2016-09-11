@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'country_select'
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'simple_form'
 
 group :development, :test do
