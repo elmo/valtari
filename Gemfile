@@ -27,10 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'carrierwave-postgresql'
 gem 'country_select'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'pg'
+gem 'rmagick'
 gem 'simple_form'
 
 group :development, :test do
