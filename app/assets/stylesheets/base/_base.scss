@@ -1,0 +1,23 @@
+// classes that are used accross multiple pages & modifications to Materialize
+
+@import "variables";
+@import "buttons";
+@import "typography";
+
+// --------- ENABLES STICKY FOOTER ---------
+body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// --------- WHITE SPACE AROUND PAGE CONTENT ---------
+.margin-top-bottom {
+  margin-top: 7%;
+  margin-bottom: 7%;
+}

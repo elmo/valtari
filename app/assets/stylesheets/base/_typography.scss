@@ -1,0 +1,84 @@
+// For materialize default scss see: https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
+// This file contains modifications and additional text classes
+
+// --------- FONT SIZES ---------
+// modify materialize default h1 to be smaller so it
+// matches our styles and allows us to add a few h1s for SEO
+h1 {
+  font-size: 5em;
+  margin: 0.67em 0;
+}
+
+// modify materialize default h2 to be smaller so it
+// matches our styles and allows us to add a few h2s for SEO
+h2 {
+  font-size: .8em;
+  margin: 0.50em 0;
+}
+
+
+// same size as materialize default h4
+// 2.28rem !default
+.header-four {
+  font-size: $h4-fontsize;
+  margin: ($h4-fontsize / 2) 0 ($h4-fontsize / 2.5) 0;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+// same size as materialize default h5
+// 2.28rem !default
+.header-five {
+  font-size: $h5-fontsize;
+  line-height: 110%;
+  margin: ($h5-fontsize / 2) 0 ($h5-fontsize / 2.5) 0;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.header-six {
+  font-size: $h6-fontsize;
+  line-height: 110%;
+  margin: ($h6-fontsize / 2) 0 ($h6-fontsize / 2.5) 0;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.medium-text {
+  font-size: 1.1rem;
+
+  @media #{$small-and-down} {
+    font-size: 1.0rem;
+  }
+}
+
+.large-text {
+  font-size: 1.2rem;
+
+  @media #{$small-and-down} {
+    font-size: 1.15rem;
+  }
+}
+
+// --------- SUB-HEADER ---------
+.sub-header {
+  font-size: 1.0rem;
+  font-weight: 400;
+
+  @media #{$small-and-down} {
+    font-size: 1.2rem;
+  }
+
+  @media #{$medium-and-up} {
+    font-size: 1.4rem;
+  }
+
+  @media #{$large-and-up} {
+    font-size: 1.5rem;
+  }
+}
+
+// --------- ERRORS ---------
+.error-block {
+  color: red;
+}
