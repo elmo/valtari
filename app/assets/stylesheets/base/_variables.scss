@@ -1,0 +1,18 @@
+// A list of variables that are already available for this project can be found within the Materialize source code located at:
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
+
+// A list of colors that are already available for this project can be found within the Materialize source code located at:
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_color.scss
+
+// --------- LIGHTEN DEFAULT COLORS  ---------
+.green {
+  background-color: color("green", "lighten-2") !important;
+}
+
+.red {
+  background-color: color("red", "lighten-2") !important;
+}
+
+.yellow {
+  background-color: color("yellow", "lighten-2") !important;
+}

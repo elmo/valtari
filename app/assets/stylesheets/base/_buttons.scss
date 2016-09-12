@@ -1,0 +1,66 @@
+// --------- MATERIALIZE CUSTOMIZATIONS ---------
+
+.btn {
+  text-transform: none;
+}
+
+.collapsible-header {
+  i.material-icons.small {
+    margin-left:-12px;
+    margin-right: 0rem;
+    width: 0rem;
+  }
+
+  .small-collapible-header {
+    font-size: 12px;
+    line-height: .5em;
+    padding: 5%;
+  }
+}
+
+.collection_radio_buttons {
+  margin-left: 10px;
+  padding-left: 25px !important;
+}
+
+// collection select - shrink to make same height as input text field
+.select-wrapper input.select-dropdown {
+  height: 2.5rem;
+}
+
+.get-started-btn {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+// --------- SOCIAL MEDIA ICONS ---------
+.icon-invert {
+  -webkit-filter: invert(100%);
+  max-height: 30px;
+}
+
+.icon-btn {
+  max-height: 20px;
+  float: left;
+  margin-top: 14px;
+}
+
+// --------- FLOATING CHAT BUTTON ---------
+#floating-chat-btn {
+  bottom: 25%;
+  right: 20%;
+}
+
+// --------- CARD ACTIONS ---------
+.card {
+  .card-action {
+    a {
+      text-transform: none !important;
+    }
+  }
+}
+
+// CHAT BUTTONS
+a.end-conversation {
+  margin-right: 0px !important;
+}
