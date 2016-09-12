@@ -9,9 +9,11 @@
   </head>
 
   <body>
-    <%= render partial: '/shared/user_account_navigation' %>
     <main>
-      <%= yield %>
+      <%= render partial: '/shared/user_account_navigation' %>
+      <div class="container margin-top-bottom">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
