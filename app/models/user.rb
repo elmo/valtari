@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :confirmable,
          :lockable,
          :timeoutable
-   devise :omniauthable, omniauth_providers: [:facebook]
+   devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
    mount_uploader :avatar, AvatarUploader
 
