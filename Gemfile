@@ -32,8 +32,9 @@ gem 'materialize-sass'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+gem 'omniauth-linkedin-oauth2'
 gem 'pg'
-gem 'rmagick'
+gem 'rmagick', require: false
 gem 'simple_form'
 gem 'dotenv-rails'
 
