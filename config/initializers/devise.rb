@@ -251,6 +251,13 @@ Devise.setup do |config|
   #
   # TODO: callback_url: https://myapp.com/users/auth/facebook/callback
   config.omniauth :facebook, "180114269089790", "203987a1fde3eb4ea2b1ac08273be211", scope: 'email', info_fields: 'email,name', client_options: { ssl: { verify: !Rails.env.development? } }
+  config.omniauth :google_oauth2, "288332553554-cb188d43to86nqs318rvto8lv7ted1ov.apps.googleusercontent.com", "YgpZO--E4mPnfapcCKjw6LRw"
+
+#access_type=offline
+#scope=email profile
+#response_type=code
+#redirect_uri=http://localhost:3000/users/auth/google_oauth2/callback
+#state=2764a40fd5c17b59154795105215f350b6655494a
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
