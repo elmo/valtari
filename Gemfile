@@ -29,11 +29,13 @@ gem 'carrierwave-postgresql'
 gem 'country_select'
 gem 'devise'
 gem 'materialize-sass'
-gem 'omniauth'
+#gem 'omniauth'
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+gem 'omniauth-linkedin-oauth2'
 gem 'pg'
-gem 'rmagick'
+gem 'rmagick', require: false
 gem 'simple_form'
 gem 'dotenv-rails'
 
