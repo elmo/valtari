@@ -12,8 +12,10 @@ body {
   flex-direction: column;
 }
 
+
 main {
   flex: 1 0 auto;
+  background:#edf0f3
 }
 
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
@@ -30,9 +32,9 @@ main {
 }
 
 .nav-wrapper{
-	background: white
+	background: #0b4496
 }
 
 nav ul a {
-    color: black;
+    color: white;
 }
