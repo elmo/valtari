@@ -1,9 +1,7 @@
-<div class="container margin-top-bottom">
-
-	<div class="col s12 m4 l2"><p></p></div>
-
-	<div class="col s12 m4 l8">
-		<h3>Log in</h3>
+<div class="navy">
+	<div class="login-box">
+		<h4 class="thin">Sign In</h4>
+		<!-- email log in stuff
 		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 		  <div class="form-inputs">
 		    <%= f.input :email, required: false, autofocus: true %>
@@ -14,12 +12,19 @@
 		  <div class="form-actions">
 		    <%= f.button :submit, "Log in", class: "waves-effect waves-light btn-large indigo darken-4" %>
 		  </div>
-		<% end %>
+		<% end %>-->
 
 		<br>
 		<%= render "devise/shared/links" %>
 	</div>
+</div>
 
-	<div class="col s12 m4 l2"><p></p></div>
-
+<div class="section">
+  <div class="row center">
+  	<br><br>
+    <h3 class="light header">Getting started with Valtari is easy</h3>
+    <p class="col s4 offset-s4 caption">If you're new, sign in above to create an account, and start learning about opportunities immediately.
+Learn how our exchange platform works by trying it today. </p>
+  </div>
+  <div class="center col s12 m3"><i class="material-icons dp48 center large">settings_power</i></div>
 </div>
