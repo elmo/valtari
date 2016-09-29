@@ -3,6 +3,9 @@
 @import "variables";
 @import "buttons";
 @import "typography";
+@import "nouislider";
+@import "jquery-ui-min";
+@import "profile";
 
 // --------- ENABLES STICKY FOOTER ---------
 body {
@@ -12,8 +15,10 @@ body {
   flex-direction: column;
 }
 
+
 main {
   flex: 1 0 auto;
+  background: #edf0f3
 }
 
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
@@ -29,10 +34,12 @@ main {
     margin-top: .45em;
 }
 
-.nav-wrapper{
-	background: white
+nav{
+	background: #273f99;
+  box-shadow: none;
 }
 
 nav ul a {
-    color: black;
+    color: white;
 }
+
