@@ -43,10 +43,10 @@ class BusinessesController < ApplicationController
     respond_to do |format|
       if @business.update(business_params)
         format.html { redirect_to @business, notice: 'Business was successfully updated.' }
-        format.json { render :show, status: :ok, location: @business }
+        format.json { respond_with_bip(@business) }
       else
         format.html { render :edit }
-        format.json { render json: @business.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@business) }
       end
     end
   end
