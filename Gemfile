@@ -25,11 +25,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'best_in_place'
 gem 'carrierwave-postgresql'
 gem 'country_select'
+gem 'city-state'
 gem 'devise'
 gem 'materialize-sass'
-#gem 'omniauth'
+gem 'momentjs-rails'
+gem 'pikaday-gem'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
@@ -37,11 +40,13 @@ gem 'omniauth-linkedin-oauth2'
 gem 'pg'
 gem 'rmagick', require: false
 gem 'simple_form'
+gem 'underscore-rails'
 gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '3.5.0'
 end
 
 group :development do
