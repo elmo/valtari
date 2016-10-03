@@ -1,3 +1,37 @@
 // Place all the styles related to the Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.company-list {
+	td, th{
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 90px
+	}
+	td{
+		height: 67px
+	}
+}
+.user-view{
+	td, tr, a{ font-size:13px }
+}
+.admin-view{
+	td, tr, a{ font-size:12px }
+}
+.credit{
+	font-size:12px;
+}
+section{
+	overflow-x: auto
+}
+h4 >span{
+	color: #dddddd;
+    font-weight: 200;
+}
+.input-small{
+	height: 17px!important;
+	font-size: 12px!important;
+	padding-top:11px!important;
+	margin-bottom:8px!important;
+	line-height:1.5;
+}
