@@ -1,22 +1,94 @@
-<p><%= @business.company_name %></p>
-<p><%= @business.contact_title %></p>
-<p><%= @business.contact_first_name%></p>
-<p><%= @business.contact_last_name%></p>
-<p><%= @business.phone %></p>
-<p><%= @business.email %></p>
-<p><%= @business.website %></p>
-<p><%= @business.number_of_employees %></p>
-<p><%= @business.naics_code %></p>
-<p><%= @business.sic_code %></p>
-<p><%= @business.description %></p>
-<p><%= @business.address %></p>
-<p><%= @business.city %></p>
-<p><%= @business.state %></p>
-<p><%= @business.postal_code %></p>
-<p><%= @business.country %></p>
-<p><%= @business.created_at %></p>
-<p><%= @business.updated_at %></p>
+<div class="container">
+	<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content details">
+		<table class="striped">
+          <thead>
+            <tr>
+              <th><%= @business.company_name %></th>
+            </tr>
+          </thead>
+            <tbody>
+           
+            <tr>
+              <td>Contact Title</td>
+              <td><%= @business.contact_title %></td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td><%= @business.contact_first_name%> <%= @business.contact_last_name%></td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td><%= @business.phone %></td>
+            </tr>
+            <tr>
+              <td>Website</td>
+              <td><%= @business.website %></td>
+            </tr>
+            <tr>
+              <td>No. of Employees</td>
+              <td><%= @business.number_of_employees %></td>
+            </tr>
+            <tr>
+            	<td>NAICS Code</td>
+            	<td><%= @business.naics_code %> </td>
+            </tr>
+            <tr>
+            	<td>SIC Code</td>
+            	<td><%= @business.sic_code %> </td>
+            </tr>
+            <tr>
+            	<td>Description</td>
+            	<td><%= @business.description %></td>
+            </tr>
+            <tr>
+            	<td>Address</td>
+            	<td><%= @business.address %></td>
+            </tr>
+            <tr>
+            	<td>City</td>
+            	<td><%= @business.city %></td>
+            </tr>
+            <tr>
+            	<td>State</td>
+            	<td><%= @business.state %></td>
+            </tr>
+            <tr>
+            	<td>Postal Code</td>
+            	<td><%= @business.postal_code %></td>
+            </tr>
+            <tr>
+            	<td>Country</td>
+            	<td><%= @business.country %></td>
+            </tr>
+            <tr>
+            	<td>Created on</td>
+            	<td><%= @business.created_at %></td>
+            </tr>
+            <tr>
+            	<td>Last Update</td>
+            	<td><%= @business.updated_at %></td>
+            </tr>
+          </tbody>
+        </table>
 
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
 
+<div class="container">
+	<div class="row">
+	  <div class="col s12">
+	    <div class="card">
+	      <div class="card-content details">
 <%= link_to 'Edit', edit_business_path(@business) %> |
 <%= link_to 'List', businesses_path %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

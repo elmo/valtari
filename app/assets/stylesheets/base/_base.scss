@@ -6,6 +6,7 @@
 @import "nouislider";
 @import "jquery-ui-min";
 @import "profile";
+@import "businesses";
 
 // --------- ENABLES STICKY FOOTER ---------
 body {
@@ -30,16 +31,30 @@ main {
 
 // -------- Navigation ---------
 .brand-logo img{
-    width: 4.3em;
-    margin-top: .45em;
+  width: 4.3em;
+  margin-top: .45em;
 }
 
 nav{
-	background: #273f99;
+	background: #2f2d75;
   box-shadow: none;
 }
 
 nav ul a {
-    color: white;
+  color: white;
 }
 
+.userView{
+  background: #262261
+}
+// ---
+.notice{
+  z-index: 99;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 14em;
+  color: #9ca0b4;
+  position: absolute;
+  right: 0;
+}
