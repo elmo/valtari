@@ -10,11 +10,15 @@
 }
 
 .red {
-  background-color: color("red", "lighten-2") !important;
+  background-color: #FA1405 !important
 }
 
 .yellow {
   background-color: color("yellow", "lighten-2") !important;
+}
+
+.blue{
+	background-color: #0078B4
 }
 
 .navy{
@@ -23,4 +27,8 @@
 
 .large{
 	font-size:12em
+}
+
+.dark-gray{
+	background-color: #111!important
 }

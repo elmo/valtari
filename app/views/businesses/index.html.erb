@@ -16,10 +16,9 @@
                         <!--<th>Title</th>
                             <th>First Name</th>
                             <th>Last Name</th>-->
-                            <th>Phone</th>
-                            <th>Email</th>
+                            <th>Phone/Email</th>
                         <!--<th>Website</th>-->
-                            <th># of Employees</th>
+                            <th>Employees</th>
                             <th>Parent Company</th>
                             <th>NAISC</th>
                             <th>SIC</th>
@@ -38,7 +37,10 @@
                       <tbody>
                         <% @businesses.each do |business| %>
                           <tr>
-                            <td><%= best_in_place business, :company_name, url: business_path(business),  place_holder: 'edit'  %></td>
+                            <td>
+                                <%= link_to business_path(business) do %>
+                                    <%= business.company_name %>
+                                <% end %></td>
                             <td><a href="#" class="credit">1 Credit</a></td>
                         <!--<td><%= best_in_place business, :contact_title , place_holder: 'edit'  %></td>-->
                             <td><a href="#" class="credit">1 Credit</a></td>
@@ -46,7 +48,6 @@
                             <td><%= best_in_place business, :contact_last_name, place_holder: 'edit'  %></td>-->
                             <td><a href="#" class="credit">1 Credit</a></td>
                         <!--<td><%= best_in_place business, :phone , place_holder: 'edit'  %></td>-->
-                            <td><a href="#" class="credit">1 Credit</a></td>
                         <!--<td><%= best_in_place business, :email , place_holder: 'edit'  %></td>
                             <td><%= best_in_place business, :website , place_holder: 'edit'  %></td>-->
                         <!--<td><%= best_in_place business, :number_of_employees, place_holder: 'edit'  %></td>-->
@@ -62,7 +63,7 @@
                             <!--<td><%= best_in_place business, :postal_code, place_holder: 'edit'  %></td>-->
                             <!--<td><%= best_in_place business, :country , place_holder: 'edit'  %></td>-->
                         <!--<td>created:<%= business.created_at.strftime("%m/%d/%Y") -%> updated:<%= business.updated_at.strftime("%m/%d/%Y") -%></td>-->
-                            <td><%= link_to 'Details', business_path(business) %></td>
+                            
                           </tr>
                         <% end %>
                       </tbody>
@@ -92,7 +93,7 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Website</th>
-                    <th># Employees</th>
+                    <th>Employees</th>
                     <th>NAISC</th>
                     <th>SIC</th>
                     <th>Description</th>
@@ -102,32 +103,31 @@
                     <th>Zip</th>
                     <th>Country</th>
                     <th>Time</th>
-                    <th> </th>
                 </tr>
               </thead>
 
               <tbody>
                 <% @businesses.each do |business| %>
                   <tr>
-                    <td><%= best_in_place business, :company_name, :inner_class => 'input-small', url: business_path(business),  place_holder: 'edit'  %>         </td>
+                    <td><%= best_in_place business, :company_name, :inner_class => 'input-small', url: business_path(business),  place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %> <%= link_to '→', business_path(business) %></td> 
                     <td><a href="#">1 Credit</a></td>
-                    <td><%= best_in_place business, :contact_title, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :contact_first_name, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :contact_last_name, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :phone, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :email, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :website, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :number_of_employees, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :naics_code, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :sic_code, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :description, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :address, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :city, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :state, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :postal_code, :inner_class => 'input-small', place_holder: 'edit'  %></td>
-                    <td><%= best_in_place business, :country, :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :contact_title, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :contact_first_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :contact_last_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :phone, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :email, :inner_class => 'input-small', place_holder:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' %></td>
+                    <td><%= best_in_place business, :website, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :number_of_employees, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :naics_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :sic_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :description, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :address, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :city, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :state, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :postal_code, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :country, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
                     <td>created:<%= business.created_at.strftime("%m/%d/%Y") -%> updated:<%= business.updated_at.strftime("%m/%d/%Y") -%></td>
-                    <td><%= link_to 'Details', business_path(business) %></td>
+                    
                   </tr>
                 <% end %>
               </tbody>
