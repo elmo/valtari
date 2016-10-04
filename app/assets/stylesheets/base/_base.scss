@@ -22,6 +22,16 @@ main {
   background: #edf0f3
 }
 
+body footer.page-footer{
+  margin-top:0;
+  .footer-copyright{
+    background:#000
+  }
+}
+.inline-block{
+  display: inline-block
+}
+
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
 .margin-top-bottom {
   margin-top: 7%;
