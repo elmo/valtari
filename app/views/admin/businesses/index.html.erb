@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content company-list">
+        <h4>Companies <span>Admin View</span></h4>
+        <section>
+            <table class="admin-view">
+              <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Owner/CEO</th>
+                    <th>Title</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Website</th>
+                    <th>Employees</th>
+                    <th>NAISC</th>
+                    <th>SIC</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Country</th>
+                    <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @businesses.each do |business| %>
+                  <tr>
+                    <td><%= best_in_place business, :company_name, :inner_class => 'input-small', url: business_path(business),  place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %> <%= link_to '→', business_path(business) %></td>
+                    <td><a href="#">1 Credit</a></td>
+                    <td><%= best_in_place business, :contact_title, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :contact_first_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :contact_last_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :phone, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :email, :inner_class => 'input-small', place_holder:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' %></td>
+                    <td><%= best_in_place business, :website, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :number_of_employees, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :naics_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :sic_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :description, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :address, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
+                    <td><%= best_in_place business, :city, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :state, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :postal_code, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= best_in_place business, :country, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td>created:<%= business.created_at.strftime("%m/%d/%Y") -%> updated:<%= business.updated_at.strftime("%m/%d/%Y") -%></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </section>
+        <br>
+        <%= link_to '+ New Business', new_business_path %>
+      </div>
+    </div>
+  </div>
+</div>
