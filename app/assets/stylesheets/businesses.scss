@@ -6,10 +6,15 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
-		max-width: 90px
+		max-width: 6em;
+		width: 6em
 	}
 	td{
-		height: 67px
+		height: 68px
+	}
+	tr th:first-child, tr td:first-child {
+    width: 12em!important;
+    max-width:12em;
 	}
 }
 .user-view{
@@ -24,14 +29,36 @@
 section{
 	overflow-x: auto
 }
-h4 >span{
-	color: #dddddd;
-    font-weight: 200;
+h4 {
+	span{
+		color: #dddddd;
+    	font-weight: 200;
+    }
+    &.inline-block{
+    	margin-left:20px
+    }
 }
 .input-small{
 	height: 17px!important;
 	font-size: 12px!important;
-	padding-top:11px!important;
+	padding-top:10px!important;
 	margin-bottom:8px!important;
 	line-height:1.5;
+	width: 5em
+}
+.go-to-edit{
+	margin: 0 1em;
+}
+.go-to-list{
+	float: right;
+	padding-top: 18px;
+	padding-right: 20px
+}
+table.striped {
+	> tbody > tr:nth-child(odd) {
+    	background-color: #fcfcfc;
+    }
+    > tbody > tr > td {
+    	padding-left: 20px
+    } 
 }
