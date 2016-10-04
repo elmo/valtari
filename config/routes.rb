@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get '/profile' => 'home#profile', as: :profile
   root to: "home#index"
   namespace :admin do
-   resources: :business
+   resources :businesses
   end
 end

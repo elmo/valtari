@@ -10,7 +10,7 @@
             </tr>
           </thead>
             <tbody>
-           
+
             <tr>
               <td>Contact Title</td>
               <td><%= @business.contact_title %></td>
@@ -85,8 +85,8 @@
 	  <div class="col s12">
 	    <div class="card">
 	      <div class="card-content details">
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'List', businesses_path %>
+            <%= link_to 'Edit', edit_admin_business_path(@business) %> |
+            <%= link_to 'List', admin_businesses_path %>
 				</div>
 			</div>
 		</div>
