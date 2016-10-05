@@ -50,13 +50,18 @@ nav{
   box-shadow: none;
 }
 
-nav ul a {
-  color: white;
+nav ul{
+  font-size:.9em;
+  a {
+    color: white;
+    font-size: 1em;
+  }
 }
 
 .userView{
   background: #262261
 }
+
 // ---
 .notice{
   z-index: 99;
@@ -68,3 +73,8 @@ nav ul a {
   position: absolute;
   right: 0;
 }
+
+.card{
+  box-shadow: 0 1px 2px rgba(0,0,0,.1)
+}
+
