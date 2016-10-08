@@ -17,14 +17,15 @@ end
 task load_businesses: :environment do
   CSV.foreach('db/businesses.csv').with_index do |row,i|
     next if i == 0
+    name = row[0].split(' ').map {|x| x.capitalize }.join(' ')
     Business.create!(
-     company_name: row[0],
+     company_name: name,
      contact_first_name: row[1],
      contact_last_name:row[2],
      contact_title: row[3],
      email: row[4],
      website: row[5],
-     revenue: row[6].to_i,
+     revenue: row[6].to_f,
      number_of_employees: row[7].to_i,
      naics_code: row[8],
      sic_code: row[9],
