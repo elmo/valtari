@@ -48,6 +48,14 @@ body footer.page-footer{
 nav{
 	background: #e1e6ea;
   box-shadow: none;
+  i.material-icons{
+    font-size: 1.6rem;
+    color: #cbcbcb;
+  }
+  .dropdown-content li > a{
+    font-size: 14px;
+    color: #7c8e9b;
+  }
 }
 
 nav ul{
@@ -55,6 +63,7 @@ nav ul{
   a {
     color: #888f95;
     font-size: 1em;
+    font-weight: 500;
     &:hover{
       background-color: rgb(237, 240, 243);
       color: #515e67;
