@@ -15,7 +15,8 @@ end
 
 
 task load_businesses: :environment do
-  CSV.foreach('db/businesses.csv') do |row|
+  CSV.foreach('db/businesses.csv').with_index do |row,i|
+    next if i == 0
     Business.create!(
      company_name: row[0],
      contact_first_name: row[1],
@@ -32,8 +33,8 @@ task load_businesses: :environment do
      address: row[12],
      city: row[13],
      state: row[14],
-     country: row[15],
-     postal_code: row[16],
+     postal_code: row[15],
+     country: row[16],
      phone: row[17])
   end
 end
