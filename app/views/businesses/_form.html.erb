@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col s12">
+    <%= simple_form_for([:admin,@business]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :company_name -%>
+      <%= f.input :contact_first_name -%>
+      <%= f.input :contact_last_name -%>
+      <%= f.input :contact_title -%>
+      <%= f.input :phone -%>
+      <%= f.input :email -%>
+      <%= f.input :website -%>
+      <%= f.input :revenue -%>
+      <%= f.input :number_of_employees -%>
+      <%= f.input :naics_code -%>
+      <%= f.input :sic_code -%>
+      <%= f.input :industry_classification -%>
+      <%= f.input :description, as: :text -%>
+      <%= f.input :address -%>
+      <%= f.input :city -%>
+      <%= f.input :state, collection: CS.states(:us), include_blank: 'Select State', wrapper: :material_select -%>
+      <%= f.input :postal_code, as: :string -%>
+      <%= f.input :country, as: :country, priority: ["United States", 'Ukraine', 'Austria'], include_blank: "Select Country",  wrapper: :material_select -%>
+      <%= f.input :status -%>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
