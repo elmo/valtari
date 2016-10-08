@@ -46,17 +46,26 @@ body footer.page-footer{
 }
 
 nav{
-	background: #2f2d75;
+	background: #e1e6ea;
   box-shadow: none;
 }
 
-nav ul a {
-  color: white;
+nav ul{
+  font-size:.9em;
+  a {
+    color: #6D6464;
+    font-size: 1em;
+    &:hover{
+      background-color: rgb(237, 240, 243);
+      color: #515e67;
+    }
+  }
 }
 
 .userView{
   background: #262261
 }
+
 // ---
 .notice{
   z-index: 99;
@@ -68,3 +77,8 @@ nav ul a {
   position: absolute;
   right: 0;
 }
+
+.card{
+  box-shadow: 0 1px 2px rgba(0,0,0,.1)
+}
+
