@@ -2,19 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .company-list {
-	td, th{
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		max-width: 6em;
-		width: 6em
+	tr td {
+    	border-top: 1px solid rgba(154, 154, 154, 0.1);
 	}
-	td{
-		height: 68px
-	}
-	tr th:first-child, tr td:first-child {
-    width: 12em!important;
-    max-width:12em;
+	.admin-view{
+		td, th{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 6em;
+			width: 6em
+		}
+		td{
+			height: 68px
+		}
+		tr th:first-child, tr td:first-child {
+		    width: 12em!important;
+		    max-width:12em;
+		}
+		tr th:last-child, tr td:last-child{
+		    width: 4em!important;
+		    max-width: 4em;
+		}
+		tr th:nth-last-child(2), tr td:nth-last-child(2), tr th:nth-last-child(3), tr td:nth-last-child(3), tr th:nth-last-child(4), tr td:nth-last-child(4){
+		    width: 3.2em!important;
+		    max-width: 3.2em;
+		}
 	}
 }
 .user-view{
@@ -62,3 +75,34 @@ table.striped {
     	padding-left: 20px
     } 
 }
+#search {
+	margin: .5rem 0 0 0;
+	i.material-icons {
+	    position: absolute;
+	    right: 15px;
+	    top: 11px;
+	    color: #dddddd
+	}
+	input{
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+		padding-left: 11px;
+		padding-right: 0;
+		width: 95%;
+		margin:0;
+		font-size: .9rem;
+		height: 2.8rem
+	}
+	input[type=text]:focus{
+		box-shadow: none
+	}
+}
+th i.material-icons {
+    font-size: 1.25em;
+    padding-top: 3px;
+}
+#when{
+	font-size: 0.8em;
+	letter-spacing: -.2px;
+}
+

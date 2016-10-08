@@ -2,15 +2,20 @@
     <div class="nav-wrapper">
       <div class="container">
         <a href="#" class="brand-logo">
-        <%= image_tag("valtari-x-whit.svg", :alt => "Valtari") %>
+        <%= image_tag("valtari-x-red.svg", :alt => "Valtari") %>
         </a>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
          <% if current_user.present? %>
-           <li>  <%= current_user.name %> </p> </li>
+           <li><a>Home</a></li>
+           <li><a>Campaigns</a></li>
+           <li><a>Selling</a></li>
+           <li><a>Raise Capital</a></li>
+           <li><a>Resources</a><li>
+           <!--<li><a><%= current_user.name %></a></li>-->
            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete  -%></li>
-         <% else %>
-          <li><%= link_to 'Sign In', new_user_session_path -%></li>
+          <% else %>
+           <li><%= link_to 'Sign In', new_user_session_path -%></li>
           <% end %>
         </ul>
       </div>
