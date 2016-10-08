@@ -11,13 +11,12 @@
             <i class="material-icons">search</i>
           </div>
         </div>
-        
+
         <section>
             <table class="admin-view">
               <thead>
                 <tr>
                     <th>Company</th>
-                    <th>Owner/CEO</th>
                     <th>Title</th>
                     <th>First</th>
                     <th>Last</th>
@@ -40,7 +39,6 @@
                 <% @businesses.each do |business| %>
                   <tr>
                     <td><%= best_in_place business, :company_name, :inner_class => 'input-small', url: business_path(business),  place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %> <%= link_to '→', business_path(business) %></td>
-                    <td><a href="#">1 Credit</a></td>
                     <td><%= best_in_place business, :contact_title, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
                     <td><%= best_in_place business, :contact_first_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
                     <td><%= best_in_place business, :contact_last_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
@@ -61,6 +59,7 @@
                 <% end %>
               </tbody>
             </table>
+            <%= paginate(@businesses) -%>
         </section>
         <br>
         <%= link_to '+ New Business', new_admin_business_path %>
