@@ -1,12 +1,14 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
+
   def profile
-  end 
+  end
   def campaigns
-  end 
+  end
   def sellers
-  end 
+  end
   def raise_capital
-  end 
-  def resoures 
-  end 
+  end
+  def resoures
+  end
 end

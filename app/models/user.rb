@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable,
-         :confirmable,
          :lockable,
          :timeoutable
    devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2, :linkedin]
