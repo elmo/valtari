@@ -7,11 +7,11 @@
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
          <% if current_user.present? %>
-           <li><a>Home</a></li>
-           <li><a>Campaigns</a></li>
-           <li><a>Selling</a></li>
-           <li><a>Raise Capital</a></li>
-           <li><a>Resources</a><li>
+           <li><%= link_to 'Home', root_path -%></li>
+           <li><%= link_to 'Campaigns', campaigns_path -%></li>
+           <li><%= link_to 'Sellers', sellers_path -%></li>
+           <li><%= link_to 'Raise Capital', raise_capital_path -%></li>
+           <li><%= link_to 'Resources', resources_path -%></li>
            <!--<li><a><%= current_user.name %></a></li>-->
            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete  -%></li>
           <% else %>
