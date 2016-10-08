@@ -5,16 +5,30 @@
 	tr td {
     	border-top: 1px solid rgba(154, 154, 154, 0.1);
 	}
+	th.sorted-up:after{
+	    content: '▲';
+	    font-size: 8px;
+	    position: absolute;
+	    top: 20px;
+	    padding-left: 3px;
+	}
+	th.sorted-down:after{
+	    content: '▼';
+	    font-size: 8px;
+	    position: absolute;
+	    top: 22px;
+	    padding-left: 3px;
+	}
 	.admin-view{
 		td, th{
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			max-width: 6em;
-			width: 6em
+			width: 6em;
 		}
 		td{
-			height: 68px
+			height: 68px;
 		}
 		tr th:first-child, tr td:first-child {
 		    width: 12em!important;
