@@ -14,7 +14,9 @@
                     <!--<div class="range-container" id="pips-slider"></div> range slider--> &nbsp; &nbsp;
                 </div>
                 <div id="search" class="input-field col m3 s12">
-                  <input type="text" class="">
+                    <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
+                      <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search by company name, email, or phone' -%>
+                  <% end %>
                   <i class="material-icons">search</i>
                 </div>
             </div>
@@ -22,16 +24,20 @@
                     <table class="user-view">
                       <thead>
                         <tr>
-                            <th>Company</th>
-                            <th>Owner/CEO</th>
-                            <th>Phone/Email</th>
-                            <th>Revenue</th>
-                            <th>Employees</th>
-                            <th>Industry</th>
-                            <th>Description</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th><i class="material-icons dp48">query_builder</i></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>" ><%= link_to 'Company', url_for(params.merge(sort: 'company-name', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Owner/CEO', url_for(params.merge(sort: 'owner-ceo', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Phone', url_for(params.merge(sort: 'phone', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Email', url_for(params.merge(sort: 'email', sort_direction: @sort_direction) ) -%></th>
+                            <th  class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Revenue', url_for(params.merge(sort: 'revenue', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>" ><%= link_to 'Employees', url_for(params.merge(sort: 'employees', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>" ><%= link_to 'Industry', url_for(params.merge(sort: 'industry', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>" ><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
+                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do  %>
+                              <i class="material-icons dp48">query_builder</i></th>
+                             <% end %>
+                            </th>
                         </tr>
                       </thead>
 
@@ -43,14 +49,17 @@
                                     <%= business.company_name %>
                                 <% end %>
                             </td>
-                            <td><a href="#" class="credit">1 Credit</a></td>
-                            <td><a href="#" class="credit">1 Credit</a></td>
+                            <td>
+                                <%= business.contact_first_name %> <%= business.contact_last_name %>
+                            </td>
+                            <td><%= business.phone %></td>
+                            <td><%= business.email %></td>
                             <td><%= business.revenue %></td>
                             <td><%= business.number_of_employees %></td>
                             <td><%= business.industry_classification %></td>
-                            <td><a href="#" class="credit">1 Credit</a></td>
                             <td><%= business.city %></td>
                             <td><%= business.state %></td>
+                            <td><%= business.country %></td>
                             <td id="when"><%= business.updated_at.strftime("%m/%d/%y") -%></td>
 
                             <!--<td><%= best_in_place business, :postal_code, place_holder: 'edit'  %></td>-->
@@ -72,21 +81,21 @@
 
 /* Range slider stuff */
 $(function() {
-    
+
     $("#pips-slider")
-    
+
       .slider({
-        
+
           range: true,
           min: 5,
           max: 500,
           values: [ 5, 500 ],
           step: 25
-        
+
         })
-    
+
       .slider("pips", {
-          
+
           first: "pip",
           last: "pip",
           rest: "pip",
@@ -94,17 +103,17 @@ $(function() {
           labels: true,
           prefix: "",
           suffix: " million"
-        
+
         })
-    
+
       .slider("float", {
-          
+
           handle: true,
           pips: false,
           labels: true,
           prefix: "",
           suffix: ""
-        
+
       });
 
 });

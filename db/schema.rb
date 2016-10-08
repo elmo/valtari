@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004041359) do
+ActiveRecord::Schema.define(version: 20161008205333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,9 +38,17 @@ ActiveRecord::Schema.define(version: 20161004041359) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "parent_company"
+    t.index ["city"], name: "index_businesses_on_city", using: :btree
+    t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
+    t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
     t.index ["country"], name: "index_businesses_on_country", using: :btree
+    t.index ["email"], name: "index_businesses_on_email", using: :btree
+    t.index ["industry_classification"], name: "index_businesses_on_industry_classification", using: :btree
     t.index ["naics_code"], name: "index_businesses_on_naics_code", using: :btree
+    t.index ["number_of_employees"], name: "index_businesses_on_number_of_employees", using: :btree
+    t.index ["phone"], name: "index_businesses_on_phone", using: :btree
     t.index ["sic_code"], name: "index_businesses_on_sic_code", using: :btree
+    t.index ["state"], name: "index_businesses_on_state", using: :btree
     t.index ["status"], name: "index_businesses_on_status", using: :btree
   end
 
