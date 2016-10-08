@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008205333) do
+ActiveRecord::Schema.define(version: 20161008213425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20161008205333) do
     t.string   "phone"
     t.string   "email"
     t.string   "website"
-    t.integer  "revenue"
+    t.decimal  "revenue",                 precision: 8, scale: 2
     t.integer  "number_of_employees"
     t.string   "naics_code"
     t.string   "sic_code"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20161008205333) do
     t.string   "country"
     t.string   "postal_code"
     t.string   "status"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "parent_company"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
