@@ -1,28 +1,33 @@
 // Place all the styles related to the Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.company-list .admin-view{
-	td, th{
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		max-width: 6em;
-		width: 6em
+.company-list {
+	tr td {
+    	border-top: 1px solid rgba(154, 154, 154, 0.1);
 	}
-	td{
-		height: 68px
-	}
-	tr th:first-child, tr td:first-child {
-	    width: 12em!important;
-	    max-width:12em;
-	}
-	tr th:last-child, tr td:last-child{
-	    width: 4em!important;
-	    max-width: 4em;
-	}
-	tr th:nth-last-child(2), tr td:nth-last-child(2), tr th:nth-last-child(3), tr td:nth-last-child(3), tr th:nth-last-child(4), tr td:nth-last-child(4){
-	    width: 3.2em!important;
-	    max-width: 3.2em;
+	.admin-view{
+		td, th{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 6em;
+			width: 6em
+		}
+		td{
+			height: 68px
+		}
+		tr th:first-child, tr td:first-child {
+		    width: 12em!important;
+		    max-width:12em;
+		}
+		tr th:last-child, tr td:last-child{
+		    width: 4em!important;
+		    max-width: 4em;
+		}
+		tr th:nth-last-child(2), tr td:nth-last-child(2), tr th:nth-last-child(3), tr td:nth-last-child(3), tr th:nth-last-child(4), tr td:nth-last-child(4){
+		    width: 3.2em!important;
+		    max-width: 3.2em;
+		}
 	}
 }
 .user-view{

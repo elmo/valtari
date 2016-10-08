@@ -46,15 +46,19 @@ body footer.page-footer{
 }
 
 nav{
-	background: #2f2d75;
+	background: #e1e6ea;
   box-shadow: none;
 }
 
 nav ul{
   font-size:.9em;
   a {
-    color: white;
+    color: #6D6464;
     font-size: 1em;
+    &:hover{
+      background-color: rgb(237, 240, 243);
+      color: #515e67;
+    }
   }
 }
 
