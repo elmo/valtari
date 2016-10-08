@@ -4,13 +4,9 @@
     <div class="card">
       <div class="details">
       	<h4 class="inline-block"><%= @business.company_name %></h4>
-			  <%= link_to 'Edit', edit_business_path(@business), :class=>'go-to-edit inline-block'  %> 
-              <%= link_to 'Back to List', businesses_path, :class=>'go-to-list inline-block' %>
-
+        <%= link_to 'Back to List', businesses_path, :class=>'go-to-list inline-block' %>
 		<table class="striped">
-
             <tbody>
-           
             <tr>
               <td>Contact Title</td>
               <td><%= @business.contact_title %></td>
