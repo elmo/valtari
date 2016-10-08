@@ -2,11 +2,36 @@ class BusinessesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_business, only: [:show, :edit, :update, :destroy]
 
-
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.all.page(params[:page]).per(10)
+    scope = Business
+    q = params[:q]
+    ordering = { created_at: :asc }
+    current_sort_direction = params[:sort_direction] || 'desc'
+    @sort_direction = current_sort_direction == 'desc' ? 'asc' : 'desc'
+    if q =~ /\@/ # input is an email address
+      scope = scope.where(email: q)
+    elsif q =~ /\d/ # input contains a digit
+      scope =  scope.where(['phone = ?',   q.gsub(/\D/, '')])
+    else
+      scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
+    end
+    # Sort
+    if params[:sort].present?
+      ordering = "company_name #{current_sort_direction}" if params[:sort] == 'company-name'
+      ordering = "contact_last_name #{current_sort_direction}" if params[:sort] == 'owner-ceo'
+      ordering = "phone #{current_sort_direction}" if params[:sort] == 'phone'
+      ordering = "email #{current_sort_direction}" if params[:sort] == 'email'
+      ordering = "revenue #{current_sort_direction}" if params[:sort] == 'revenue'
+      ordering = "number_of_employees #{current_sort_direction}" if params[:sort] == 'employees'
+      ordering = "industry_classification #{current_sort_direction}" if params[:sort] == 'industry'
+      ordering = "city #{current_sort_direction}" if params[:sort] == 'city'
+      ordering = "state #{current_sort_direction}" if params[:sort] == 'state'
+      ordering = "country #{current_sort_direction}" if params[:sort] == 'country'
+      ordering = "updated_at #{current_sort_direction}" if params[:sort] == 'updated'
+    end
+    @businesses = scope.page(params[:page]).order(ordering).per(10)
   end
 
   # GET /businesses/1
