@@ -4,23 +4,134 @@
 		<div class="row">
 
 		  <div class="col s12">
-		    <div class="card">
-		      <div class="card-content">
-		        <span class="card-title">Sell a Company</span>
-		        <p>Start here</p>
-		      </div>
-		    </div>
-		  </div>
-		  
-		  <div class="col s6">
-		    <div class="card">
-		      <div class="card-content">
-		        <span class="card-title">Companies for Sale</span>
-		        <p></p>
-		      </div>
-		    </div>
-		  </div>
 
+			  <h2 class="header">Companies for Sale 
+			  	<div class="see-list right"><i class="material-icons dp48">view_list</i></div>
+			  	<div class="see-grid right selected"><i class="material-icons dp48">view_module</i></div> 
+			  </h2>
+
+		      <div class="row">
+		        <div class="col s12 m4">
+		          <div class="card blue-grey darken-4">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Ajax Supplies <a href="#">$10&mdash;15m</a></div>
+		              <p>I am a very good company. I am good.
+		              I am convenient because I require little explanation.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Consumer Products</a>
+		              
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card blue-grey darken-3">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Dr. Brommers <a href="#">$10&mdash;15m</a></div>
+		              <p>I am a very simple good company. I am good at containing small bits of information.
+		              I am convenient.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Consumer Products</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card blue-grey darken-2">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Tom Watts <a href="#">$5&mdash;10m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am lean.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Consumer Products</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card blue-grey darken-2">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">World Peas <a href="#">$5&mdash;10m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am growing quickly.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Consumer Products</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card blue-grey darken-1">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Tacks <a href="#">$1m&mdash;5m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am growing quickly.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Consumer Products</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card indigo darken-3">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Jazz Nation <a href="#">$5m&mdash;10m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am growing quickly.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Entertainment & Recreation</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card indigo darken-2">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Hillbillies 'R Us <a href="#">$1m&mdash;5m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am growing quickly.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Entertainment & Recreation</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s12 m4">
+		          <div class="card indigo darken-1">
+		            <div class="card-content corner white-text">
+		              <div class="card-title">Estonchtya Know <a href="#">$500k&mdash;1m</a></div>
+		              <p>I am a very good company. I am good at containing small bits of information.
+		              I am convenient because I am growing quickly.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">Entertainment & Recreation</a>
+		            </div>
+		          </div>
+		        </div>
+
+		      </div>
+		  </div>
 		</div>
     </div>
 </div>
+
+<script type="text/javascript">
+$('.see-list').on('click', function(e) {
+  $('.s12 .s12').removeClass('m4');
+  $('.see-list').toggleClass("selected");
+  $('.see-grid').toggleClass("selected"); //you can list several class names 
+});
+
+$('.see-grid').on('click', function(e) {
+  $('.s12 .s12').addClass('m4');
+  $('.see-grid').toggleClass("selected");
+  $('.see-list').toggleClass("selected"); //you can list several class names 
+});
+</script>
