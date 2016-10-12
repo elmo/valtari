@@ -11,10 +11,13 @@
 		opacity: 1
 	}
 }
-.card-action{
+.card .card-action{
 	padding: 8px 20px 12px;
 	z-index: 2;
 	font-size: .9rem;
+	a {
+    	color: #8ca0b4 !important;
+	}
 }
 
 .float-margin{
