@@ -1,0 +1,11 @@
+.corner:before{
+	border-right: 50px solid #edf0f3;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid transparent;
+    content: "";
+    height: 0;
+    right: -1px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
