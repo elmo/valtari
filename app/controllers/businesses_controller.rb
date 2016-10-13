@@ -14,7 +14,7 @@ class BusinessesController < ApplicationController
       scope = scope.where(email: q)
     elsif q =~ /\d/ # input contains a digit
       scope =  scope.where(['phone = ?',   q.gsub(/\D/, '')])
-    else
+    elsif q.present?
       scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
     end
     # Sort
