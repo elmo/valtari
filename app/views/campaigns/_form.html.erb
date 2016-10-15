@@ -1,0 +1,8 @@
+<%= simple_form_for(@campaign) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :revenue_id, collection: revenue_options %>
+  <%= f.input :ebitda_id, collection: ebidta_options %>
+  <%= f.input :industry_id, collection: industry_options %>
+  <%= f.button :submit %>
+<% end %>

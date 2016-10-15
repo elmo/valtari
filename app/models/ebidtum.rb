@@ -1,0 +1,2 @@
+class Ebidtum < ApplicationRecord
+end
