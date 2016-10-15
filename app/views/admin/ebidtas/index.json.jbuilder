@@ -1,0 +1,1 @@
+json.array! @ebidta, partial: 'ebidta/ebidtum', as: :ebidtum

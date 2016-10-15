@@ -1,0 +1,10 @@
+class Campaign < ApplicationRecord
+  belongs_to :user
+  belongs_to :ebidtum, foreign_key: 'Ebidtum', foreign_key: 'ebitda_id'
+  belongs_to :revenue
+  belongs_to :industry
+  validates_presence_of :title
+  validates_presence_of :user_id
+  validates_presence_of :revenue_id
+  validates_presence_of :ebitda_id
+end
