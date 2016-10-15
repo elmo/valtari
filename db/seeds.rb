@@ -1,23 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#
-#
-#
-#Revenue.create(name: "< 1M")
-#Revenue.create(name: "1 - 2M")
-#Revenue.create(name: "2 - 5M")
-#Revenue.create(name: "5 - 10M")
-#Revenue.create(name: "10 - 20M")
-#Revenue.create(name: "20 - 50M")
-#Revenue.create(name: "50 - 100M")
-#Revenue.create(name: "100 - 200M")
-#Revenue.create(name: "200 - 500M")
-#Revenue.create(name: "500 - 1B")
+Revenue.create(name: "< 1M")
+Revenue.create(name: "1 - 2M")
+Revenue.create(name: "2 - 5M")
+Revenue.create(name: "5 - 10M")
+Revenue.create(name: "10 - 20M")
+Revenue.create(name: "20 - 50M")
+Revenue.create(name: "50 - 100M")
+Revenue.create(name: "100 - 200M")
+Revenue.create(name: "200 - 500M")
+Revenue.create(name: "500 - 1B")
 
 Ebidtum.create(name: "< 1M")
 Ebidtum.create(name: "1 - 2M")
@@ -29,3 +19,17 @@ Ebidtum.create(name: "50 - 100M")
 Ebidtum.create(name: "100 - 200M")
 Ebidtum.create(name: "200 - 500M")
 Ebidtum.create(name: "500 - 1B")
+
+Industry.create!(code: '111110', name: 'Soybean Farming')
+Industry.create!(code: '111120', name: 'Oilseed (except Soybean) Farming')
+Industry.create!(code: '111130', name: 'Dry Pea and Bean Farming')
+Industry.create!(code: '111140', name: 'Wheat Farming')
+Industry.create!(code: '111150', name: 'Corn Farming')
+Industry.create!(code: '111160', name: 'Rice Farming')
+Industry.create!(code: '111191', name: 'Oilseed and Grain Combination Farming')
+Industry.create!(code: '111199', name: 'All Other Grain Farming')
+Industry.create!(code: '111211', name: 'Potato Farming')
+Industry.create!(code: '111219', name: 'Other Vegetable (except Potato) and Melon Farming')
+Industry.create!(code: '111310', name: 'Orange Groves')
+Industry.create!(code: '111320', name:'Citrus (except Orange) Groves')
+Industry.create!(code: '111331', name: 'Apple Orchardsk')

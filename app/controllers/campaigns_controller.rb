@@ -26,7 +26,6 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @campaign = current_user.campaigns.new(campaign_params)
-
     respond_to do |format|
       if @campaign.save
         format.html { redirect_to @campaign, notice: 'Campaign was successfully created.' }
@@ -70,6 +69,6 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:title, :revenue_id, :ebitda_id)
+      params.require(:campaign).permit(:title, :revenue_id, :ebitda_id, :industry_id)
     end
 end

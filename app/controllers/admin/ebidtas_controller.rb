@@ -1,10 +1,10 @@
-class Admin::EbidtaController < Admin::AdminController
+class Admin::EbidtasController < Admin::AdminController
   before_action :set_ebidtum, only: [:show, :edit, :update, :destroy]
 
   # GET /ebidta
   # GET /ebidta.json
   def index
-    @ebidta = Ebidtum.all
+    @ebidtas = Ebidtum.all
   end
 
   # GET /ebidta/1
@@ -25,14 +25,11 @@ class Admin::EbidtaController < Admin::AdminController
   # POST /ebidta.json
   def create
     @ebidtum = Ebidtum.new(ebidtum_params)
-
     respond_to do |format|
       if @ebidtum.save
-        format.html { redirect_to @ebidtum, notice: 'Ebidtum was successfully created.' }
-        format.json { render :show, status: :created, location: @ebidtum }
+        format.html { redirect_to admin_ebidtas_path(@ebidtum), notice: 'Ebidtum was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @ebidtum.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +39,9 @@ class Admin::EbidtaController < Admin::AdminController
   def update
     respond_to do |format|
       if @ebidtum.update(ebidtum_params)
-        format.html { redirect_to @ebidtum, notice: 'Ebidtum was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ebidtum }
+        format.html { redirect_to admin_ebidtas_path(@ebidtum), notice: 'Ebidtum was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @ebidtum.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +51,7 @@ class Admin::EbidtaController < Admin::AdminController
   def destroy
     @ebidtum.destroy
     respond_to do |format|
-      format.html { redirect_to ebidta_url, notice: 'Ebidtum was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admin_ebidtas_url, notice: 'Ebidtum was successfully destroyed.' }
     end
   end
 
