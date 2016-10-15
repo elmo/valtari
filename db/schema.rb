@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013150242) do
+ActiveRecord::Schema.define(version: 20161015181745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,12 @@ ActiveRecord::Schema.define(version: 20161013150242) do
     t.integer  "revenue_id"
     t.integer  "ebitda_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "industry_id"
+    t.index ["ebitda_id"], name: "index_campaigns_on_ebitda_id", using: :btree
+    t.index ["industry_id"], name: "index_campaigns_on_industry_id", using: :btree
+    t.index ["revenue_id"], name: "index_campaigns_on_revenue_id", using: :btree
   end
 
   create_table "ebidta", force: :cascade do |t|
@@ -68,9 +72,11 @@ ActiveRecord::Schema.define(version: 20161013150242) do
   end
 
   create_table "industries", force: :cascade do |t|
+    t.string   "code"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_industries_on_code", using: :btree
   end
 
   create_table "revenues", force: :cascade do |t|

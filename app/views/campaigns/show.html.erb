@@ -1,20 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @campaign.title %>
 </p>
 
 <p>
+  <strong>Industry:</strong>
+  <%= @campaign.industry.name %>
+</p>
+
+<p>
   <strong>Revenue:</strong>
-  <%= @campaign.revenue %>
+  <%= @campaign.revenue.name %>
 </p>
 
 <p>
   <strong>Ebitda:</strong>
-  <%= @campaign.ebitda %>
+  <%= @campaign.ebidtum.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
+<p>
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> | <%= link_to 'Back', campaigns_path %>
+</p>
