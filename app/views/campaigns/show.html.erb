@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @campaign.revenue %>
+</p>
+
+<p>
+  <strong>Ebitda:</strong>
+  <%= @campaign.ebitda %>
+</p>
+
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>
