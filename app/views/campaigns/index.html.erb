@@ -6,7 +6,9 @@
            <div class="margin-top-bottom">
              <%= render partial: '/campaigns/campaigns' %>
            </div>
-           <%= link_to 'Create a New Campaign', new_campaign_path %>
+           <%= link_to new_campaign_path, class: "waves-effect waves-light btn" do %>
+             <i class="material-icons">add </i>
+           <% end %>
        </div>
      </div>
   </div>
