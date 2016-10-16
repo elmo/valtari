@@ -4,5 +4,5 @@
   <%= f.input :revenue_id, collection: revenue_options, wrapper: :material_select, prompt: "Choose revenue range"  %>
   <%= f.input :ebitda_id, collection: ebidta_options , wrapper: :material_select,  prompt: "Choose EBIDTA range"  %>
   <%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "#{(@campaign.persisted?) ? 'update' : 'save'}", class: "material-icons" %>
 <% end %>
