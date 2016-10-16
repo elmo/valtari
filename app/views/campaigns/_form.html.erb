@@ -1,8 +1,8 @@
 <%= simple_form_for(@campaign) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title %>
-  <%= f.input :revenue_id, collection: revenue_options %>
-  <%= f.input :ebitda_id, collection: ebidta_options %>
-  <%= f.input :industry_id, collection: industry_options %>
+  <%= f.input :title, label: false, placeholder: 'Campaign title'  %>
+  <%= f.input :revenue_id, collection: revenue_options, wrapper: :material_select, prompt: "Choose revenue range"  %>
+  <%= f.input :ebitda_id, collection: ebidta_options , wrapper: :material_select,  prompt: "Choose EBIDTA range"  %>
+  <%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %>
   <%= f.button :submit %>
 <% end %>
