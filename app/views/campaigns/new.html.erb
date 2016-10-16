@@ -1,5 +1,14 @@
 <div class="container">
-<h1>New Campaign</h1>
-<%= render 'form', campaign: @campaign %>
-<%= link_to 'Back', campaigns_path %>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-title">New Campaign</div>
+          <div class="margin-top-bottom">
+            <%= render 'form', campaign: @campaign %>
+            <%= render partial: "links", locals: { campaign: @campaign } -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
