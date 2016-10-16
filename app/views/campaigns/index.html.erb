@@ -1,4 +1,13 @@
-<h1>Campaigns</h1>
-<%= render partial: '/campaigns/campaigns' %>
-<br>
-<%= link_to 'Create a New Campaign', new_campaign_path %>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-title">My Campaigns</div>
+           <div class="margin-top-bottom">
+             <%= render partial: '/campaigns/campaigns' %>
+           </div>
+           <%= link_to 'Create a New Campaign', new_campaign_path %>
+       </div>
+     </div>
+  </div>
+</div>
