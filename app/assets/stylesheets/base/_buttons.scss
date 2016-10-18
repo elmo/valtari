@@ -2,7 +2,8 @@
 
 .btn {
   text-transform: none;
-  overflow: hidden
+  overflow: hidden;
+   @extend .blue, .darken-1;
 }
 
 // Adds hover effect for btns
@@ -110,4 +111,13 @@ a.end-conversation {
       text-align: center
     }
   }
+}
+
+.right-corner{
+  float: right;
+  margin-top: -1.5em
+}
+
+.material-icons.tiny{
+  margin-right:5px
 }

@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col s12">
-      <div class="card">
-        <div class="card-title">Edit Campaign</div>
-          <div class="margin-top-bottom">
-          <%= render partial: "campaign", locals: { campaign: @campaign } -%>
-          <%= render partial: "links", locals: { campaign: @campaign } -%>
-        </div>
+    <div class="margin-top-bottom">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">Campaign</div>
+            <%= render partial: "campaign", locals: { campaign: @campaign } -%>
+            <%= render partial: "links", locals: { campaign: @campaign } -%>
+          </div>
         </div>
       </div>
     </div>
