@@ -1,5 +1,6 @@
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
+$primary-color: color("blue", "darken-1") !default;
+$secondary-color: color("blue", "darken-1") !default;
+$success-color: color("blue", "darken-1") !default;
 @import 'materialize';
 @import 'base/base';
-@import 'home.scss';

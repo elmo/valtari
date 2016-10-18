@@ -1,5 +1,22 @@
-<p><strong>Title: </strong><%= campaign.title %> </p>
-<p><strong>Industry: </strong><%= campaign.industry.name %></p>
-<p><strong>Revenue: </strong><%= campaign.revenue.name %></p>
-<p><strong>Ebitda: </strong><%= campaign.ebidtum.name %> </p>
-<br>
+<table class="bordered">
+  <thead>
+    <tr>
+      <th><%= campaign.title %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Industry</td>
+      <td><%= campaign.title %></td>
+    </tr>
+    <tr>
+      <td>Revenue</td>
+      <td><%= campaign.revenue.name %></td>
+    </tr>
+    <tr>
+      <td>Ebitda</td>
+      <td><%= campaign.ebidtum.name %></td>
+    </tr>
+    <tr>
+</tbody>
+</table>
