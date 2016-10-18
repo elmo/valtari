@@ -114,8 +114,9 @@ a.end-conversation {
 }
 
 .right-corner{
-  float: right;
-  margin-top: -1.5em
+  margin-top: -1.5em;
+  display: block;
+  text-align:right
 }
 
 .material-icons.tiny{
