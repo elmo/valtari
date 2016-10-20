@@ -1,4 +1,4 @@
-<%= simple_form_for(@campaign) do |f| %>
+<%= simple_form_for([:my, @campaign]) do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, label: false, placeholder: 'Campaign title'  %>
   <%= f.input :revenue_id, collection: revenue_options, wrapper: :material_select, prompt: "Choose revenue range"  %>
