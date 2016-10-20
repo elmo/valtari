@@ -1,0 +1,9 @@
+
+<% if campaign.persisted? and action_name != 'edit' %>
+  <%= link_to edit_my_campaign_path(campaign), class: "waves-effect waves-light btn" do %>
+    Edit
+  <% end %>
+<% end %>
+<%= link_to(my_campaigns_path, class: "right-corner") do %>
+ See My Campaigns
+<% end %>

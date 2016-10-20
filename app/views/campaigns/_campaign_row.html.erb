@@ -3,12 +3,4 @@
   <td><%= campaign.revenue.name %></td>
   <td><%= campaign.ebidtum.name %></td>
   <td><%= campaign.industry.name %></td>
-  <td>
-    <%= link_to(edit_campaign_path(campaign) , class: "inline-link") do %>
-      <i class="material-icons tiny">mode_edit</i>
-    <% end %>
-    <%= link_to(campaign, method: :delete, data: { confirm: 'Are you sure want to remove this campaign?' }, class: "inline-link") do  %>
-      <i class="material-icons tiny">delete </i>
-    <% end %>
-  </td>
 </tr>
