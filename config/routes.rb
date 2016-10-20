@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get '/admin' => 'admin/site#index', as: :admin
   root to: "home#index"
   resources :businesses, only: [:index, :show]
-  resources :campaigns
+  resources :campaigns, only: [:index,:show]
+  namespace :my do
+   resources :campaigns
+  end
+
   namespace :admin do
    resources :businesses
    resources :ebidtas
