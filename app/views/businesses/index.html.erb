@@ -10,10 +10,10 @@
                 <div class="col m5 s12">
                     <h4>Companies <span>User View</span></h4>
                 </div>
-                <div class="col m4 s12">
+                <div class="col m2 s12">
                     <!--<div class="range-container" id="pips-slider"></div> range slider--> &nbsp; &nbsp;
                 </div>
-                <div id="search" class="input-field col m3 s12">
+                <div id="search" class="input-field col m5 s12">
                     <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
                       <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search by company name, email, or phone' -%>
                   <% end %>
@@ -34,8 +34,8 @@
                             <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>" ><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
                             <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
                             <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
-                            <th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do  %>
-                              <i class="material-icons dp48">query_builder</i></th>
+                            <!--<th class="<%= (@sort_direction == 'asc') ? 'sorted-down' : 'sorted-up' -%>"  ><%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do  %>
+                              <i class="material-icons dp48">query_builder</i></th>-->
                              <% end %>
                             </th>
                         </tr>
@@ -60,7 +60,7 @@
                             <td><%= business.city %></td>
                             <td><%= business.state %></td>
                             <td><%= business.country %></td>
-                            <td id="when"><%= business.updated_at.strftime("%m/%d/%y") -%></td>
+                           <!-- <td id="when"><%= business.updated_at.strftime("%m/%d/%y") -%></td>-->
 
                             <!--<td><%= best_in_place business, :postal_code, place_holder: 'edit'  %></td>-->
                             <!--<td><%= best_in_place business, :country , place_holder: 'edit'  %></td>-->
