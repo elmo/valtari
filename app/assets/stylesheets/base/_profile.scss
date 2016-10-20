@@ -32,7 +32,9 @@
 	background: rgba(140, 160, 180, 0.27);
 	margin: 0 0 .3em 0;
 	color: rgb(187, 198, 205);
-	&.add{ display: block; width: 7em; font-size: .8em; color: #85a0b4; .material-icons{ float: left; padding: 0 8px 0 0} }
+	&.add{ display: block; width: auto; font-size: .8em; color: #85a0b4; background: none; margin: 0 0 -1.5em -2.6em;
+		.material-icons{ float: left; padding: 0 2px 0 0} 
+	}
 }
 .text-link{
 	color: #8ca0b4;
