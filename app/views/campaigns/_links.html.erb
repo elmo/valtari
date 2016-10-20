@@ -1,10 +1,9 @@
+
 <% if campaign.persisted? and action_name != 'edit' %>
-<%= link_to edit_campaign_path(campaign), class: "waves-effect waves-light btn" do %>
-  <i class="material-icons">edit</i>
+  <%= link_to edit_campaign_path(campaign), class: "waves-effect waves-light btn" do %>
+    Edit
+  <% end %>
 <% end %>
-
+<%= link_to(campaigns_path, class: "right-corner") do %>
+ See Campaigns
 <% end %>
-<%= link_to(campaigns_path, class: "waves-effect waves-light btn") do %>
-  <i class="material-icons">list</i>
-<% end %>
-

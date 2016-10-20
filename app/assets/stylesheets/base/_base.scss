@@ -4,9 +4,9 @@
 @import "buttons";
 @import "typography";
 @import "nouislider";
-@import "jquery-ui-min";
 @import "profile";
 @import "businesses";
+@import "home";
 @import "designs";
 @import "sell";
 
@@ -34,6 +34,7 @@ body footer.page-footer{
   display: inline-block
 }
 
+
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
 .margin-top-bottom {
   margin-top: 7%;
@@ -55,9 +56,13 @@ nav{
     color: #cbcbcb;
   }
   .dropdown-content li > a{
-    font-size: 14px;
-    color: #7c8e9b;
+    color: #7c8e9b
   }
+}
+
+.dropdown-content li > span{
+  font-size: 14px;
+  color: #222;
 }
 
 nav ul{
