@@ -1,10 +1,8 @@
-<div class="col s9 m8 l9">
-  <div class="card">
-   <div class="card-content">
-     <div class="card-title">My Campaigns</div>
+<div class="card">
+  <div class="card-content">
+    <div class="card-title">My Campaigns</div>
      <% current_user.campaigns.each do |campaign| %>
        <%= render partial: '/campaigns/campaign_item', locals: {campaign: campaign } -%>
      <% end %>
-   </div>
   </div>
 </div>
