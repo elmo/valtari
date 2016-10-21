@@ -17,7 +17,7 @@
 	    content: '▼';
 	    font-size: 7px;
 	    position: absolute;
-	    top: 23px;
+	    top: 22px;
 	    padding-left: 3px;
 	}
 	.admin-view{
@@ -46,7 +46,7 @@
 	}
 }
 .user-view{
-	td, tr, a{ font-size:13px }
+	td, tr, a{ font-size:13px; color: black }
 }
 .admin-view{
 	td, tr, a{ font-size:12px }
@@ -94,18 +94,18 @@ table.striped {
 	margin: .5rem 0 0 0;
 	i.material-icons {
 	    position: absolute;
-	    right: 15px;
+	    right: 19px;
 	    top: 11px;
 	    color: #dddddd
 	}
 	input{
-		border: 1px solid #e0e0e0;
-		border-radius: 4px;
-		padding-left: 11px;
+		border-bottom: 1px solid #e0e0e0;
+		padding-left: 5px;
 		padding-right: 0;
 		width: 95%;
 		margin:0;
-		font-size: .9rem;
+		font-weight: 200;
+    	font-size: 1.5em;
 		height: 2.8rem
 	}
 	input[type=text]:focus{
@@ -119,5 +119,10 @@ th i.material-icons {
 #when{
 	font-size: 0.8em;
 	letter-spacing: -.2px;
+}
+body nav.pagination{
+	background-color: transparent;
+	a { color: #333 }
+	.page{ color: #333; margin:0 2px 0 4px }
 }
 

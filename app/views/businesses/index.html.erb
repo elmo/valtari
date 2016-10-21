@@ -15,7 +15,7 @@
                 </div>
                 <div id="search" class="input-field col m5 s12">
                     <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
-                      <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search by company name, email, or phone' -%>
+                      <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search' -%>
                   <% end %>
                   <i class="material-icons">search</i>
                 </div>
