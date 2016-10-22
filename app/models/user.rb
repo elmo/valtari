@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -28,6 +29,31 @@ class User < ApplicationRecord
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def master!
+    add_role(:master)
+  end
+
+  def master?
+    has_role?(:master)
+  end
+
+  def admin!
+    add_role(:admin)
+  end
+
+  def admin?
+    has_role?(:admin)
+  end
+
+
+  def editor!
+    add_role(:editor)
+  end
+
+  def editor?
+    has_role?(:editor)
   end
 
 end
