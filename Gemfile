@@ -40,6 +40,7 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-linkedin-oauth2'
 gem 'pg'
 gem 'rmagick', require: false
+gem 'rolify'
 gem 'simple_form'
 gem 'underscore-rails'
 gem 'dotenv-rails'
