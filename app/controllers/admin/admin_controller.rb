@@ -4,8 +4,8 @@ class Admin::AdminController < ApplicationController
 
   private
 
-  def require_admin_role
-    not_found !current_user.admin? and !current_user.editor? and !current_user.master?
+  def require_admin_or_editor_role
+    not_found if !current_user.admin? and !current_user.editor? and !current_user.master?
   end
 
 end
