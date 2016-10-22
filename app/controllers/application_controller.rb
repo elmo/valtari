@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     profile_path
   end
 
+  def not_found
+    raise ActionController::RoutingError, 'Not Found'
+  end
+
 end
