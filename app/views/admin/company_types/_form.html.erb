@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col s12">
+   <%= simple_form_for([:admin, @company_type]) do |f| %>
+     <%= f.error_notification %>
+       <%= f.input :name %>
+       <%= f.input :category, collection: company_type_categories,  wrapper: :material_select, prompt: 'Choose category'  %>
+       <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

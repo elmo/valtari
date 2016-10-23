@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content company-list">
+        <div class="row">
+          <div class="col m9 s12">
+            <h4>Company Types <span>Admin</span></h4>
+          </div>
+          <div id="search" class="input-field col m3 s12">
+            <input type="text" class="">
+            <i class="material-icons">search</i>
+          </div>
+        </div>
+        <section>
+            <table class="admin-view">
+              <thead>
+                <tr>
+                    <th>Company Type</th>
+                    <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @company_types.each do |company_type| %>
+                  <tr>
+                    <td><%= best_in_place company_type, :name, url: admin_company_type_path(company_type)  %></td>
+                    <td><%= best_in_place company_type, :category,  url: admin_company_type_path(company_type) %></td>
+                    <td>
+                        <%= link_to 'edit', edit_admin_company_type_path(company_type) -%>
+                        <%= link_to 'delete', admin_company_type_path(company_type) , method: :delete, data: {confirm: "Are you sure?"} -%>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <%= paginate(@company_types) -%>
+        </section>
+        <br>
+        <%= link_to '+ New Company Type', new_admin_company_type_path %>
+      </div>
+    </div>
+  </div>
+</div>

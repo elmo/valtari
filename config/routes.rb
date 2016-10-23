@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
    resources :businesses
-   resources :ebidtas
    resources :campaigns
+   resources :company_types
+   resources :ebidtas
    resources :industries
    resources :revenues
   end
