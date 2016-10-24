@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>SIC Codes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>NAICS Code</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sic_codes.each do |sic_code| %>
+      <tr>
+        <td><%= sic_code.name %></td>
+        <td><%= sic_code.code %></td>
+        <td><%= link_to 'Edit', edit_admin_sic_code_path(sic_code) %></td>
+        <td><%= link_to 'Destroy', admin_sic_code_path(sic_code), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@sic_codes) -%>
+
+<br>
+
+<%= link_to 'New Sic Code', new_admin_sic_code_path %>
