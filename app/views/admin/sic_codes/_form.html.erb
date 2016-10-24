@@ -1,0 +1,6 @@
+<%= simple_form_for([:admin, @sic_code]) do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :name %>
+    <%= f.input :code %>
+    <%= f.button :submit %>
+<% end %>
