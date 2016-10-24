@@ -18,6 +18,7 @@ Rails.application.routes.draw do
    resources :company_types
    resources :ebidtas
    resources :industries
+   resources :naic_codes
    resources :revenues
   end
 end
