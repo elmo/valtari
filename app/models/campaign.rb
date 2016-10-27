@@ -7,4 +7,8 @@ class Campaign < ApplicationRecord
   validates_presence_of :user_id
   validates_presence_of :revenue_id
   validates_presence_of :ebitda_id
+  STAGE_SEED = 'seed'
+  STAGE_EARLY = 'early'
+  STAGE_EXPANSION = 'expansion'
+  STAGE_LATER = 'later'
 end

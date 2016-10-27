@@ -12,4 +12,13 @@ module CampaignsHelper
     Industry.all.collect {|i| [i.name, i.id] }
   end
 
+  def company_stage_options
+    [
+      Campaign::STAGE_SEED,
+      Campaign::STAGE_EARLY,
+      Campaign::STAGE_EXPANSION,
+      Campaign::STAGE_LATER
+    ]
+  end
+
 end
