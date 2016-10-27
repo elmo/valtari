@@ -1,6 +1,7 @@
 <%= simple_form_for([:my, @campaign]) do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, label: false, placeholder: 'Campaign title'  %>
+  <%= f.input :stage, collection: company_stage_options, wrapper: :material_select, prompt: "Choose company stage"  %>
   <%= f.input :revenue_id, collection: revenue_options, wrapper: :material_select, prompt: "Choose revenue range"  %>
   <%= f.input :ebitda_id, collection: ebidta_options , wrapper: :material_select,  prompt: "Choose EBIDTA range"  %>
   <%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %>
