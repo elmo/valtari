@@ -1,0 +1,12 @@
+<tr>
+  <td><%= link_to capital.title, my_capital_path(capital) %></td>
+  <td><%= capital.revenue %></td>
+  <td>
+    <%= link_to(edit_my_capital_path(capital) , class: "inline-link") do %>
+      <i class="material-icons tiny">mode_edit</i>
+    <% end %>
+    <%= link_to(my_capital_path(capital), method: :delete, data: { confirm: 'Are you sure want to remove this capital?' }, class: "inline-link") do  %>
+      <i class="material-icons tiny">delete </i>
+    <% end %>
+  </td>
+</tr>

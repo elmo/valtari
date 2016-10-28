@@ -1,0 +1,5 @@
+<%= simple_form_for([:my, @capital]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, label: false, placeholder: 'Title'  %>
+  <%= f.button :submit, "#{(@capital.persisted?) ? 'Update' : 'Save'}" %>
+<% end %>

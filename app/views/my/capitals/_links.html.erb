@@ -1,0 +1,8 @@
+<% if capital.persisted? and action_name != 'edit' %>
+  <%= link_to edit_my_capital_path(capital), class: "waves-effect waves-light btn" do %>
+    Edit
+  <% end %>
+<% end %>
+<%= link_to(my_capitals_path, class: "right-corner") do %>
+ See My Capital raisings
+<% end %>
