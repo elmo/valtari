@@ -1,8 +1,10 @@
 <tr>
   <td><%= link_to campaign.title, my_campaign_path(campaign) %></td>
   <td><%= campaign.stage %></td>
-  <td><%= campaign.revenue.name %></td>
-  <td><%= campaign.ebidtum.name %></td>
+  <td><%= campaign.revenue_lower %></td>
+  <td><%= campaign.revenue_upper %></td>
+  <td><%= campaign.ebitda_lower %></td>
+  <td><%= campaign.ebitda_upper %></td>
   <td><%= campaign.industry.name %></td>
   <td>
     <%= link_to(edit_my_campaign_path(campaign) , class: "inline-link") do %>
