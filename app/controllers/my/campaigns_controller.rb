@@ -56,6 +56,6 @@ class My::CampaignsController < ApplicationController
     end
 
     def campaign_params
-      params.require(:campaign).permit(:title, :stage, :revenue_id, :ebitda_id, :industry_id)
+      params.require(:campaign).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, :industry_id)
     end
 end
