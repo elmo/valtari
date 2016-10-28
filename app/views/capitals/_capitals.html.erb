@@ -1,0 +1,16 @@
+<% if @capitals.empty? %>
+    <p>Your search has returned no results.</p>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @capitals.each do |capital| %>
+        <%= render partial: '/capitals/capital_row', locals: {capital: capital } %>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

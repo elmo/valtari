@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   root to: "home#profile"
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
+  resources :capitals, only: [:index,:show]
   namespace :my do
    resources :campaigns
+   resources :capitals
   end
 
   namespace :admin do
    resources :businesses
    resources :campaigns
+   resources :capitals
    resources :company_types
    resources :ebidtas
    resources :industries
