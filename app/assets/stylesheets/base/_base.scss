@@ -47,7 +47,7 @@ body footer.page-footer{
 
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
 .margin-top-bottom {
-  margin-top: 7%;
+  margin-top: 2%;
   margin-bottom: 7%;
 }
 
@@ -68,7 +68,11 @@ nav{
   .dropdown-content li > a{
     color: #7c8e9b
   }
+  &.secondary{
+    background: white!important
+  }
 }
+
 
 .dropdown-content li > span{
   font-size: 14px;
