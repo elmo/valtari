@@ -1,8 +1,10 @@
-<%= link_to campaign.title, campaign  -%>
+<%= link_to campaign.title, my_campaign_path(campaign)  -%>
 <p>
 <%= campaign.industry.name %>
-Revenue:<%= campaign.revenue.name %>
-EDIDTA:<%= campaign.ebidtum.name %>
-Stage:<%= campaign.stage %>
+Stage: <%= campaign.stage %>
+Revenue range: <%= campaign.revenue_lower %> - <%= campaign.revenue_upper %><br />
+EDITDA ranger: <%= campaign.ebitda_lower %> - <%= campaign.ebidta_upper %><br />
 </p>
+
 <br />
+
