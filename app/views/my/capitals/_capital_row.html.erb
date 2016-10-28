@@ -1,6 +1,7 @@
 <tr>
   <td><%= link_to capital.title, my_capital_path(capital) %></td>
   <td><%= capital.revenue %></td>
+  <td><%= capital.industry_classifications.collect(&:name).join(', ')%></td>
   <td>
     <%= link_to(edit_my_capital_path(capital) , class: "inline-link") do %>
       <i class="material-icons tiny">mode_edit</i>
