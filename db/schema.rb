@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028161730) do
+ActiveRecord::Schema.define(version: 20161028183137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,11 @@ ActiveRecord::Schema.define(version: 20161028161730) do
     t.index ["stage"], name: "index_campaigns_on_stage", using: :btree
   end
 
+  create_table "capital_industry_classifications", force: :cascade do |t|
+    t.integer "capital_id"
+    t.integer "industry_classification_id"
+  end
+
   create_table "capitals", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -99,6 +104,10 @@ ActiveRecord::Schema.define(version: 20161028161730) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_industries_on_code", using: :btree
+  end
+
+  create_table "industry_classifications", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "organizations", force: :cascade do |t|

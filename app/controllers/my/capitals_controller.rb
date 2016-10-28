@@ -32,7 +32,7 @@ class My::CapitalsController < ApplicationController
   def update
     respond_to do |format|
       if @capital.update(capital_params)
-        format.html { redirect_to  my_capital_path(@capital) , notice: 'Capital campaign was successfully updated.' }
+        format.html { redirect_to  edit_my_capital_path(@capital) , notice: 'Capital campaign was successfully updated.' }
         format.json { render :show, status: :ok, location: @capital }
       else
         format.html { render :edit }
@@ -56,6 +56,6 @@ class My::CapitalsController < ApplicationController
     end
 
     def capital_params
-      params.require(:capital).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, :industry_id)
+      params.require(:capital).permit(:title, :revenue, industry_classification_ids: [])
     end
 end
