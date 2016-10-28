@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028002036) do
+ActiveRecord::Schema.define(version: 20161028161730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 20161028002036) do
     t.index ["industry_id"], name: "index_campaigns_on_industry_id", using: :btree
     t.index ["revenue_id"], name: "index_campaigns_on_revenue_id", using: :btree
     t.index ["stage"], name: "index_campaigns_on_stage", using: :btree
+  end
+
+  create_table "capitals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.decimal  "revenue",    precision: 8, scale: 2
+    t.decimal  "decimal",    precision: 8, scale: 2
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "company_types", force: :cascade do |t|

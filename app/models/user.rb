@@ -13,6 +13,7 @@ class User < ApplicationRecord
    mount_uploader :avatar, AvatarUploader
 
    has_many :campaigns
+   has_many :capitals
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
