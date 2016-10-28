@@ -1,5 +1,19 @@
 <%= simple_form_for([:my, @capital]) do |f| %>
   <%= f.error_notification %>
+
+  <%= f.label :title, 'Title' -%>
   <%= f.input :title, label: false, placeholder: 'Title'  %>
+  <%= f.input :revenue %>
+  <%= f.label :industry_classification_ids, 'Industries' -%>
+  <%= f.collection_check_boxes :industry_classification_ids, IndustryClassification.all, :id, :name do |ic| %>
+
+  <div class="collection-check-box">
+    <%= ic.check_box %>
+    <%= ic.label %>
+  </div>
+
+  <% end %>
+
   <%= f.button :submit, "#{(@capital.persisted?) ? 'Update' : 'Save'}" %>
+
 <% end %>
