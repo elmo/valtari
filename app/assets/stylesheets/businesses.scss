@@ -73,8 +73,12 @@ section{
 }
 h4 {
 	span{
-		color: #dddddd;
+		color: #aaa;
     	font-weight: 200;
+    	font-size: 1rem;
+    }
+    a{
+    	color: #7bb1e1;
     }
     &.inline-block{
     	margin-left:20px
@@ -141,4 +145,5 @@ body nav.pagination{
 	.page{ color: #333; margin:0 2px 0 4px; font-size: .9rem;}
 	text-align: center;
 }
+
 
