@@ -20,7 +20,7 @@ class My::CampaignsController < ApplicationController
     @campaign = current_user.campaigns.new(campaign_params)
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to my_campaign_path(@campaign), notice: 'Campaign was successfully created.' }
+        format.html { redirect_to edit_my_campaign_path(@campaign), notice: 'Campaign was successfully created.' }
         format.json { render :show, status: :created, location: @campaign }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class My::CampaignsController < ApplicationController
   def update
     respond_to do |format|
       if @campaign.update(campaign_params)
-        format.html { redirect_to  my_campaign_path(@campaign) , notice: 'Campaign was successfully updated.' }
+        format.html { redirect_to  edit_my_campaign_path(@campaign) , notice: 'Campaign was successfully updated.' }
         format.json { render :show, status: :ok, location: @campaign }
       else
         format.html { render :edit }
@@ -56,6 +56,6 @@ class My::CampaignsController < ApplicationController
     end
 
     def campaign_params
-      params.require(:campaign).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, :industry_id)
+      params.require(:campaign).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, industry_classification_ids: [] )
     end
 end
