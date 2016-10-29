@@ -1,8 +1,38 @@
-<%= @user.name -%><br />
-<%= @user.first_name -%><br />
-<%= @user.last_name -%><br />
-<%= @user.headline -%><br />
-<%= @user.industry -%><br />
-<%= @user.location -%><br />
-<%= @user.profile_url -%><br />
-<%= @user.picture_url -%><br />
+<div class="container">
+	<div id="profile-page" class="section">
+         	<div id="profile-page-header" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="http://demo.geekslabs.com/materialize/v2.2/layout03/images/user-profile-bg.jpg" alt="user background">                    
+                </div>
+                <figure class="card-profile-image">
+                    <img src="<%= @user.picture_url -%>" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                </figure>
+                <div class="card-content">
+                  <div class="row">                    
+                    <div class="col s3 offset-s2">                        
+                        <h4 class="card-title grey-text text-darken-4"><%= @user.name -%></h4>
+                        <p class="medium-small grey-text"><%= @user.headline -%></p>                        
+                    </div>
+                    <div class="col s2 left-align">
+                        <h4 class="card-title grey-text text-darken-4">Location</h4>
+                        <p class="medium-small grey-text"><%= @user.location -%></p>                        
+                    </div>
+                    <div class="col s2 center-align">
+                        <h4 class="card-title grey-text text-darken-4"></h4>
+                        <p class="medium-small grey-text"></p>                        
+                    </div>                    
+                    <div class="col s2 center-align">
+                        <h4 class="card-title grey-text text-darken-4"></h4>
+                        <p class="medium-small grey-text"></p>                        
+                    </div>                    
+
+                  </div>
+                </div>
+               
+            </div>
+
+      </div>
+    </div>
+<br />
+<br />
+<br />
