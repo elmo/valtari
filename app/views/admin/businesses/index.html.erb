@@ -15,25 +15,7 @@
         <section>
             <table class="admin-view">
               <thead>
-                <tr>
-                    <th>Company</th>
-                    <th>Title</th>
-                    <th>First</th>
-                    <th>Last</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Website</th>
-                    <th>Employees</th>
-                    <th>NAISC</th>
-                    <th>SIC</th>
-                    <th>Description</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Country</th>
-                    <th><i class="material-icons dp48">query_builder</i></th>
-                </tr>
+                <%= render partial: 'column_headers' %>
               </thead>
               <tbody>
                 <% @businesses.each do |business| %>
