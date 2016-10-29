@@ -1,10 +1,12 @@
 <div class="card">
   <div class="card-content lanyard-container">
 	<div class="lanyard truncate">
-	  <%= image_tag("baldwin.jpg", :alt => "Valtari") %>
-	  <%= current_user.name %>
-	  <p>Admin</p>
+	  <%= image_tag(current_user.picture_url) %>
+      <%= link_to current_user.name, user_path(current_user) %>
 	</div>
+	  <%= current_user.headline if current_user.headline.present? %><br />
+      <%= current_user.industry if current_user.industry.present?  %><br />
+	  <%= link_to(current_user.profile_url,  current_user.profile_url) if current_user.profile_url.present? %>
   </div>
 </div>
 <div class="collection">
