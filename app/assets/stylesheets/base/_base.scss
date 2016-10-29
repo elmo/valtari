@@ -116,3 +116,31 @@ nav ul{
   }
 }
 
+// Forms
+.select{
+  margin-top: 1rem;
+  margin-right: 0.35em;
+}
+
+
+
+mm{ display:block;margin:0;padding:0;border:0;position:relative; 
+  .input-field{
+    margin: 0.95em 0 0 1em;
+    padding-right: 3em;
+  }
+  &:before{ 
+    content: "$";
+    position: absolute;
+    margin-top: 11px; 
+  }
+  &:after{     
+    content: "MM";
+    position: absolute;
+    margin-top: -47px;
+    right: 10px }
+}
+
+.row form .col{
+  padding: 0 0.25rem
+}
