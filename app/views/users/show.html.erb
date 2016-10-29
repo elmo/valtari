@@ -2,7 +2,7 @@
 	<div id="profile-page" class="section">
          	<div id="profile-page-header" class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="http://demo.geekslabs.com/materialize/v2.2/layout03/images/user-profile-bg.jpg" alt="user background">                    
+                    <%= image_tag('profile-bg.png', class: 'activator' )-%>                    
                 </div>
                 <figure class="card-profile-image">
                     <img src="<%= @user.picture_url -%>" alt="profile image" class="circle z-depth-2 responsive-img activator">
