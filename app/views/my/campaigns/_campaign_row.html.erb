@@ -5,7 +5,7 @@
   <td><%= campaign.revenue_upper %></td>
   <td><%= campaign.ebitda_lower %></td>
   <td><%= campaign.ebitda_upper %></td>
-  <td><%= campaign.industry.name %></td>
+  <td><%= campaign.industry_classifications.collect(&:name).join(', ') %></td>
   <td>
     <%= link_to(edit_my_campaign_path(campaign) , class: "inline-link") do %>
       <i class="material-icons tiny">mode_edit</i>
