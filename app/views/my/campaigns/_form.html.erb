@@ -10,8 +10,17 @@
   <div class="row">
   	<div class="col s12"><%= f.input :stage, collection: company_stage_options, wrapper: :material_select, prompt: "Choose company stage"  %></div>
   </div>
+
   <div class="row">
-    <div class="col s12"><%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %></div>
+    <div class="col s12">
+      <%= f.label :industry_classification_ids, 'Industries' -%>
+      <%= f.collection_check_boxes :industry_classification_ids, IndustryClassification.all, :id, :name do |ic| %>
+      <div class="collection-check-box">
+         <%= ic.check_box %>
+         <%= ic.label %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <%= f.button :submit, "#{(@campaign.persisted?) ? 'Update' : 'Save'}" %>
