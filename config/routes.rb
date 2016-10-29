@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get '/resources' => 'home#resources', as: :resources
   get '/admin' => 'admin/site#index', as: :admin
   root to: "home#profile"
+
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
   resources :capitals, only: [:index,:show]
+  resources :users, only: [:show]
+
   namespace :my do
    resources :campaigns
    resources :capitals
