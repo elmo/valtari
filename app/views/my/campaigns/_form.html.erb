@@ -1,11 +1,11 @@
 <%= simple_form_for([:my, @campaign]) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title, label: false, placeholder: 'Campaign title'  %>
-  <%= f.input :stage, collection: company_stage_options, wrapper: :material_select, prompt: "Choose company stage"  %>
-  <%= f.input :revenue_lower %>
-  <%= f.input :revenue_upper %>
-  <%= f.input :ebitda_lower %>
-  <%= f.input :ebitda_upper %>
-  <%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %>
+  <div class="col s12"><%= f.input :title, label: 'Campaign Title' %></div>
+  <div class="col s12 l6"><%= f.input :stage, collection: company_stage_options, wrapper: :material_select, prompt: "Choose company stage"  %></div>
+  <div class="col s12 l6"><%= f.input :industry_id, collection: industry_options, wrapper: :material_select, prompt: "Choose Industry"  %></div>
+  <div class="col s12 l6"><mm><%= f.input :revenue_lower %></mm></div>
+  <div class="col s12 l6"><mm><%= f.input :revenue_upper %></mm></div>
+  <div class="col s12 l6"><mm><%= f.input :ebitda_lower %></mm></div>
+  <div class="col s12 l6"><mm><%= f.input :ebitda_upper %></mm></div>
   <%= f.button :submit, "#{(@campaign.persisted?) ? 'Update' : 'Save'}" %>
 <% end %>
