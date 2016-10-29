@@ -5,6 +5,9 @@
   overflow: hidden;
    @extend .blue, .darken-1;
 }
+form input.btn {
+    margin: 1em .5em;
+}
 
 // Adds hover effect for btns
 .btn:hover:before {
@@ -114,7 +117,7 @@ a.end-conversation {
 }
 
 .right-corner{
-  margin-top: -1.5em;
+  margin: -2.8em 0 1em;
   display: block;
   text-align:right
 }
