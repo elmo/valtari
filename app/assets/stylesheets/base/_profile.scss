@@ -9,7 +9,7 @@
 	    font-size: 1em;
 	    font-weight: 500;
 	    color: #000;
-	    line-height: 32px;
+	    line-height: 46px;
 	    padding: 0 12px;
 	    border-radius: 16px;
 	    font-weight: 600;
@@ -25,6 +25,10 @@
 		font-weight:400;
 		font-size:.75em
 		}
+	}
+	ul{
+		font-size: 13px;
+		margin: 0;
 	}
 }
 .chip{
@@ -42,4 +46,19 @@
     font-size: .75em;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+#profile-page-header{
+	.card-image{
+		height:250px
+	}
+	.card-profile-image {
+    width: 110px;
+    position: absolute;
+    top: 190px;
+    z-index: 1;
+    left: 40px;
+    cursor: pointer;
+    margin: 0;
+  }
 }
