@@ -1,13 +1,16 @@
-<div class="card">
+<div class="card cells">
   <div class="card-content">
     <div class="card-title">
     	<div class="row no-margin">
      	  <div class="col s12 m6"><%= link_to 'Capital Raises', capitals_path, class: "" %> </div>
           <div class="col s12 m3 medium-text">Revenue</div>
+
       </div>
     </div>
+    <ul class="collection">
       <% current_user.capitals.each do |capital| %>
-      <%= render partial: '/capitals/capital_item', locals: {capital: capital } -%>
-     <% end %>
+      <li class="collection-item"><%= render partial: '/capitals/capital_item', locals: {capital: capital } -%></li>
+      <% end %>
+    </ul>
   </div>
 </div>
