@@ -1,10 +1,21 @@
-<%= link_to campaign.title, my_campaign_path(campaign)  -%>
-<p>
-<%= campaign.industry.name %>
-Stage: <%= campaign.stage %>
-Revenue range: <%= campaign.revenue_lower %> - <%= campaign.revenue_upper %><br />
-EDITDA ranger: <%= campaign.ebitda_lower %> - <%= campaign.ebitda_upper %><br />
-</p>
 
-<br />
-
+<div class="row no-margin">
+  <div class="col s12 m6">
+    <span class="title"><%= link_to campaign.title, my_campaign_path(campaign)  -%></span>
+    <p><%= campaign.industry.name %><br>
+       Stage: <%= campaign.stage %>
+    </p>
+  </div>
+  <div class="col s12 m3">
+  	<span class="title">&nbsp;</span>
+    <p class="money">
+      $<%= campaign.revenue_lower %>&mdash;<%= campaign.revenue_upper %><span class="mm">MM</span><br />
+    </p>
+  </div>
+  <div class="col s12 m3">
+  	<span class="title">&nbsp;</span>
+  	<p class="money"> 
+  	  $<%= campaign.ebitda_lower %>&mdash;<%= campaign.ebitda_upper %><span class="mm">MM</span><br />
+  	</p>
+  </div>
+</div>
