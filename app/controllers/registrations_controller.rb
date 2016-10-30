@@ -14,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     if update_resource(current_user, account_update_params)
-      redirect_to profile_path
+      redirect_to edit_user_registration_path, notice: "Account updated"
     else
       render :edit
     end
@@ -39,8 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :organization_id)
+    params.require(:user).permit(:first_name, :last_name, :email, :industry, :headline, :location, :profile_url, :password, :password_confirmation, :organization_id )
   end
-
 
 end
