@@ -13,6 +13,7 @@
     <main>
       <%= render partial: '/shared/user_account_navigation' %>
         <div>
+          <%= render partial: '/shared/flash' %>
           <%= yield %>
         </div>
       </div>
@@ -24,12 +25,12 @@
             <h4 class="white-text">Valtari Exchange</h4>
             <p class="grey-text text-lighten-4"></p>
           </div>
-          
+
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-        © 2016 Valtari Exchange 
+        © 2016 Valtari Exchange
         <br><br><br>
         <a class="grey-text text-lighten-4 right" href="#!"></a>
         <br><br>

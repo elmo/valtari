@@ -1,8 +1,12 @@
-<div class="card-title">My Email</div>
+<div class="card-title">My Settings</div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%# render partial: 'email_confirmation_fields', locals: {f: f} -%>
-    <%# render partial: 'password_fields', locals: {f: f} -%>
+    <%= f.input :email  %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :industry %>
+    <%= f.input :headline %>
+    <%= f.input :location %>
+    <%= f.input :profile_url %>
     <%= f.button :submit, "Update" %>
-    <% end %>
+  <% end %>
