@@ -5,7 +5,11 @@
       <%= link_to current_user.name, user_path(current_user) %>
 	  </div>
     <ul>
-      <li class="truncate">Put organization here</li>
+      <li class="truncate">
+        <% if current_user.organization.present? %>
+        <%= current_user.organization.name %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>

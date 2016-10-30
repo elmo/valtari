@@ -23,7 +23,11 @@
                     </div>   
                     <div class="col s2">
                         <h4 class="card-title grey-text text-darken-4">Organization</h4>
-                        <p class="medium-small grey-text"></p>
+                        <p class="medium-small grey-text">
+                          <% if current_user.organization.present? %>
+                            <%= current_user.organization.name %>
+                          <% end %>
+                        </p>
                     </div>                 
                     <div class="col s1 left-align">
                         <h4 class="card-title grey-text text-darken-4"></h4>
