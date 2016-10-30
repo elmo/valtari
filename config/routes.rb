@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users,  controllers: { omniauth_callbacks: "callbacks" }
+  devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
   get '/profile' => 'home#profile', as: :profile
   get '/sellers' => 'home#sellers', as: :sellers
   get '/raise_capital' => 'home#raise_capital', as: :raise_capital
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   namespace :my do
-   resources :campaigns
-   resources :capitals
+    resources :campaigns
+    resources :capitals
   end
 
   namespace :admin do
