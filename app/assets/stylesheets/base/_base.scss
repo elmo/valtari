@@ -137,12 +137,22 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
     content: "MM";
     position: absolute;
     margin-top: -47px;
-    right: 10px }
+    right: 10px; 
+  }
+  dash{
+    position: absolute;
+    right: -12px;
+    top: 11px;
+  }
 }
 
+.money{
+  font-size: 1rem;
+  font-weight: 600;
+}
 span.mm{
   font-size: .75rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .cells {
