@@ -12,8 +12,8 @@ class Campaign < ApplicationRecord
   validates_presence_of :ebitda_lower
   validates_presence_of :ebitda_upper
   validates_presence_of :stage
-  STAGE_SEED = 'seed'
-  STAGE_EARLY = 'early'
-  STAGE_EXPANSION = 'expansion'
-  STAGE_LATER = 'later'
+  STAGE_SEED = 'Seed'
+  STAGE_EARLY = 'Early'
+  STAGE_EXPANSION = 'Expansion'
+  STAGE_LATER = 'Later'
 end
