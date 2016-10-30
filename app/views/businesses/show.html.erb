@@ -1,77 +1,78 @@
 <div class="container">
 	<div class="row">
-  <div class="col s12 l6 offset-l3">
-    <div class="card">
-      <div class="details">
-      	<h4 class="inline-block"><%= @business.company_name %></h4>
-        <%= link_to 'Back to List', businesses_path, :class=>'go-to-list inline-block' %>
-		<table class="striped">
-            <tbody>
-            <tr>
-              <td>Contact Title</td>
-              <td><%= @business.contact_title %></td>
-            </tr>
-            <tr>
-              <td>Name</td>
-              <td><%= @business.contact_first_name%> <%= @business.contact_last_name%></td>
-            </tr>
-            <tr>
-              <td>Phone</td>
-              <td><%= @business.phone %></td>
-            </tr>
-            <tr>
-              <td>Website</td>
-              <td><%= @business.website %></td>
-            </tr>
-            <tr>
-              <td>No. of Employees</td>
-              <td><%= @business.number_of_employees %></td>
-            </tr>
-            <tr>
-            	<td>NAICS Code</td>
-            	<td><%= @business.naics_code %> </td>
-            </tr>
-            <tr>
-            	<td>SIC Code</td>
-            	<td><%= @business.sic_code %> </td>
-            </tr>
-            <tr>
-            	<td>Description</td>
-            	<td><%= @business.description %></td>
-            </tr>
-            <tr>
-            	<td>Address</td>
-            	<td><%= @business.address %></td>
-            </tr>
-            <tr>
-            	<td>City</td>
-            	<td><%= @business.city %></td>
-            </tr>
-            <tr>
-            	<td>State</td>
-            	<td><%= @business.state %></td>
-            </tr>
-            <tr>
-            	<td>Postal Code</td>
-            	<td><%= @business.postal_code %></td>
-            </tr>
-            <tr>
-            	<td>Country</td>
-            	<td><%= @business.country %></td>
-            </tr>
-            <tr>
-            	<td>Created on</td>
-            	<td><%= @business.created_at %></td>
-            </tr>
-            <tr>
-            	<td>Last Update</td>
-            	<td><%= @business.updated_at %></td>
-            </tr>
-          </tbody>
-        </table>
-
-		</div>
+    <div class="margin-top-bottom">
+      <div class="col s12 l6 offset-l3">
+        <div class="card">
+          <div class="card-content">
+      	    <h4 class="inline-block"><%= @business.company_name %></h4>
+            <%= link_to 'Back to List', businesses_path, :class=>'go-to-list inline-block' %>
+		        <table class="bordered">
+              <tbody>
+              <tr>
+                <td>Contact Title</td>
+                <td><%= @business.contact_title %></td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td><%= @business.contact_first_name%> <%= @business.contact_last_name%></td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td><%= @business.phone %></td>
+              </tr>
+              <tr>
+                <td>Website</td>
+                <td><%= @business.website %></td>
+              </tr>
+              <tr>
+                <td>No. of Employees</td>
+                <td><%= @business.number_of_employees %></td>
+              </tr>
+              <tr>
+            	  <td>NAICS Code</td>
+            	  <td><%= @business.naics_code %> </td>
+              </tr>
+              <tr>
+            	  <td>SIC Code</td>
+            	  <td><%= @business.sic_code %> </td>
+              </tr>
+              <tr>
+            	  <td>Description</td>
+            	  <td><%= @business.description %></td>
+              </tr>
+              <tr>
+              	<td>Address</td>
+              	<td><%= @business.address %></td>
+              </tr>
+              <tr>
+            	  <td>City</td>
+            	  <td><%= @business.city %></td>
+              </tr>
+              <tr>
+              	<td>State</td>
+              	<td><%= @business.state %></td>
+              </tr>
+              <tr>
+              	<td>Postal Code</td>
+              	<td><%= @business.postal_code %></td>
+              </tr>
+              <tr>
+            	  <td>Country</td>
+            	  <td><%= @business.country %></td>
+              </tr>
+              <tr>
+              	<td>Created on</td>
+            	 <td><%= @business.created_at %></td>
+              </tr>
+              <tr>
+              	<td>Last Update</td>
+              	<td><%= @business.updated_at %></td>
+              </tr>
+            </tbody>
+          </table>
+		    </div>
+	    </div>
 	  </div>
-	</div>
   </div>
 </div>
+<br><br><br><br>
