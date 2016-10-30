@@ -1,9 +1,18 @@
-<div class="card">
+<div class="card cells">
   <div class="card-content">
     <div class="card-title">
-      <%= link_to 'Campaigns', campaigns_path, class: "" %>  </div>
+      <div class="row no-margin">
+        <div class="col s12 m6"><%= link_to 'Campaigns', campaigns_path, class: "" %> </div>
+        <div class="col s12 m3 medium-text">Revenue range</div>
+        <div class="col s12 m3 medium-text">EBITDA range</div>
+      </div>
+    </div>
+    <ul class="collection">
       <% current_user.campaigns.each do |campaign| %>
-      <%= render partial: '/campaigns/campaign_item', locals: {campaign: campaign } -%>
-     <% end %>
+      <li class="collection-item">   
+        <%= render partial: '/campaigns/campaign_item', locals: {campaign: campaign } -%>
+      </li>
+      <% end %>
+    </ul>
   </div>
 </div>
