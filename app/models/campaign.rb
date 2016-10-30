@@ -1,8 +1,8 @@
 class Campaign < ApplicationRecord
   belongs_to :user
-  belongs_to :ebidtum, foreign_key: 'Ebidtum', foreign_key: 'ebitda_id'
-  belongs_to :revenue
-  belongs_to :industry
+  belongs_to :ebidtum, foreign_key: 'Ebidtum', foreign_key: 'ebitda_id', optional: true
+  belongs_to :revenue, optional: true
+  belongs_to :industry, optional: true
   has_many :campaign_industry_classifications
   has_many :industry_classifications, through: :campaign_industry_classifications, class_name: 'IndustryClassification'
   validates_presence_of :title

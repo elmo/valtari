@@ -20,9 +20,10 @@ class My::CampaignsController < ApplicationController
     @campaign = current_user.campaigns.new(campaign_params)
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to edit_my_campaign_path(@campaign), notice: 'Campaign was successfully created.' }
+        format.html { redirect_to my_campaigns_path, notice: 'Campaign was successfully created.' }
         format.json { render :show, status: :created, location: @campaign }
       else
+        byebug
         format.html { render :new }
         format.json { render json: @campaign.errors, status: :unprocessable_entity }
       end

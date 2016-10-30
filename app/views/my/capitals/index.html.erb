@@ -2,7 +2,7 @@
   <div class="nav-wrapper container">
     <div class="col s12">
       <ul class="left">
-        <li><%= link_to 'All Campaigns', capitals_path, class: "" %></li>
+        <li><%= link_to 'All Capital Raises', capitals_path, class: "" %></li>
       </ul>
     </div>
   </div>
@@ -14,10 +14,10 @@
       <div class="col s12">
         <div class="card">
           <div class="card-content">
-            <div class="card-title">My Campaigns</div>
-            <%= link_to new_my_capital_path, class: "waves-effect btn right float-margin" do %>        
-        Create Campaign
-        <% end %>
+            <div class="card-title">My Capital Raises</div>
+            <%= link_to new_my_capital_path, class: "waves-effect btn right float-margin" do %>
+              Create Capital Raise
+            <% end %>
             <%= render partial: '/my/capitals/capitals' %>
           </div>
         </div>
