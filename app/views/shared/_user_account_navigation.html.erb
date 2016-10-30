@@ -16,10 +16,14 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
          <% if current_user.present? %>
            <li><%= link_to 'Home', profile_path -%></li>
+
+           <% if false %>
            <li><%= link_to 'Campaigns', campaigns_path -%></li>
            <li><%= link_to 'Sellers', sellers_path -%></li>
            <li><%= link_to 'Raise Capital', capitals_path -%></li>
            <li><%= link_to 'Resources', resources_path -%></li>
+          <% end %>
+
            <!--<li><a><%= current_user.name %></a></li>-->
            <li><a class="dropdown-button" href="#!" data-activates="dropdown"><i class="material-icons dp48">person_pin</i></a></li>
           <% else %>
