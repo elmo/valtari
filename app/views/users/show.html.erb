@@ -2,25 +2,25 @@
 	<div id="profile-page" class="section">
          	<div id="profile-page-header" class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <%= image_tag('profile-bg.png', class: 'activator' )-%>                    
+                    <%= image_tag('profile-bg.png', class: 'activator' )-%>
                 </div>
                 <figure class="card-profile-image">
-                    <img src="<%= @user.picture_url -%>" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                   <%= avatar_image(current_user, "circle z-depth-2 responsive-img activator" ) -%>
                 </figure>
                 <div class="card-content">
-                  <div class="row">                    
-                    <div class="col s3 offset-s2">                        
+                  <div class="row">
+                    <div class="col s3 offset-s2">
                         <h4 class="card-title grey-text text-darken-4"><%= @user.name -%></h4>
-                        <p class="medium-small grey-text"><%= current_user.headline if current_user.headline.present? %></p>            
+                        <p class="medium-small grey-text"><%= current_user.headline if current_user.headline.present? %></p>
                     </div>
                     <div class="col s2">
                         <h4 class="card-title grey-text text-darken-4">Location</h4>
-                        <p class="medium-small grey-text"><%= @user.location -%></p>                        
+                        <p class="medium-small grey-text"><%= @user.location -%></p>
                     </div>
                     <div class="col s2">
                         <h4 class="card-title grey-text text-darken-4">Industry</h4>
-                        <p class="medium-small grey-text"><%= current_user.industry if current_user.industry.present?  %></p>                     
-                    </div>   
+                        <p class="medium-small grey-text"><%= current_user.industry if current_user.industry.present?  %></p>
+                    </div>
                     <div class="col s2">
                         <h4 class="card-title grey-text text-darken-4">Organization</h4>
                         <p class="medium-small grey-text">
@@ -28,21 +28,21 @@
                             <%= current_user.organization.name %>
                           <% end %>
                         </p>
-                    </div>                 
+                    </div>
                     <div class="col s1 left-align">
                         <h4 class="card-title grey-text text-darken-4"></h4>
                         <p class="medium-small social-links">
-                          <% if current_user.profile_url.present? %>   
+                          <% if current_user.profile_url.present? %>
                             <%= link_to current_user.profile_url, target:'_blank' do %>
                               <% image_tag('linkedin.png') %>
                             <% end %>
                           <% end %>
-                        </p>                        
-                    </div>                    
+                        </p>
+                    </div>
 
                   </div>
                 </div>
-               
+
             </div>
 
       </div>

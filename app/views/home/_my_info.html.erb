@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-content lanyard-container">
 	<div class="lanyard truncate">
-	    <%= image_tag(current_user.picture_url) %>
+      <%= avatar_image(current_user) -%>
       <%= link_to current_user.name, user_path(current_user) %>
 	  </div>
     <ul>
