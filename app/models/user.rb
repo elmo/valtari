@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
    mount_uploader :avatar, AvatarUploader
 
-   belongs_to :organization
+   belongs_to :organization, optional: true
    has_many :campaigns
    has_many :capitals
 
@@ -23,12 +23,6 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name
       user.avatar = auth.info.image
-      user.first_name = auth.extra.raw_info.first_name
-      user.last_name = auth.extra.raw_info.last_name
-      user.headline = auth.extra.raw_info.headline
-      user.industry = auth.extra.raw_info.industry
-      user.location = auth.extra.raw_info.location.name
-      user.picture_url = auth.extra.raw_info.pictureUrl
     end
   end
 
