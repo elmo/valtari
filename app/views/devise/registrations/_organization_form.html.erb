@@ -1,4 +1,4 @@
-<div class="card-title">My organization</div>
+<div class="card-title">Organization</div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <%= f.input :organization_id,
@@ -8,4 +8,3 @@
           autofocus: true %>
     <%= f.button :submit, "Update" %>
     <% end %>
-</div>

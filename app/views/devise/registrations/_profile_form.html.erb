@@ -1,4 +1,4 @@
-<div class="card-title">Edit my profile</div>
+<div class="card-title">My Email</div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <%= f.input :email, required: true, autofocus: true %>
@@ -6,5 +6,3 @@
     <%# render partial: 'password_fields', locals: {f: f} -%>
     <%= f.button :submit, "Update" %>
     <% end %>
-    <%= render partial: 'cancel_link' -%>
-</div>
