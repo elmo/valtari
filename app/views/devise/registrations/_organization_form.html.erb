@@ -1,0 +1,11 @@
+<div class="card-title">My organization</div>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :organization_id,
+          collection: Organization.all.collect {|o| [o.name, o.id] },
+          wrapper: 'material_select',
+          required: true,
+          autofocus: true %>
+    <%= f.button :submit, "Update" %>
+    <% end %>
+</div>
