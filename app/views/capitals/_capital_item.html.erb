@@ -1,7 +1,17 @@
-<%= link_to capital.title, capital_path(capital)  -%>
-<p>
-<%= capital.title %>
-</p>
 
-<br />
+<div class="row no-margin">
+  <div class="col s12 m6">
+    <span class="title"><%= link_to capital.title, capital_path(capital)  -%></span>
+    <p><%= capital.industry_classifications.collect(&:name).join(', ') %><br>
+       
+    </p>
+  </div>
+  <div class="col s12 m3">
+  	<span class="title">&nbsp;</span>
+    <p class="money">
+      $<%= capital.revenue %><span class="mm">MM</span><br />
+    </p>
+  </div>
+</div>
+
 
