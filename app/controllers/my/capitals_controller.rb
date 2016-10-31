@@ -23,7 +23,6 @@ class My::CapitalsController < ApplicationController
         format.html { redirect_to my_capital_path(@capital), notice: 'Capital campaign was successfully created.' }
         format.json { render :show, status: :created, location: @capital }
       else
-        byebug
         format.html { render :new }
         format.json { render json: @capital.errors, status: :unprocessable_entity }
       end
