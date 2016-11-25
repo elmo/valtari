@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Global region:</strong>
+  <%= @geo.global_region %>
+</p>
+
+<p>
+  <strong>Continent:</strong>
+  <%= @geo.continent %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @geo.country %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @geo.region %>
+</p>
+
+<p>
+  <strong>Subregion:</strong>
+  <%= @geo.subregion %>
+</p>
+
+<%= link_to 'Edit', edit_admin_geo_path(@geo) %> |
+<%= link_to 'Back', admin_geos_path %>

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Geos</h1>
+
+<table>
+ <tr>
+   <%(1..1).each do |i| %>
+       <% sym = "division#{i}".to_sym %>
+     <td>
+       <% Geo.select(sym).distinct.pluck(sym).sort.each do |d| %>
+           <%= link_to d, admin_geos_path(sym => d) -%> <br />
+     <% end %>
+     </td>
+   <% end %>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Division 1</th>
+      <th>Division 2</th>
+      <th>Division 3</th>
+      <th>Division 4</th>
+      <th>Division 5</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geos.each do |geo| %>
+      <tr>
+        <td><%= geo.id %></td>
+        <td><%= geo.division1 %></td>
+        <td><%= geo.division2 %></td>
+        <td><%= geo.division3 %></td>
+        <td><%= geo.division4 %></td>
+        <td><%= geo.division5 %></td>
+        <td><%= link_to 'Show', admin_geo_path(geo) %></td>
+        <td><%= link_to 'Edit', edit_admin_geo_path(geo) %></td>
+        <td><%= link_to 'Destroy', admin_geo_path(geo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@geos) -%>
+
+<br>
+
+<%= link_to 'New Geo', new_admin_geo_path %>

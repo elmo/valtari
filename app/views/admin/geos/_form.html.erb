@@ -1,0 +1,15 @@
+<%= simple_form_for([:admin, @geo]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :division1 %>
+    <%= f.input :division2 %>
+    <%= f.input :division3 %>
+    <%= f.input :division4 %>
+    <%= f.input :division5 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
