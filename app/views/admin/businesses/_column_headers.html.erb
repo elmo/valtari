@@ -15,6 +15,7 @@
   <th id="state" class="<%= sort_arrow_class('state') -%>"><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
   <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
   <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
+  <th id="geo_id">Geo</th>
   <th class="<%= sort_arrow_class('updated') -%>">
       <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>
       <i class="material-icons dp48">query_builder</i>
