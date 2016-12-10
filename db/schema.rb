@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124162717) do
+ActiveRecord::Schema.define(version: 20161210192636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,13 @@ ActiveRecord::Schema.define(version: 20161124162717) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.string   "parent_company"
+    t.integer  "geo_id"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
     t.index ["country"], name: "index_businesses_on_country", using: :btree
     t.index ["email"], name: "index_businesses_on_email", using: :btree
+    t.index ["geo_id"], name: "index_businesses_on_geo_id", using: :btree
     t.index ["industry_classification"], name: "index_businesses_on_industry_classification", using: :btree
     t.index ["naics_code"], name: "index_businesses_on_naics_code", using: :btree
     t.index ["number_of_employees"], name: "index_businesses_on_number_of_employees", using: :btree
@@ -109,8 +111,9 @@ ActiveRecord::Schema.define(version: 20161124162717) do
     t.string   "division3"
     t.string   "division4"
     t.string   "division5"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "state_abbreviation"
   end
 
   create_table "industries", force: :cascade do |t|
