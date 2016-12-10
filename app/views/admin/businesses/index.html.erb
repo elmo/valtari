@@ -36,6 +36,7 @@
                     <td><%= best_in_place business, :state, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
                     <td><%= best_in_place business, :postal_code, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
                     <td><%= best_in_place business, :country, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
+                    <td><%= link_to business.geo_id, admin_geo_path(business.geo_id) %></td>
                     <td id="when"><%= business.updated_at.strftime("%m/%d/%y") -%></td>
                   </tr>
                 <% end %>
