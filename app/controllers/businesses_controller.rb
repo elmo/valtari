@@ -31,6 +31,13 @@ class BusinessesController < ApplicationController
       ordering = "country #{current_sort_direction}" if params[:sort] == 'country'
       ordering = "updated_at #{current_sort_direction}" if params[:sort] == 'updated'
     end
+
+    scope = scope.within_division1( params[:division1] ) if params[:division1]
+    scope = scope.within_division2( params[:division2] ) if params[:division2]
+    scope = scope.within_division3( params[:division3] ) if params[:division3]
+    scope = scope.within_division4( params[:division4] ) if params[:division4]
+    scope = scope.within_division5( params[:division5] ) if params[:division5]
+
     @businesses = scope.page(params[:page]).order(ordering).per(10)
   end
 

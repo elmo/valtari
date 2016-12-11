@@ -1,0 +1,47 @@
+<p>
+<% division1_names.each do |name| %>
+  <%= link_to name, businesses_path(division1: name ) -%> |
+<% end %>
+</p>
+
+<% if params[:division1].present? %>
+<p>
+  <%  names_within_division1(params[:division1]).each do |name| %>
+      <%= link_to name, businesses_path(division1: params[:division1],
+                                        division2: name ) -%> |
+   <% end %>
+</p>
+<% end %>
+
+<% if params[:division2].present? %>
+<p>
+  <%  names_within_division2(params[:division2]).each do |name| %>
+      <%= link_to name, businesses_path(division1: params[:division1],
+                                        division2: params[:division2],
+                                        division3: name ) -%> |
+   <% end %>
+</p>
+<% end %>
+
+<% if params[:division3].present? %>
+<p>
+  <%  names_within_division3(params[:division3]).each do |name| %>
+      <%= link_to name, businesses_path(division1: params[:division1],
+                                        division2: params[:division2],
+                                        division3: params[:division3],
+                                        division4: name ) -%> |
+   <% end %>
+</p>
+<% end %>
+
+<% if params[:division4].present? %>
+<p>
+  <% names_within_division4( params[:division4] ).each do |name| %>
+      <%= link_to name, businesses_path(division1: params[:division1],
+                                        division2: params[:division2],
+                                        division3: params[:division3],
+                                        division4: params[:division4],
+                                        division5: name ) -%> |
+   <% end %>
+</p>
+<% end %>
