@@ -1,10 +1,32 @@
 class Geo < ApplicationRecord
-  scope :within_division1, -> (division1) { where(division1: division1) }
-  scope :within_division2, -> (division2) { where(division2: division2) }
-  scope :within_division3, -> (division3) { where(division3: division3) }
-  scope :within_division4, -> (division4) { where(division4: division4) }
-  scope :within_division5, -> (division5) { where(division5: division5) }
-  scope :without_division5, -> { where(division5: nil) }
+  scope :within_division1, -> (division1) { where(division1: division1).where.not(division2: nil).where(division3: nil) }
+  scope :within_division2, -> (division2) { where(division2: division2).where.not(division3: nil).where(division4: nil) }
+  scope :within_division3, -> (division3) { where(division3: division3).where.not(division4: nil).where(division5: nil) }
+  scope :within_division4, -> (division4) { where(division4: division4).where.not(division5: nil) }
+
+
+  def parent_geo
+    return Geo.where(division4: division4).where(division5: nil).first if division5.present?
+    return Geo.where(division3: division3).where(division4: nil).first if division4.present?
+    return Geo.where(division2: division3).where(division3: nil).first if division3.present?
+    return Geo.where(division1: division2).where(division2: nil).first if division2.present?
+    nil
+  end
+
+  def parents
+    a = []
+    child = self
+    while true
+      parent = child.parent_geo
+      return a if parent.nil?
+      a << parent
+      child = parent
+    end
+  end
+
+  def self.division1
+    Geo.select(:division1).distinct
+  end
 
   def self.for_state_abbreviation(state_abbreviation)
     full_state_name = Geo.state_abbrev_map[state_abbreviation.to_sym]
