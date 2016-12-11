@@ -2,18 +2,16 @@
 
 <h1>Geos</h1>
 
-<table>
- <tr>
-   <%(1..1).each do |i| %>
-       <% sym = "division#{i}".to_sym %>
-     <td>
-       <% Geo.select(sym).distinct.pluck(sym).sort.each do |d| %>
-           <%= link_to d, admin_geos_path(sym => d) -%> <br />
-     <% end %>
-     </td>
-   <% end %>
-  </tr>
-</table>
+<ul>
+  <li>
+   <%= link_to 'All' , admin_geos_path -%>
+  </li>
+<% division1_names.sort.each do |division1| %>
+  <li>
+  <%= link_to division1, admin_geos_path(division1: division1) -%>
+  </li>
+<% end %>
+</ul>
 
 <table>
   <thead>
@@ -32,12 +30,31 @@
   <tbody>
     <% @geos.each do |geo| %>
       <tr>
-        <td><%= geo.id %></td>
-        <td><%= geo.division1 %></td>
-        <td><%= geo.division2 %></td>
-        <td><%= geo.division3 %></td>
-        <td><%= geo.division4 %></td>
-        <td><%= geo.division5 %></td>
+        <td><%= link_to geo.id, admin_geo_path(geo)  %></td>
+        <td><%= link_to  geo.division1, admin_geos_path(division1: geo.division1) %></td>
+
+        <td>
+           <% if geo.division2.present? %>
+            <%= link_to  geo.division2, admin_geos_path(division2: geo.division2) %>
+          <% end %>
+        </td>
+
+        <td>
+           <% if geo.division3.present? %>
+            <%= link_to  geo.division3, admin_geos_path(division3: geo.division3) %>
+          <% end %>
+        </td>
+
+        <td>
+           <% if geo.division4.present? %>
+            <%= link_to geo.division4, admin_geos_path(division4: geo.division4) %>
+          <% end %>
+        </td>
+        <td>
+            <%= geo.division5 %>
+        </td>
+
+
         <td><%= geo.state_abbreviation %></td>
         <td><%= link_to 'Show', admin_geo_path(geo) %></td>
         <td><%= link_to 'Edit', edit_admin_geo_path(geo) %></td>

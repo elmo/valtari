@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210192636) do
+ActiveRecord::Schema.define(version: 20161211181059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,20 @@ ActiveRecord::Schema.define(version: 20161210192636) do
     t.datetime "updated_at",                                      null: false
     t.string   "parent_company"
     t.integer  "geo_id"
+    t.string   "division1"
+    t.string   "division2"
+    t.string   "division3"
+    t.string   "division4"
+    t.string   "division5"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
     t.index ["country"], name: "index_businesses_on_country", using: :btree
+    t.index ["division1"], name: "index_businesses_on_division1", using: :btree
+    t.index ["division2"], name: "index_businesses_on_division2", using: :btree
+    t.index ["division3"], name: "index_businesses_on_division3", using: :btree
+    t.index ["division4"], name: "index_businesses_on_division4", using: :btree
+    t.index ["division5"], name: "index_businesses_on_division5", using: :btree
     t.index ["email"], name: "index_businesses_on_email", using: :btree
     t.index ["geo_id"], name: "index_businesses_on_geo_id", using: :btree
     t.index ["industry_classification"], name: "index_businesses_on_industry_classification", using: :btree
@@ -114,6 +124,11 @@ ActiveRecord::Schema.define(version: 20161210192636) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "state_abbreviation"
+    t.index ["division1"], name: "index_geos_on_division1", using: :btree
+    t.index ["division2"], name: "index_geos_on_division2", using: :btree
+    t.index ["division3"], name: "index_geos_on_division3", using: :btree
+    t.index ["division4"], name: "index_geos_on_division4", using: :btree
+    t.index ["division5"], name: "index_geos_on_division5", using: :btree
   end
 
   create_table "industries", force: :cascade do |t|
