@@ -32,7 +32,7 @@ class Geo < ApplicationRecord
   def self.for_state_abbreviation(state_abbreviation)
     full_state_name = Geo.state_abbrev_map[state_abbreviation.to_sym]
     return nil if full_state_name.nil?
-    Geo.within_division4(full_state_name).without_division5.first
+    Geo.where(division4: full_state_name).without_division5.first
   end
 
   def zone4_abbreviation
