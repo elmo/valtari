@@ -3,6 +3,7 @@ class Geo < ApplicationRecord
   scope :within_division2, -> (division2) { where(division2: division2).where.not(division3: nil).where(division4: nil) }
   scope :within_division3, -> (division3) { where(division3: division3).where.not(division4: nil).where(division5: nil) }
   scope :within_division4, -> (division4) { where(division4: division4).where.not(division5: nil) }
+  scope :without_division5, -> { where(division5: nil) }
 
 
   def parent_geo
