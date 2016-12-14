@@ -11,6 +11,7 @@ class Business < ApplicationRecord
   def set_geo
     if geo.blank?
       self.geo = Geo.for_state_abbreviation(state)
+      return if self.geo.nil?
       self.division1 = geo.division1 if geo.division1.present?
       self.division2 = geo.division2 if geo.division2.present?
       self.division3 = geo.division3 if geo.division3.present?
