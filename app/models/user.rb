@@ -16,7 +16,7 @@ class User < ApplicationRecord
    belongs_to :organization, optional: true
    has_many :campaigns
    has_many :capitals
-
+   has_many :user_businesses
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -58,6 +58,10 @@ class User < ApplicationRecord
 
   def editor?
     has_role?(:editor)
+  end
+
+  def favorite_business?(business)
+    user_businesses.exists?(business_id: business.id)
   end
 
 end
