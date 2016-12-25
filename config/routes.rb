@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   namespace :my do
     resources :campaigns
     resources :capitals
+    resources :businesses do
+      resources :user_businesses
+    end
   end
 
   namespace :admin do
