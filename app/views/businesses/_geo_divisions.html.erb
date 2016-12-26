@@ -1,6 +1,6 @@
 <p>
 <% division1_names.each do |name| %>
-  <%= link_to name, businesses_path(division1: name ) -%> |
+  <%= link_to name, businesses_path(division1: name,  q: params[:q]) -%> |
 <% end %>
 </p>
 
@@ -8,7 +8,7 @@
 <p>
   <%  names_within_division1(params[:division1]).each do |name| %>
       <%= link_to name, businesses_path(division1: params[:division1],
-                                        division2: name ) -%> |
+                                        division2: name, q: params[:q] )-%> |
    <% end %>
 </p>
 <% end %>
@@ -18,7 +18,7 @@
   <%  names_within_division2(params[:division2]).each do |name| %>
       <%= link_to name, businesses_path(division1: params[:division1],
                                         division2: params[:division2],
-                                        division3: name ) -%> |
+                                        division3: name, q: params[:q] ) -%> |
    <% end %>
 </p>
 <% end %>
@@ -29,7 +29,7 @@
       <%= link_to name, businesses_path(division1: params[:division1],
                                         division2: params[:division2],
                                         division3: params[:division3],
-                                        division4: name ) -%> |
+                                        division4: name, q: params[:q] ) -%> |
    <% end %>
 </p>
 <% end %>
@@ -41,7 +41,7 @@
                                         division2: params[:division2],
                                         division3: params[:division3],
                                         division4: params[:division4],
-                                        division5: name ) -%> |
+                                        division5: name, q: params[:q]  ) -%> |
    <% end %>
 </p>
 <% end %>
