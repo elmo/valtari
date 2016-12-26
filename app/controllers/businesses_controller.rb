@@ -1,6 +1,7 @@
 class BusinessesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_business, only: [:show, :edit, :update, :destroy]
+  before_action :save_search
 
   # GET /businesses
   # GET /businesses.json
@@ -32,11 +33,11 @@ class BusinessesController < ApplicationController
       ordering = "updated_at #{current_sort_direction}" if params[:sort] == 'updated'
     end
 
-    scope = scope.within_division1( params[:division1] ) if params[:division1]
-    scope = scope.within_division2( params[:division2] ) if params[:division2]
-    scope = scope.within_division3( params[:division3] ) if params[:division3]
-    scope = scope.within_division4( params[:division4] ) if params[:division4]
-    scope = scope.within_division5( params[:division5] ) if params[:division5]
+    scope = scope.within_division1( params[:division1] ) if params[:division1].present?
+    scope = scope.within_division2( params[:division2] ) if params[:division2].present?
+    scope = scope.within_division3( params[:division3] ) if params[:division3].present?
+    scope = scope.within_division4( params[:division4] ) if params[:division4].present?
+    scope = scope.within_division5( params[:division5] ) if params[:division5].present?
 
     @businesses = scope.page(params[:page]).order(ordering).per(10)
   end
@@ -99,6 +100,11 @@ class BusinessesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_business
       @business = Business.find(params[:id])
+    end
+
+    def save_search
+      query_string = URI.parse(request.url).query
+      current_user.searches.find_or_create_by(query: CGI.unescape(query_string), name: Search.search_name(params)) if query_string.present?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
