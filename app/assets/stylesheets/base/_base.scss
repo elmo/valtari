@@ -30,7 +30,10 @@ body {
 
 main {
   flex: 1 0 auto;
-  background: #edf0f3
+  background-image: url('/assets/bridge.png');
+  background-size: 100%;
+  background-position: center 0;
+  background-repeat: no-repeat;
 }
 
 body footer.page-footer{
@@ -58,7 +61,7 @@ body footer.page-footer{
 }
 
 nav{
-	background: #e1e6ea;
+	background: transparent;
   box-shadow: none;
   i.material-icons{
     font-size: 1.6rem;
@@ -81,7 +84,7 @@ nav{
 nav ul{
   font-size:.9em;
   a {
-    color: #626262;
+    color: #FFF;
     font-size: 1em;
     font-weight: 500;
     &:hover{
@@ -168,6 +171,7 @@ span.mm{
     border: none;
   }
 }
+.collection{ background:white }
 
 .no-margin{
   margin-bottom: 0
