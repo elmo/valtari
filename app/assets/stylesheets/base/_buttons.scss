@@ -105,7 +105,7 @@ a.end-conversation {
     text-align: center;
     max-width: 31em;
     margin: 0 auto;
-    padding: 4em 0 3.2em;
+    padding: 2.7em 0 0.2em;
   .social-buttons{
     padding: 0 0 2em;
     /*a:nth-child(1){ background: url('facebook-icon.png') no-repeat #3356a0 }*/
@@ -113,14 +113,20 @@ a.end-conversation {
     a:nth-child(1){ background-image: url('linked-in-icon.png'); background-color: #2e82c5; background-repeat:no-repeat }
     > a{
       width:21em;
+      font-size: 1.2em;
+      padding: 0 1em 0 2em;
       display: block;
-      margin:0 auto 1em;
+      margin: 14em auto 6em;
       line-height: 57px;
       background-size: 36px!important;
       color: white;
       background-position: 14px 3px!important;
       text-align: center
     }
+  }
+  h4{
+    color: white;
+    font-size: 2.5em
   }
 }
 

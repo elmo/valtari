@@ -18,7 +18,9 @@
   <%= link_to 'My Capital Raises', my_capitals_path, class: 'collection-item' %>
   <%= link_to 'Companies Database', businesses_path, class: 'collection-item' %>
   <%= link_to 'Sell Listings', sellers_path, class: 'collection-item' %>
-  <%= render partial: '/my/searches/recent' -%>
 </div>
 
 
+<div class="card">
+  <div class="card-content"><%= render partial: '/my/searches/recent' -%></div>
+</div>
