@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :capitals
     resources :businesses do
+      resources :businesses
       resources :user_businesses
     end
   end

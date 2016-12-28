@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content company-list">
+           <div class="row">
+             <div class="col m5 s12">
+                <h4>My Company Watch List<span></h4>
+                  <%= link_to 'view all businesses', businesses_url  -%>
+              </div>
+          </div>
+          <section>
+             <table class="user-view">
+               <thead>
+                 <%= render partial: 'column_headers' -%>
+               </thead>
+               <tbody>
+                 <% @businesses.each do |business| %>
+                   <tr>
+                     <td>
+                       <%= link_to business.company_name, business_path(business) %>
+                       <span id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business)-%></span>
+                       </td>
+                       <td> <%= business.contact_first_name %> <%= business.contact_last_name %></td>
+                       <td><%= business.phone %></td>
+                       <td><%= business.revenue %></td>
+                       <td><%= business.number_of_employees %></td>
+                       <td><%= business.industry_classification %></td>
+                       <td><%= business.city %></td>
+                       <td><%= business.state %></td>
+                       <td><%= business.country %></td>
+                      </tr>
+                  <% end %>
+              </tbody>
+            </table>
+            <%= paginate(@businesses) -%>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
