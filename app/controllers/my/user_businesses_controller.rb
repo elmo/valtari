@@ -1,6 +1,6 @@
 class My::UserBusinessesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_business
+  before_action :set_business, only: [:create, :destroy]
 
   def create
     @user_business = current_user.user_businesses.create!(business_id: @business.id)
