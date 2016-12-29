@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <main>
+    <main class="<% if current_user.present? %>logged-in<% end %>">
       <%= render partial: '/shared/user_account_navigation' %>
         <div>
           <%= render partial: '/shared/flash' %>
