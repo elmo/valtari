@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
-  get '/profile' => 'home#profile', as: :profile
+  get '/profile' => 'my/dashboard#profile', as: :profile
   get '/sellers' => 'home#sellers', as: :sellers
   get '/raise_capital' => 'home#raise_capital', as: :raise_capital
   get '/resources' => 'home#resources', as: :resources
