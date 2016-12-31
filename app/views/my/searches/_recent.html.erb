@@ -1,7 +1,7 @@
-<p>Recent searches:
-<ul>
-<% current_user.searches.order(created_at: :desc).limit(5).each do |search|  %>
-  <li><%= link_to search.name , businesses_path + '?' + search.query %> </li>
-<% end %>
-</ul>
-</p>
+<div class="recent">Recent searches:
+  <ul>
+	<% current_user.searches.order(created_at: :desc).limit(5).each do |search|  %>
+  	<li><%= link_to search.name , businesses_path + '?' + search.query %> </li>
+	<% end %>
+  </ul>
+</div>
