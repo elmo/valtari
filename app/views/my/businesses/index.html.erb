@@ -19,7 +19,7 @@
                    <tr>
                      <td>
                        <%= link_to business.company_name, business_path(business) %>
-                       <span id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business)-%></span>
+                       <span id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business, remote: false )-%></span>
                        </td>
                        <td> <%= business.contact_first_name %> <%= business.contact_last_name %></td>
                        <td><%= business.phone %></td>
