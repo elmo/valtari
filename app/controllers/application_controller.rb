@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :resource_name, :resource, :devise_mapping
 
-  def after_sign_in_path_fer(resource)
+  def after_sign_in_path_for(resource)
     return profile_path if resource.organization.present? or resource.declined_to_state_organization?
     edit_user_registration_path
   end
