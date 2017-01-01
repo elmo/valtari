@@ -1,8 +1,8 @@
 <div class="side-bar">
-  <%= link_to 'My Campaigns', my_campaigns_path, class: 'collection-item' %>
-  <%= link_to 'My Capital Raises', my_capitals_path, class: 'collection-item' %>
-  <%= link_to 'Companies Database', businesses_path, class: 'collection-item' %>
+  <%= link_to "My Campaigns (#{current_user.campaigns.count})", my_campaigns_path, class: 'collection-item' %>
+  <%= link_to "My Capital Raises (#{current_user.capitals.count})", my_capitals_path, class: 'collection-item' %>
+  <%= link_to "Companies Database (#{Business.count}) ", businesses_path, class: 'collection-item' %>
   <%= link_to 'Sell Listings', sellers_path, class: 'collection-item' %>
-  <%= link_to 'Watch List', my_businesses_path , class: 'collection-item' %>
+  <%= link_to "Watch List (#{current_user.businesses.count}) ", my_businesses_path , class: 'collection-item' %>
   <p class="card-content"><%= render partial: '/my/dashboard/searches' -%></p>
 </div>
