@@ -1,0 +1,21 @@
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <h4>Search history </h4>
+        <table>
+          <tr>
+            <th>Name</th>
+           </tr>
+           <% @searches.each do |search|  %>
+              <tr>
+                <td><%= search.created_at.strftime(date_and_time_format) %> </td>
+                <td><%= link_to search.name , businesses_path + '?' + search.query %> </td>
+                <td><%= link_to 'delete', my_search_path(search), method: :delete %> </td>
+              </tr>
+            <% end %>
+          </table>
+          <%= paginate(@searches) -%>
+        </div>
+      </div>
+    </div>
+  </div>

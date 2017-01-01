@@ -5,4 +5,8 @@ module ApplicationHelper
     (@sort_direction == 'asc') ? 'sorted-up' : 'sorted-down'
   end
 
+  def date_and_time_format
+     "%m-%d-%Y %H:%M %p"
+  end
+
 end

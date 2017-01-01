@@ -23,7 +23,6 @@ class My::CampaignsController < ApplicationController
         format.html { redirect_to my_campaigns_path, notice: 'Campaign was successfully created.' }
         format.json { render :show, status: :created, location: @campaign }
       else
-        byebug
         format.html { render :new }
         format.json { render json: @campaign.errors, status: :unprocessable_entity }
       end
