@@ -14,8 +14,8 @@
       <div class="col s12">
         <div class="card">
           <div class="card-content">
-            <div class="card-title">My Campaigns</div>
-            <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>        
+              <div class="card-title">My Campaigns (<%= current_user.campaigns.count -%>) </div>
+            <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
         Create Campaign
         <% end %>
             <%= render partial: '/my/campaigns/campaigns' %>
