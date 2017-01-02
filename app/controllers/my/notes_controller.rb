@@ -39,10 +39,10 @@ class My::NotesController < ApplicationController
     respond_to do |format|
       if @note.update(note_params)
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
-        format.json { render :show, status: :ok, location: @note }
+        format.json { respond_with_bip(@note) }
       else
         format.html { render :edit }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@note) }
       end
     end
   end
@@ -58,7 +58,7 @@ class My::NotesController < ApplicationController
   private
 
     def set_notable
-      @notable = Business.find(params[:business_id])
+      @notable = Business.find(params[:business_id]) if params[:business_id].present?
     end
 
     def set_note
