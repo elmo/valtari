@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :capitals
     resources :searches
     resources :businesses do
-      resources :businesses
+      resources :notes
       resources :user_businesses
     end
   end

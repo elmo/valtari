@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226184226) do
+ActiveRecord::Schema.define(version: 20170102052027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,16 @@ ActiveRecord::Schema.define(version: 20161226184226) do
 
   create_table "industry_classifications", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.string   "notable_type"
+    t.integer  "notable_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id", using: :btree
   end
 
   create_table "organizations", force: :cascade do |t|

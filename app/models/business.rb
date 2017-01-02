@@ -1,6 +1,7 @@
 class Business < ApplicationRecord
   belongs_to :geo, optional: true
   before_validation :set_geo
+  has_many :notes, as: :notable
 
   scope :within_division1, -> (division1) { where(division1: division1) }
   scope :within_division2, -> (division2) { where(division2: division2) }

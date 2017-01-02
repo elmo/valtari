@@ -8,7 +8,7 @@ class Search < ApplicationRecord
     name = params[:division3] if params[:division3].present?
     name = params[:division4] if params[:division4].present?
     name = params[:division5] if params[:division5].present?
-    name += " : #{params[:q]}" if params[:q].present?
+    name += " #{params[:q]}" if params[:q].present?
     name
   end
 
