@@ -4,5 +4,6 @@
   <%= link_to "Companies Database (#{Business.count}) ", businesses_path, class: 'collection-item' %><br />
   <%= link_to 'Sell Listings', sellers_path, class: 'collection-item' %><br />
   <%= link_to "Watch List (#{current_user.businesses.count}) ", my_businesses_path , class: 'collection-item' %><br />
+  <%= link_to "Notes(#{current_user.notes.count}) ", my_notes_path , class: 'collection-item' %><br />
   <p class="card-content"><%= render partial: '/my/dashboard/searches' -%></p>
 </div>

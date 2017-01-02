@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-content">
+   <h4>My notes</h4>
+    <% if @notes.any? %>
+    <% @notes.each do |note| %>
+      <p> <%= link_to note.notable.title, polymorphic_url([:my, note.notable, note])-%> </p>
+      <%= render partial: '/my/notes/note', locals: {notable: note.notable, note: note } -%>
+   <% end %>
+   <% else %>
+     <p>You have not saved any notes. You can create notes from the detail of a business that you are interested in.<p>
+   <% end %>
+</div>
