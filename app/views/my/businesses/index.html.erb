@@ -18,10 +18,10 @@
                  <% @businesses.each do |business| %>
                    <tr>
                      <td>
-                       <%= link_to business.company_name, business_path(business) %>
+                       <%= link_to business.company_name, my_business_path(business) %>
                        <span id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business, remote: false )-%></span>
                        </td>
-                       <td> <%= business.contact_first_name %> <%= business.contact_last_name %></td>
+                       <td><%= business.contact_first_name %> <%= business.contact_last_name %></td>
                        <td><%= business.phone %></td>
                        <td><%= business.revenue %></td>
                        <td><%= business.number_of_employees %></td>
