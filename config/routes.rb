@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   namespace :my do
+    resources :notes, only: [:index, :show]
     resources :campaigns
     resources :capitals
     resources :searches

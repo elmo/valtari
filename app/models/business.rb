@@ -32,4 +32,8 @@ class Business < ApplicationRecord
     end
   end
 
+  def title
+    company_name
+  end
+
 end

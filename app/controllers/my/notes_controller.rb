@@ -5,9 +5,9 @@ class My::NotesController < ApplicationController
 
   def index
     if @notable.present?
-      @notes = @notable.notes.where(user_id: current_user.id).page(params[:page]).per(20)
+      @notes = @notable.notes.where(user_id: current_user.id).order(created_at: :desc).page(params[:page]).per(10)
     else
-      @notes = current_user.notes.page(params[:page]).per(20)
+      @notes = current_user.notes.order(created_at: :desc).page(params[:page]).per(10)
     end
   end
 
@@ -26,7 +26,7 @@ class My::NotesController < ApplicationController
     @note.user = current_user
     respond_to do |format|
       if @note.save
-        format.html { redirect_to my_business_path(@note.notable), notice: 'Note was successfully created.' }
+        format.html { redirect_back(fallback_location:  polymorphic_url([:my, @notable, @note]), notice: 'Note was successfully saved.') }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
@@ -38,11 +38,11 @@ class My::NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
-        format.json { render :show, status: :ok, location: @note }
+        format.html { redirect_back(fallback_location:  polymorphic_url([:my, @notable, @note]), notice: 'Note was successfully update.') }
+        format.json { respond_with_bip(@note) }
       else
         format.html { render :edit }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@note) }
       end
     end
   end
@@ -50,7 +50,7 @@ class My::NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to my_business_path(@note.notable), notice: 'Note was successfully created.' }
+      format.html { redirect_back(fallback_location:  polymorphic_url([:my, @notable, @note]), notice: 'Note was successfully deleted.') }
       format.json { head :no_content }
     end
   end
@@ -58,7 +58,7 @@ class My::NotesController < ApplicationController
   private
 
     def set_notable
-      @notable = Business.find(params[:business_id])
+      @notable = Business.find(params[:business_id]) if params[:business_id].present?
     end
 
     def set_note

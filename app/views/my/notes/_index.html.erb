@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-content">
+   <h4>Add Note</h4>
+     <%= simple_form_for([:my, notable, Note.new]) do |f| %>
+       <%= f.error_notification %>
+       <%= f.input :body -%>
+       <%= f.button :submit %>
+     <% end %>
+     <div id="business-<%=-%>-note-list">
+      <% notable.notes.where(user_id: current_user.id ).each do |note| %>
+          <%= render partial: '/my/notes/note', locals: {notable: notable, note: note } -%>
+       <% end %>
+    </div>
+</div>
