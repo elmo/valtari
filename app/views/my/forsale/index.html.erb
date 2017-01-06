@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="margin-top-bottom">
+    <div class="row">
+      <div class="col s12 l2">
+        <div class="side-bar">
+          <%= link_to 'All Listings', class: "" %>
+          <%= link_to 'My Listings', class: "" %>
+        </div>
+      </div>
+      <div class="col s12 l10">
+        <div class="card">
+          <div class="card-content">
+              <div class="card-title">Marketplace (<%= current_user.campaigns.count -%>) </div>
+            <%= link_to, class: "waves-effect btn right float-margin" do %>
+        List Company
+        <% end %>
+            <%= render partial: '' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
