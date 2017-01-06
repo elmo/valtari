@@ -31,7 +31,6 @@ h4{
   line-height: 110%;
   margin: 1.78rem 0 1.424rem 0;
   font-weight: 200;
-  color: #FFF;
 }
 // same size as materialize default h4
 // 2.28rem !default
@@ -97,4 +96,17 @@ h4{
 // --------- ERRORS ---------
 .error-block {
   color: red;
+}
+
+// -- Misc type styles -----
+.description{
+  color: #444
+}
+.money{
+  font-size: 1rem;
+  font-weight: 600;
+}
+span.mm{
+  font-size: .75rem;
+  font-weight: 400;
 }
