@@ -9,19 +9,17 @@
 </nav>
 
 <div class="container">
-  <div class="margin-top-bottom">
-    <div class="row">
-      <div class="col s12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-title">My Capital Raises</div>
-            <%= link_to new_my_capital_path, class: "waves-effect btn right float-margin" do %>
-              Create Capital Raise
-            <% end %>
-            <%= render partial: '/my/capitals/capitals' %>
-          </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-title">My Capital Raises (#{current_user.capitals.count})</div>
+          <%= link_to new_my_capital_path, class: "waves-effect btn right float-margin" do %>
+            Create Capital Raise
+          <% end %>
+          <%= render partial: '/my/capitals/capitals' %>
         </div>
       </div>
-     </div>
-  </div>
+    </div>
+   </div>
 </div>

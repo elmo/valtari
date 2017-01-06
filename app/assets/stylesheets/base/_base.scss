@@ -15,6 +15,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-size: 14px
 }
 
 @media only screen and (min-width: 601px){
@@ -128,6 +129,7 @@ nav ul{
 
 .side-bar {
   padding-top: 1em;
+  font-size: .9em;
   li {
     list-style: none;
     line-height: 14px;
@@ -181,30 +183,40 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
   }
 }
 
-.money{
-  font-size: 1rem;
-  font-weight: 600;
-}
-span.mm{
-  font-size: .75rem;
-  font-weight: 400;
-}
 
 .cells {
   .card-content{ padding: 0 }
-  .card-title{ padding: 15px 15px 0 20px }
+  .card-title{ padding: 15px 15px 0 15px }
   ul.collection {
     border: none;
   }
 }
-.collection{ background:white }
+.collection{ 
+  background: white;
+  .collection-item{
+    padding: 10px 16px
+  }
+}
 
 .no-margin{
   margin-bottom: 0
+}
+
+.row.short{
+  margin-bottom:2px;
+}
+
+.card.listing {
+    margin: 0 0 3px 0;
 }
 
 .columns{
   -webkit-columns: 180px 2;
    -moz-columns: 180px 2;
         columns: 180px 2;
+}
+
+.column-entry{
+  color: #999;
+  font-weight: 200
 }

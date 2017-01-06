@@ -1,20 +1,18 @@
-<nav class="secondary hide-on-med-and-down">
-  <div class="nav-wrapper container">
-    <div class="col s12">
-      <ul class="left hide-on-med-and-down">
-        <li><%= link_to 'My Campaigns', my_campaigns_path, class: "" %></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="margin-top-bottom">
+  <div class="">
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 l2">
+        <div class="side-bar">
+          <%= link_to 'My Campaigns', my_campaigns_path, class: "" %>
+        </div>
+      </div>
+      <div class="col s12 l10">
         <div class="card">
           <div class="card-content">
-            <div class="card-title">Campaigns </div>
+              <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
+            <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
+            Create Campaign
+            <% end %>
             <%= render partial: '/campaigns/campaigns' %>
           </div>
         </div>
