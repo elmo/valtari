@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102052027) do
+ActiveRecord::Schema.define(version: 20170107195840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,26 @@ ActiveRecord::Schema.define(version: 20170102052027) do
     t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id", using: :btree
   end
 
+  create_table "opportunities", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "revenue_id"
+    t.integer  "ebitda_id"
+    t.integer  "user_id"
+    t.integer  "industry_id"
+    t.integer  "revenue_amount"
+    t.integer  "ebidta_amount"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["industry_id"], name: "index_opportunities_on_industry_id", using: :btree
+    t.index ["revenue_id"], name: "index_opportunities_on_revenue_id", using: :btree
+    t.index ["user_id"], name: "index_opportunities_on_user_id", using: :btree
+  end
+
+  create_table "opportunity_industry_classifications", force: :cascade do |t|
+    t.integer "opportunity_id"
+    t.integer "industry_classification_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -241,4 +261,7 @@ ActiveRecord::Schema.define(version: 20170102052027) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
+  add_foreign_key "opportunities", "industries"
+  add_foreign_key "opportunities", "revenues"
+  add_foreign_key "opportunities", "users"
 end

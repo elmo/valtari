@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
   resources :capitals, only: [:index,:show]
+  resources :opportunities, only: [:index,:show]
   resources :users, only: [:show]
 
   namespace :my do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :capitals
     resources :searches
+    resources :opportunities
     resources :businesses do
       resources :notes
       resources :user_businesses

@@ -1,0 +1,18 @@
+<div class="row no-margin">
+  <div class="col s12 m6">
+    <span class="title"><%= link_to opportunity.title, opportunity_path(opportunity)  -%></span>
+    <p><%= opportunity.industry_classifications.collect(&:name).join(', ') %></p>
+  </div>
+  <div class="col s12 m3">
+  	<span class="title">&nbsp;</span>
+    <p class="money">
+      $<%= opportunity.revenue_lower %>&mdash;<%= opportunity.revenue_amount %><span class="mm">MM</span><br />
+    </p>
+  </div>
+  <div class="col s12 m3">
+  	<span class="title">&nbsp;</span>
+  	<p class="money">
+  	  $<%= opportunity.ebitda_lower %>&mdash;<%= opportunity.ebitda_amount %><span class="mm">MM</span><br />
+  	</p>
+  </div>
+</div>

@@ -16,6 +16,7 @@ class User < ApplicationRecord
    belongs_to :organization, optional: true
    has_many :campaigns
    has_many :capitals
+   has_many :opportunities
    has_many :user_businesses
    has_many :businesses, through: :user_businesses
    has_many :searches

@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to opportunity.title, opportunity_path(opportunity) %></td>
+  <td><%= opportunity.revenue_amount %><br />
+  <td><%= opportunity.ebidta_amount %><br />
+  <td><%= opportunity.industry_classifications.collect(&:name).join(', ') %></td>
+</tr>
