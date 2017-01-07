@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
-  get '/profile' => 'my/dashboard#profile', as: :profile
+  get '/profile' => 'my/dashboard#home', as: :profile
   get '/sellers' => 'home#sellers', as: :sellers
   get '/raise_capital' => 'home#raise_capital', as: :raise_capital
   get '/resources' => 'home#resources', as: :resources
   get '/admin' => 'admin/site#index', as: :admin
-  root to: "my/dashboard#profile"
+  root to: "my/dashboard#home"
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
