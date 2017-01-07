@@ -1,0 +1,22 @@
+<table class="bordered">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Title</td>
+      <td><%= opportunity.title %></td>
+    </tr>
+    <tr>
+      <td>Revenue</td>
+      <td><%= opportunity.revenue_amount %></td>
+    </tr>
+    <tr>
+      <td>EBIDTA</td>
+      <td><%= opportunity.ebidta_amount %></td>
+    </tr>
+    <tr>
+      <td>Industries</td>
+      <td><%= opportunity.industry_classifications.collect(&:name).join(', ')  %></td>
+    </tr>
+  </tbody>
+</table>

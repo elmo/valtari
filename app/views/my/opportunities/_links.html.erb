@@ -1,0 +1,9 @@
+
+<% if opportunity.persisted? and action_name != 'edit' %>
+  <%= link_to edit_my_opportunity_path(opportunity), class: "waves-effect waves-light btn" do %>
+    Edit
+  <% end %>
+<% end %>
+<%= link_to(my_opportunities_path, class: "right-corner") do %>
+ See My Sell-side Opportunites
+<% end %>

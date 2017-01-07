@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Revenue</th>
+      <th>Ebitda</th>
+      <th>Industry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @opportunities.each do |opportunity| %>
+      <%= render partial: '/opportunities/opportunity_row', locals: {opportunity: opportunity } %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@opportunities) -%>

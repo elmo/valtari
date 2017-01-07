@@ -1,0 +1,14 @@
+<tr>
+  <td><%= link_to opportunity.title, my_opportunity_path(opportunity) %></td>
+  <td><%= opportunity.revenue_amount %></td>
+  <td><%= opportunity.ebidta_amount %></td>
+  <td><%= opportunity.industry_classifications.collect(&:name).join(', ') %></td>
+  <td>
+    <%= link_to(edit_my_opportunity_path(opportunity) , class: "inline-link") do %>
+      <i class="material-icons tiny">mode_edit</i>
+    <% end %>
+    <%= link_to(my_opportunity_path(opportunity), method: :delete, data: { confirm: 'Are you sure want to remove this opportunity?' }, class: "inline-link") do  %>
+      <i class="material-icons tiny">delete </i>
+    <% end %>
+  </td>
+</tr>
