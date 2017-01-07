@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resources :campaigns, only: [:index,:show]
   resources :capitals, only: [:index,:show]
   resources :opportunities, only: [:index,:show]
+  resources :events, only: [:index,:show]
   resources :users, only: [:show]
 
   namespace :my do
     resources :notes, only: [:index, :show]
+    resources :events
     resources :campaigns
     resources :capitals
     resources :searches

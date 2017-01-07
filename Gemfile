@@ -42,6 +42,7 @@ gem 'pg'
 gem 'rmagick', require: false
 gem 'rolify'
 gem 'simple_form'
+gem "simple_calendar", "~> 2.0"
 gem 'underscore-rails'
 gem 'dotenv-rails'
 

@@ -21,6 +21,7 @@ class User < ApplicationRecord
    has_many :businesses, through: :user_businesses
    has_many :searches
    has_many :notes
+   has_many :events
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
