@@ -1,0 +1,7 @@
+<%= simple_form_for([:my, @event]) do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :end_time  %>
+    <%= f.button :submit %>
+<% end %>
