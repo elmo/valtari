@@ -14,6 +14,8 @@
       <%= render partial: '/shared/user_account_navigation' %>
         <div>
           <%= render partial: '/shared/flash' %>
+          <%= render partial: '/home/side_bar' -%>
+          <%= render partial: '/my/side_bar' if request.path =~ /\/my/ -%>
           <%= yield %>
         </div>
       </div>
