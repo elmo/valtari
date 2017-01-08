@@ -8,9 +8,7 @@ class User < ApplicationRecord
          :validatable,
          :lockable,
          :timeoutable
-   #devise :omniauthable, omniauth_providers: [:google_oauth2, :linkedin]
    devise :omniauthable, omniauth_providers: [:linkedin]
-
    mount_uploader :avatar, AvatarUploader
 
    belongs_to :organization, optional: true
@@ -22,6 +20,8 @@ class User < ApplicationRecord
    has_many :searches
    has_many :notes
    has_many :events
+   has_many :messages
+   has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -67,6 +67,10 @@ class User < ApplicationRecord
 
   def favorite_business?(business)
     user_businesses.exists?(business_id: business.id)
+  end
+
+  def all_messages
+    Message.where(["user_id = ? or recipient_id = ? ", id, id ] )
   end
 
 end

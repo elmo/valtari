@@ -1,0 +1,8 @@
+<%= simple_form_for([:my, @message] ) do |f| %>
+  <%= f.error_notification %>
+   <%= f.hidden_field :recipient_id %>
+   <%= f.hidden_field :thread_id %>
+   <%= f.input :subject %>
+   <%= f.input :body %>
+   <%= f.button :submit %>
+<% end %>
