@@ -15,16 +15,21 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   namespace :my do
-    resources :notes, only: [:index, :show]
-    resources :events
-    resources :campaigns
-    resources :capitals
-    resources :searches
-    resources :opportunities
     resources :businesses do
       resources :notes
       resources :user_businesses
     end
+    resources :events
+    resources :campaigns
+    resources :capitals
+    resources :messages do
+      member do
+        put 'open'
+      end
+    end
+    resources :notes, only: [:index, :show]
+    resources :opportunities
+    resources :searches
   end
 
   namespace :admin do

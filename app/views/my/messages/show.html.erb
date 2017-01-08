@@ -1,0 +1,26 @@
+<p>
+  <strong>From:</strong>
+  <%= @message.user.name %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @message.recipient.name %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>Opened:</strong>
+  <%= @message.opened %>
+</p>
+
+<%= link_to 'Back', my_messages_path %>
