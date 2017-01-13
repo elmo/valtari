@@ -12,7 +12,7 @@
       background: #3c3c3c!important;
       color: white!important;    }
     &:hover {
-      background: #eaeaea;
+      background: #FDFDFD;
       color: #333;
     }
   }
@@ -34,11 +34,13 @@
   margin-left: -1rem;
   margin-right: -1rem;
   padding-left: 1em;
-  a.sub-item {
-    padding:0 13px 10px;
-    color: #3c3c3c
+  .sub-item {
+    padding:0 8px 6px;
+    color: #3c3c3c;
+    display: inline-block;
+    margin-right: 0.8em
   }
-  a.sub-item.active {
+  .sub-item.active {
     border-bottom: 2px solid;
     font-weight: 600
   }

@@ -1,25 +1,23 @@
 <div class="card">
   <div class="card-content company-list">
     <div class="sub">
-      <div id="search" class="input-field">
-            <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
-              <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search' -%>
-              <%= hidden_field_tag :division1, params[:division1] -%>
-              <%= hidden_field_tag :division2, params[:division2] -%>
-              <%= hidden_field_tag :division3, params[:division3] -%>
-              <%= hidden_field_tag :division4, params[:division4] -%>
-              <%= hidden_field_tag :division5, params[:division5] -%>
-          <% end %>
-          <i class="material-icons">search</i>
+      <a href="#" class="sub-item active">All</a>
+      <%= link_to 'Saved', my_businesses_path, class: 'sub-item' %>
+      <div class="sub-item">
+        <div id="search" class="input-field">
+              <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
+                <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search' -%>
+                <%= hidden_field_tag :division1, params[:division1] -%>
+                <%= hidden_field_tag :division2, params[:division2] -%>
+                <%= hidden_field_tag :division3, params[:division3] -%>
+                <%= hidden_field_tag :division4, params[:division4] -%>
+                <%= hidden_field_tag :division5, params[:division5] -%>
+            <% end %>
+            <i class="material-icons">search</i>
+          </div>
         </div>
       </div>
-    <div class="row">
-        <div class="col m5 s12">
-            <h4>Companies</h4>
-            <span><%= link_to 'My watch list', my_businesses_path %></span>
-        </div>
-        
-    </div>
+      <h4>Companies</h4>
         <section>
            <%= render partial: 'geo_divisions' %>
             <table class="user-view">
