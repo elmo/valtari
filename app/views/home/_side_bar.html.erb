@@ -19,10 +19,12 @@
 <% end %>
 
 <br><br>
- 
+
+<% if current_user.present?%>
 <!--<%= link_to "Notes(#{current_user.notes.count}) ", my_notes_path , class: '' %><br />-->
 <div class="recent">
 <p class="card-content"><%= render partial: '/my/dashboard/searches' -%></p>
 </div>
+<% end %>
 
 
