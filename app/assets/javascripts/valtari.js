@@ -12,7 +12,8 @@ $(document).on('turbolinks:load', function() {
 	        $('textarea').val((tval).substring(0, tlength - 1))
 	    }
 	})
-
+	//Nav active states
+	$( ".side-bar a.active" ).prevAll().css( "border-right", "1px solid #3c3c3c" );
 });
 
 

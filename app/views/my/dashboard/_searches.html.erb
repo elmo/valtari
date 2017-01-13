@@ -1,4 +1,4 @@
-<p>Recent searches: (<%= current_user.searches.count -%>)
+<p>Recent searches:
 <ul>
 <% current_user.searches.order(created_at: :desc).limit(5).each do |search|  %>
   <li><%= link_to search.name , businesses_path + '?' + search.query %> </li>

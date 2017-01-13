@@ -6,21 +6,29 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" %>
 
   </head>
 
   <body>
     <main class="<% if current_user.present? %>logged-in<% end %>">
       <%= render partial: '/shared/user_account_navigation' %>
-        <div>
-          <%= render partial: '/shared/flash' %>
-          <%= render partial: '/home/side_bar' -%>
-          <%= render partial: '/my/side_bar' if request.path =~ /\/my/ -%>
-          <%= yield %>
+      <%= render partial: '/shared/flash' %>
+      <div class="container">
+        <div class="row">
+          <div class="col l2 s12">
+            <div class="side-bar">
+            <%= render partial: '/home/side_bar' -%>
+            <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ -%>
+            </div>
+          </div>
+          <div class="col l10 s12">
+            <%= yield %>
+          </div>
         </div>
       </div>
     </main>
-    <footer class="page-footer dark-gray">
+    <footer class="page-footer light-gray">
       <div class="container">
         <div class="row">
         <div class="col l6 s12">
