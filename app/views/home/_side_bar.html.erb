@@ -1,5 +1,28 @@
-<%= link_to "Companies (#{Business.count}) ", businesses_path, class: 'collection-item' %><br />
-<%= link_to "Capital Raises", capitals_path, class: 'collection-item' %><br />
-<%= link_to "Marketplace", opportunities_path, class: 'collection-item' %><br />
-<%= link_to "Events", events_path, class: 'collection-item' %><br />
+<%= link_to businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item"  do %>
+<i class="ion-cube" data-pack="default" data-tags="box, square, container"></i>Companies
+<% end %>
+
+<%= link_to my_campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" do %>
+<i class="ion-speakerphone" data-pack="default" data-tags="box, square, container"></i>Campaigns
+<% end %>
+
+<%= link_to my_capitals_path, class: "#{(controller_name == 'capitals') ? 'active' : '' } nav-item"  do %>
+<i class="ion-briefcase" data-pack="default" data-tags="box, square, container"></i>Capital Raising
+<% end %>
+
+<%= link_to opportunities_path, class: "#{(controller_name == 'opportunities') ? 'active' : '' } nav-item" do %>
+<i class="ion-ios-pricetags" data-pack="default" data-tags="box, square, container"></i>Marketplace
+<% end %>
+
+<%= link_to events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" do %>
+<i class="ion-plane" data-pack="default" data-tags="box, square, container"></i>Events
+<% end %>
+
+<br><br>
+ 
+<!--<%= link_to "Notes(#{current_user.notes.count}) ", my_notes_path , class: '' %><br />-->
+<div class="recent">
+<p class="card-content"><%= render partial: '/my/dashboard/searches' -%></p>
+</div>
+
 

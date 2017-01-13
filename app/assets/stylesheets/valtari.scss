@@ -1,0 +1,139 @@
+
+.side-bar {
+  padding-top: .7em;
+  font-size: .9em;
+  a { color: #333; }
+  i { margin-right: 10px; &:before{ width:15px } }
+  .nav-item{
+    display: block;
+    padding: 10px 0 9px 14px;
+    font-size: 1.2em;
+    &.active {
+      background: #3c3c3c!important;
+      color: white!important;    }
+    &:hover {
+      background: #eaeaea;
+      color: #333;
+    }
+  }
+  li {
+    list-style: none;
+    line-height: 14px;
+    &.active{
+      background: white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.sub{
+  height: 2.2em;
+  margin-bottom: 10px;
+  margin-top: -3px;
+  border-bottom: 1px solid #f5f5f5;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1em;
+  a.sub-item {
+    padding:0 13px 10px;
+    color: #3c3c3c
+  }
+  a.sub-item.active {
+    border-bottom: 2px solid;
+    font-weight: 600
+  }
+}
+
+.recent{
+  font-size:0.85em;
+  margin-top:10px;
+  opacity: .58;
+  ul{ margin: 0 }
+}
+
+
+// ---
+.notice{
+  z-index: 99;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 14em;
+  color: #9ca0b4;
+  position: absolute;
+  right: 0;
+}
+
+
+// -- Misc type styles -----
+.description{
+  color: #444
+}
+.money{
+  font-size: 1rem;
+  font-weight: 600;
+}
+span.mm{
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.card-title{
+  a {
+      color: #111
+  }
+}
+.sellers{
+  .card-title{
+    a{ color: #c0bdbd; font-weight: 200 }
+  }
+}
+.see-list, .see-grid{
+  cursor: pointer;
+  opacity: .3;
+  &.selected{
+    opacity: 1
+  }
+}
+.card .card-action{
+  padding: 8px 20px 12px;
+  z-index: 2;
+  font-size: .9rem;
+  a {
+      color: #8ca0b4 !important;
+  }
+}
+
+.float-margin{
+    margin-top: -0.9em;
+    height: 42px;
+    line-height: 43px;
+}
+
+.column-entry{
+  color: #999;
+  font-weight: 200
+}
+
+mm{ display:block;margin:0;padding:0;border:0;position:relative; 
+  .input-field{
+    margin: 0.95em 0 0 1em;
+    padding-right: 3em;
+  }
+  &:before{ 
+    content: "$";
+    position: absolute;
+    margin-top: 11px; 
+  }
+  &:after{     
+    content: "MM";
+    position: absolute;
+    margin-top: -47px;
+    right: 10px; 
+  }
+  dash{
+    position: absolute;
+    right: -12px;
+    top: 11px;
+  }
+}

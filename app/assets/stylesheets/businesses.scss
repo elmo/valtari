@@ -108,22 +108,26 @@ table.striped {
     } 
 }
 #search {
-	margin: .5rem 0 0 0;
+	margin: -0.85rem 0 0 0;
+	padding-left: 1.5em;
+	position: absolute;
 	i.material-icons {
 	    position: absolute;
-	    right: 19px;
+	    left: -1px;
 	    top: 11px;
-	    color: #dddddd
+	    color: #dddddd;
+	    font-size: 1.38em
 	}
 	input{
-		border-bottom: 1px solid #e0e0e0;
 		padding-left: 5px;
 		padding-right: 0;
 		width: 95%;
 		margin:0;
 		font-weight: 200;
     	font-size: 1.5em;
-		height: 2.8rem
+		height: 2.8rem;
+		border-color:transparent;
+		background-color: transparent
 	}
 	input[type=text]:focus{
 		box-shadow: none

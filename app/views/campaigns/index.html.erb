@@ -1,22 +1,15 @@
-<div class="container">
-  <div class="">
-    <div class="row">
-      <div class="col s12 l2">
-        <div class="side-bar">
-          <%= link_to 'My Campaigns', my_campaigns_path, class: "" %>
-        </div>
-      </div>
-      <div class="col s12 l10">
-        <div class="card">
-          <div class="card-content">
-              <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
-            <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
-            Create Campaign
-            <% end %>
-            <%= render partial: '/campaigns/campaigns' %>
-          </div>
-        </div>
-      </div>
+<div class="card">
+  <div class="card-content">
+    <div class="sub">
+    <%= link_to "My Campaigns", my_campaigns_path, class: 'sub-item' %>
+    <%= link_to "All", campaigns_path, class: 'sub-item active' %>
+    
+    <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
+    Create Campaign
+    <% end %>
     </div>
+  <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
+  
+  <%= render partial: '/campaigns/campaigns' %>
   </div>
 </div>

@@ -3,6 +3,8 @@
 .btn {
   text-transform: none;
   overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
    @extend .blue, .darken-1;
 }
 form input.btn {
