@@ -1,11 +1,10 @@
 <div class="card">
   <div class="card-content company-list">
-     <div class="row">
-       <div class="col m5 s12">
-          <h4>Saved Companies<span></h4>
-            <%= link_to 'See All Companies', businesses_url  -%>
-        </div>
+    <div class="sub">
+      <%= link_to 'All', businesses_url, class: 'sub-item' %>
+      <%= link_to 'Saved', my_businesses_path, class: 'sub-item active' %>
     </div>
+    <h4>Saved Companies</h4>
     <section>
        <table class="user-view">
          <thead>
