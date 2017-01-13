@@ -3,8 +3,8 @@ require 'csv'
 desc 'convert business tsv'
 
 task convert_business_tsv: :environment do
-  CSV.open('db/businesses.csv', 'w') do |csv|
-    File.open('db/businesses.csv.tsv') do |f|
+  CSV.open('db/full_businesses.csv', 'w') do |csv|
+    File.open('db/newfile.tsv') do |f|
       f.each_line do |tsv|
         tsv.chomp!
         csv << tsv.split(/\t/)
@@ -15,6 +15,9 @@ end
 
 
 task load_businesses: :environment do
+  UserBusiness.destroy_all
+  Business.delete_all
+  ActiveRecord::Base.connection.reset_pk_sequence!('businesses')
   CSV.foreach('db/businesses.csv').with_index do |row,i|
     next if i == 0
     name = row[0].split(' ').map {|x| x.capitalize }.join(' ')
