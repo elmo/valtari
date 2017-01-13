@@ -19,7 +19,7 @@
           <div class="col l2 s12">
             <div class="side-bar">
             <%= render partial: '/home/side_bar' -%>
-            <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ -%>
+            <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
             </div>
           </div>
           <div class="col l10 s12">
