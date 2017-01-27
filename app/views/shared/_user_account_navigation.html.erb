@@ -23,6 +23,7 @@
           <% end %>
 
            <!--<li><a><%= current_user.name %></a></li>-->
+           <li><a class="messages-nav" href="#!"><i class="ion-email"></i></a></li>
            <li><a class="dropdown-button" href="#!" data-activates="dropdown"><%= current_user.name %></a></li>
           <% else %>
            <li class="sign-in"><%= link_to 'Sign In', new_user_session_path -%></li>
