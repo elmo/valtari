@@ -26,6 +26,11 @@
   }
 }
 
+.messages-nav i{
+  font-size: 1.75em;
+  margin-right: -14px;
+}
+
 .sub{
   height: 2.2em;
   margin-bottom: 10px;
@@ -112,6 +117,11 @@ span.mm{
     line-height: 43px;
 }
 
+@media only screen and (min-width: 601px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
+    line-height:60px
+  }
+}
 .column-entry{
   color: #999;
   font-weight: 200
