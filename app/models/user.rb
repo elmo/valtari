@@ -73,4 +73,8 @@ class User < ApplicationRecord
     Message.where(["user_id = ? or recipient_id = ? ", id, id ] )
   end
 
+  def opened_messages
+    Message.where(["(user_id = ? or recipient_id = ?) and opened = ? ", id, id, true ] )
+  end
+
 end

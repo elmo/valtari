@@ -18,9 +18,13 @@
 <i class="ion-plane" data-pack="default" data-tags="box, square, container"></i>Events
 <% end %>
 
+<%= link_to my_messages_path, class: "#{(controller_name == 'messages') ? 'active' : '' } nav-item" do %>
+<i class="ion-email" data-pack="default" data-tags="box, square, container"></i>Messages
+<% end %>
+
 <br><br>
 
-<% if current_user.present?%>
+<% if false and current_user.present?%>
 <!--<%= link_to "Notes(#{current_user.notes.count}) ", my_notes_path , class: '' %><br />-->
 <div class="recent">
 <p class="card-content"><%= render partial: '/my/dashboard/searches' -%></p>
