@@ -1,9 +1,17 @@
 <tr>
-  <td><%= link_to campaign.title, my_campaign_path(campaign) %></td>
+    <td><%= link_to campaign.title, my_campaign_path(campaign) %>
+        <br />
+        <%= campaign.user.name -%>
+        <%= link_to  new_my_message_path(recipient_id: campaign.user.id ) do %>
+         <i class="ion-email" data-pack="default" data-tags="box, square, container"></i>
+        <% end %>
+    </td>
   <td><%= campaign.stage %></td>
-  <td><%= campaign.revenue_lower %> - <%= campaign.revenue_upper %></td>
-  <td><%= campaign.ebitda_lower %> - <%= campaign.ebitda_upper %></td>
-  <td><%= campaign.industry.name %></td>
+  <td><%= campaign.revenue_lower %></td>
+  <td><%= campaign.revenue_upper %></td>
+  <td><%= campaign.ebitda_lower %></td>
+  <td><%= campaign.ebitda_upper %></td>
+  <td><%= campaign.industry_classifications.collect(&:name).join(', ') %></td>
   <td>
     <%= link_to(edit_my_campaign_path(campaign) , class: "inline-link") do %>
       <i class="material-icons tiny">mode_edit</i>

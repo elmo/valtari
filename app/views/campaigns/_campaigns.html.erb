@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <% @campaigns.each do |campaign| %>
-        <%= render partial: '/my/campaigns/campaign_row', locals: {campaign: campaign } %>
+        <%= render partial: '/campaigns/campaign_row', locals: {campaign: campaign } %>
     <% end %>
   </tbody>
 </table>
