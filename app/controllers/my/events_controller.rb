@@ -4,6 +4,15 @@ class My::EventsController < ApplicationController
 
   def index
     @events = current_user.events.future( params[:start_date]  ? Date.parse(params[:start_date]) : Date.today )
+   respond_to do |format|
+     format.html do
+       if params[:view] == 'list'
+          render template: '/my/events/list.html.erb'
+       else
+          render template: '/my/events/index.html.erb'
+       end
+     end
+   end
   end
 
   def show
@@ -20,7 +29,7 @@ class My::EventsController < ApplicationController
     @event = current_user.events.new(event_params)
     respond_to do |format|
       if @event.save
-        format.html { redirect_to my_event_url(@event), notice: 'Event was successfully created.' }
+        format.html { redirect_to my_events_url, notice: 'Event was successfully created.' }
       else
         format.html { render :new }
       end
@@ -30,7 +39,7 @@ class My::EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to my_event_url(@event) , notice: 'Event was successfully updated.' }
+        format.html { redirect_to edit_my_event_url(@event) , notice: 'Event was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -51,6 +60,6 @@ class My::EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :start_time, :end_time)
+      params.require(:event).permit(:title, :start_time, :end_time,:description)
     end
 end

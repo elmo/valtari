@@ -9,4 +9,8 @@ module ApplicationHelper
      "%m-%d-%Y %H:%M %p"
   end
 
+  def date_format
+    "%m-%d-%Y"
+  end
+
 end

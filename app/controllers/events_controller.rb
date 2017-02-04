@@ -3,13 +3,15 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.future
+    @events = Event.future(Time.zone.now)
   end
 
   def show
-    def set_event
-      @event = Event.find(params[:id])
-    end
   end
 
+  private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end
