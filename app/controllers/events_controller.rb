@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def index
-    @events = Event.future
+    @events = Event.future(Time.zone.now)
   end
 
   def show

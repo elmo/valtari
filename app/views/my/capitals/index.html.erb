@@ -8,7 +8,7 @@
 	   <% end %>
 	</div>
 	<div class="card-title">
-	  My Capital Raising  (#{current_user.capitals.count})
+        My Capital Raising  (<%= current_user.capitals.count %>)
 	</div>
 	  <%= render partial: '/my/capitals/capitals' %>
   </div>
