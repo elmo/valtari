@@ -5,8 +5,9 @@
       <% @events.each do |event| %>
         <li>
           <p> <%= event.start_time.strftime(date_format) %> -  <%= event.end_time.strftime(date_format) %> </p>
+          <h3> <%= link_to event.title, event_path(event)  %></h3>
           <p>
-          <%= link_to event.title, event_path(event)  %>
+             <%= event.description -%>
           </p>
         </li>
       <% end %>
