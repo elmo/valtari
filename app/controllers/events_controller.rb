@@ -7,9 +7,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    def set_event
-      @event = Event.find(params[:id])
-    end
   end
 
+  private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end
