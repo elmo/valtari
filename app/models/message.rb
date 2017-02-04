@@ -7,7 +7,11 @@ class Message < ApplicationRecord
    scope :unopened, -> { where( opened: false ) }
 
    def open!
-     update_attributes(opened: true)
+     update_attributes(opened: true, opened_at: Time.zone.now)
+   end
+
+   def opened?
+     opened == true
    end
 
 end

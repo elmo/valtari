@@ -3,7 +3,17 @@ class My::MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
-    @messages = current_user.all_messages
+     if params[:sent] == 'true'
+       @messages = current_user.messages.order(created_at: :desc).page(params[:page]).per(10)
+     elsif params[:all] == 'true'
+       @messages = current_user.all_messages.order(created_at: :desc).page(params[:page]).per(10)
+     elsif params[:opened] == 'true'
+       @messages = current_user.received_messages.opened.page(params[:page]).per(10)
+     elsif params[:opened] == 'false'
+       @messages = current_user.received_messages.unopened.page(params[:page]).per(10)
+     else
+       @messages = current_user.all_messages.order(created_at: :desc).page(params[:page]).per(10)
+     end
   end
 
   def show
@@ -12,6 +22,7 @@ class My::MessagesController < ApplicationController
 
   def new
     @message = current_user.messages.new(recipient_id: params[:recipient_id], thread_id: params[:thread_id]  )
+    @recipient = User.find(params[:recipient_id])
   end
 
   def edit
