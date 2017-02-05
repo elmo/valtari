@@ -1,11 +1,60 @@
-<%= simple_form_for([:my, @event]) do |f| %>
-  <%= f.error_notification %>
-    <%= f.input :title %>
-    <%= f.input :start_time, as: :string, input_html: {class: 'datepicker'}  %>
-    <%= f.input :end_time, as: :string,  input_html: {class: 'datepicker' }   %>
-    <%= f.input :location %>
-    <%= f.input :description %>
-    <%= f.label :tags %>
-    <%= f.text_field :tag_list, value: f.object.tag_list.to_s  %>
+<div class="row">
+<%= simple_form_for([:my, @event], html_html: { class: 'col s12 l6 offset-l3' }  ) do |f| %>
+    <%= f.error_notification %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Event title", class: 'validate' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :location %>
+      <%= f.text_field :location , placeholder: "Location", class: 'validate' %>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.select :industry_classification_id, industry_classifications_options, prompt: "Choose Industry"-%>
+      <%= f.label :industry_classification_id, "Industry" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.input :start_time, as: :string, input_html: {class: 'datepicker'}  %>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.input :end_time, as: :string,  input_html: {class: 'datepicker' }   %>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :tags %>
+      <%= f.text_field :tag_list, value: f.object.tag_list.to_s  %>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
     <%= f.button :submit %>
+   </div>
+  </div>
+
 <% end %>
+</div>
