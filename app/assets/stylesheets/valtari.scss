@@ -127,6 +127,13 @@ span.mm{
   font-weight: 200
 }
 
+@media only screen and (min-width: 993px) {
+  .container.wide {
+    max-width: 100%;
+    width:100%
+  }
+}
+
 mm{ display:block;margin:0;padding:0;border:0;position:relative; 
   .input-field{
     margin: 0.95em 0 0 1em;
