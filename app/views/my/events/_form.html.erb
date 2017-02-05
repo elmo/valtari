@@ -3,6 +3,9 @@
     <%= f.input :title %>
     <%= f.input :start_time, as: :string, input_html: {class: 'datepicker'}  %>
     <%= f.input :end_time, as: :string,  input_html: {class: 'datepicker' }   %>
+    <%= f.input :location %>
     <%= f.input :description %>
+    <%= f.label :tags %>
+    <%= f.text_field :tag_list, value: f.object.tag_list.to_s  %>
     <%= f.button :submit %>
 <% end %>
