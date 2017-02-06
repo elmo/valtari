@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205163721) do
+ActiveRecord::Schema.define(version: 20170206151105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170205163721) do
     t.string   "division3"
     t.string   "division4"
     t.string   "division5"
+    t.string   "duplication_status"
+    t.integer  "last_updated_by_id"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170205163721) do
     t.index ["division3"], name: "index_businesses_on_division3", using: :btree
     t.index ["division4"], name: "index_businesses_on_division4", using: :btree
     t.index ["division5"], name: "index_businesses_on_division5", using: :btree
+    t.index ["duplication_status"], name: "index_businesses_on_duplication_status", using: :btree
     t.index ["email"], name: "index_businesses_on_email", using: :btree
     t.index ["geo_id"], name: "index_businesses_on_geo_id", using: :btree
     t.index ["industry_classification"], name: "index_businesses_on_industry_classification", using: :btree

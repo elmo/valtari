@@ -7,6 +7,27 @@
   box-shadow: none;
    @extend .blue, .darken-1;
 }
+
+.keep-btn {
+  padding: 1em;
+  margin: 1em;
+  text-transform: none;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  @extend .green, .darken-1;
+}
+
+.dupe-btn {
+  padding: 1em;
+  margin: 1em;
+  text-transform: none;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  @extend .red, .darken-1;
+}
+
 form input.btn {
     margin: 1em .5em;
 }

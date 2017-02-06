@@ -1,5 +1,11 @@
 <tr>
+  <th> Duplication Status</th>
   <th id="company" class="<%= sort_arrow_class('company-name') -%>"><%= link_to 'Company', url_for(params.merge(sort: 'company-name', sort_direction: @sort_direction) ) -%></th>
+  <th id="address" class="<%= sort_arrow_class('address') -%>"><%= link_to 'Address', url_for(params.merge(sort: 'address', sort_direction: @sort_direction) ) -%></th>
+  <th id="city" class="<%= sort_arrow_class('city') -%>"><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
+  <th id="state" class="<%= sort_arrow_class('state') -%>"><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
+  <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
+  <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
   <th id="title" class="<%= sort_arrow_class('title') -%>"><%= link_to 'Title', url_for(params.merge(sort: 'title', sort_direction: @sort_direction) ) -%></th>
   <th id="first_name" class="<%= sort_arrow_class('first-name') -%>"><%= link_to 'First Name', url_for(params.merge(sort: 'first-name', sort_direction: @sort_direction) ) -%></th>
   <th id="last_name" class="<%= sort_arrow_class('last-name') -%>"><%= link_to 'Last Name', url_for(params.merge(sort: 'last-name', sort_direction: @sort_direction) ) -%></th>
@@ -10,11 +16,6 @@
   <th id="naisc" class="<%= sort_arrow_class('naisc') -%>"><%= link_to 'NAISC', url_for(params.merge(sort: 'naisc', sort_direction: @sort_direction) ) -%></th>
   <th id="sic" class="<%= sort_arrow_class('sic') -%>"><%= link_to 'SIC', url_for(params.merge(sort: 'sic', sort_direction: @sort_direction) ) -%></th>
   <th id="description" class="<%= sort_arrow_class('description') -%>"><%= link_to 'Description', url_for(params.merge(sort: 'description', sort_direction: @sort_direction) ) -%></th>
-  <th id="address" class="<%= sort_arrow_class('address') -%>"><%= link_to 'Address', url_for(params.merge(sort: 'address', sort_direction: @sort_direction) ) -%></th>
-  <th id="city" class="<%= sort_arrow_class('city') -%>"><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
-  <th id="state" class="<%= sort_arrow_class('state') -%>"><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
-  <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
-  <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
   <th id="geo_id">Geo</th>
   <th class="<%= sort_arrow_class('updated') -%>">
       <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>

@@ -16,4 +16,8 @@ module BusinessesHelper
     end
   end
 
+  def duplication_statuses
+    ['ready', 'ok', 'dupe']
+  end
+
 end
