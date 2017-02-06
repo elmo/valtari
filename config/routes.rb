@@ -33,7 +33,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-   resources :businesses
+   resources :businesses do
+     put 'dupe'
+     put 'undupe'
+   end
    resources :campaigns
    resources :capitals
    resources :company_types

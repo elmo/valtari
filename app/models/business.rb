@@ -8,6 +8,39 @@ class Business < ApplicationRecord
   scope :within_division3, -> (division3) { where(division3: division3) }
   scope :within_division4, -> (division4) { where(division4: division4) }
   scope :within_division5, -> (division5) { where(division4: division5) }
+  belongs_to :last_updated_by_user, class_name: 'User', foreign_key: :last_updated_by_id
+
+  DUPLICATION_STATUS_READY = "ready"
+  DUPLICATION_STATUS_DUPE = "dupe"
+  DUPLICATION_STATUS_OK = "ok"
+
+  scope :ready, -> {where(duplication_status: DUPLICATION_STATUS_READY) }
+  scope :dupe, -> {where(duplication_status: DUPLICATION_STATUS_DUPE) }
+  scope :ok, -> {where(duplication_status: DUPLICATION_STATUS_OK) }
+
+  def new!(user:)
+    update_attributes(duplication_status: DUPLICATION_STATUS_READY, last_updated_by_id: user.id)
+  end
+
+  def dupe!(user:)
+    update_attributes(duplication_status: DUPLICATION_STATUS_DUPE, last_updated_by_id: user.id)
+  end
+
+  def undupe!(user:)
+    update_attributes(duplication_status: DUPLICATION_STATUS_OK, last_updated_by_id: user.id)
+  end
+
+  def dupe?
+    duplication_status == DUPLICATION_STATUS_DUPE
+  end
+
+  def ok?
+    duplication_status == DUPLICATION_STATUS_OK
+  end
+
+  def ready?
+    duplication_status == DUPLICATION_STATUS_READY
+  end
 
   def set_geo
     if geo.blank?

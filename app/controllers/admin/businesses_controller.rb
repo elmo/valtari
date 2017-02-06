@@ -6,7 +6,7 @@ class Admin::BusinessesController < Admin::AdminController
   def index
     scope = Business
     q = params[:q]
-    ordering = { created_at: :asc }
+    ordering = "lower(company_name) asc"
     current_sort_direction = params[:sort_direction] || 'desc'
     @sort_direction = current_sort_direction == 'desc' ? 'asc' : 'desc'
     if q =~ /\@/ # input is an email address
@@ -16,6 +16,11 @@ class Admin::BusinessesController < Admin::AdminController
     elsif q.present?
       scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
     end
+
+    scope = scope.ready if params[:duplication_status].present? and params[:duplication_status] == 'ready'
+    scope = scope.ok if params[:duplication_status].present? and params[:duplication_status] == 'ok'
+    scope = scope.dupe if params[:duplication_status].present? and params[:duplication_status] == 'dupe'
+
     # Sort
     if params[:sort].present?
       ordering = "company_name #{current_sort_direction}" if params[:sort] == 'company-name'
@@ -81,6 +86,18 @@ class Admin::BusinessesController < Admin::AdminController
         format.json { respond_with_bip(@business) }
       end
     end
+  end
+
+  def dupe
+     @business = Business.find(params[:business_id])
+     @business.dupe!(user: current_user)
+     redirect_back(fallback_location: admin_businesses_path)
+  end
+
+  def undupe
+     @business = Business.find(params[:business_id])
+     @business.undupe!(user: current_user)
+     redirect_back(fallback_location: admin_businesses_path)
   end
 
   # DELETE /businesses/1

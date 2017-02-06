@@ -4,7 +4,7 @@
       <div class="card-content company-list">
         <div class="row">
           <div class="col m9 s12">
-            <h4>Companies (Admin View)<span> &nbsp; <%= link_to 'User View', businesses_path %> </span></h4>
+            <h4>Companies (Admin View)<span> edit <%= link_to 'User View', businesses_path %> </span></h4>
           </div>
           <div id="search" class="input-field col m3 s12">
             <input type="text" class="">
@@ -13,6 +13,12 @@
         </div>
 
         <section>
+          <p>
+            <%= link_to "All (#{Business.count})" , admin_businesses_path  -%> |
+            <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready') -%> |
+            <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ) -%> |
+            <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe') -%>
+          </p>
             <table class="admin-view">
               <thead>
                 <%= render partial: 'column_headers' %>
@@ -20,23 +26,39 @@
               <tbody>
                 <% @businesses.each do |business| %>
                   <tr>
-                    <td><%= best_in_place business, :company_name, :inner_class => 'input-small', url: business_path(business),  place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %> <%= link_to '→', business_path(business) %></td>
-                    <td><%= best_in_place business, :contact_title, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :contact_first_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :contact_last_name, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :phone, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
-                    <td><%= best_in_place business, :email, :inner_class => 'input-small', place_holder:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' %></td>
-                    <td><%= best_in_place business, :website, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :number_of_employees, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :naics_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :sic_code, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :description, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :address, :inner_class => 'input-small', place_holder: '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'  %></td>
-                    <td><%= best_in_place business, :city, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
-                    <td><%= best_in_place business, :state, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
-                    <td><%= best_in_place business, :postal_code, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
-                    <td><%= best_in_place business, :country, :inner_class => 'input-small', place_holder: '&nbsp;'  %></td>
-                    <td><%= link_to business.geo_id, admin_geo_path(business.geo_id) %></td>
+                    <td>
+                       <%= business.duplication_status -%>
+                       <% if business.ready? or business.ok? %>
+                         <%= link_to 'dupe',  admin_business_dupe_path(business), method: :put, class: 'dupe-btn' %>
+                      <% end %>
+                       <% if business.dupe? or business.ready? %>
+                        <%= link_to 'keep',  admin_business_undupe_path(business), method: :put, class: 'keep-btn' %>
+                      <% end %>
+
+                      <% if business.last_updated_by_user.present? %>
+                          <small>last updated by:
+                          <%= business.last_updated_by_user.name %>
+                          </small>
+                      <% end %>
+
+                    </td>
+                    <td style="width: 200px;"><%= best_in_place business, :company_name, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %> <%= link_to '→', business_path(business) %></td>
+                    <td><%= best_in_place business, :address, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :city, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :state, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :postal_code, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :country, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :contact_title, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :contact_first_name, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :contact_last_name, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :phone, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :email, url: admin_business_path(business), :inner_class => 'input-small', place_holder:'edit edit' %></td>
+                    <td><%= best_in_place business, :website, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit edit'  %></td>
+                    <td><%= best_in_place business, :number_of_employees, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :naics_code, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :sic_code, url: admin_business_path(business),:inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= best_in_place business, :description, url: admin_business_path(business), :inner_class => 'input-small', place_holder: 'edit'  %></td>
+                    <td><%= link_to business.geo_id, admin_geo_path(business.geo_id) if business.geo_id.present? %></td>
                     <td id="when"><%= business.updated_at.strftime("%m/%d/%y") -%></td>
                   </tr>
                 <% end %>
