@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount PostgresqlLoStreamer::Engine => 'event_photo', as: 'event_photo'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
   get '/profile' => 'my/dashboard#home', as: :profile
   get '/sellers' => 'home#sellers', as: :sellers

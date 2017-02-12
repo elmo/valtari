@@ -5,4 +5,5 @@ class Event < ApplicationRecord
   validates_presence_of :user_id
   scope :future, -> (date) { where(["start_time >= ? ", date ]) }
   acts_as_ordered_taggable_on :tags
+  mount_uploader :photo, PhotoUploader
 end

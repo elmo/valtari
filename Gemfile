@@ -41,6 +41,7 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-linkedin-oauth2'
 gem 'pg'
 gem 'rmagick', require: false
+gem 'postgresql_lo_streamer'
 gem 'rolify'
 gem 'simple_form'
 gem "simple_calendar", "~> 2.0"

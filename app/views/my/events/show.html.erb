@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col s8 m8">
     <h1> <%= @event.title %> </h1>
-    <p> <%= @event.start_time %> -  <%= @event.end_time %> </p>
-    <p><%= @event.description %></p>
+    <%= event_photo(@event) %>
+    <p><%= @event.start_time %> - <%= @event.end_time %> </p>
+    <p><%# @event.description %></p>
     <p> <%= link_to 'edit', edit_my_event_path(@event) %> | <%= link_to 'my events', my_events_path %></p>
     </div>
 </div>
