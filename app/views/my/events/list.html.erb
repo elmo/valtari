@@ -6,9 +6,8 @@
         <li>
           <p> <%= event.start_time.strftime(date_format) %> -  <%= event.end_time.strftime(date_format) %> </p>
           <h3> <%= link_to event.title, event_path(event)  %></h3>
-          <p>
-             <%= event.description -%>
-          </p>
+             <%= event_photo(event, size: :small) -%>
+          <p> <%= event.description -%></p>
         </li>
       <% end %>
     </ul>

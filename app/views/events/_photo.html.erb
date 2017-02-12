@@ -1,0 +1,5 @@
+<div class="event-photo-container">
+  <%= link_to event_path(event) do %>
+    <%= image_tag(event.photo.url, class: 'event-photo', height: height ) %>
+  <% end %>
+ </div>
