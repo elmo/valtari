@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s8 m8">
     <h1>Events</h1>
-      <%= month_calendar events: @events do |date, events| %>
+    <%= month_calendar events: @events, attribute: :start_date, end_attribute: :end_date do |date, events| %>
       <%= date %>
       <% events.each do |event| %>
         <div>

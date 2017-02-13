@@ -1,0 +1,7 @@
+<% if event.start_date.present? %>
+Starts: <%= event.start_date.strftime("%B %d, %Y") -%> <%= event.start_time -%>
+<% end %>
+<% if event.end_date.present? %>
+ <br />
+ Ends: <%= event.end_date.strftime("%B %d, %Y") -%> <%= event.end_time -%>
+<% end %>

@@ -4,7 +4,7 @@
      <ul>
       <% @events.each do |event| %>
         <li>
-          <p> <%= event.start_time.strftime(date_format) %> -  <%= event.end_time.strftime(date_format) %> </p>
+         <p><%= event_time_and_date(event) %></p>
           <h3> <%= link_to event.title, event_path(event)  %></h3>
              <%= event_photo(event, size: :small) -%>
           <p> <%= event.description -%></p>
