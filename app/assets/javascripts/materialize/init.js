@@ -154,34 +154,9 @@ $(document).on('turbolinks:load', function() {
        today: false
      });
 
-    // datepicker for 60 years in the past (i.e. 2006 - 1946)
-    var d = new Date();
-    var y = new Date();
-    y.setFullYear(y.getFullYear() + 1);
-    d.setFullYear(d.getFullYear() - 100 );
-    $('.birthdate-picker').pickadate(
-    {
-       selectYears: 60,
-       selectMonths: true,
-       min: d,
-       max: y,
-       clear: "Cancel",
-       close: "Done",
-       today: false
-    });
-
-    // datepicker for 5 years in the past (i.e. 2006 - 2016)
-    var d = new Date();
-    d.setFullYear( d.getFullYear() - 100 );
-    $('.period-datepicker').pickadate(
-    {
-       selectYears: 10,
-       selectMonths: true,
-       min: d,
-       max: moment().year(moment().year()).toDate(),
-       clear: "Cancel",
-       close: "Done",
-       today: false
+    $('.timepicker').pickatime({
+      min: [7,30],
+      max: [14,0]
     });
 
     $('select').not('.disabled').material_select();
