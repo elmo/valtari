@@ -2,20 +2,20 @@
 .side-bar {
   padding-top: .7em;
   font-size: .9em;
-  a { color: #797979; font-weight: 300; }
+  a { color: #797979; font-weight: 400; }
   i { margin-right: 10px; &:before{ width:15px } }
   .nav-item{
     display: block;
-    padding: 10px 0 9px 14px;
+    padding: 9px 7px 9px 14px;
     font-size: 1.1em;
+    margin-right: 10px;
     &.active {
       background: white!important;
       color: #000!important;   
-      font-weight: 400; 
-      border-right:1px solid #858585
+      font-weight: 500; 
+      border: 1px solid #efefef
     }
     &:hover {
-      background: #FDFDFD;
       color: #333;
     }
   }
