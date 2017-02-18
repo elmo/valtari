@@ -1,6 +1,10 @@
-<div class="row">
-  <div class="col s10 m10">
-  <h1>Events</h1>
+<div class="card">
+  <div class="card-content calendar">
+    <div class="sub">
+      <%= link_to 'My Events', businesses_url, class: 'sub-item active' %>
+      <%= link_to 'All', my_businesses_path, class: 'sub-item' %>
+      <%= link_to ' + New Event', new_my_event_path %>
+    </div>
     <%= month_calendar events: @events, attribute: :start_date, end_attribute: :end_date do |date, events| %>
     <%= date %>
     <% events.each do |event| %>
@@ -9,6 +13,5 @@
        </div>
        <% end %>
     <% end %>
-    <p> <%= link_to 'New Event', new_my_event_path %> </p>
   </div>
 </div>

@@ -156,3 +156,12 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
     top: 11px;
   }
 }
+
+.calendar-heading li{ display: inline; margin: 0 4px }
+.calendar tr td{ 
+  color: #d6d6d6; 
+  padding: 4px 3px 66px;
+  &.current-month {
+    color: #444;
+  }
+}
