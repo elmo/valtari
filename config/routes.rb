@@ -42,6 +42,7 @@ Rails.application.routes.draw do
    resources :capitals
    resources :company_types
    resources :ebidtas
+   resources :events
    resources :geos
    resources :industries
    resources :organizations

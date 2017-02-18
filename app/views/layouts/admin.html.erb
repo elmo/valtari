@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Valtari</title>
+    <title>Valtari Administration</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" %>
-
   </head>
-
   <body>
-    <main class="<% if current_user.present? %>logged-in<% end %>">
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
-      <div class="container wide">
+      <div class="container <%= controller_name == 'businesses' ? 'wide' : '' -%>">
         <div class="row">
-          <div class="col s12">
+           <main class="<% if current_user.present? %>logged-in<% end %>">
             <%= yield %>
-          </div>
+           </main>
         </div>
       </div>
-    </main>
     <footer class="page-footer light-gray">
       <div class="container">
         <div class="row">
