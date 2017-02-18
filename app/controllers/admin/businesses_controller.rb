@@ -17,6 +17,19 @@ class Admin::BusinessesController < Admin::AdminController
       scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
     end
 
+    scope = scope.within_division1( params[:division1] ) if params[:division1].present?
+    scope = scope.within_division2( params[:division2] ) if params[:division2].present?
+    scope = scope.within_division3( params[:division3] ) if params[:division3].present?
+    scope = scope.within_division4( params[:division4] ) if params[:division4].present?
+    scope = scope.within_division5( params[:division5] ) if params[:division5].present?
+
+    scope = scope.matching_company(params[:company_name]) if params[:company_name].present?
+    scope = scope.within_city(params[:city] ) if params[:city].present?
+    scope = scope.within_state(params[:state] ) if params[:state].present?
+    scope = scope.within_country(params[:country] ) if params[:country].present?
+    scope = scope.within_postal_code(params[:postal_code] ) if params[:postal_code].present?
+
+
     scope = scope.ready if params[:duplication_status].present? and params[:duplication_status] == 'ready'
     scope = scope.ok if params[:duplication_status].present? and params[:duplication_status] == 'ok'
     scope = scope.dupe if params[:duplication_status].present? and params[:duplication_status] == 'dupe'

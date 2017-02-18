@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col s8">
+  <%= link_to "All (#{Business.count})" , admin_businesses_path  -%> |
+  <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready') -%> |
+  <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ) -%> |
+  <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe') -%>
+  </div >
+</div >
+
+<%= form_tag admin_businesses_path,
+    id: "business-search" ,
+    class: 'search-bar',
+      role: 'search',  method: :get do %>
+
+  <div class="row">
+     <div class="col s2">
+      <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %>
+     </div>
+     <div class="col s2">
+      <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %>
+     </div>
+  </div>
+
+  <div class="row">
+     <div class="col s2">
+      <%= text_field_tag :division1,
+        params[:division1],
+        type: 'search',
+        placeholder: 'Division1' -%>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :division2,
+        params[:division2],
+        type: 'search',
+        placeholder: 'Division 2' -%>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :division3,
+        params[:division3],
+        type: 'search',
+        placeholder: 'Division 3' -%>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :division4,
+        params[:division4],
+        type: 'search',
+        placeholder: 'Division 4' -%>
+     </div>
+
+     <div class="col s2">
+      <%= text_field_tag :division5,
+        params[:division5],
+        type: 'search',
+        placeholder: 'Division 5' -%>
+     </div>
+
+     <div class="col s2">
+       <%= submit_tag 'Search', class: "btn" %>
+     </div>
+   </div>
+
+<% end %>

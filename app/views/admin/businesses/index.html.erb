@@ -13,12 +13,7 @@
         </div>
 
         <section>
-          <p>
-            <%= link_to "All (#{Business.count})" , admin_businesses_path  -%> |
-            <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready') -%> |
-            <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ) -%> |
-            <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe') -%>
-          </p>
+          <%= render partial: '/admin/businesses/search'-%>
             <table class="admin-view">
               <thead>
                 <%= render partial: 'column_headers' %>
