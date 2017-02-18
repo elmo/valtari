@@ -112,9 +112,13 @@ span.mm{
 }
 
 .float-margin{
-    margin-top: -0.9em;
-    height: 42px;
-    line-height: 43px;
+    margin-top: -0.35em;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 16px;
+    border-radius: 3px;
+    margin-right: 15px;
+    font-size: .9em;
 }
 
 @media only screen and (min-width: 601px) {
@@ -154,5 +158,14 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
     position: absolute;
     right: -12px;
     top: 11px;
+  }
+}
+
+.calendar-heading li{ display: inline; margin: 0 0 0 3px; color: black; }
+.calendar tr td{ 
+  color: #d6d6d6; 
+  padding: 4px 3px 66px;
+  &.current-month {
+    color: #444;
   }
 }
