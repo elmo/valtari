@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col s8 m8">
+    <h1><%= @event.title %> </h1>
+    <p><%= event_photo(@event) %></p>
+    <p><%= event_time_and_date(@event) %></p>
+    <p><%= @event.description %></p>
+    <p>
+      <%= link_to 'edit', edit_admin_event_path(@event) %><br />
+      <%= link_to 'back', admin_events_path %>
+    </p>
+  </div>
+</div>
