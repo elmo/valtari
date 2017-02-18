@@ -8,6 +8,12 @@ class Business < ApplicationRecord
   scope :within_division3, -> (division3) { where(division3: division3) }
   scope :within_division4, -> (division4) { where(division4: division4) }
   scope :within_division5, -> (division5) { where(division4: division5) }
+
+  scope :matching_company, -> (company_name) { where(["lower(company_name) like ? ", '%' + company_name.downcase + '%'] ) }
+  scope :within_city, -> (city) { where(["lower(city) like ? ", '%' + city.downcase + '%'] ) }
+  scope :within_state, -> (state) { where(["lower(state) like ? ", '%' + state.downcase + '%'] ) }
+  scope :within_country, -> (country) { where(["lower(country) like ? ", '%' + country.downcase + '%'] ) }
+  scope :within_postal_code, -> (postal_code) { where(["lower(postal_code) like ? ", '%' + postal_code.downcase + '%'] ) }
   belongs_to :last_updated_by_user, class_name: 'User', foreign_key: :last_updated_by_id
 
   DUPLICATION_STATUS_READY = "ready"
