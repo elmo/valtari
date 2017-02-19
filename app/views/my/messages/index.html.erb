@@ -1,11 +1,12 @@
-<h1>Messages</h1>
-<p>
- <%= link_to 'All', my_messages_path(all: true) -%> |
- <%= link_to 'Unopened', my_messages_path(opened: false )  -%> |
- <%= link_to 'Opened ', my_messages_path(opened: true)  -%> |
- <%= link_to 'Sent', my_messages_path(sent: true)  -%>
-</p>
-
+<div class="card">
+  <div class="card-content calendar">
+    <div class="sub">
+      <%= link_to 'All', my_messages_path(all: true), class: 'sub-item active' -%> 
+      <%= link_to 'Unopened', my_messages_path(opened: false), class: 'sub-item'  -%> 
+      <%= link_to 'Opened ', my_messages_path(opened: true), class: 'sub-item'  -%> 
+      <%= link_to 'Sent', my_messages_path(sent: true), class: 'sub-item'  -%>
+    </div>
+    
 <table>
   <thead>
     <tr>

@@ -1,5 +1,12 @@
-<h4>Message from <%= @message.user.name -%> </h4>
-<p>To:<%= @message.recipient.name %></p>
-<p> <strong>Subject:</strong> <%= @message.subject %> </p>
-<p> <%= @message.body %> </p>
-<p> <%= link_to 'inbox', my_messages_path %> </p>
+<div class="card">
+  <div class="card-content calendar">
+    <div class="sub">
+    	<%= link_to my_messages_path, class: 'back-btn' do %><%= image_tag("back.png", class: "back", :alt => "back") %><% end %>
+    	    </div>
+    <p> <strong><%= @message.user.name -%></strong></p> 
+	<p> <%= @message.subject %> </p>
+	<p> <%= @message.body %> </p>
+	
+</div>
+</div>
+</div>
