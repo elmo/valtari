@@ -14,8 +14,6 @@ class User < ApplicationRecord
    belongs_to :organization, optional: true
    has_many :campaigns
    has_many :followings
-   has_many :followed_users, through: :followings, source: :user
-   has_many :following_users, through: :followings, source: :other_user
    has_many :capitals
    has_many :opportunities
    has_many :user_businesses
@@ -25,6 +23,15 @@ class User < ApplicationRecord
    has_many :events
    has_many :messages
    has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
+
+
+   def followed_users
+     User.where(id: followings.collect(&:other_user_id) )
+   end
+
+   def following_users
+     User.where(id: Following.where(other_user_id: self.id).collect(&:user_id) )
+   end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -89,7 +96,7 @@ class User < ApplicationRecord
   end
 
   def following?(user)
-   Following.exists?(user_id: self.id, other_user_id: user.id)
+    Following.exists?(user_id: self.id, other_user_id: user.id)
   end
 
 end
