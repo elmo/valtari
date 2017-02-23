@@ -2,6 +2,9 @@ class My::FollowingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_other_user, only: [:create, :destroy]
 
+  def index
+  end
+
   def create
     respond_to do |format|
       if current_user.follow(@other_user)

@@ -1,0 +1,22 @@
+<% if current_user.followed_users.any?  %>
+  <p>Users I'm following:</p>
+  <ul>
+  <% current_user.followed_users.each do |user| %>
+      <li> <%= user.name -%>
+       <%= following_user_link(user, remote: false) -%>
+      </li>
+  <% end %>
+  </ul>
+<% else %>
+<% end %>
+
+<% if current_user.following_users.any?  %>
+  <p>Users following me:</p>
+  <ul>
+  <% current_user.following_users.each do |user| %>
+      <li><%= user.name -%>
+       <%= following_user_link(user, remote: false) -%>
+      </li>
+  <% end %>
+  </ul>
+<% end %>
