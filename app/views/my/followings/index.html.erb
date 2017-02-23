@@ -1,3 +1,5 @@
+<h1>Members</h1>
+
 <% if current_user.followed_users.any?  %>
   <p>Users I'm following:</p>
   <ul>
@@ -8,9 +10,10 @@
   <% end %>
   </ul>
 <% else %>
+   <p>You are currently not following any users.</p>
 <% end %>
 
-<% if current_user.following_users.any?  %>
+<% if current_user.following_users %>
   <p>Users following me:</p>
   <ul>
   <% current_user.following_users.each do |user| %>
@@ -19,4 +22,6 @@
       </li>
   <% end %>
   </ul>
+<% else  %>
+   <p>You are currently not followed by any users.</p>
 <% end %>
