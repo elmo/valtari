@@ -10,4 +10,20 @@ module UsersHelper
     end
   end
 
+  def following_user_link(other_user, remote: true)
+    if current_user.following?(other_user)
+      link_to(my_following_path(id: other_user.id), method: :delete, remote: remote) do
+         content_tag(:i, class: "material-icons") do
+           'person_pin'
+         end
+      end
+    else
+      link_to(my_followings_path(id: other_user.id), method: :post, remote: remote) do
+         content_tag(:i, class: "material-icons") do
+           'not_interested'
+         end
+      end
+    end
+  end
+
 end

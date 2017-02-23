@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
    belongs_to :organization, optional: true
    has_many :campaigns
+   has_many :followings
+   has_many :followed_users, through: :followings, source: :user
+   has_many :following_users, through: :followings, source: :other_user
    has_many :capitals
    has_many :opportunities
    has_many :user_businesses
@@ -75,6 +78,18 @@ class User < ApplicationRecord
 
   def opened_messages
     Message.where(["(user_id = ? or recipient_id = ?) and opened = ? ", id, id, true ] )
+  end
+
+  def follow(other_user)
+    followings.find_or_create_by(other_user_id: other_user.id)
+  end
+
+  def unfollow(other_user)
+    followings.where(other_user_id: other_user.id).destroy_all
+  end
+
+  def following?(user)
+   Following.exists?(user_id: self.id, other_user_id: user.id)
   end
 
 end

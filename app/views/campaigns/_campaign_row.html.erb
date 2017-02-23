@@ -5,6 +5,7 @@
         <%= link_to  new_my_message_path(recipient_id: campaign.user.id ) do %>
          <i class="ion-email" data-pack="default" data-tags="box, square, container"></i>
         <% end %>
+        <%= following_user_link(campaign.user, remote: false) -%>
     </td>
   <td><%= campaign.stage %></td>
   <td><%= campaign.revenue_lower %></td>
