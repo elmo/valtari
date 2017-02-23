@@ -13,14 +13,12 @@ module UsersHelper
   def following_user_link(other_user, remote: true)
     if current_user.following?(other_user)
       link_to(my_following_path(id: other_user.id), method: :delete, remote: remote) do
-         content_tag(:i, class: "material-icons") do
-           'person_pin'
+         content_tag(:i, class: "ion-person-add") do
          end
       end
     else
       link_to(my_followings_path(id: other_user.id), method: :post, remote: remote) do
-         content_tag(:i, class: "material-icons") do
-           'not_interested'
+         content_tag(:i, class: "ion-ios-close-outline") do
          end
       end
     end
