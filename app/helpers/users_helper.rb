@@ -14,11 +14,7 @@ module UsersHelper
     if current_user.following?(other_user)
       link_to(my_following_path(id: other_user.id), method: :delete, remote: remote) do
          content_tag(:i, class: "material-icons") do
-<<<<<<< HEAD
-           'done'
-=======
            'person_pin'
->>>>>>> c90f111e69840153de3a63f560e884eb14199f22
          end
       end
     else
