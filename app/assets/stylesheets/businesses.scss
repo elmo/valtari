@@ -125,7 +125,7 @@ table.striped {
 		margin:0;
 		font-weight: 200;
     	font-size: 15px;
-		height: 2.8rem;
+		height: 2.48rem;
 		border-color:transparent;
 		background-color: transparent
 	}
@@ -148,5 +148,18 @@ body nav.pagination{
 	.page{ color: #333; margin:0 2px 0 4px; font-size: .9rem;}
 	text-align: center;
 }
-
+.geo-list a {
+	display:inline-block;
+    font-size: 10px;
+    font-weight: 200;
+    color: #afafaf;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin: 0 9px 3px 1px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    &:hover{
+    	color: black
+    }
+}
 
