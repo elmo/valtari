@@ -31,8 +31,23 @@
 }
 
 .messages-nav i{
-  font-size: 1.75em;
+  font-size: 1.25em;
   margin-right: -14px;
+}
+
+.favorite-business{
+  float: left;
+  margin: 1px 7px 0px 0;
+  i{
+    font-size: 13px;
+    opacity: .1;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    &.gold{ opacity: 1 }
+  }
 }
 
 .sub{
