@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" %>
   </head>
   <body>
+    <main class="<% if current_user.present? %>logged-in<% end %>">
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= controller_name == 'businesses' ? 'wide' : '' -%>">
         <div class="row">
-           <main class="<% if current_user.present? %>logged-in<% end %>">
             <%= yield %>
            </main>
         </div>

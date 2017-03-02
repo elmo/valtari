@@ -113,19 +113,18 @@ table.striped {
 	position: absolute;
 	i.material-icons {
 	    position: absolute;
-	    left: -1px;
-	    top: 11px;
+	    left: 1px;
+	    top: 8px;
 	    color: #dddddd;
 	    font-size: 1.35em
 	}
 	input{
-		padding-left: 5px;
+		padding-left: 0;
 		padding-right: 0;
 		width: 95%;
 		margin:0;
-		font-weight: 200;
-    	font-size: 15px;
-		height: 2.48rem;
+    	font-size: 14px;
+		height: 2rem;
 		border-color:transparent;
 		background-color: transparent
 	}

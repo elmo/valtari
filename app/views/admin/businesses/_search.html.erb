@@ -1,11 +1,4 @@
-<div class="row">
-  <div class="col s8">
-  <%= link_to "All (#{Business.count})" , admin_businesses_path  -%> |
-  <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready') -%> |
-  <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ) -%> |
-  <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe') -%>
-  </div >
-</div >
+
 
 <%= form_tag admin_businesses_path,
     id: "business-search" ,
@@ -13,7 +6,7 @@
       role: 'search',  method: :get do %>
 
   <div class="row">
-     <div class="col s2">
+     <div class="col s3">
       <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %>
      </div>
      <div class="col s2">
@@ -31,10 +24,8 @@
      <div class="col s2">
       <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %>
      </div>
-  </div>
-
-  <div class="row">
-     <div class="col s2">
+ 
+     <div class="col s3">
       <%= text_field_tag :division1,
         params[:division1],
         type: 'search',

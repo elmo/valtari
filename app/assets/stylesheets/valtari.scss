@@ -152,8 +152,8 @@ span.mm{
 
 @media only screen and (min-width: 993px) {
   .container.wide {
-    max-width: 100%;
-    width:100%
+    max-width: 95%;
+    width:95%
   }
 }
 
@@ -201,4 +201,10 @@ a.back-btn {
 //New Events
 label[for="event_photo"] {
     top: -7px;
+}
+
+.right-link{
+    float: right;
+    margin: 1px 15px 0 0;
+    color: #1e88e5;
 }
