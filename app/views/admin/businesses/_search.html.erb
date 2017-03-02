@@ -6,7 +6,7 @@
       role: 'search',  method: :get do %>
 
   <div class="row">
-     <div class="col s2">
+     <div class="col s3">
       <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %>
      </div>
      <div class="col s2">
@@ -24,10 +24,8 @@
      <div class="col s2">
       <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %>
      </div>
-  </div>
-
-  <div class="row">
-     <div class="col s2">
+ 
+     <div class="col s3">
       <%= text_field_tag :division1,
         params[:division1],
         type: 'search',

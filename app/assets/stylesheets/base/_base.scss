@@ -141,6 +141,11 @@ body .input-field.col label.text {
     top: 1rem
 }
 
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
+  padding: 0 0 0 9px
+}
 //override checkbox placement a tiny bit
 body [type="checkbox"]:checked + label:before{
   top: -2px;
