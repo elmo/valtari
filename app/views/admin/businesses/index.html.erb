@@ -2,16 +2,26 @@
   <div class="col s12">
     <div class="card">
       <div class="card-content company-list">
-        <div class="row">
-            <%= link_to 'See User View', businesses_path, class: 'right-link' %> 
-          <div id="search" class="input-field col m3 s12">
-            <input type="text" class="" placeholder="Companies (Admin View)">
-            <i class="material-icons">search</i>
-          </div>
+        <div class="sub">
+          
+            <%= link_to "All (#{Business.count})" , admin_businesses_path, class:'sub-item' -%>
+            <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready'), class:'sub-item' -%>
+            <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ), class:'sub-item' -%>
+            <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe'), class:'sub-item' -%>
+
+            <div class="sub-item">
+             <div id="search" class="input-field">
+              <input type="text" class="" placeholder="Companies">
+              <i class="material-icons">search</i>
+             </div>
+            </div>
+
+           <%= link_to 'See User View', businesses_path, class: 'right-link' %> 
         </div>
 
         <section>
           <%= render partial: '/admin/businesses/search'-%>
+         
             <table class="admin-view">
               <thead>
                 <%= render partial: 'column_headers' %>
@@ -20,8 +30,8 @@
                 <% @businesses.each do |business| %>
                   <tr>
                     <td>
-                       <%= business.duplication_status -%>
-                       <% if business.ready? or business.ok? %>
+                      <%= business.duplication_status -%>
+                      <% if business.ready? or business.ok? %>
                          <%= link_to 'dupe',  admin_business_dupe_path(business), method: :put, class: 'dupe-btn' %>
                       <% end %>
                        <% if business.dupe? or business.ready? %>
