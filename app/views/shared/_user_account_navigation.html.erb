@@ -16,7 +16,7 @@
             <li><a class="messages-nav" href="<%=my_messages_path%>"><i class="ion-email"></i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown"><%= current_user.name %></a></li>
           <% end %>
-          <% if current_user.admin? %>
+          <%  if current_user.present? and current_user.admin? %>
               <li><%= link_to 'Admin', admin_path -%></li>
           <% end %>
         </ul>
