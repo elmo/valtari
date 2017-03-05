@@ -4,17 +4,33 @@
       <%= link_to "My Campaigns", my_campaigns_path, class: 'sub-item active' %>
       <%= link_to "All", campaigns_path, class: 'sub-item' %>
       <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
-          Create Campaign
+        Create Campaign
       <% end %>
     </div>
-
     <div class="card-title">My Campaigns (<%= current_user.campaigns.count -%>) </div>
+      <% if @campaigns.empty? %>
+        <p>You have not created any capitals campaigns.</p>
+      <% else %>
       <%= render partial: '/my/campaigns/campaigns' %>
+      <% end %>
+  </div>
+</div>
 
-    <br />
-
-    <div class="card-title">My Captials(<%= current_user.capitals.count -%>) </div>
-	  <%= render partial: 'my/capitals/capitals' %>
-
+<div class="card">
+  <div class="card-content">
+     <div class="sub">
+        <%= link_to "My Capital Raises", my_capitals_path, class: 'sub-item active' %>
+        <%= link_to "All", capitals_path, class: 'sub-item' %>
+        <%= link_to new_my_capital_path, class: "waves-effect btn right float-margin" do %>
+          Create Capital raise
+        <% end %>
+     </div>
+     <div class="card-title">My Captials(<%= current_user.capitals.count -%>) </div>
+      <% if @capitals.empty? %>
+        <p>You have not created any capital raises.</p>
+      <% else %>
+	    <%= render partial: 'my/capitals/capitals' %>
+      <% end %>
+    </div>
   </div>
 </div>
