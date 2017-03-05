@@ -42,3 +42,7 @@ task load_businesses: :environment do
      phone: row[17])
   end
 end
+
+task fix_georgia: :environment do
+   Business.where(geo_id: 151).each {|business| business.set_geo(force: true) }
+end

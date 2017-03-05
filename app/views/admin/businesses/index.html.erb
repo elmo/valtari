@@ -52,6 +52,15 @@
                     <td><%= best_in_place business, :state, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                     <td><%= best_in_place business, :postal_code, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                     <td><%= best_in_place business, :country, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+
+                    <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+                      <td><%= best_in_place business, :division1, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+                      <td><%= best_in_place business, :division2, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+                      <td><%= best_in_place business, :division3, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+                      <td><%= best_in_place business, :division4, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+                      <td><%= best_in_place business, :division5, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
+                    <% end %>
+
                     <td><%= best_in_place business, :contact_title, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                     <td><%= best_in_place business, :contact_first_name, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                     <td><%= best_in_place business, :contact_last_name, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>

@@ -5,6 +5,15 @@
   <th id="city" class="<%= sort_arrow_class('city') -%>"><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
   <th id="state" class="<%= sort_arrow_class('state') -%>"><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
   <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
+
+  <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+    <th id="division1" class="<%= sort_arrow_class('division1') -%>"><%= link_to 'Division1', url_for(params.merge(sort: 'division1', sort_direction: @sort_direction) ) -%></th>
+    <th id="division2" class="<%= sort_arrow_class('division2') -%>"><%= link_to 'Division2', url_for(params.merge(sort: 'division2', sort_direction: @sort_direction) ) -%></th>
+    <th id="division3" class="<%= sort_arrow_class('division3') -%>"><%= link_to 'Division3', url_for(params.merge(sort: 'division3', sort_direction: @sort_direction) ) -%></th>
+     <th id="division4" class="<%= sort_arrow_class('division4') -%>"><%= link_to 'Division4', url_for(params.merge(sort: 'division4', sort_direction: @sort_direction) ) -%></th>
+    <th id="division5" class="<%= sort_arrow_class('division5') -%>"><%= link_to 'Division5', url_for(params.merge(sort: 'division5', sort_direction: @sort_direction) ) -%></th>
+  <% end %>
+
   <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
   <th id="title" class="<%= sort_arrow_class('title') -%>"><%= link_to 'Title', url_for(params.merge(sort: 'title', sort_direction: @sort_direction) ) -%></th>
   <th id="first_name" class="<%= sort_arrow_class('first-name') -%>"><%= link_to 'First Name', url_for(params.merge(sort: 'first-name', sort_direction: @sort_direction) ) -%></th>

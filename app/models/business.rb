@@ -48,15 +48,20 @@ class Business < ApplicationRecord
     duplication_status == DUPLICATION_STATUS_READY
   end
 
-  def set_geo
-    if geo.blank?
+  def set_geo(force: false)
+    user = User.with_role(:admin).first
+    if force or geo.blank?
       self.geo = Geo.for_state_abbreviation(state)
       return if self.geo.nil?
-      self.division1 = geo.division1 if geo.division1.present?
-      self.division2 = geo.division2 if geo.division2.present?
-      self.division3 = geo.division3 if geo.division3.present?
-      self.division4 = geo.division4 if geo.division4.present?
-      self.division5 = geo.division5 if geo.division5.present?
+      self.division1 = geo.division1 if force or geo.division1.present?
+      self.division2 = geo.division2 if force or geo.division2.present?
+      self.division3 = geo.division3 if force or geo.division3.present?
+      self.division4 = geo.division4 if force or geo.division4.present?
+      self.division5 = geo.division5 if force or geo.division5.present?
+      if force
+        self.last_updated_by_user = user
+        self.save
+      end
     end
   end
 
