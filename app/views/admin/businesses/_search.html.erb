@@ -1,68 +1,52 @@
-
-
-<%= form_tag admin_businesses_path,
-    id: "business-search" ,
-    class: 'search-bar',
-      role: 'search',  method: :get do %>
+<%= form_tag admin_businesses_path, id: "business-search" , class: 'search-bar', role: 'search',  method: :get do %>
 
   <div class="row">
-     <div class="col s3">
-      <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %>
-     </div>
-     <div class="col s2">
-      <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %>
-     </div>
+     <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
+     <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
+     <div class="col s2"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
+     <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
+     <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %> </div>
+  </div>
 
-     <div class="col s2">
-      <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %>
-     </div>
+  <div id="admin-geo-divisions">
+  <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+     <%= render partial: 'admin/businesses/geo_divisions' -%>
+  <% end %>
+  </div>
+</div>
 
+   <div class="row">
      <div class="col s2">
-      <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %>
-     </div>
+      <%= check_box_tag :show_divisions , 'true',  params[:show_divisions] %>
+      <%= label_tag :show_divisions, 'Show divisions' %>
+    </div>
 
-     <div class="col s2">
-      <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %>
-     </div>
- 
-     <div class="col s3">
-      <%= text_field_tag :division1,
-        params[:division1],
-        type: 'search',
-        placeholder: 'Division1' -%>
-     </div>
+    <div class="col s2"> <%= submit_tag 'Search', class: "btn" %>
+        <%= link_to 'clear', admin_businesses_path(show_divisions: params[:show_divisions]) -%>
+    </div>
 
-     <div class="col s2">
-      <%= text_field_tag :division2,
-        params[:division2],
-        type: 'search',
-        placeholder: 'Division 2' -%>
-     </div>
-
-     <div class="col s2">
-      <%= text_field_tag :division3,
-        params[:division3],
-        type: 'search',
-        placeholder: 'Division 3' -%>
-     </div>
-
-     <div class="col s2">
-      <%= text_field_tag :division4,
-        params[:division4],
-        type: 'search',
-        placeholder: 'Division 4' -%>
-     </div>
-
-     <div class="col s2">
-      <%= text_field_tag :division5,
-        params[:division5],
-        type: 'search',
-        placeholder: 'Division 5' -%>
-     </div>
-
-     <div class="col s2">
-       <%= submit_tag 'Search', class: "btn" %>
-     </div>
-   </div>
-
+  </div>
 <% end %>
+
+<script>
+  $(document).on('turbolinks:load', function() {
+    $('#division1').change(function() {
+      $.get('/admin/divisions?name=division1&value=' + $("#division1").val() );
+    });
+    $('#division2').change(function() {
+      $.get('/admin/divisions?name=division2&value=' + $("#division2").val() );
+    });
+    $('#division3').change(function() {
+      $.get('/admin/divisions?name=division3&value=' + $("#division3").val() );
+    });
+    $('#division4').change(function() {
+      $.get('/admin/divisions?name=division4&value=' + $("#division4").val() );
+    });
+    $('#division5').change(function() {
+      $.get('/admin/divisions?name=division5&value=' + $("#division5").val() );
+    });
+    $('#show_divisions').change(function() { $('#business-search').submit(); });
+
+  });
+</script>
+

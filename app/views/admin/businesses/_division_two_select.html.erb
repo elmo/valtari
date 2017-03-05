@@ -1,0 +1,2 @@
+<%= label_tag :division2, 'Geo Division Two' -%>
+<%= select_tag :division2, options_for_select(names_within_division1(params[:division1]),  params[:division2]), include_blank: true -%>

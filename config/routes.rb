@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+   resources :divisions, only: [:index]
    resources :businesses do
      put 'dupe'
      put 'undupe'
