@@ -4,6 +4,7 @@ class My::CampaignsController < ApplicationController
 
   def index
     @campaigns = current_user.campaigns.order(created_at: :desc).page(params[:page]).per(10)
+    @capitals = current_user.capitals.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show

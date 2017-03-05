@@ -7,9 +7,14 @@
           Create Campaign
       <% end %>
     </div>
+
     <div class="card-title">My Campaigns (<%= current_user.campaigns.count -%>) </div>
-     
       <%= render partial: '/my/campaigns/campaigns' %>
-    </div>
+
+    <br />
+
+    <div class="card-title">My Captials(<%= current_user.capitals.count -%>) </div>
+	  <%= render partial: 'my/capitals/capitals' %>
+
   </div>
 </div>
