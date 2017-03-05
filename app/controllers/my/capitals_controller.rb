@@ -44,7 +44,7 @@ class My::CapitalsController < ApplicationController
   def destroy
     @capital.destroy
     respond_to do |format|
-      format.html { redirect_to my_capitals_url, notice: 'Capital campaign was successfully destroyed.' }
+      format.html { redirect_to my_campaigns_url, notice: 'Capital campaign was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
