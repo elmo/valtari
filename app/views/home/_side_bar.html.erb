@@ -10,6 +10,10 @@
 <i class="ion-ios-pricetags" data-pack="default" data-tags="box, square, container"></i>Marketplace
 <% end %>
 
+<%= link_to buysides_path, class: "#{(controller_name == 'buysides') ? 'active' : '' } nav-item" do %>
+<i class="ion-ios-pricetags" data-pack="default" data-tags="box, square, container"></i>Buysides
+<% end %>
+
 <%= link_to events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" do %>
 <i class="ion-plane" data-pack="default" data-tags="box, square, container"></i>Events
 <% end %>

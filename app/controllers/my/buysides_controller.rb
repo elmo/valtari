@@ -56,6 +56,6 @@ class My::BuysidesController < ApplicationController
     end
 
     def buyside_params
-      params.require(:buyside).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, industry_classification_ids: [] )
+      params.require(:buyside).permit(:title, :stage, :revenue_lower, :revenue_upper, :ebitda_lower, :ebitda_upper, :city, :state, :postal_code, industry_classification_ids: [] )
     end
 end

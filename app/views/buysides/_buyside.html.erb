@@ -1,31 +1,16 @@
-<table class="bordered">
-  <thead>
-    <tr>
-      <th><%= buyside.title %></th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-      <td>Industry</td>
-      <td><%= buyside.title %></td>
-    </tr>
-
-    <tr>
-      <td>Stage</td>
-      <td><%= buyside.stage %></td>
-    </tr>
-
-    <tr>
-      <td>Revenue</td>
-      <td>
-          <%= buyside.revenue_lower %> - <%= buyside.revenue_upper %>
-      </td>
-    </tr>
-    <tr>
-      <td>Ebitda</td>
-      <td><%= buyside.ebidta_lower %> - <%= buyside.ebidta_upper %> </td>
-    </tr>
-    <tr>
-</tbody>
-</table>
+<tr>
+  <td><%= link_to buyside.title, buyside_path(buyside) %>
+    <br />
+    <%= buyside.user.name -%>
+    <%= link_to  new_my_message_path(recipient_id: buyside.user.id ) do %>
+      <i class="ion-email" data-pack="default" data-tags="box, square, container"></i>
+    <% end %>
+    <%= following_user_link(buyside.user, remote: false) -%>
+  </td>
+  <td><%= buyside.stage %></td>
+  <td><%= buyside.revenue_lower %></td>
+  <td><%= buyside.revenue_upper %></td>
+  <td><%= buyside.ebitda_lower %></td>
+  <td><%= buyside.ebitda_upper %></td>
+  <td><%= buyside.industry_classifications.collect(&:name).join(', ') %></td>
+</tr>

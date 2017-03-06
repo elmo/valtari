@@ -3,8 +3,8 @@ class Buyside < ApplicationRecord
   belongs_to :ebidtum, foreign_key: 'Ebidtum', foreign_key: 'ebitda_id', optional: true
   belongs_to :revenue, optional: true
   belongs_to :industry, optional: true
-  has_many :campaign_industry_classifications
-  has_many :industry_classifications, through: :campaign_industry_classifications, class_name: 'IndustryClassification'
+  has_many :buyside_industry_classifications
+  has_many :industry_classifications, through: :buyside_industry_classifications, class_name: 'IndustryClassification'
   validates_presence_of :title
   validates_presence_of :user_id
   validates_presence_of :revenue_lower

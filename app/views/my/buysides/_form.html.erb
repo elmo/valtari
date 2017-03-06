@@ -1,0 +1,45 @@
+<%= simple_form_for([:my, @buyside]) do |f| %>
+  <%= f.error_notification %>
+  <div class="row"><div class="col s12"><%= f.input :title, label: 'Campaign Title' %></div></div>
+  <div class="row">
+    <div class="col s6"><mm><%= f.input :revenue_lower %><dash>&mdash;</dash></mm></div>
+    <div class="col s6"><mm><%= f.input :revenue_upper %></mm></div>
+    <div class="col s6"><mm><%= f.input :ebitda_lower %><dash>&mdash;</dash></mm></div>
+    <div class="col s6"><mm><%= f.input :ebitda_upper %></mm></div>
+  </div>
+  <div class="row">
+      <div class="col s12">
+          <%= f.input :stage,
+              collection: company_stage_options,
+              wrapper: :material_select,
+              prompt: "Choose company stage"  %>
+       </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12 columns">
+      <%= f.collection_check_boxes :industry_classification_ids, IndustryClassification.all, :id, :name do |ic| %>
+      <div class="collection-check-box">
+         <%= ic.check_box %>
+         <%= ic.label %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s5">
+      <%= f.input :city -%>
+    </div>
+    <div class="col s5">
+      <%= f.input :state-%>
+    </div>
+    <div class="col s5">
+      <%= f.input :postal_code -%>
+    </div>
+  </div>
+
+  <%= f.button :submit, "#{(@buyside.persisted?) ? 'Update' : 'Save'}" %>
+
+<% end %>
