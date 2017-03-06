@@ -2,73 +2,93 @@
     <%= f.error_notification %>
 
   <div class="row">
-    <div class="input-field col s12">
-      <%= f.label :title %>
-      <%= f.text_field :title, placeholder: "Event title", class: 'validate' %>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Event title", class: 'validate' %>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
-      <%= f.label :location %>
-      <%= f.text_field :location , placeholder: "Location", class: 'validate' %>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.select :industry_classification_id, industry_classifications_options, prompt: "Choose Industry"-%>
-      <%= f.label :industry_classification_id, "Industry" %>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.label :location %>
+        <%= f.text_field :location , placeholder: "Location", class: 'validate' %>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
-      <%= f.label :photo, "Upload image" %> <br />
-      <p>
-        <%= f.file_field :photo %>
-      </p>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.select :industry_classification_id, industry_classifications_options, prompt: "Choose Industry"-%>
+        <%= f.label :industry_classification_id, "Industry" %>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s8">
-      <%= f.input :start_date, as: :string, input_html: {class: 'datepicker'} -%>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.label :photo, "Upload image" %> <br />
+        <p>
+          <%= f.file_field :photo %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <div class="input-field">
+        <%= f.input :start_date, as: :string, input_html: {class: 'datepicker'} -%>
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="input-field">
+         <%= f.input :start_time, as: :string, input_html: {class: 'timepicker'} -%>
+       </div>
+     </div>
    </div>
-    <div class="input-field col s4">
-      <%= f.input :start_time, as: :string, input_html: {class: 'timepicker'} -%>
-   </div>
-  </div>
 
   <div class="row">
-    <div class="input-field col s8">
-      <%= f.input :end_date, as: :string,  input_html: {class: 'datepicker' } -%>
+    <div class="col s6">
+      <div class="input-field">
+        <%= f.input :end_date, as: :string,  input_html: {class: 'datepicker' } -%>
+      </div>
     </div>
-
-    <div class="input-field col s4">
-      <%= f.input :end_time, as: :string,  input_html: {class: 'timepicker' } -%>
-    </div>
-   </div>
-
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.label :description %>
-      <%= f.text_area :description %>
+    <div class="col s6">
+      <div class="input-field">
+        <%= f.input :end_time, as: :string,  input_html: {class: 'timepicker' } -%>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
-      <%= f.label :tags %>
-      <%= f.text_field :tag_list, value: f.object.tag_list.to_s  %>
-   </div>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+    </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
-    <%= f.button :submit %>
-   </div>
+    <div class="col s12">
+      <div class="input-field">
+        <%= f.label :tags %>
+        <%= f.text_field :tag_list, value: f.object.tag_list.to_s  %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="input-field">
+      <%= f.button :submit %>
+     </div>
+    </div>
   </div>
 
 <% end %>

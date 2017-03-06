@@ -1,8 +1,8 @@
 <%= simple_form_for([:my, @capital]) do |f| %>
   <%= f.error_notification %>
 
-  <div class="row"><div class="col s12 l8"><%= f.input :title, label: 'Title', placeholder: 'Enter your title'  %></div>
-  <div class="col s12 l4"><mm><%= f.input :revenue %></mm></div></div>
+  <div class="row"><div class="col s12"><%= f.input :title, label: 'Title', placeholder: 'Enter your title'  %></div>
+  <div class="col s12 l6"><mm><%= f.input :revenue %></mm></div></div>
   
   <div class="row">
     <div class="col s12"><%= f.label :industry_classification_ids, 'Industries' -%>
