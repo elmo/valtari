@@ -10,12 +10,14 @@ Rails.application.routes.draw do
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
+  resources :buysides, only: [:index,:show]
   resources :capitals, only: [:index,:show]
   resources :opportunities, only: [:index,:show]
   resources :events, only: [:index,:show]
   resources :users, only: [:show]
 
   namespace :my do
+    resources :buysides
     resources :followings
     resources :businesses do
       resources :notes

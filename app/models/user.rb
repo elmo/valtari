@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
    belongs_to :organization, optional: true
    has_many :campaigns
+   has_many :buysides
    has_many :followings
    has_many :capitals
    has_many :opportunities

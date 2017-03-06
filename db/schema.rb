@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222192148) do
+ActiveRecord::Schema.define(version: 20170306164133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,28 @@ ActiveRecord::Schema.define(version: 20170222192148) do
     t.index ["sic_code"], name: "index_businesses_on_sic_code", using: :btree
     t.index ["state"], name: "index_businesses_on_state", using: :btree
     t.index ["status"], name: "index_businesses_on_status", using: :btree
+  end
+
+  create_table "buyside_industry_classifications", force: :cascade do |t|
+    t.integer "buyside_id"
+    t.integer "industry_classification_id"
+  end
+
+  create_table "buysides", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "geo_id"
+    t.string   "stage"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.decimal  "revenue_lower", precision: 8, scale: 2
+    t.decimal  "revenue_upper", precision: 8, scale: 2
+    t.decimal  "ebitda_lower",  precision: 8, scale: 2
+    t.decimal  "ebitda_upper",  precision: 8, scale: 2
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.index ["stage"], name: "index_buysides_on_stage", using: :btree
   end
 
   create_table "campaign_industry_classifications", force: :cascade do |t|

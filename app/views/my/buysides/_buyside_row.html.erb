@@ -1,0 +1,15 @@
+<tr>
+  <td><%= link_to buyside.title, my_buyside_path(buyside) %></td>
+  <td><%= buyside.stage %></td>
+  <td><%= buyside.revenue_lower %> -  <%= buyside.revenue_upper %></td>
+  <td><%= buyside.ebitda_lower %> - <%= buyside.ebitda_upper %></td>
+  <td><%= buyside.industry_classifications.collect(&:name).join(', ') %></td>
+  <td>
+    <%= link_to(edit_my_buyside_path(buyside) , class: "inline-link") do %>
+      <i class="material-icons tiny">mode_edit</i>
+    <% end %>
+    <%= link_to(my_buyside_path(buyside), method: :delete, data: { confirm: 'Are you sure want to remove this buyside?' }, class: "inline-link") do  %>
+      <i class="material-icons tiny">delete </i>
+    <% end %>
+  </td>
+</tr>
