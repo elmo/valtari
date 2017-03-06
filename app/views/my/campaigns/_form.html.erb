@@ -1,5 +1,6 @@
 <%= simple_form_for([:my, @campaign]) do |f| %>
   <%= f.error_notification %>
+  <br>
   <div class="row"><div class="col s12"><%= f.input :title, label: 'Campaign Title' %></div></div>
   <div class="row">
     <div class="col s6"><mm><%= f.input :revenue_lower %><dash>&mdash;</dash></mm></div>
