@@ -1,0 +1,18 @@
+<div class="container wide admin-nav">
+  <nav>
+    <div class="nav-wrapper">
+
+    <ul class="left hide-on-med-and-down">
+
+       <li><%= link_to 'Company Database', admin_businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'EBIDTAs', admin_ebidtas_path, class: "#{(controller_name == 'ebidtas') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'Revenues', admin_revenues_path, class: "#{(controller_name == 'revenues') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'NAISC Codes', admin_industries_path, class: "#{(controller_name == 'industries') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'SIC Codes', admin_sic_codes_path, class: "#{(controller_name == 'sic_codes') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'Events', admin_events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" -%></li>
+       <li><%= link_to 'Organizations', admin_organizations_path, class: "#{(controller_name == 'organizations') ? 'active' : '' } nav-item" -%></li>
+
+      </ul>
+    </div>
+  </nav>
+</div>
