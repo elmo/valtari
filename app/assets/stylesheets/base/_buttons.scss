@@ -9,22 +9,30 @@
 }
 
 .keep-btn {
-  padding: 1em;
-  margin: 1em;
+  display: block;
+  margin: 2px;
   text-transform: none;
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
+  width: 51px;
+  padding: 2px;
+  color: white!important;
+  text-align: center;
   @extend .green, .darken-1;
 }
 
 .dupe-btn {
-  padding: 1em;
-  margin: 1em;
+  display: block;
+  margin: 2px;
   text-transform: none;
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
+  width: 51px;
+  padding: 2px;
+  color: white!important;
+  text-align: center;
   @extend .red, .darken-1;
 }
 

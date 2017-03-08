@@ -208,3 +208,13 @@ label[for="event_photo"] {
     margin: 1px 15px 0 0;
     color: #1e88e5;
 }
+
+//Admin nav
+.admin-nav nav{
+  margin-bottom: -11px;
+  a { color: #999; font-weight: 400 }
+  a.active.nav-item{
+    color: #000;
+  }
+}
+

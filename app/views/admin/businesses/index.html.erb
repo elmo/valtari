@@ -19,7 +19,6 @@
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
         </div>
 
-        <section>
           <%= render partial: '/admin/businesses/search'-%>
 
             <table class="admin-view">
@@ -78,7 +77,6 @@
               </tbody>
             </table>
             <%= paginate(@businesses) -%>
-        </section>
         <br>
         <%= link_to '+ New Business', new_admin_business_path %>
       </div>

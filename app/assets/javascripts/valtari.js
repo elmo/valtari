@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
- jQuery(".best_in_place").best_in_place();
+  jQuery(".best_in_place").best_in_place();
 
  	//Max characters in decimal input
 	$('input.decimal').keypress(function(e) {
@@ -13,6 +13,15 @@ $(document).on('turbolinks:load', function() {
 	    }
 	})
     $('select').material_select();
+
+    //Resize columns w/ colResizable-1.5.min.js
+    $(".admin-view").colResizable ({
+    	liveDrag:true,
+    	'hoverCursor': "col-resize",
+    	postbackSafe: true,
+    	gripInnerHtml:"<div class='grip'></div>", 
+    	draggingClass:"dragging" 
+    });
 
 });
 
