@@ -27,8 +27,8 @@
   <th id="description" class="<%= sort_arrow_class('description') -%>"><%= link_to 'Description', url_for(params.merge(sort: 'description', sort_direction: @sort_direction) ) -%></th>
   <th id="geo_id">Geo</th>
   <th class="<%= sort_arrow_class('updated') -%>">
-      <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>
+    <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>
       <i class="material-icons dp48">query_builder</i>
-  <% end %>
+    <% end %>
   </th>
 </tr>
