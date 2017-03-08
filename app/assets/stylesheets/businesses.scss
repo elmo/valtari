@@ -26,38 +26,14 @@
 	    top: 22px;
 	    padding-left: 3px;
 	}
-	.admin-view{
-		td, th{
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			overflow: hidden;
-			max-width: 6em;
-			width: 6em;
-		}
-		td{
-			height: 68px;
-		}
-		tr th:first-child, tr td:first-child {
-		    width: 12em!important;
-		    max-width:12em;
-		}
-		tr th:last-child, tr td:last-child{
-		    width: 4em!important;
-		    max-width: 4em;
-		}
-		tr th:nth-last-child(2), tr td:nth-last-child(2), tr th:nth-last-child(3), tr td:nth-last-child(3), tr th:nth-last-child(4), tr td:nth-last-child(4){
-		    width: 3.2em!important;
-		    max-width: 3.2em;
-		}
-	}
-	#contact{ width: 8em }
+/*	#contact{ width: 8em }
 	#phone{ width: 7em }
 	#revenue{ width: 5.5em }
 	#employees{ width: 6.5em }
 	#industry{ width: 7em } 
 	#city{ width: 7.5em }
 	#state{ width: 3.5em }
-	#country{ width: 7em }
+	#country{ width: 7em }*/
 }
 .user-view{
 	td, tr, a{ font-size:13px; color: black }
@@ -162,3 +138,70 @@ body nav.pagination{
     }
 }
 
+.admin-view{
+	td, th{
+		text-overflow: ellipsis;
+		overflow: hidden!important;
+		vertical-align: top;
+	}
+	td{
+		height: 68px;
+	}
+	/*
+	tr th:first-child, tr td:first-child {
+	    width: 7em;
+	}
+	tr th:nth-child(2), tr td:nth-child(2){
+	    width: 19em;
+	}
+	tr th:last-child, tr td:last-child{
+	    width: 4em!important;
+	    max-width: 4em;
+	}
+	tr th:nth-last-child(2), tr td:nth-last-child(2), tr th:nth-last-child(3), tr td:nth-last-child(3), tr th:nth-last-child(4), tr td:nth-last-child(4){
+	    width: 3.2em!important;
+	    max-width: 3.2em;
+	}
+    */
+	.grip {
+		width:20px;
+		height:30px;
+		margin-top:-3px;
+		background-image:url(../img/grip.png);
+		margin-left:-5px;
+		position:relative;
+		z-index:88;
+		cursor:e-resize}
+
+	.grip:hover {
+		background-position-x:-20px}
+
+	.dragging .grip {
+		background-position-x:-40px}
+
+	.grip2{
+		width:20px;
+		height:15px;
+		margin-top:-3px;
+		background-image:url('grip2.png');
+		margin-left:-5px;
+		position:relative;
+		z-index:88;
+		cursor:e-resize;
+	    background-repeat: no-repeat;
+	}
+
+	.grip2:hover{
+		background-position-x:-20px;
+	}
+
+	.dragging .grip2{
+		background-position-x:-40px;
+	}
+	.JCLRLastGrip {
+		.grip2{
+	    	background-position-y:-18px;
+	   		left:-2px;
+	   	}
+	}	
+}

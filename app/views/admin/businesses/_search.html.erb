@@ -1,11 +1,11 @@
 <%= form_tag admin_businesses_path, id: "business-search" , class: 'search-bar', role: 'search',  method: :get do %>
 
   <div class="row">
-     <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
-     <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
-     <div class="col s2"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
-     <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
-     <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %> </div>
+    <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
+    <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
+    <div class="col s1"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
+    <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %></div>
+    <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
   </div>
 
   <div id="admin-geo-divisions">
@@ -13,7 +13,6 @@
      <%= render partial: 'admin/businesses/geo_divisions' -%>
   <% end %>
   </div>
-</div>
 
    <div class="row">
      <div class="col s2">
