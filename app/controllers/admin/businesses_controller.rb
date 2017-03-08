@@ -128,6 +128,7 @@ class Admin::BusinessesController < Admin::AdminController
     # Use callbacks to share common setup or constraints between actions.
     def set_business
       @business = Business.find(params[:id])
+      @business.last_updated_by_user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
