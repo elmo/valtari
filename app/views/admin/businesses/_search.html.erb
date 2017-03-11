@@ -1,17 +1,26 @@
 <%= form_tag admin_businesses_path, id: "business-search" , class: 'search-bar', role: 'search',  method: :get do %>
 
-  <div class="row">
-    <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
-    <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
-    <div class="col s1"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
-    <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %></div>
-    <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
-  </div>
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header <%= business_search_active %>">Search Fields</div>
+       <div class='collapsible-body'>
+         <div class="row">
+         <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
+         <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
+         <div class="col s1"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
+         <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %></div>
+        <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
+      </div>
+     </div>
+    </li>
+  </ul>
 
-  <div id="admin-geo-divisions">
-  <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
-     <%= render partial: 'admin/businesses/geo_divisions' -%>
-  <% end %>
+  <div class="row">
+     <div id="admin-geo-divisions">
+       <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+         <%= render partial: 'admin/businesses/geo_divisions' -%>
+       <% end %>
+     </div>
   </div>
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -19,7 +28,7 @@
   <div class="collapsible-header <%= advanced_search_active %>">Advanced Search</div>
     <div class='collapsible-body'>
   <h4>Containing</h4>
-    <% with_filters.in_groups_of(5).each do |group| -%>
+    <% with_filters.in_groups_of(6).each do |group| -%>
       <div class="row">
         <% group.compact.each do |filter| %>
           <div class="col s2">
@@ -31,7 +40,7 @@
   <% end %>
 
   <h4>Missing</h4>
-   <% without_filters.in_groups_of(5).each do |group| -%>
+   <% without_filters.in_groups_of(6).each do |group| -%>
       <div class="row">
         <% group.compact.each do |filter| %>
           <div class="col s2">
