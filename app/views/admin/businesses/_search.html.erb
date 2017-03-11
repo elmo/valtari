@@ -14,6 +14,38 @@
   <% end %>
   </div>
 
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+  <div class="collapsible-header <%= advanced_search_active %>">Advanced Search</div>
+    <div class='collapsible-body'>
+  <h4>Containing</h4>
+    <% with_filters.in_groups_of(5).each do |group| -%>
+      <div class="row">
+        <% group.compact.each do |filter| %>
+          <div class="col s2">
+            <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+            <%= label_tag filter, filter.to_s.humanize.gsub(/With /, '') -%>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
+
+  <h4>Missing</h4>
+   <% without_filters.in_groups_of(5).each do |group| -%>
+      <div class="row">
+        <% group.compact.each do |filter| %>
+          <div class="col s2">
+            <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+            <%= label_tag filter, filter.to_s.humanize.gsub(/Without /, '') -%>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
+  </li>
+  </div>
+
+  </ul>
+
    <div class="row">
      <div class="col s2">
       <%= check_box_tag :show_divisions , 'true',  params[:show_divisions] %>
@@ -45,6 +77,8 @@
       $.get('/admin/divisions?name=division5&value=' + $("#division5").val() );
     });
     $('#show_divisions').change(function() { $('#business-search').submit(); });
+
+   $('.collapsible').collapsible();
 
   });
 </script>

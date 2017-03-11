@@ -22,17 +22,58 @@ class Admin::BusinessesController < Admin::AdminController
     scope = scope.within_division3( params[:division3] ) if params[:division3].present?
     scope = scope.within_division4( params[:division4] ) if params[:division4].present?
     scope = scope.within_division5( params[:division5] ) if params[:division5].present?
-
     scope = scope.matching_company(params[:company_name]) if params[:company_name].present?
     scope = scope.within_city(params[:city] ) if params[:city].present?
     scope = scope.within_state(params[:state] ) if params[:state].present?
     scope = scope.within_country(params[:country] ) if params[:country].present?
     scope = scope.within_postal_code(params[:postal_code] ) if params[:postal_code].present?
-
-
     scope = scope.ready if params[:duplication_status].present? and params[:duplication_status] == 'ready'
     scope = scope.ok if params[:duplication_status].present? and params[:duplication_status] == 'ok'
     scope = scope.dupe if params[:duplication_status].present? and params[:duplication_status] == 'dupe'
+
+    scope = scope.with_email if params[:with_email].present?
+    scope = scope.with_phone if params[:with_phone].present?
+    scope = scope.with_address if params[:with_address].present?
+    scope = scope.with_city if params[:with_city].present?
+    scope = scope.with_state if params[:wiht_state].present?
+    scope = scope.with_country if params[:with_country].present?
+    scope = scope.with_contact_first_name if params[:with_contact_first_name].present?
+    scope = scope.with_contact_last_name if params[:with_contact_last_name].present?
+    scope = scope.with_contact_title if params[:with_contact_title].present?
+    scope = scope.with_website if params[:with_website].present?
+    scope = scope.with_revenue if params[:with_revenue].present?
+    scope = scope.with_number_of_employees if params[:with_number_of_employees].present?
+    scope = scope.with_naics_code if params[:with_naics_code].present?
+    scope = scope.with_sic_code if params[:with_sic_code].present?
+    scope = scope.with_parent_company if params[:with_parent_company].present?
+    scope = scope.with_geo_id if params[:wiht_geo_id].present?
+    scope = scope.with_division1 if params[:with_division1].present?
+    scope = scope.with_division2 if params[:with_division2].present?
+    scope = scope.with_division3 if params[:with_division3].present?
+    scope = scope.with_division4 if params[:with_division4].present?
+    scope = scope.with_division5 if params[:with_division5].present?
+
+    scope = scope.without_email if params[:without_email].present?
+    scope = scope.without_phone if params[:without_phone].present?
+    scope = scope.without_address if params[:without_address].present?
+    scope = scope.without_city if params[:without_city].present?
+    scope = scope.without_state if params[:without_state].present?
+    scope = scope.without_country if params[:without_country].present?
+    scope = scope.without_contact_first_name if params[:without_contact_first_name].present?
+    scope = scope.without_contact_last_name if params[:without_contact_last_name].present?
+    scope = scope.without_contact_title if params[:without_contact_title].present?
+    scope = scope.without_website if params[:without_website].present?
+    scope = scope.without_revenue if params[:without_revenue].present?
+    scope = scope.without_number_of_employees if params[:without_number_of_employees].present?
+    scope = scope.without_naics_code if params[:without_naics_code].present?
+    scope = scope.without_sic_code if params[:without_sic_code].present?
+    scope = scope.without_parent_company if params[:without_parent_company].present?
+    scope = scope.without_geo_id if params[:without_geo_id].present?
+    scope = scope.without_division1 if params[:without_division1].present?
+    scope = scope.without_division2 if params[:without_division2].present?
+    scope = scope.without_division3 if params[:without_division3].present?
+    scope = scope.without_division4 if params[:without_division4].present?
+    scope = scope.without_division5 if params[:without_division5].present?
 
     # Sort
     if params[:sort].present?
