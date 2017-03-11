@@ -29,6 +29,7 @@ class Geo < ApplicationRecord
   end
 
   def self.for_state_abbreviation(state_abbreviation)
+      return if state_abbreviation.nil?
     full_state_name = Geo.state_abbrev_map[state_abbreviation.to_sym]
     return nil if full_state_name.nil?
     if full_state_name == 'Georgia'

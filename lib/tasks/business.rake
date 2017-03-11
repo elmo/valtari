@@ -46,3 +46,26 @@ end
 task fix_georgia: :environment do
    Business.where(geo_id: 151).each {|business| business.set_geo(force: true) }
 end
+
+task repair_businesses: :environment do
+  user = User.first
+  CSV.foreach('db/valtari-business-repair.csv').with_index do |row,i|
+    next if i == 0
+    id,address1, address2,city,state,zip,country,phone1, phone2 = row
+    full_address = [address1.try(:strip), address2.try(:strip)].join(' ').strip
+    phone =  phone1.gsub(/\D/, '').strip if phone1.present? 
+    business =  Business.find(id)
+    business.update_attributes( 
+      address: full_address, 
+      city: city,
+      state: state,
+      country: country,
+      postal_code: zip,
+      phone: phone,
+      duplication_status: "ready",
+      last_updated_by_id: user.id
+    )
+    p id
+  end
+
+end
