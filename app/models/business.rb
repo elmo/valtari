@@ -14,7 +14,58 @@ class Business < ApplicationRecord
   scope :within_state, -> (state) { where(["lower(state) like ? ", '%' + state.downcase + '%'] ) }
   scope :within_country, -> (country) { where(["lower(country) like ? ", '%' + country.downcase + '%'] ) }
   scope :within_postal_code, -> (postal_code) { where(["lower(postal_code) like ? ", '%' + postal_code.downcase + '%'] ) }
-  belongs_to :last_updated_by_user, class_name: 'User', foreign_key: :last_updated_by_id
+
+  scope :with_email, -> { where.not("email is null or email = '' ") }
+  scope :with_phone, -> { where.not("phone is null or phone = '' ") }
+  scope :with_address, -> { where.not("address is null or address = '' ") }
+  scope :with_city, -> { where.not("city is null or city = '' ") }
+  scope :with_state, -> { where.not("state is null or state = '' ") }
+  scope :with_country, -> { where.not("country is null or country = '' ") }
+  scope :with_contact_first_name, -> { where.not("contact_first_name is null or contact_first_name = '' ") }
+  scope :with_contact_last_name, -> { where.not("contact_first_name is null or contact_last_name = '' ") }
+  scope :with_contact_title, -> { where.not("contact_title is null or contact_title = '' ") }
+  scope :with_phone, -> { where.not("phone is null or phone = '' ") }
+  scope :with_website, -> { where.not("website is null or website = '' ") }
+  scope :with_revenue , -> { where.not("revenue is null") }
+  scope :with_number_of_employees, -> { where.not("number_of_employees is null") }
+  scope :with_naics_code, -> { where.not("naics_code is null or naics_code = '' ") }
+  scope :with_sic_code, -> { where.not("sic_code is null or sic_code = '' " ) }
+  scope :with_industry_classification, -> { where.not("industry_classification is null or industry_classification = '' " ) }
+  scope :with_parent_company, -> { where.not("parent_company is null or parent_company = '' " ) }
+  scope :with_geo_id, -> { where.not( geo_id: nil) }
+  scope :with_division1, -> { where.not("division1 is null or division1 = '' " ) }
+  scope :with_division2, -> { where.not("division2 is null or division2 = '' " ) }
+  scope :with_division3, -> { where.not("division3 is null or division3 = '' " ) }
+  scope :with_division4, -> { where.not("division4 is null or division4 = '' " ) }
+  scope :with_division5, -> { where.not("division5 is null or division5 = '' " ) }
+  scope :with_duplication_status, -> { where.not("duplication_status is null or duplication_status = '' " ) }
+
+  scope :without_email, -> { where("email is null or email = '' ") }
+  scope :without_phone, -> { where("phone is null or phone = '' ") }
+  scope :without_address, -> { where("address is null or address = '' ") }
+  scope :without_city, -> { where("city is null or city = '' ") }
+  scope :without_state, -> { where("state is null or state = '' ") }
+  scope :without_country, -> { where("country is null or country = '' ") }
+  scope :without_contact_first_name, -> { where("contact_first_name is null or contact_first_name = '' ") }
+  scope :without_contact_last_name, -> { where("contact_first_name is null or contact_last_name = '' ") }
+  scope :without_contact_title, -> { where("contact_title is null or contact_title = '' ") }
+  scope :without_phone, -> { where("phone is null or phone = '' ") }
+  scope :without_website, -> { where("website is null or website = '' ") }
+  scope :without_revenue , -> { where("revenue is null") }
+  scope :without_number_of_employees, -> { where("number_of_employees is null") }
+  scope :without_naics_code, -> { where("naics_code is null or naics_code = '' ") }
+  scope :without_sic_code, -> { where("sic_code is null or sic_code = '' " ) }
+  scope :without_industry_classification, -> { where("industry_classification is null or industry_classification = '' " ) }
+  scope :without_parent_company, -> { where("parent_company is null or parent_company = '' " ) }
+  scope :without_geo_id, -> { where( geo_id: nil) }
+  scope :without_division1, -> { where("division1 is null or division1 = '' " ) }
+  scope :without_division2, -> { where("division2 is null or division2 = '' " ) }
+  scope :without_division3, -> { where("division3 is null or division3 = '' " ) }
+  scope :without_division4, -> { where("division4 is null or division4 = '' " ) }
+  scope :without_division5, -> { where("division5 is null or division5 = '' " ) }
+  scope :without_duplication_status, -> { where("duplication_status is null or duplication_status = '' " ) }
+
+  belongs_to :last_updated_by_user, class_name: 'User', foreign_key: :last_updated_by_id, optional: true
 
   DUPLICATION_STATUS_READY = "ready"
   DUPLICATION_STATUS_DUPE = "dupe"
