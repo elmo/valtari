@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'judge'
 gem 'best_in_place'
 gem 'carrierwave-postgresql'
 gem 'country_select'
