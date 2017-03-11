@@ -1,20 +1,21 @@
-<%= simple_form_for([:my, @event], html_html: { class: 'col s12 l6 offset-l3' }  ) do |f| %>
-    <%= f.error_notification %>
+<%= form_for([:my, @event], html_html: { class: 'col s12 l6 offset-l3' }, builder: Judge::FormBuilder)  do |f| %>
 
   <div class="row">
     <div class="col s12">
       <div class="input-field">
         <%= f.label :title %>
-        <%= f.text_field :title, placeholder: "Event title", class: 'validate' %>
+        <%= f.text_field :title, validate: true %>
+        <div class="field-error-msg" id="title-error-msg"></div>
       </div>
     </div>
   </div>
+
 
   <div class="row">
     <div class="col s12">
       <div class="input-field">
         <%= f.label :location %>
-        <%= f.text_field :location , placeholder: "Location", class: 'validate' %>
+        <%= f.text_field :location, validate: true %>
       </div>
     </div>
   </div>
@@ -42,12 +43,12 @@
   <div class="row">
     <div class="col s6">
       <div class="input-field">
-        <%= f.input :start_date, as: :string, input_html: {class: 'datepicker'} -%>
+        <%= f.text_field :start_date, {class: 'datepicker'} -%>
       </div>
     </div>
     <div class="col s6">
       <div class="input-field">
-         <%= f.input :start_time, as: :string, input_html: {class: 'timepicker'} -%>
+        <%= f.text_field :start_time, {class: 'timepicker'} -%>
        </div>
      </div>
    </div>
@@ -55,12 +56,12 @@
   <div class="row">
     <div class="col s6">
       <div class="input-field">
-        <%= f.input :end_date, as: :string,  input_html: {class: 'datepicker' } -%>
+        <%= f.text_field :end_date, {class: 'datepicker' } -%>
       </div>
     </div>
     <div class="col s6">
       <div class="input-field">
-        <%= f.input :end_time, as: :string,  input_html: {class: 'timepicker' } -%>
+        <%= f.text_field :end_time, {class: 'timepicker' } -%>
       </div>
     </div>
   </div>
@@ -86,9 +87,33 @@
   <div class="row">
     <div class="col s12">
       <div class="input-field">
-      <%= f.button :submit %>
+      <%= f.button :submit, id: 'submit-event' %>
      </div>
     </div>
   </div>
 
 <% end %>
+
+<script type="text/javascript">
+$(document).on('turbolinks:load', function() {
+
+   var errorBorder = '2px solid green';
+
+   $('#event_title').blur(function() {
+    judge.validate(document.getElementById('event_title'), {
+      valid: function(element) {
+        element.style.border = errorBorder;
+        element.style.margin = '5px';
+        $('#submit-event').prop( "disabled", false);
+        $('#title-error-msg').html('');
+      },
+      invalid: function(element, messages) {
+        element.style.border = '2px solid red';
+        $('#submit-event').prop( "disabled", true);
+        $('#title-error-msg').html('title ' + messages);
+       }
+     });
+  });
+
+});
+</script>

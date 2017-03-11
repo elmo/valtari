@@ -4,9 +4,32 @@
   <th id="address" class="<%= sort_arrow_class('address') -%>"><%= link_to 'Address', url_for(params.merge(sort: 'address', sort_direction: @sort_direction) ) -%></th>
   <th id="city" class="<%= sort_arrow_class('city') -%>"><%= link_to 'City', url_for(params.merge(sort: 'city', sort_direction: @sort_direction) ) -%></th>
   <th id="state" class="<%= sort_arrow_class('state') -%>"><%= link_to 'State', url_for(params.merge(sort: 'state', sort_direction: @sort_direction) ) -%></th>
-  <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
 
-  <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+  <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
+  <th id="title" class="<%= sort_arrow_class('title') -%>"><%= link_to 'Title', url_for(params.merge(sort: 'title', sort_direction: @sort_direction) ) -%></th>
+  <th id="first_name" class="<%= sort_arrow_class('first-name') -%>"><%= link_to 'First Name', url_for(params.merge(sort: 'first-name', sort_direction: @sort_direction) ) -%></th>
+  <th id="last_name" class="<%= sort_arrow_class('last-name') -%>"><%= link_to 'Last Name', url_for(params.merge(sort: 'last-name', sort_direction: @sort_direction) ) -%></th>
+  <th id="email" class="<%= sort_arrow_class('email') -%>"><%= link_to 'Email', url_for(params.merge(sort: 'email', sort_direction: @sort_direction) ) -%></th>
+  <th id="website" class="<%= sort_arrow_class('website') -%>"><%= link_to 'Website', url_for(params.merge(sort: 'website', sort_direction: @sort_direction) ) -%></th>
+  <th id="employees" class="<%= sort_arrow_class('employees') -%>"><%= link_to 'Employees', url_for(params.merge(sort: 'employees', sort_direction: @sort_direction) ) -%></th>
+  
+  <th class="<%= sort_arrow_class('updated') -%>">
+    <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>
+      Last Update
+    <% end %>
+  </th>
+
+  <% if params[:show_all].present? and params[:show_all] == 'true' %>
+    <th id="phone" class="<%= sort_arrow_class('company-name') -%>"><%= link_to 'Phone', url_for(params.merge(sort: 'phone', sort_direction: @sort_direction) ) -%></th>
+    <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
+    <th id="description" class="<%= sort_arrow_class('description') -%>"><%= link_to 'Description', url_for(params.merge(sort: 'description', sort_direction: @sort_direction) ) -%></th>
+    <th id="naisc" class="<%= sort_arrow_class('naisc') -%>"><%= link_to 'NAISC', url_for(params.merge(sort: 'naisc', sort_direction: @sort_direction) ) -%></th>
+    <th id="sic" class="<%= sort_arrow_class('sic') -%>"><%= link_to 'SIC', url_for(params.merge(sort: 'sic', sort_direction: @sort_direction) ) -%></th>  
+    <th id="geo_id">Geo</th>
+  <% end -%>
+
+
+   <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
     <th id="division1" class="<%= sort_arrow_class('division1') -%>"><%= link_to 'Division1', url_for(params.merge(sort: 'division1', sort_direction: @sort_direction) ) -%></th>
     <th id="division2" class="<%= sort_arrow_class('division2') -%>"><%= link_to 'Division2', url_for(params.merge(sort: 'division2', sort_direction: @sort_direction) ) -%></th>
     <th id="division3" class="<%= sort_arrow_class('division3') -%>"><%= link_to 'Division3', url_for(params.merge(sort: 'division3', sort_direction: @sort_direction) ) -%></th>
@@ -14,21 +37,4 @@
     <th id="division5" class="<%= sort_arrow_class('division5') -%>"><%= link_to 'Division5', url_for(params.merge(sort: 'division5', sort_direction: @sort_direction) ) -%></th>
   <% end %>
 
-  <th id="country" class="<%= sort_arrow_class('country') -%>"><%= link_to 'Country', url_for(params.merge(sort: 'country', sort_direction: @sort_direction) ) -%></th>
-  <th id="title" class="<%= sort_arrow_class('title') -%>"><%= link_to 'Title', url_for(params.merge(sort: 'title', sort_direction: @sort_direction) ) -%></th>
-  <th id="first_name" class="<%= sort_arrow_class('first-name') -%>"><%= link_to 'First Name', url_for(params.merge(sort: 'first-name', sort_direction: @sort_direction) ) -%></th>
-  <th id="last_name" class="<%= sort_arrow_class('last-name') -%>"><%= link_to 'Last Name', url_for(params.merge(sort: 'last-name', sort_direction: @sort_direction) ) -%></th>
-  <th id="phone" class="<%= sort_arrow_class('company-name') -%>"><%= link_to 'Phone', url_for(params.merge(sort: 'phone', sort_direction: @sort_direction) ) -%></th>
-  <th id="email" class="<%= sort_arrow_class('email') -%>"><%= link_to 'Email', url_for(params.merge(sort: 'email', sort_direction: @sort_direction) ) -%></th>
-  <th id="website" class="<%= sort_arrow_class('website') -%>"><%= link_to 'Website', url_for(params.merge(sort: 'website', sort_direction: @sort_direction) ) -%></th>
-  <th id="employees" class="<%= sort_arrow_class('employees') -%>"><%= link_to 'Employees', url_for(params.merge(sort: 'employees', sort_direction: @sort_direction) ) -%></th>
-  <th id="naisc" class="<%= sort_arrow_class('naisc') -%>"><%= link_to 'NAISC', url_for(params.merge(sort: 'naisc', sort_direction: @sort_direction) ) -%></th>
-  <th id="sic" class="<%= sort_arrow_class('sic') -%>"><%= link_to 'SIC', url_for(params.merge(sort: 'sic', sort_direction: @sort_direction) ) -%></th>
-  <th id="description" class="<%= sort_arrow_class('description') -%>"><%= link_to 'Description', url_for(params.merge(sort: 'description', sort_direction: @sort_direction) ) -%></th>
-  <th id="geo_id">Geo</th>
-  <th class="<%= sort_arrow_class('updated') -%>">
-    <%= link_to url_for(params.merge(sort: 'updated', sort_direction: @sort_direction) ) do %>
-      <i class="material-icons dp48">query_builder</i>
-    <% end %>
-  </th>
 </tr>

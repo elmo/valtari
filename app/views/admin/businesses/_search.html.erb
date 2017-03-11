@@ -59,6 +59,8 @@
      <div class="col s2">
       <%= check_box_tag :show_divisions , 'true',  params[:show_divisions] %>
       <%= label_tag :show_divisions, 'Show divisions' %>
+      <%= check_box_tag :show_all , 'true',  params[:show_all] %>
+      <%= label_tag :show_all, 'Show all columns' %>
     </div>
 
     <div class="col s2"> <%= submit_tag 'Search', class: "btn" %>
@@ -86,9 +88,8 @@
       $.get('/admin/divisions?name=division5&value=' + $("#division5").val() );
     });
     $('#show_divisions').change(function() { $('#business-search').submit(); });
-
    $('.collapsible').collapsible();
-
+    $('#show_all').change(function() { $('#business-search').submit(); });
   });
 </script>
 

@@ -17,4 +17,7 @@
 //= require moment
 //= require underscore
 //= require best_in_place
+//= require underscore
+//= require json2
+//= require judge
 //= require_tree .
