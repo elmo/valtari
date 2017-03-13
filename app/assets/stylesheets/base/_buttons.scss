@@ -134,6 +134,9 @@ a.end-conversation {
     max-width: 31em;
     margin: 0 auto;
     padding: 2.7em 0 0.2em;
+    @media (min-width: 900px){
+       padding: 4vh 0 7vh;
+    }
   .social-buttons{
     /*a:nth-child(1){ background: url('facebook-icon.png') no-repeat #3356a0 }*/
     //a:nth-child(1){ background-image: url('google-icon.png'); background-color: #dd4b39 !important; background-repeat:no-repeat }

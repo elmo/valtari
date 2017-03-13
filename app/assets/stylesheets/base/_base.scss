@@ -14,7 +14,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-size: 14px
+  font-size: 14px;
+  .row{ margin-bottom: 6px }
 }
 
 @media only screen and (min-width: 601px){
@@ -31,14 +32,14 @@ body {
 main {
   flex: 1 0 auto;
   background-image: url('/assets/bridge.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
 }
 
 body footer.page-footer{
   margin-top:0;
-  background: none;
+  background: #155996;
   color: #F1F1F1;
   .footer-copyright{
     background: none;
@@ -49,13 +50,19 @@ body footer.page-footer{
   display: inline-block
 }
 
-.input-field label{
-  left: 0.7rem;
-  font-size: 0.8rem;
-  &.active {
-    transform: translateY(-180%);
-    left: 0;
+.input-field {
+  label{
+    left: 0.7rem;
+    font-size: 0.8rem;
+    &.active {
+      transform: translateY(-180%);
+      left: 0;
+    }
+    &[for=event_photo] {
+      left: 0;
+    }
   }
+  .select-wrapper + label{ left: 0 }
 }
 
 abbr[title] {
