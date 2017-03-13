@@ -16,6 +16,7 @@
       <div class="input-field">
         <%= f.label :location %>
         <%= f.text_field :location, validate: true %>
+        <div class="field-error-msg" id="event-location-error-msg"></div>
       </div>
     </div>
   </div>
@@ -97,18 +98,40 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load', function() {
 
-   var errorBorder = '2px solid green';
+   var successBorder = '1px solid #20b05d';
+   var successShadow = '0 1px 0 0 #20b05d';
+
+   var errorBorder = '1px solid red';
+   var errorShadow = '0 1px 0 0 red';
 
    $('#event_title').blur(function() {
     judge.validate(document.getElementById('event_title'), {
       valid: function(element) {
-        element.style.border = errorBorder;
-        element.style.margin = '5px';
+        element.style.borderBottom = successBorder;
+        element.style.boxShadow = successShadow;
         $('#submit-event').prop( "disabled", false);
         $('#title-error-msg').html('');
       },
       invalid: function(element, messages) {
-        element.style.border = '2px solid red';
+        element.style.borderBottom = errorBorder;
+        element.style.boxShadow = errorShadow;
+        $('#submit-event').prop( "disabled", true);
+        $('#title-error-msg').html('title ' + messages);
+       }
+     });
+  });
+
+  $('#event_location').blur(function() {
+    judge.validate(document.getElementById('event_location'), {
+      valid: function(element) {
+        element.style.borderBottom = successBorder;
+        element.style.boxShadow = successShadow;
+        $('#submit-event').prop( "disabled", false);
+        $('#event-location-error-msg').html('');
+      },
+      invalid: function(element, messages) {
+        element.style.borderBottom = errorBorder;
+        element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
         $('#title-error-msg').html('title ' + messages);
        }

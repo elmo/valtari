@@ -31,14 +31,14 @@ body {
 main {
   flex: 1 0 auto;
   background-image: url('/assets/bridge.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
 }
 
 body footer.page-footer{
   margin-top:0;
-  background: none;
+  background: #155996;
   color: #F1F1F1;
   .footer-copyright{
     background: none;

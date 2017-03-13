@@ -11,7 +11,8 @@
   </head>
 
   <body>
-    <main class="<% if current_user.present? %>logged-in<% end %>">
+    <% if current_user.present? %><main class="logged-in"><% else %><main><% end %>
+    
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
@@ -30,6 +31,7 @@
         </div>
       </div>
     </main>
+    
     <footer class="page-footer light-gray">
       <div class="container">
         <div class="row">
