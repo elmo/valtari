@@ -16,7 +16,7 @@
       <div class="input-field">
         <%= f.label :location %>
         <%= f.text_field :location, validate: true %>
-        <div class="field-error-msg" id="event-location-error-msg"></div>
+        <div class="field-error-msg" id="event-loc-error-msg"></div>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ $(document).on('turbolinks:load', function() {
         element.style.borderBottom = errorBorder;
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
-        $('#title-error-msg').html('title ' + messages);
+        $('#title-error-msg').html('Title ' + messages);
        }
      });
   });
@@ -127,13 +127,13 @@ $(document).on('turbolinks:load', function() {
         element.style.borderBottom = successBorder;
         element.style.boxShadow = successShadow;
         $('#submit-event').prop( "disabled", false);
-        $('#event-location-error-msg').html('');
+        $('#event-loc-error-msg').html('');
       },
       invalid: function(element, messages) {
         element.style.borderBottom = errorBorder;
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
-        $('#title-error-msg').html('title ' + messages);
+        $('#event-loc-error-msg').html('Location ' + messages);
        }
      });
   });
