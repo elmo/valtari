@@ -10,34 +10,35 @@
     <div class="nav-wrapper">
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
         <%= link_to profile_path, class: 'brand-logo' do %><%= image_tag("valtari-x.svg", :alt => "Valtari") %><% end %>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-         <% if current_user.present? %>
+          <% if current_user.present? %>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="messages-nav" href="<%=my_messages_path%>"><i class="ion-email"></i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown"><%= current_user.name %></a></li>
-          <% end %>
-          <%  if current_user.present? and current_user.admin? %>
+            <%  if current_user.present? and current_user.admin? %>
               <li><%= link_to 'Admin', admin_path -%></li>
-          <% end %>
-        </ul>
+            <% end %>
+            </ul>
+         <% end %>
       </div>
     </div>
 
 
-  <ul id="slide-out" class="side-nav">
-    <li>
-      <div class="userView">
-        <li><%= link_to 'Account', edit_user_registration_path %></li>
-      </div>
-    </li>
-    <% if current_user.present? %>
-           <li>  <%= current_user.name %> </p> </li>
-           <li><div class="divider"></div></li>
-           <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete  -%></li>
-         <% else %>
-          <li><%= link_to 'Sign In', new_user_session_path -%></li>
-    <% end %>
-
+  <ul id="slide-out" class="side-nav mobile-nav">
+      <li><%= link_to 'Companies', businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" %>
+        </li>
+      <li><%= link_to 'Campaigns', my_campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" %>
+        </li>
+      <li><%= link_to 'Buysides', buysides_path, class: "#{(controller_name == 'buysides') ? 'active' : '' } nav-item" %>
+        </li>
+      <li><%= link_to 'Events', events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" %>
+        </li>
+      <li><%= link_to 'People', my_followings_path, class: "#{(controller_name == 'people') ? 'active' : '' } nav-item" %>
+        </li>
+      <li><a class="messages-nav" href="<%=my_messages_path%>">Messages</a></li>
+      <li><div class="divider"></div></li>
+      <li><%= link_to 'Account', edit_user_registration_path %></li>
+      <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete -%></li>
   </ul>
 
 
