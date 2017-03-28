@@ -10,7 +10,7 @@
             <p>Users I'm following:</p>
             <ul>
             <% current_user.followed_users.each do |user| %>
-                <li> <%= link_to user.name, user_path(user) -%>
+                <li><%= public_profile_link(user) %>
                  <%= following_user_link(user, remote: false) -%>
                 </li>
             <% end %>
@@ -24,7 +24,7 @@
             <ul>
             <% current_user.following_users.each do |user| %>
                 <li>
-                <%= link_to user.name, user_path(user) -%>
+                <%= public_profile_link(user) %>
                  <%= following_user_link(user, remote: false) -%>
                 </li>
             <% end %>
