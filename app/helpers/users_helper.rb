@@ -24,4 +24,8 @@ module UsersHelper
     end
   end
 
+  def public_profile_link(user)
+    link_to user.name, user_path(user)
+  end
+
 end
