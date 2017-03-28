@@ -1,7 +1,7 @@
 // Place all the styles related to the Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.company-list {
+.company-list, .admin-view {
 	thead tr th{
 		border-left: 1px solid #ececec;
 	    text-align: center;
@@ -13,8 +13,14 @@
 			width: 100%;
 	    }
 	}
+	thead tr th:last-child{
+		border-right: 1px solid #ececec
+	}
 	tr td {
     	border-top: 1px solid rgba(154, 154, 154, 0.1);
+    	white-space: nowrap;
+    	text-overflow: ellipsis;
+    	max-width: 1px;
 	}
 	th{ 
 		position: relative;
