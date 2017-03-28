@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .company-list {
+	thead tr th{
+		border-left: 1px solid #ececec;
+	    text-align: center;
+	    background: #f9f9f9;
+	    border-top: 1px solid #ececec;
+	    padding: 7px 0;
+	    > a {
+			display: inline-block;
+			width: 100%;
+	    }
+	}
 	tr td {
     	border-top: 1px solid rgba(154, 154, 154, 0.1);
 	}
@@ -12,18 +23,24 @@
 		}
 	}
 	th.sorted-up:after{
-	    content: '▲';
-	    font-size: 7px;
+	    content: ' ';
+	    background: url(/assets/up-arrow.svg) no-repeat;
 	    position: absolute;
-	    top: 22px;
-	    padding-left: 3px;
+	    top: 11px;
+	    right: 11px;
+	    background-size: 12px;
+	    width: 14px;
+	    height: 9px;
 	}
 	th.sorted-down:after{
-	    content: '▼';
-	    font-size: 7px;
+	    content: ' ';
+	    background: url(/assets/down-arrow.svg) no-repeat;
 	    position: absolute;
-	    top: 22px;
-	    padding-left: 3px;
+	    top: 11px;
+	    right: 11px;
+	    background-size: 12px;
+	    width: 14px;
+	    height: 9px;
 	}
 /*	#contact{ width: 8em }
 	#phone{ width: 7em }
