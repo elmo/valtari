@@ -1,7 +1,7 @@
 <tr>
     <td><%= link_to campaign.title, my_campaign_path(campaign) %>
         <br />
-        <%= campaign.user.name -%>
+        <%= link_to campaign.user.name, user_path(campaign.user) -%>
         <%= link_to  new_my_message_path(recipient_id: campaign.user.id ) do %>
          <i class="ion-email" data-pack="default" data-tags="box, square, container"></i>
         <% end %>
