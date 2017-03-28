@@ -83,20 +83,21 @@ table.striped {
     } 
 }
 #search {
-	margin: -0.95rem 0 0 0;
-	padding-left: 1.5em;
-	position: absolute;
+	margin: 0.65em 0 0 0;
+	padding: 3px 12px;
+	border: 1px solid #efefef;
+	width: 300px;
+	background-color: white;
 	i.material-icons {
 	    position: absolute;
-	    left: 1px;
-	    top: 8px;
+	    right: 5px;
+	    top: 10px;
 	    color: #dddddd;
 	    font-size: 1.35em
 	}
 	input{
 		padding-left: 0;
 		padding-right: 0;
-		width: 95%;
 		margin:0;
     	font-size: 14px;
 		height: 2rem;

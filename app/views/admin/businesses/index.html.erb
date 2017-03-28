@@ -9,13 +9,6 @@
             <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ), class:'sub-item' -%>
             <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe'), class:'sub-item' -%>
 
-            <div class="sub-item">
-             <div id="search" class="input-field">
-              <input type="text" class="" placeholder="Companies">
-              <i class="material-icons">search</i>
-             </div>
-            </div>
-
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
         </div>
 
