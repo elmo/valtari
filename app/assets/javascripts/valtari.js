@@ -15,8 +15,9 @@ $(document).on('turbolinks:load', function() {
     $('select').material_select();
 
     //Resize columns w/ colResizable-1.5.min.js
-    $(".admin-view").colResizable ({
+    $(".resizable").colResizable ({
     	liveDrag:true,
+        resizeMode: 'fit',
     	'hoverCursor': "col-resize",
     	postbackSafe: true,
     	gripInnerHtml:"<div class='grip'></div>", 
