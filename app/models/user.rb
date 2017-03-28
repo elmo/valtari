@@ -24,6 +24,8 @@ class User < ApplicationRecord
    has_many :events
    has_many :messages
    has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
+   has_many :user_industry_classifications
+   has_many :industry_classifications, through: :user_industry_classifications, class_name: 'IndustryClassification'
 
 
    def followed_users

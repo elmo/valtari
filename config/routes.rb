@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   namespace :my do
+    resource :interests
     resources :buysides
     resources :followings
     resources :businesses do
