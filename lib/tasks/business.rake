@@ -109,6 +109,6 @@ end
   end 
 
   task cleanup_five: :environment do
-    #Business.where("length(postal_code) = 4").update_all(postal_code: "concat('0' || postal_code)")
+    ActiveRecord::Base.connection.execute("update businesses set postal_code = concat('0' || postal_code) where length(postal_code) = 4 ")
   end 
 
