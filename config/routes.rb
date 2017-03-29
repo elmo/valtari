@@ -42,6 +42,9 @@ Rails.application.routes.draw do
    resources :businesses do
      put 'dupe'
      put 'undupe'
+     collection do
+       get 'export'
+     end
    end
    resources :campaigns
    resources :capitals

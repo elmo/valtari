@@ -164,6 +164,15 @@ class Admin::BusinessesController < Admin::AdminController
     end
   end
 
+  def export
+    @businesses = Business.all
+    respond_to do |format|
+      format.csv do
+        send_data @businesses.to_csv, filename: "export-#{Time.zone.now}.csv"
+      end
+    end
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.
