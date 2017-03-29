@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   mount PostgresqlLoStreamer::Engine => 'event_photo', as: 'event_photo'
   mount Judge::Engine => '/judge'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
+  root to: "home#splash"
+  get '/home' => 'home#index', as: :home
   get '/profile' => 'my/dashboard#home', as: :profile
-  get '/sellers' => 'home#sellers', as: :sellers
-  get '/raise_capital' => 'home#raise_capital', as: :raise_capital
-  get '/resources' => 'home#resources', as: :resources
   get '/admin' => 'admin/site#index', as: :admin
-  root to: "home#index"
+  #root to: "home#index" Lease this here
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
