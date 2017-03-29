@@ -35,3 +35,32 @@ a.b-edit-details{
     border-radius: 2px;
     border: 1px solid #e0e0e0;
 }
+
+
+.keep-btn {
+  display: block;
+  margin: 2px;
+  text-transform: none;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  width: 51px;
+  padding: 2px;
+  color: white!important;
+  text-align: center;
+  background: $green-bg;
+}
+
+.dupe-btn {
+  display: block;
+  margin: 2px;
+  text-transform: none;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  width: 51px;
+  padding: 2px;
+  color: white!important;
+  text-align: center;
+  @extend .red, .darken-1;
+}
