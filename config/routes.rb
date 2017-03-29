@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/raise_capital' => 'home#raise_capital', as: :raise_capital
   get '/resources' => 'home#resources', as: :resources
   get '/admin' => 'admin/site#index', as: :admin
-  root to: "my/dashboard#home"
+  root to: "home#index"
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
