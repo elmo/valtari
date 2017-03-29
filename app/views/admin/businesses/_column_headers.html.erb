@@ -19,6 +19,7 @@
     <% end %>
   </th>
 
+
   <% if params[:show_all].present? and params[:show_all] == 'true' %>
     <th id="phone" class="<%= sort_arrow_class('company-name') -%>"><%= link_to 'Phone', url_for(params.merge(sort: 'phone', sort_direction: @sort_direction) ) -%></th>
     <th id="zip" class="<%= sort_arrow_class('zip') -%>"><%= link_to 'Zip', url_for(params.merge(sort: 'zip', sort_direction: @sort_direction) ) -%></th>
