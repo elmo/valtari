@@ -8,6 +8,7 @@
             <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ), class:'sub-item' -%>
             <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe'), class:'sub-item' -%>
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
+           <%= link_to 'export', export_admin_businesses_path(format: :csv) -%>
         </div>
         <ul class="collapsible" data-collapsible="accordion">
          <li>
