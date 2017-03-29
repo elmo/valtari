@@ -164,12 +164,6 @@ span.mm{
   font-weight: 200
 }
 
-@media only screen and (min-width: 993px) {
-  .container.wide {
-    max-width: 95%;
-    width:95%
-  }
-}
 
 mm{ display:block;margin:0;padding:0;border:0;position:relative; 
   .input-field{
@@ -193,6 +187,16 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
     top: 11px;
   }
 }
+
+note-meta {
+  margin-bottom: 1em;
+}
+
+.note {
+  margin: 1em; 
+  padding: 1em; 
+}
+
 
 .calendar-heading li{ display: inline; margin: 0 0 0 3px; color: black; }
 .calendar tr td{ 

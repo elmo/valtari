@@ -1,0 +1,29 @@
+body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 14px;
+  .row{ margin-bottom: 6px }
+}
+
+@media only screen and (min-width: 601px){
+  .container {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 993px){
+  .container {
+    width: 98%;
+  }
+  .container.wide {
+    max-width: 95%;
+    width:95%
+  }
+}
+@media only screen and (min-width: 1250px){
+  .container {
+    width: 90%;
+  }
+}
+
