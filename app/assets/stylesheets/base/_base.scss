@@ -27,21 +27,6 @@ body footer.page-footer{
   display: inline-block
 }
 
-.input-field {
-  label{
-    left: 0.7rem;
-    font-size: 0.8rem;
-    &.active {
-      transform: translateY(-180%);
-      left: 0;
-    }
-    &[for=event_photo] {
-      left: 0;
-    }
-  }
-  .select-wrapper + label{ left: 0 }
-}
-
 abbr[title] {
     border-bottom: none;
 }
@@ -123,7 +108,7 @@ nav ul{
 // Forms 
 .select{
   margin-top: 1rem;
-  margin-right: 0.35em;
+  margin-right: 0.35rem;
 }
 
 body textarea{
@@ -144,7 +129,8 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   border: 1px solid #eaeaea;
   border-radius: 2px;
   padding: 0 0 0 9px;
-  height: 2.6rem;
+  font-size: 0.85rem;
+  height: 2.3rem;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box; 
@@ -155,6 +141,24 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   background: white;
   width: auto 
 }
+
+.input-field {
+  margin-top: 1.5rem;
+  label{
+    left: 0.7rem;
+    font-size: 0.8rem;
+    top: 0.6rem;
+    &.active {
+      transform: translateY(-180%);
+      left: 0;
+    }
+    &[for=event_photo] {
+      left: 0;
+    }
+  }
+  .select-wrapper + label{ left: 0 }
+}
+
 
 //override checkbox placement a tiny bit
 body [type="checkbox"]:checked + label:before{
