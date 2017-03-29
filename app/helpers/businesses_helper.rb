@@ -20,6 +20,17 @@ module BusinessesHelper
     ['ready', 'ok', 'dupe']
   end
 
+  def business_attributes
+    [
+      "company_name", "contact_first_name", "contact_last_name", "contact_title",
+      "phone", "email", "website", "revenue", "number_of_employees", "naics_code",
+      "sic_code", "industry_classification", "description", "address", "city", "state",
+      "country", "postal_code", "status", "created_at", "updated_at", "parent_company",
+      "geo_id", "division1", "division2", "division3", "division4", "division5",
+      "duplication_status", "last_updated_by_id"
+    ]
+  end
+
 
    def with_filters
     [
