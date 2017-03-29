@@ -37,7 +37,11 @@ class CallbacksController < Devise::OmniauthCallbacksController
       @user.save
       set_flash_message(:notice, :success, kind:  "Linkedin") if is_navigational_format?
       sign_in(@user)
-      redirect_to after_sign_up_path_for(@user)
+      if Time.zone.now < (@user.created_at + 10.seconds)
+        redirect_to after_sign_up_path_for(@user) and return false
+      else
+        redirect_to after_sign_in_path_for(@user) and return false
+      end
     else
       session["devise.linkedin_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
