@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
   helper_method :resource_name, :resource, :devise_mapping
 
   def after_sign_in_path_for(resource)
-    return edit_my_interests_path if resource.organization.present? or resource.declined_to_state_organization?
-    edit_user_registration_path
+    businesses_path
+  end
+
+  def after_sign_up_path_for(resource)
+    edit_my_interests_path
   end
 
   def not_found
