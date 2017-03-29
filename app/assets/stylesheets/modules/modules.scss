@@ -1,0 +1,24 @@
+@import "company-list";
+
+body{ 
+	nav.pagination{ background-color: transparent;
+	a { color: #333; font-size: .9rem; }
+	span{ padding: 3px 2px 3px 6px; }
+	.page{ color: #333; margin:0 2px 0 4px; font-size: .9rem; }
+	text-align: center;
+	}
+}
+.geo-list a {
+	display:inline-block;
+    font-size: 10px;
+    font-weight: 200;
+    color: #afafaf;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin: 0 9px 3px 1px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    &:hover{
+    	color: black
+    }
+}

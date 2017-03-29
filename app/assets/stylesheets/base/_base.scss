@@ -1,38 +1,11 @@
 // classes that are used accross multiple pages & modifications to Materialize
 @import "variables";
-@import "buttons";
+@import "overrides";
 @import "typography";
-@import "nouislider";
 @import "profile";
-@import "businesses";
-@import "home";
-@import "designs";
 
 // --------- ENABLES STICKY FOOTER ---------
-body {
-  width: 100%;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  font-size: 14px;
-  .row{ margin-bottom: 6px }
-}
 
-@media only screen and (min-width: 601px){
-  .container {
-    width: 90%;
-  }
-}
-@media only screen and (min-width: 993px){
-  .container {
-    width: 98%;
-  }
-}
-@media only screen and (min-width: 1250px){
-  .container {
-    width: 90%;
-  }
-}
 main {
   flex: 1 0 auto;
   background-image: url('/assets/bridge.jpg');
