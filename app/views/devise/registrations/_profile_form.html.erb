@@ -1,11 +1,29 @@
-<div class="card-title">My Settings</div>
+<div class="card-title">General</div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-    <%= f.input :email  %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :industry %>
-    <%= f.input :headline %>
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <%= f.input :email  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.input :first_name %>
+      </div>
+      <div class="col s6">
+        <%= f.input :last_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.input :industry %>
+      </div>
+      <div class="col s6">
+        <%= f.input :headline %>
+      </div>
+    </div>
+    
     <%= f.input :location %>
     <%= f.input :profile_url %>
     <%= f.button :submit, "Update" %>
