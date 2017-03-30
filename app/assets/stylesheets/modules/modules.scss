@@ -64,3 +64,10 @@ a.b-edit-details{
   text-align: center;
   @extend .red, .darken-1;
 }
+
+.event-photo-container img{
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height:inherit
+}

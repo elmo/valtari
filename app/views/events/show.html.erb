@@ -1,9 +1,22 @@
-<div class="row">
-  <div class="col s8 m8">
-    <h1> <%= @event.title %> </h1>
-    <p><%= event_photo(@event, size: :large) -%></p>
-    <p><%= event_time_and_date(@event) %></p>
-    <p><%= @event.description %></p>
-    <p><%= link_to 'edit', edit_my_event_path(@event) %> | <%= link_to 'my events', my_events_path %></p>
- </div>
+<div class="container">
+  <div class="row">
+    <div class="col s12 l6 offset-l2">
+      <div class="card">
+        <div class="card-content">
+    	  <h5 class="header-five"> <%= @event.title %> </h5>
+    	  <p><%= event_photo(@event, size: :large) -%></p>
+    	  <p><%= event_time_and_date(@event) %></p>
+    	  <p><%= @event.description %></p>
+    	  <br>
+    	  <p>
+    	  	<% if @event.user == current_user %>
+    	  	<%= link_to 'Edit', edit_my_event_path(@event) %> &nbsp;
+    	  	<%= link_to 'My Events', my_events_path(view: 'list') -%>
+    	  	<%= link_to 'Delete', my_event_path(@event),  class:'right-link', method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } -%>
+    	  	<% end %>
+    	  </p>
+    	</div>
+      </div>
+    </div>
+  </div>
 </div>
