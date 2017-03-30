@@ -36,6 +36,18 @@ a.b-edit-details{
     border: 1px solid #e0e0e0;
 }
 
+.field-error-msg{
+  position: absolute;
+  font-size: 11px;
+  bottom: -1px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: .01rem;
+  right: 0px;
+  background: red;
+  padding: 0 5px;
+  z-index: 999;
+}
 
 .keep-btn {
   display: block;
@@ -63,6 +75,10 @@ a.b-edit-details{
   color: white!important;
   text-align: center;
   @extend .red, .darken-1;
+}
+
+#event_photo{
+  margin-bottom:1rem
 }
 
 .event-photo-container img{

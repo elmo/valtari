@@ -58,12 +58,34 @@ form input.btn {
 // collection select - shrink to make same height as input text field
 .select-wrapper input.select-dropdown {
   height: 2.5rem;
+  border-radius: 0;
+  font-size: 0.85rem
 }
 
-.get-started-btn {
-  margin-top: 4%;
-  margin-bottom: 4%;
+.dropdown-content {
+  li > span {
+    font-size: 14px;
+    padding: 10px 16px 9px;
+        color: #0089ec
+
+  }
+  li > a{
+    font-size: 15px;
+  }
+  li:hover{
+    background: #F7F7F7
+  }
+  li:active{
+    background: #F1F1F1
+  }
+  li.active{
+    span{ color: white; background: #0089ec; }
+  }
+  li{
+    min-height: 27px;
+  }
 }
+
 
 // --------- SOCIAL MEDIA ICONS ---------
 .icon-invert {

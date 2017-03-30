@@ -43,29 +43,19 @@
 
   <div class="row">
     <div class="col s6">
-      <div class="input-field">
-        <%= f.text_field :start_date, {class: 'datepicker'} -%>
+      <div class="input-field event_start_date">
+        <%= f.label :start_date %>
+        <%= f.text_field :start_date, validate: true, class: 'datepicker' -%>
+        <div class="field-error-msg" id="event-start-error-msg"></div>
       </div>
     </div>
     <div class="col s6">
-      <div class="input-field">
-        <%= f.text_field :start_time, {class: 'timepicker'} -%>
-       </div>
-     </div>
+      <div class="input-field event_end_date">
+        <%= f.label :end_date %>
+        <%= f.text_field :end_date, validate: true, class: 'datepicker' -%>
+      </div>
+    </div>
    </div>
-
-  <div class="row">
-    <div class="col s6">
-      <div class="input-field">
-        <%= f.text_field :end_date, {class: 'datepicker' } -%>
-      </div>
-    </div>
-    <div class="col s6">
-      <div class="input-field">
-        <%= f.text_field :end_time, {class: 'timepicker' } -%>
-      </div>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col s12">
@@ -88,7 +78,7 @@
   <div class="row">
     <div class="col s12">
       <div class="input-field">
-      <%= f.button :submit, id: 'submit-event' %>
+      <%= f.button :Create, id: 'submit-event', class: 'btn' %>
      </div>
     </div>
   </div>
@@ -134,6 +124,24 @@ $(document).on('turbolinks:load', function() {
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
         $('#event-loc-error-msg').html('Location ' + messages);
+       }
+     });
+  });
+
+  $('button.btn-flat').click(function() {
+    console.log('clicked');
+    judge.validate(document.getElementById('event_start_date'), {
+      valid: function(element) {
+        element.style.borderBottom = successBorder;
+        element.style.boxShadow = successShadow;
+        $('#submit-event').prop( "disabled", false);
+        $('#event-start-error-msg').html(' ');
+      },
+      invalid: function(element, messages) {
+        element.style.borderBottom = errorBorder;
+        element.style.boxShadow = errorShadow;
+        $('#submit-event').prop( "disabled", true);
+        $('#event-start-error-msg').html('Start Date ' + messages);
        }
      });
   });
