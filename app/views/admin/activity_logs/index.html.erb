@@ -1,0 +1,31 @@
+<% ActivityLog.select(:user_id).distinct.collect(&:user_id).each do |uid| %>
+    <% user = User.find(uid) %>
+    <%= user.name -%> (<%= ActivityLog.for_user(user).count -%>)
+<% end %>
+
+<% if @activity_logs.empty? %>
+  <p>There is no activity for your search.
+  </p>
+<% else %>
+    <table>
+      <thead>
+       <th>User</th>
+       <th>Business</th>
+       <th>Action</th>
+       <th>Date</th>
+      </thead>
+      <tbody>
+        <% @activity_logs.each do |al| %>
+          <tr>
+            <td><%= al.user.name %></td>
+            <td><%= al.business.company_name -%></td>
+            <td><%= al.action -%></td>
+            <td><%= al.created_at.strftime(date_and_time_format) -%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p>
+    <%= paginate(@activity_logs) -%>
+    </p>
+<% end %>
