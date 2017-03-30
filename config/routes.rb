@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+   resources :activity_logs, only: [:index]
    resources :divisions, only: [:index]
    resources :businesses do
      put 'dupe'

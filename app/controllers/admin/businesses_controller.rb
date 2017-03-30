@@ -133,7 +133,7 @@ class Admin::BusinessesController < Admin::AdminController
   def update
     respond_to do |format|
      Logidze.with_responsible(current_user.id) do
-        if @business.update(business_params)
+        if @business.update_attributes(business_params)
           format.html { redirect_to admin_business_path(@business), notice: 'Business was successfully updated.' }
           format.json { respond_with_bip(@business) }
         else

@@ -4,6 +4,7 @@ class Business < ApplicationRecord
   belongs_to :geo, optional: true
   before_validation :set_geo
   has_many :notes, as: :notable
+  after_update :log_changes
 
   scope :within_division1, -> (division1) { where(division1: division1) }
   scope :within_division2, -> (division2) { where(division2: division2) }
@@ -141,6 +142,17 @@ class Business < ApplicationRecord
       all.each do |business|
         csv << attributes.map{ |attr| business.send(attr)}
       end
+    end
+  end
+
+  private
+
+  def log_changes
+    if last_updated_by_id.present?
+      action = self.changes
+      action.delete("created_at")
+      action.delete("updated_at")
+      ActivityLog.create(user: User.find(last_updated_by_id) , business: self, action: action )
     end
   end
 
