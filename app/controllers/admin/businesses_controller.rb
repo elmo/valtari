@@ -132,12 +132,14 @@ class Admin::BusinessesController < Admin::AdminController
   # PATCH/PUT /businesses/1.json
   def update
     respond_to do |format|
-      if @business.update(business_params)
-        format.html { redirect_to admin_business_path(@business), notice: 'Business was successfully updated.' }
-        format.json { respond_with_bip(@business) }
-      else
-        format.html { render :edit }
-        format.json { respond_with_bip(@business) }
+     Logidze.with_responsible(current_user.id) do
+        if @business.update(business_params)
+          format.html { redirect_to admin_business_path(@business), notice: 'Business was successfully updated.' }
+          format.json { respond_with_bip(@business) }
+        else
+          format.html { render :edit }
+          format.json { respond_with_bip(@business) }
+        end
       end
     end
   end

@@ -123,6 +123,8 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    logidze (0.5.0)
+      rails (>= 4.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -292,6 +294,7 @@ DEPENDENCIES
   judge
   kaminari!
   listen (~> 3.0.5)
+  logidze
   materialize-sass
   momentjs-rails
   omniauth-facebook
