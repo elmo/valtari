@@ -1,5 +1,6 @@
 require 'csv'
 class Business < ApplicationRecord
+  has_logidze
   belongs_to :geo, optional: true
   before_validation :set_geo
   has_many :notes, as: :notable

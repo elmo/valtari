@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328150625) do
+ActiveRecord::Schema.define(version: 20170330152456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "businesses", force: :cascade do |t|
     t.string   "company_name"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170328150625) do
     t.string   "division5"
     t.string   "duplication_status"
     t.integer  "last_updated_by_id"
+    t.jsonb    "log_data"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
