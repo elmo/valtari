@@ -151,7 +151,10 @@ $(document).on('turbolinks:load', function() {
        selectYears: 10,
        clear: "Cancel",
        close: "Done",
-       today: false
+       today: false,
+       onClose: function() {
+          $('.datepicker').blur();
+       } 
      });
 
     $('.timepicker').pickatime({

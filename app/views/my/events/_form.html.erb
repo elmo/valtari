@@ -87,10 +87,8 @@
 
 <script type="text/javascript">
 $(document).on('turbolinks:load', function() {
-
    var successBorder = '1px solid #20b05d';
    var successShadow = '0 1px 0 0 #20b05d';
-
    var errorBorder = '1px solid red';
    var errorShadow = '0 1px 0 0 red';
 
@@ -128,8 +126,7 @@ $(document).on('turbolinks:load', function() {
      });
   });
 
-  $('button.btn-flat').click(function() {
-    console.log('clicked');
+  $('#event_start_date').blur(function() {
     judge.validate(document.getElementById('event_start_date'), {
       valid: function(element) {
         element.style.borderBottom = successBorder;
