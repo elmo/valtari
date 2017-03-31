@@ -50,18 +50,31 @@
   a.active { background: $blue; color:white }
 }
 .favorite-business{
-  float: left;
-  margin: 1px 7px 0px 0;
-  i{
-    font-size: 13px;
-    opacity: .1;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    &.gold{ opacity: 1 }
+  position: absolute;
+  top:0;
+  left:0;
+  div{
+    font-size: 18px;
+    line-height: 15px;
+    opacity: 0.05;
+    width: 16px;
+    height: 16px;
+    border-top: 18px solid #2ba5e3;
+    border-right: 16px solid transparent;
+    opacity: 0.01;
+    transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -webkit-transition: opacity 1s ease-in-out;
+    &.favorite{ opacity: 1}
+    &.not.favorite{ opacity: 0.01}
+    &:hover{ opacity: 0.18 }
   }
+}
+a.company-name{
+  margin-left: 15px
+}
+.company-list tbody tr:hover{
+   .favorite.not{ opacity: 0.1 }
 }
 
 .sub{
