@@ -13,4 +13,8 @@ module ApplicationHelper
     "%m-%d-%Y"
   end
 
+  def industry_classification_thumbnail_image(industry_classification)
+    image_tag("#{industry_classification.name.downcase.underscore}.jpg")
+  end
+
 end

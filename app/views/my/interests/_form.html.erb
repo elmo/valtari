@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col s12 columns">
       <%= f.collection_check_boxes :industry_classification_ids, IndustryClassification.all, :id, :name do |ic| %>
+      <%= industry_classification_thumbnail_image(ic.object) -%>
       <div class="collection-check-box">
          <%= ic.check_box %>
          <%= ic.label %>
