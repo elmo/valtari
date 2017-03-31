@@ -20,9 +20,11 @@ $(document).on('turbolinks:load', function() {
         resizeMode: 'fit',
     	'hoverCursor': "col-resize",
     	postbackSafe: true,
+        minWidth: 90,
     	gripInnerHtml:"<div class='grip'></div>", 
     	draggingClass:"dragging" 
     });
+
 
 });
 

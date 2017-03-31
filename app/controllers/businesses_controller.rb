@@ -39,7 +39,7 @@ class BusinessesController < ApplicationController
     scope = scope.within_division4( params[:division4] ) if params[:division4].present?
     scope = scope.within_division5( params[:division5] ) if params[:division5].present?
 
-    @businesses = scope.page(params[:page]).order(ordering).per(10)
+    @businesses = scope.page(params[:page]).order(ordering).per(50)
   end
 
   # GET /businesses/1
