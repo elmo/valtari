@@ -10,7 +10,7 @@
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
            <%= link_to 'Export CSV', export_admin_businesses_path(format: :csv), class: 'right-link' -%>
         </div>
-       
+
        <!-- here's the businesses -->
         <ul class="collapsible" data-collapsible="accordion">
          <li>
@@ -22,7 +22,7 @@
               </div>
           </li>
         </ul>
-        
+
        <%= render partial: '/admin/businesses/search'-%>
             <table class="admin-view resizable">
               <thead>
@@ -56,20 +56,12 @@
                     <td><%= best_in_place business, :email, url: admin_business_path(business), inner_class: 'input-small', place_holder:'edit edit' %></td>
                     <td><%= best_in_place business, :website, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit edit'  %></td>
                     <td><%= best_in_place business, :number_of_employees, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
-                    <td id="when">
-                      <%= business.updated_at.strftime("%m/%d/%y") -%>
-                      <%= link_to admin_business_path(business), class: 'b-edit-details' do %> <i class="ion-edit"></i>
-                      <% end %>
-                    </td>
-                    <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+                    <% if params[:show_all].present? and params[:show_all] == 'true' %>
                       <td><%= best_in_place business, :division1, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :division2, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :division3, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :division4, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :division5, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
-                    <% end %>
-
-                    <% if params[:show_all].present? and params[:show_all] == 'true' %>
                       <td><%= best_in_place business, :phone, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :postal_code, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= best_in_place business, :description, url: admin_business_path(business), inner_class: 'input-small', place_holder: 'edit'  %></td>
@@ -77,7 +69,13 @@
                       <td><%= best_in_place business, :sic_code, url: admin_business_path(business),inner_class: 'input-small', place_holder: 'edit'  %></td>
                       <td><%= link_to business.geo_id, admin_geo_path(business.geo_id) if business.geo_id.present? %></td>
                     <% end -%>
-                    
+
+                    <td id="when">
+                      <%= business.updated_at.strftime("%m/%d/%y") -%>
+                      <%= link_to admin_business_path(business), class: 'b-edit-details' do %> <i class="ion-edit"></i>
+                      <% end %>
+                    </td>
+
                   </tr>
                 <% end %>
               </tbody>
