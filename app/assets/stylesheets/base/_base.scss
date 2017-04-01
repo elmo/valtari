@@ -8,7 +8,7 @@
 
 main {
   flex: 1 0 auto;
-  background-image: url('/assets/bridge.jpg');
+  background-image: asset_url('/assets/bridge.jpg');
   background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
