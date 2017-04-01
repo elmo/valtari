@@ -13,7 +13,7 @@
       </div>
      </div>
     </li>
-  </ul>
+ </ul>
 
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -45,8 +45,15 @@
   <% end %>
   </li>
   </div>
-
   </ul>
+
+    <div class="row">
+     <div id="admin-geo-divisions">
+       <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+         <%= render partial: 'admin/businesses/geo_divisions' -%>
+       <% end %>
+     </div>
+    </div>
 
    <div class="row">
      <div class="col s2">
@@ -56,18 +63,11 @@
     </div>
 
     <div class="col s2"> <%= submit_tag 'Search', class: "btn" %>
-        <%= link_to 'clear', admin_businesses_path(show_divisions: params[:show_divisions]) -%>
+        <%= link_to 'clear all search criteria', admin_businesses_path(show_divisions: params[:show_divisions]) -%>
     </div>
 
   </div>
 
-    <div class="row">
-     <div id="admin-geo-divisions">
-       <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
-         <%= render partial: 'admin/businesses/geo_divisions' -%>
-       <% end %>
-     </div>
-    </div>
 
 <% end %>
 

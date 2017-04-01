@@ -11,20 +11,9 @@
            <%= link_to 'Export CSV', export_admin_businesses_path(format: :csv), class: 'right-link' -%>
         </div>
 
-       <!-- here's the businesses -->
-        <ul class="collapsible" data-collapsible="accordion">
-         <li>
-           <div class="collapsible-header"><%= page_entries_info(@businesses) %></div>
-              <div class='collapsible-body'>
-                <% all_business_scopes.each do |s| %>
-                   <%= link_to "#{s.to_s.humanize} (#{Business.send(s).count})", admin_businesses_path + "?#{s}=true" -%><br />
-                <% end %>
-              </div>
-          </li>
-        </ul>
-
-       <%= render partial: '/admin/businesses/search'-%>
-            <table class="admin-view resizable">
+        <%= render partial: '/admin/businesses/scopes'-%>
+        <%= render partial: '/admin/businesses/search'-%>
+          <table class="admin-view resizable">
               <thead>
                 <%= render partial: 'column_headers' %>
               </thead>
