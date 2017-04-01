@@ -15,13 +15,6 @@
     </li>
   </ul>
 
-  <div class="row">
-     <div id="admin-geo-divisions">
-       <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
-         <%= render partial: 'admin/businesses/geo_divisions' -%>
-       <% end %>
-     </div>
-  </div>
 
 <ul class="collapsible" data-collapsible="accordion">
   <li>
@@ -57,8 +50,7 @@
 
    <div class="row">
      <div class="col s2">
-      <%= check_box_tag :show_divisions , 'true',  params[:show_divisions] %>
-      <%= label_tag :show_divisions, 'Show divisions' %>
+      <%= hidden_field :show_divisions , 'true' %>
       <%= check_box_tag :show_all , 'true',  params[:show_all] %>
       <%= label_tag :show_all, 'Show all columns' %>
     </div>
@@ -68,6 +60,15 @@
     </div>
 
   </div>
+
+    <div class="row">
+     <div id="admin-geo-divisions">
+       <% if params[:show_divisions].present? and params[:show_divisions] == 'true' %>
+         <%= render partial: 'admin/businesses/geo_divisions' -%>
+       <% end %>
+     </div>
+    </div>
+
 <% end %>
 
 <script>

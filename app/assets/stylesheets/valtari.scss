@@ -7,7 +7,7 @@
     color: #d0d8e8;
 }
 
-.side-bar {
+.side-bar, .user-nav {
   padding-top: .7em;
   padding-right: 10px;
   @media only screen and (max-width: 993px) {
@@ -62,9 +62,9 @@
     border-top: 18px solid #2ba5e3;
     border-right: 16px solid transparent;
     opacity: 0.01;
-    transition: opacity 1s ease-in-out;
-   -moz-transition: opacity 1s ease-in-out;
-   -webkit-transition: opacity 1s ease-in-out;
+    transition: opacity .6s ease-in-out;
+   -moz-transition: opacity .6s ease-in-out;
+   -webkit-transition: opacity .6s ease-in-out;
     &.favorite{ opacity: 1}
     &.not.favorite{ opacity: 0.01}
     &:hover{ opacity: 0.18 }

@@ -3,7 +3,7 @@
     <div class="col s12 l6 offset-l2">
       <div class="card">
         <div class="card-content">
-    	  <h5 class="header-five"> <%= @event.title %> </h5>
+    	  <div class="card-title"> <%= @event.title %> </div>
     	  <p><%= event_photo(@event, size: :large) -%></p>
     	  <p><%= event_time_and_date(@event) %></p>
     	  <p><%= @event.description %></p>

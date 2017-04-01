@@ -3,7 +3,7 @@
     <div class="col s12 l6 offset-l2">
       <div class="card">
         <div class="card-content">
-          <h5 class="header-five">Events</h5>
+          <div class="card-title">Events</div>
             <ul>
               <% @events.each do |event| %>
               <li>
@@ -17,5 +17,8 @@
             </ul>
                 <p><%= link_to 'calendar view', my_events_path -%></p>
     <p><%= link_to 'new event', new_my_event_path -%></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

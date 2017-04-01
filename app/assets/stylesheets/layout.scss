@@ -15,10 +15,13 @@ body {
 @media only screen and (min-width: 993px){
   .container {
     width: 98%;
-  }
-  .container.wide {
-    max-width: 95%;
-    width:95%
+    &.wide {
+      max-width: 95%;
+      width:95%
+    }
+    &.full{
+      width:100%; max-width: 100%;
+    }
   }
 }
 @media only screen and (min-width: 1250px){

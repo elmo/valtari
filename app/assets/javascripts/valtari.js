@@ -20,11 +20,18 @@ $(document).on('turbolinks:load', function() {
         resizeMode: 'fit',
     	'hoverCursor': "col-resize",
     	postbackSafe: true,
-        minWidth: 90,
+        minWidth: 60,
     	gripInnerHtml:"<div class='grip'></div>", 
     	draggingClass:"dragging" 
     });
 
+    //Get rid of red border
+    $('.input-field input').keypress(function(e) {
+        
+        $(this).css('border-bottom','1px solid #20b05d');
+        $(this).css('box-shadow','0 1px 0 0 #20b05d');
+        $(this).next('.field-error-msg').fadeOut();
+    })
 
 });
 

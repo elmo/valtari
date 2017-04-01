@@ -11,7 +11,13 @@
 <nav>
     <div class="nav-wrapper">
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
-        <%= link_to profile_path, class: 'brand-logo' do %><%= image_tag("valtari-x.svg", :alt => "Valtari") %><% end %>
+        <%= link_to profile_path, class: 'brand-logo' do %>
+          <% if current_user.present? && current_user.admin? %>
+              <%= image_tag("valtari-x.svg", :alt => "Valtari Exchange") %>
+            <% else %>
+              <%= image_tag("valtari-x-whit.svg", :alt => "Valtari Exchange") %>
+          <% end %>
+        <% end %>
           <% if current_user.present? %>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -24,7 +30,6 @@
          <% end %>
       </div>
     </div>
-
 
   <ul id="slide-out" class="side-nav mobile-nav">
       <li><%= link_to 'Companies', businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" %>
@@ -42,9 +47,7 @@
       <li><%= link_to 'Account', edit_user_registration_path %></li>
       <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete -%></li>
   </ul>
-
-
-  </nav>
+</nav>
 
 <script type="text/javascript">
 
