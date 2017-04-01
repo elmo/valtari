@@ -7,6 +7,9 @@ class Business < ApplicationRecord
   has_many :verifications
   after_update :log_changes
 
+  VERIFICATION_STATUS_COMPLETE = 'complete'
+  VERIFICATION_STATUS_REQUESTED = 'requested'
+
   scope :within_division1, -> (division1) { where(division1: division1) }
   scope :within_division2, -> (division2) { where(division2: division2) }
   scope :within_division3, -> (division3) { where(division3: division3) }
@@ -153,6 +156,22 @@ class Business < ApplicationRecord
 
   def recently_verified?
     Time.zone.now < (last_verified  + 2.weeks)
+  end
+
+  def verification_status_complete!
+    update_attributes(verification_status: VERIFICATION_STATUS_COMPLETE)
+  end
+
+  def verification_status_complete?
+    verification_status == VERIFICATION_STATUS_COMPLETE
+  end
+
+  def verification_status_requested!
+    update_attributes(verification_status: VERIFICATION_STATUS_REQUESTED)
+  end
+
+  def verification_status_reqeusted?
+    verification_status == VERIFICATION_STATUS_REQUESTED
   end
 
   private
