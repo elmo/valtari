@@ -1,9 +1,12 @@
 <%= simple_form_for(@user, url: my_interests_path, method: :put ) do |f| %>
   <%= f.error_notification %>
-  <div class="row">
+  <div class="interests">
     <div class="col s12 columns">
       <%= f.collection_check_boxes :industry_classification_ids, IndustryClassification.all, :id, :name do |ic| %>
-      <%= industry_classification_thumbnail_image(ic.object) -%>
+      
+        <div class="center-cropped"><%= industry_classification_thumbnail_image(ic.object) -%>
+        </div>
+      
       <div class="collection-check-box">
          <%= ic.check_box %>
          <%= ic.label %>
