@@ -25,7 +25,7 @@
               </thead>
               <tbody>
                 <% @businesses.each do |business| %>
-                  <tr>
+                    <tr class="<%= (business.verification_status_reqeusted?) ? 'is-pending' : ''  -%>  <%= (business.verification_status_complete? ) ? 'is-verified' : ''  -%> " >
                     <td>
                     <div id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business)-%></div>
                     <%= link_to business.company_name, business_path(business), class:'company-name' %>
