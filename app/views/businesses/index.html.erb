@@ -34,6 +34,7 @@
                     <%= form_for([:my, business, Verification.new] ) do |f| %>
                        <%= f.submit 'Request Verification!' -%>
                     <% end %>
+                    <%= business.verification_status -%>
                     </td>
                     <td><%= business.contact_first_name %> <%= business.contact_last_name %></td>
                     <td><%= business.phone %></td>

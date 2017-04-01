@@ -33,6 +33,7 @@ class Verification < ApplicationRecord
 
   def status_new!
      update(status: STATUS_NEW)
+     business.verification_status_requested!
   end
 
   def status_new?
@@ -53,6 +54,7 @@ class Verification < ApplicationRecord
 
   def completed_by!(user: user)
     update_attributes(status: STATUS_COMPLETE, completed_by_user_id: user.id)
+    business.verification_status_complete!
   end
 
   def status_complete?

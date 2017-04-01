@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401190337) do
+ActiveRecord::Schema.define(version: 20170401210549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170401190337) do
     t.jsonb    "log_data"
     t.integer  "last_verified_by"
     t.datetime "last_verified"
+    t.string   "verification_status"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170401190337) do
     t.index ["sic_code"], name: "index_businesses_on_sic_code", using: :btree
     t.index ["state"], name: "index_businesses_on_state", using: :btree
     t.index ["status"], name: "index_businesses_on_status", using: :btree
+    t.index ["verification_status"], name: "index_businesses_on_verification_status", using: :btree
   end
 
   create_table "buyside_industry_classifications", force: :cascade do |t|
