@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 l8 offset-l2">
+      <div class="card">
+        <div class="card-content">
+          <% if @verifications.empty? %>
+            <p>There is no activity for your search.
+            </p>
+          <% else %>
+              <table>
+                <thead>
+                 <th>Requested by</th>
+                 <th>Business</th>
+                 <th>Status</th>
+                 <th>Assigned to</th>
+                 <th>Date</th>
+                 <th>Edit</th>
+                </thead>
+                <tbody>
+                  <% @verifications.each do |verification| %>
+                    <tr>
+                      <td><%= verification.user.name %></td>
+                      <td><%= verification.business.company_name -%></td>
+                      <td><%= verification.status -%></td>
+                      <td><%= verification.try(:assigned_user).try(:name) -%></td>
+                      <td><%= verification.created_at.strftime(date_and_time_format) -%></td>
+                      <td><%= link_to 'edit', edit_admin_verification_path(verification) -%></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <p>
+              <%= paginate(@verifications) -%>
+              </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

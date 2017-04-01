@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/home' => 'home#index', as: :home
   get '/profile' => 'my/dashboard#home', as: :profile
   get '/admin' => 'admin/site#index', as: :admin
-  #root to: "home#index" Lease this here
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
     resources :businesses do
       resources :notes
       resources :user_businesses
+      resources :verifications
     end
     resources :events
     resources :campaigns
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :activity_logs, only: [:index]
    resources :divisions, only: [:index]
+   resources :verifications
    resources :businesses do
      put 'dupe'
      put 'undupe'

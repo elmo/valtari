@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330162445) do
+ActiveRecord::Schema.define(version: 20170401152851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170330162445) do
     t.string   "duplication_status"
     t.integer  "last_updated_by_id"
     t.jsonb    "log_data"
+    t.integer  "last_verified_by"
+    t.datetime "last_verified"
     t.index ["city"], name: "index_businesses_on_city", using: :btree
     t.index ["company_name"], name: "index_businesses_on_company_name", using: :btree
     t.index ["contact_last_name"], name: "index_businesses_on_contact_last_name", using: :btree
@@ -362,6 +364,19 @@ ActiveRecord::Schema.define(version: 20170330162445) do
     t.integer "user_id"
     t.integer "role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+  end
+
+  create_table "verifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "assigned_to_user_id"
+    t.integer  "business_id"
+    t.string   "status"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["assigned_to_user_id"], name: "index_verifications_on_assigned_to_user_id", using: :btree
+    t.index ["business_id"], name: "index_verifications_on_business_id", using: :btree
+    t.index ["status"], name: "index_verifications_on_status", using: :btree
+    t.index ["user_id"], name: "index_verifications_on_user_id", using: :btree
   end
 
   add_foreign_key "messages", "users"

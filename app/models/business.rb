@@ -4,6 +4,7 @@ class Business < ApplicationRecord
   belongs_to :geo, optional: true
   before_validation :set_geo
   has_many :notes, as: :notable
+  has_many :verifications
   after_update :log_changes
 
   scope :within_division1, -> (division1) { where(division1: division1) }
@@ -62,6 +63,11 @@ class Business < ApplicationRecord
   scope :without_division4, -> { where("division4 is null or division4 = '' " ) }
   scope :without_division5, -> { where("division5 is null or division5 = '' " ) }
   scope :without_duplication_status, -> { where("duplication_status is null or duplication_status = '' " ) }
+
+  scope :recently_verified, -> (date) { where([ "last_verified < ? ", date + 2.weeks ] ) }
+  scope :verified, -> { where.not( last_verified: nil) }
+  scope :unverified, -> { where( last_verified: nil) }
+  scope :assigned, -> (date) { where( last_verified: nil) }
 
   belongs_to :last_updated_by_user, class_name: 'User', foreign_key: :last_updated_by_id, optional: true
 
@@ -143,6 +149,10 @@ class Business < ApplicationRecord
         csv << attributes.map{ |attr| business.send(attr)}
       end
     end
+  end
+
+  def recently_verified?
+    Time.zone.now < (last_verified  + 2.weeks)
   end
 
   private
