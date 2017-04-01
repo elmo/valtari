@@ -5,19 +5,25 @@ body {
   flex-direction: column;
   font-size: 14px;
   .row{ margin-bottom: 6px }
+  .user-nav.wide{ display: none }
 }
 
 @media only screen and (min-width: 601px){
+  body{
   .container {
     width: 90%;
+  }
+  .user-nav.wide{
+    display: block
+  }
   }
 }
 @media only screen and (min-width: 993px){
   .container {
     width: 98%;
     &.wide {
-      max-width: 95%;
-      width:95%
+      max-width: 98.1%;
+      width: 98.1%;
     }
     &.full{
       width:100%; max-width: 100%;

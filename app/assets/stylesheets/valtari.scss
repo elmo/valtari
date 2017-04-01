@@ -7,30 +7,43 @@
     color: #d0d8e8;
 }
 
-.side-bar, .user-nav {
-  padding-top: .7em;
-  padding-right: 10px;
-  @media only screen and (max-width: 993px) {
-    display: none
-  }
-  font-size: .9em;
-  a { color: #888; font-weight: 400; }
-  i { margin-right: 8px; font-size: .85em; &:before{ width:15px } }
+.side-bar nav .nav-wrapper, .user-nav nav .nav-wrapper  {
+
   .nav-item{
-    display: block;
-    padding: 8px 7px 6px 14px;
-    font-size: 1.12em;
-    border:1px solid transparent;
+    display: inline-block;
+    width: 150px;
+    margin-right: -4px;
+    padding: 9px 3px 9px 3px;
+    line-height: 20px;
+    background: white;
+    text-align: center;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
     &.active {
-      background: white;
-      color: #000!important;    
-      font-weight: 400;
-      border: 1px solid #EFEFEF;
+      background: #22206b;
+      color: #FFF!important;    
+      font-weight: 500;
+      &:hover{ background: #22206b }
     }
     &:hover {
-      color: #000;
+      color: #FFF;
+      background: #323f84;
     }
   }
+
+  a { color: #22206b; font-weight: 400; }
+  i { 
+    height: 20px; 
+    font-size: .85em; 
+    display: inline-block;
+    line-height: 22px;
+    margin-right: 8px;
+    margin-left: -18px;
+    &:before{ 
+      width:15px 
+    } 
+  }
+
   li {
     list-style: none;
     line-height: 14px;
@@ -39,6 +52,12 @@
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
   }
+
+  @media only screen and (max-width: 993px) {
+    display: none
+  }
+  font-size: .9em;
+
 }
 
 .messages-nav i{
@@ -59,8 +78,8 @@
     opacity: 0.05;
     width: 16px;
     height: 16px;
-    border-top: 18px solid #2ba5e3;
-    border-right: 16px solid transparent;
+    border-top: 12px solid #fa1405;
+    border-right: 15px solid transparent;
     opacity: 0.01;
     transition: opacity .6s ease-in-out;
    -moz-transition: opacity .6s ease-in-out;
@@ -169,7 +188,7 @@ span.mm{
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
-    line-height:60px
+    line-height: 60px
   }
 }
 .column-entry{
