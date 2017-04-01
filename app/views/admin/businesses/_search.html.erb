@@ -1,51 +1,48 @@
-<%= form_tag admin_businesses_path, id: "business-search" , class: 'search-bar', role: 'search',  method: :get do %>
+  <%= form_tag admin_businesses_path, id: "business-search" , class: 'search-bar', role: 'search',  method: :get do %>
 
-  <ul class="collapsible" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header <%= business_search_active %>">Search Fields</div>
-       <div class='collapsible-body'>
-         <div class="row">
-         <div class="col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Company Name" %> </div>
-         <div class="col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
-         <div class="col s1"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
-         <div class="col s2"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %></div>
-        <div class="col s2"> <%= text_field_tag :country, params[:country], type: "search", placeholder: "Country" %> </div>
+    <div class="row">
+       <div class="sub-item col s2"> <%= text_field_tag :company_name, params[:company_name], type: "search", placeholder: "Search Company Name" %> </div>
+       <div class="sub-item col s2"> <%= text_field_tag :city, params[:city], type: "search", placeholder: "City" %> </div>
+       <div class="sub-item col s1"> <%= text_field_tag :state, params[:state], type: "search", placeholder: "State" %> </div>
+       <div class="sub-item col s1"> <%= text_field_tag :postal_code, params[:postal_code], type: "search", placeholder: "Postal Code" %></div>
+       <%= submit_tag 'Search', class: "btn sub-item" %>
+       <%= link_to 'Clear', admin_businesses_path(show_divisions: params[:show_divisions]), class: 'btn clear sub-item' -%>
+       <div class="sub-item right">
+        <%= hidden_field :show_divisions , 'true' %>
+        <%= check_box_tag :show_all , 'true',  params[:show_all] %>
+        <%= label_tag :show_all, 'Show all columns' %>
+       </div>
+       <div class="sub-item right">
+         <a class="dropdown-button sub-item" href="#!" data-activates="dropdown-filters">Filters<i class="material-icons right">arrow_drop_down</i></a>
+          <ul id="dropdown-filters" class="dropdown-content">
+            <h4>Containing</h4>
+              <% with_filters.in_groups_of(6).each do |group| -%>
+                <div class="row">
+                  <% group.compact.each do |filter| %>
+                    <div class="col s2">
+                      <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+                      <%= label_tag filter, filter.to_s.humanize.gsub(/With /, '') -%>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+
+          <h4>Missing</h4>
+           <% without_filters.in_groups_of(6).each do |group| -%>
+              <div class="row">
+                <% group.compact.each do |filter| %>
+                  <div class="col s2">
+                    <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+                    <%= label_tag filter, filter.to_s.humanize.gsub(/Without /, '') -%>
+                  </div>
+                <% end %>
+              </div>
+          <% end %>
+          
+        </ul>
       </div>
-     </div>
-    </li>
- </ul>
 
-
-<ul class="collapsible" data-collapsible="accordion">
-  <li>
-  <div class="collapsible-header <%= advanced_search_active %>">Advanced Search</div>
-    <div class='collapsible-body'>
-  <h4>Containing</h4>
-    <% with_filters.in_groups_of(6).each do |group| -%>
-      <div class="row">
-        <% group.compact.each do |filter| %>
-          <div class="col s2">
-            <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
-            <%= label_tag filter, filter.to_s.humanize.gsub(/With /, '') -%>
-          </div>
-        <% end %>
-      </div>
-  <% end %>
-
-  <h4>Missing</h4>
-   <% without_filters.in_groups_of(6).each do |group| -%>
-      <div class="row">
-        <% group.compact.each do |filter| %>
-          <div class="col s2">
-            <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
-            <%= label_tag filter, filter.to_s.humanize.gsub(/Without /, '') -%>
-          </div>
-        <% end %>
-      </div>
-  <% end %>
-  </li>
-  </div>
-  </ul>
+    </div>
 
     <div class="row">
      <div id="admin-geo-divisions">
@@ -54,20 +51,6 @@
        <% end %>
      </div>
     </div>
-
-   <div class="row">
-     <div class="col s2">
-      <%= hidden_field :show_divisions , 'true' %>
-      <%= check_box_tag :show_all , 'true',  params[:show_all] %>
-      <%= label_tag :show_all, 'Show all columns' %>
-    </div>
-
-    <div class="col s2"> <%= submit_tag 'Search', class: "btn" %>
-        <%= link_to 'clear all search criteria', admin_businesses_path(show_divisions: params[:show_divisions]) -%>
-    </div>
-
-  </div>
-
 
 <% end %>
 

@@ -7,12 +7,18 @@
             <%= link_to "Ready (#{Business.ready.count})" , admin_businesses_path(duplication_status: 'ready'), class:'sub-item' -%>
             <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ), class:'sub-item' -%>
             <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe'), class:'sub-item' -%>
+            <a class="dropdown-button sub-item" href="#!" data-activates="dropdown-scopes">Totals<i class="material-icons right">arrow_drop_down</i></a>
+              <ul id="dropdown-scopes" class="dropdown-content">
+                <%= render partial: '/admin/businesses/scopes'-%>
+              </ul>
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
            <%= link_to 'Export CSV', export_admin_businesses_path(format: :csv), class: 'right-link' -%>
         </div>
 
-        <%= render partial: '/admin/businesses/scopes'-%>
-        <%= render partial: '/admin/businesses/search'-%>
+        <div class="sub taller">
+          <%= render partial: '/admin/businesses/search'-%>
+        </div>
+        
           <table class="admin-view resizable">
               <thead>
                 <%= render partial: 'column_headers' %>
