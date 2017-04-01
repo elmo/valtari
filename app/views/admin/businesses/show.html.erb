@@ -31,15 +31,17 @@
          </div>
          <div class="col s6">
             <h2>Change History</h2>
-            <% @business.log_data.versions.reverse.each_with_index do |version,i| -%>
-              <p>
-              Version:<%= version.data["v"]%>
-              <% version.data["c"].each do |k,v| %>
+            <% if @business.log_data.present? %>
+              <% @business.log_data.versions.reverse.each_with_index do |version,i| -%>
+                <p>
+                Version:<%= version.data["v"]%>
+                <% version.data["c"].each do |k,v| %>
                   <%= k %> : <%= v -%> <br />
+                <% end %>
+                Changed by: <%= User.find(version.data["r"]).first_name %>
+                </p>
               <% end %>
-              Changed by: <%= User.find(version.data["r"]).first_name %>
-              </p>
-            <% end %>
+           <% end %>
          </div>
 
        </div>
