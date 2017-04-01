@@ -16,19 +16,31 @@ body{
   background-color: transparent;
 	}
 }
-.geo-list a {
-  display:inline-block;
-  font-size: 10px;
-  font-weight: 200;
-  color: #afafaf;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  margin: 0 9px 3px 1px;
-  padding: 2px 4px;
-  border-radius: 3px;
+.geo-list{
+  margin: 2px 0 9px;
+  div{ margin: 0 }
+   a {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: .25px;
+    margin: 0 9px 1px 1px;
+    color: #438cb9;
+    padding: 2px 4px 1px;
     &:hover{
     	color: black
     }
+    &.active{
+      color: white;
+      background: #8ed0f9;
+      &.third{
+        background: #6ea7d9
+      }
+      &.fourth{
+        background: #3a7ebb
+      }
+    }
+  }
 }
 
 a.b-edit-details{

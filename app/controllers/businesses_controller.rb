@@ -7,6 +7,7 @@ class BusinessesController < ApplicationController
   # GET /businesses.json
   def index
     scope = Business
+    params[:division1] = 'United States and Canada'
     q = params[:q]
     ordering = { created_at: :asc }
     current_sort_direction = params[:sort_direction] || 'desc'
