@@ -6,16 +6,16 @@
         <div class="card-title">Events <%= link_to 'New Event', new_admin_event_path, class:'right-link' -%></div>
         <table>
         <tr>
-          <th>Date</th>
           <th>Title</th>
+          <th>Date</th>
           <th>Location</th>
           <th>Description</th>
           <th></th>
         </tr>
       <% @events.each do |event| %>
         <tr>
-          <td><%= event.start_date.strftime("%B %d, %Y") -%></td>
           <td><%= link_to event.title, admin_event_path(event) %></td>
+          <td><%= event.try(:start_date).try(:strftime,"%B %d, %Y") -%></td>
           <td><%= event.location -%></td>
           <td><%= event.description -%></td>
           <td>

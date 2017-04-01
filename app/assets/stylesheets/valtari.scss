@@ -288,11 +288,15 @@ a.back-btn {
 label[for="event_photo"] {
     top: -7px;
 }
+a.link, a.right-link{
+  color: #039be5
+}
 
 .right-link{
     float: right;
     margin: 1px 15px 0 0;
-    font-size: 14px
+    font-size: 14px;
+
 }
 
 //Admin nav
