@@ -10,6 +10,8 @@
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
            <%= link_to 'Export CSV', export_admin_businesses_path(format: :csv), class: 'right-link' -%>
         </div>
+       
+       <!-- here's the businesses -->
         <ul class="collapsible" data-collapsible="accordion">
          <li>
            <div class="collapsible-header"><%= page_entries_info(@businesses) %></div>
@@ -20,6 +22,7 @@
               </div>
           </li>
         </ul>
+        
        <%= render partial: '/admin/businesses/search'-%>
             <table class="admin-view resizable">
               <thead>

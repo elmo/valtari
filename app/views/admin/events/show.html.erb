@@ -3,7 +3,7 @@
     <div class="col s12 l6 offset-l3">
       <div class="card">
         <div class="card-content">
-          <h5 class="header-five"><%= @event.title %> <%= link_to 'Edit', edit_admin_event_path(@event), class: 'right-link' %></h5>
+          <div class="card-title"><%= @event.title %> <%= link_to 'Edit', edit_admin_event_path(@event), class: 'right-link' %></div>
             <p><%= event_photo(@event) %></p>
             <p><%= event_time_and_date(@event) %></p>
             <p><%= @event.description %></p>

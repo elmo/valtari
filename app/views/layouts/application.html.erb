@@ -11,21 +11,25 @@
   </head>
 
   <body>
-    <% if current_user.present? %><main class="logged-in"><% else %><main><% end %>
-    
+    <% if current_user.present? %>
+      <main class="logged-in">
+      <% else %><main>
+    <% end %>
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
         <div class="row">
           <% if controller_name != 'sessions' %>
-            <div class="col l2 s12">
-              <div class="side-bar">
-                <%= render partial: '/home/side_bar' if current_user.present? -%>
-                <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
-              </div>
+            <div class="container wide user-nav">
+              <nav>
+                <div class="nav-wrapper">
+                  <%= render partial: '/home/side_bar' if current_user.present? -%>
+                  <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
+                </div>
+              </nav>
             </div>
           <% end %>
-          <div class="col <%= (controller_name == 'sessions') ? '' : 'l10' -%> s12">
+          <div class="col <%= (controller_name == 'sessions') ? '' : '' -%> s12">
             <%= yield %>
           </div>
         </div>
@@ -44,7 +48,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-        Valtari Exchange
+        Valtari OÜ Exchange 
         <br><br><br>
         <a class="grey-text text-lighten-4 right" href="#!"></a>
         <br><br>

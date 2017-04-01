@@ -53,6 +53,7 @@
       <div class="input-field event_end_date">
         <%= f.label :end_date %>
         <%= f.text_field :end_date, validate: true, class: 'datepicker' -%>
+        <div class="field-error-msg" id="event-end-error-msg"></div>
       </div>
     </div>
    </div>
@@ -104,7 +105,7 @@ $(document).on('turbolinks:load', function() {
         element.style.borderBottom = errorBorder;
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
-        $('#title-error-msg').html('Title ' + messages);
+        $('#title-error-msg').html('Title ' + messages).fadeIn();
        }
      });
   });
@@ -121,7 +122,7 @@ $(document).on('turbolinks:load', function() {
         element.style.borderBottom = errorBorder;
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
-        $('#event-loc-error-msg').html('Location ' + messages);
+        $('#event-loc-error-msg').html('Location ' + messages).fadeIn();
        }
      });
   });
@@ -138,7 +139,24 @@ $(document).on('turbolinks:load', function() {
         element.style.borderBottom = errorBorder;
         element.style.boxShadow = errorShadow;
         $('#submit-event').prop( "disabled", true);
-        $('#event-start-error-msg').html('Start Date ' + messages);
+        $('#event-start-error-msg').html('Start Date ' + messages).fadeIn();
+       }
+     });
+  });
+
+  $('#event_start_date').blur(function() {
+    judge.validate(document.getElementById('event_end_date'), {
+      valid: function(element) {
+        element.style.borderBottom = successBorder;
+        element.style.boxShadow = successShadow;
+        $('#submit-event').prop( "disabled", false);
+        $('#event-end-error-msg').html(' ');
+      },
+      invalid: function(element, messages) {
+        element.style.borderBottom = errorBorder;
+        element.style.boxShadow = errorShadow;
+        $('#submit-event').prop( "disabled", true);
+        $('#event-end-error-msg').html('Start Date ' + messages).fadeIn();
        }
      });
   });
