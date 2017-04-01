@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def industry_classification_thumbnail_image(industry_classification)
-    image_tag("#{industry_classification.name.downcase.underscore}.jpg")
+    image_tag("industry_thumbs/#{industry_classification.name.downcase.underscore}.jpg", class: 'center-cropped')
   end
 
 end

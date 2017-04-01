@@ -194,8 +194,8 @@ body [type="checkbox"]:checked + label:before{
 }
 
 .columns{
-  -webkit-columns: 180px 2;
-   -moz-columns: 180px 2;
-        columns: 180px 2;
+  -webkit-columns: 180px 4;
+   -moz-columns: 180px 4;
+        columns: 180px 4;
 }
 
