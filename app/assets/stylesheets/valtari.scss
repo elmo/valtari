@@ -270,8 +270,14 @@ note-meta {
 .calendar tr td{ 
   color: #d6d6d6; 
   padding: 4px 3px 66px;
+  vertical-align: text-top;
+  height: 87px;
   &.current-month {
     color: #444;
+  }
+  .cal-date{
+    font-size: 12px;
+    div{ font-size: 1rem }
   }
 }
 
