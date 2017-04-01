@@ -1,26 +1,26 @@
-  <div class="col s3">
+  <div class="col s2">
     <%= render partial: "/admin/businesses/division_one_select" -%>
   </div>
 
-  <div class="col s3" id="division2-input">
+  <div class="col s2" id="division2-input">
    <% if params[:division1].present? %>
       <%= render partial: "/admin/businesses/division_two_select" -%>
    <% end %>
  </div>
 
-<div class="col s3" id="division3-input" >
+<div class="col s2" id="division3-input" >
   <% if params[:division2].present? %>
     <%= render partial: "/admin/businesses/division_three_select" -%>
   <% end %>
 </div>
 
-<div class="col s3" id="division4-input">
+<div class="col s2" id="division4-input">
   <% if params[:division3].present? %>
     <%= render partial: "/admin/businesses/division_four_select" -%>
   <% end %>
 </div>
 
-<div class="col s3" id="division5-input">
+<div class="col s2" id="division5-input">
   <% if params[:division4].present? %>
      <%= render partial: "/admin/businesses/division_five_select" -%>
   <% end %>

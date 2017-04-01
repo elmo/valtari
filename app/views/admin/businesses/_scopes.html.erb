@@ -1,16 +1,13 @@
-<ul class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header"><%= page_entries_info(@businesses) %></div>
-      <div class='collapsible-body'>
-         <div class="row">
-           <% all_business_scopes.in_groups_of(6).compact.each do |group| %>
-             <div class="col s3">
-               <% group.each do |s| %>
-                 <%= link_to "#{s.to_s.humanize} (#{Business.send(s).count})", admin_businesses_path + "?#{s}=true" -%><br />
-               <% end %>
-             </div>
-          <% end %>
-       </div>
+  <%= page_entries_info(@businesses) %><br>
+    <div class="row">
+      <div class="scopes-box">
+       <% all_business_scopes.in_groups_of(6).compact.each do |group| %>
+         <section>
+           <% group.each do |s| %>
+             <%= link_to "#{s.to_s.humanize} (#{Business.send(s).count})", admin_businesses_path + "?#{s}=true" -%><br />
+           <% end %>
+
+         </section>
+      <% end %>
+      </div>
     </div>
-  </li>
-</ul>
