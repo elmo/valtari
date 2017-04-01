@@ -37,15 +37,15 @@
     text-align: center;
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
+    transition: .2s;
     &.active {
       background: #22206b;
       color: #FFF!important;    
       font-weight: 500;
-      &:hover{ background: #22206b }
+      &:hover{ background: #22206b; box-shadow: none }
     }
     &:hover {
-      color: #FFF;
-      background: #323f84;
+      box-shadow: 0px 0px 20px #efefef inset
     }
   }
 
@@ -77,7 +77,9 @@
   font-size: .9em;
 
 }
-
+.user-nav{
+  margin-bottom: -5px
+}
 .messages-nav i{
   font-size: 1.25em;
   margin-right: -14px;
@@ -267,17 +269,22 @@ note-meta {
 
 
 .calendar-heading li{ display: inline; margin: 0 0 0 3px; color: black; }
-.calendar tr td{ 
-  color: #d6d6d6; 
-  padding: 4px 3px 66px;
-  vertical-align: text-top;
-  height: 87px;
-  &.current-month {
-    color: #444;
-  }
-  .cal-date{
-    font-size: 12px;
-    div{ font-size: 1rem }
+.calendar {
+  table{ table-layout: fixed }
+  tr td{ 
+    color: #d6d6d6; 
+    padding: 4px 3px 66px;
+    vertical-align: text-top;
+    height: 87px;
+    &.current-month {
+      color: #444;
+    }
+    .cal-date{
+      font-size: 12px;
+      height: 90px;
+      display: block;
+      div{ font-size: 1rem }
+    }
   }
 }
 
