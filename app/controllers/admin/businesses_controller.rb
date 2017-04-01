@@ -5,6 +5,7 @@ class Admin::BusinessesController < Admin::AdminController
   # GET /businesses.json
   def index
     params[:division1] = 'United States and Canada'
+    params[:show_divisions] = 'true'
     scope = Business
     q = params[:q]
     ordering = "lower(company_name) asc"

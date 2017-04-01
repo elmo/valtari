@@ -1,13 +1,12 @@
-<div class="row">
   <div class="col s3">
     <%= render partial: "/admin/businesses/division_one_select" -%>
   </div>
 
   <div class="col s3" id="division2-input">
-<% if params[:division1].present? %>
-    <%= render partial: "/admin/businesses/division_two_select" -%>
-  </div>
-<% end %>
+   <% if params[:division1].present? %>
+      <%= render partial: "/admin/businesses/division_two_select" -%>
+   <% end %>
+ </div>
 
 <div class="col s3" id="division3-input" >
   <% if params[:division2].present? %>
