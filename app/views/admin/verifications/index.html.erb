@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+      <div class="col s2">All:<%= Verification.count -%></div>
+      <div class="col s2">New:<%= Verification.status_new.count -%></div>
+      <div class="col s2">Pending:<%= Verification.status_pending.count -%></div>
+      <div class="col s2">Complete:<%= Verification.status_complete.count -%></div>
+  </div>
+  <div class="row">
+    <div class="col s12 l8 offset-l2">
+      <div class="card">
+        <div class="card-content">
+          <% if @verifications.empty? %>
+            <p>There is no activity for your search.
+            </p>
+          <% else %>
+              <table>
+                <thead>
+                 <th>Requested by</th>
+                 <th>Business</th>
+                 <th>Status</th>
+                 <th>Assigned to</th>
+                 <th>Completed by</th>
+                 <th>Date</th>
+                 <th>Edit</th>
+                </thead>
+                <tbody>
+                  <% @verifications.each do |verification| %>
+                    <tr>
+                      <td><%= verification.user.name -%></td>
+                      <td><%= link_to verification.business.company_name, admin_verification_path(verification) %></td>
+                      <td><%= verification.status -%></td>
+                      <td><%= verification.try(:assigned_user).try(:name) -%></td>
+                      <td><%= verification.try(:completed_by_user).try(:name) -%></td>
+                      <td><%= verification.created_at.strftime(date_and_time_format) -%></td>
+                      <td><%= link_to 'edit', edit_admin_verification_path(verification) -%></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <p>
+              <%= paginate(@verifications) -%>
+              </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

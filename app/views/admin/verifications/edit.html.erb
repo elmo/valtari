@@ -1,0 +1,16 @@
+<div class="col s12">
+  <div class="card">
+     <div class="card-content">
+         <div class="card-title">Edit Verification for <%= @verification.business.company_name -%></div>
+         <%= render 'form', verification: @verification %>
+       </div>
+    </div>
+
+<p>
+  <%= link_to 'Show', admin_verification_path(@verification) %>
+  <%= link_to 'Back', admin_verifications_path %>
+</p>
+
+  </div>
+</div>
+

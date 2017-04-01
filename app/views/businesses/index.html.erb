@@ -30,11 +30,16 @@
                     <div id="favorite-business-link-<%=business.id%>" class="favorite-business"><%= favorite_business_link(business)-%></div>
                     <%= link_to business.company_name, business_path(business), class:'company-name' %>
                     </td>
+                    <td>
+                    <%= form_for([:my, business, Verification.new] ) do |f| %>
+                       <%= f.submit 'Request Verification!' -%>
+                    <% end %>
+                    </td>
                     <td><%= business.contact_first_name %> <%= business.contact_last_name %></td>
                     <td><%= business.phone %></td>
                     <td><%= business.revenue %></td>
                     <td><%= business.number_of_employees %></td>
-                    <!--<td><%= business.industry_classification %></td>-->
+                    <!--<td><%# business.industry_classification %></td>-->
                     <td><%= business.city %></td>
                     <td><%= business.state %></td>
                     <td><%= business.country %></td>
