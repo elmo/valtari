@@ -40,7 +40,11 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :activity_logs, only: [:index]
    resources :divisions, only: [:index]
-   resources :verifications
+   resources :verifications do
+      member do
+        put 'complete'
+      end
+   end
    resources :businesses do
      put 'dupe'
      put 'undupe'
