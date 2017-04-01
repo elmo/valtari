@@ -29,7 +29,7 @@ class My::EventsController < ApplicationController
     @event = current_user.events.new(event_params)
     respond_to do |format|
       if @event.save
-        format.html { redirect_to my_events_url, notice: 'Event was successfully created.' }
+        format.html { redirect_to events_url, notice: 'Event was successfully created.' }
       else
         format.html { render :new }
       end
