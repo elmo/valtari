@@ -1,0 +1,27 @@
+<h3><%= user.name-%> </h3>
+
+<figure class="card-profile-image">
+  <%= avatar_image(user, "circle z-depth-2 responsive-img activator" ) -%>
+</figure>
+
+<p class="medium-small grey-text"><%= user.headline if user.headline.present? %></p>
+
+<p>
+  <%= link_to 'profile', user_path(user) -%>
+</p>
+
+
+<p> Industries: <%= user_interests(user) -%>
+</p>
+
+<p>
+  <%= following_user_link(user, remote: false) %>
+</p>
+
+<p>
+  <% if user.profile_url.present? %>
+    <%= link_to user.profile_url, target:'_blank' do %>
+      <%= image_tag('linkedin.png', width: 50) %>
+    <% end %>
+   <% end %>
+</p>

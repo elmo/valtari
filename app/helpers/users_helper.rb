@@ -28,4 +28,8 @@ module UsersHelper
     link_to user.name, user_path(user)
   end
 
+  def user_interests(user)
+     user.user_industry_classifications.collect(&:industry_classification).collect(&:name).join(',')
+  end
+
 end
