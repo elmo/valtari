@@ -10,6 +10,10 @@ class Verification < ApplicationRecord
   STATUS_COMPLETE = 'complete'
 
   scope :assigned  , -> { where.not(assigned_user: nil) }
+  scope :assigned_to  , -> (user) { where(assigned_user: user) }
+  scope :completed_by , -> (user) { where(completed_by_user_id: user) }
+  scope :needs_assignment,  -> { where(status: STATUS_NEW, completed_by_user_id: nil) }
+
   scope :unassigned, -> { where( assigned_user: nil) }
   scope :status_new, -> { where(status: STATUS_NEW) }
   scope :status_pending, -> { where(status: STATUS_PENDING ) }
