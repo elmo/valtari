@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resource :interests
     resources :buysides
     resources :followings
+    resources :verifications, only: [:index]
     resources :businesses do
       resources :notes
       resources :user_businesses

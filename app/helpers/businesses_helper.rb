@@ -75,4 +75,31 @@ module BusinessesHelper
      return ''
    end
 
+   def verification_status_class(business)
+     return "is-pending" if business.verification_status_reqeusted?
+     return "is-verified" if business.verification_status_complete?
+     return ""
+   end
+
+   def eligible_for_verification_request?(business)
+     business.verification_status.blank?
+   end
+
+   def verification_status(business)
+     if business.verifications.any?
+        verification = business.verifications.order(created_at: :desc).first
+        case verification.status
+          when Verification::STATUS_NEW
+            return "requested: " + format_date(verification.created_at)
+          when Verification::STATUS_PENDING
+            return "verfication in progress"
+          when Verification::STATUS_COMPLETE
+            return "verfied: " + format_date(verification.updated_at)
+          else
+            return ""
+         end
+       end
+     return ""
+   end
+
 end

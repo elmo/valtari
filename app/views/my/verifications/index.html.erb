@@ -1,0 +1,23 @@
+<h1>Verifications</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Date Requested</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @verifications.each do |verification| %>
+      <tr>
+        <td><%= link_to(verification.business.company_name, verification.business) %></td>
+        <td><%= format_date(verification.created_at) %></td>
+        <td><%= verification.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= paginate(@verifications)-%>
+</p>
