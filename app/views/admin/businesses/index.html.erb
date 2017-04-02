@@ -18,14 +18,14 @@
         <div class="sub taller">
           <%= render partial: '/admin/businesses/search'-%>
         </div>
-        
+
           <table class="admin-view resizable">
               <thead>
                 <%= render partial: 'column_headers' %>
               </thead>
               <tbody>
                 <% @businesses.each do |business| %>
-                  <tr>
+                  <tr class="<%= verification_status_class(business) -%>">
                     <td>
                       <%= business.duplication_status -%>
                       <% if business.ready? or business.ok? %>
