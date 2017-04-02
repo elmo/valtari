@@ -18,7 +18,10 @@
 <i class="ion-person" data-pack="default" data-tags="box, square, container"></i>People
 <% end %>
 
-<br><br>
+<%= link_to knowledge_path, class: "#{(action_name == 'knowledge') ? 'active' : '' } nav-item" do %>
+<i class="ion-lightbulb" data-pack="default" data-tags="box, square, container"></i>Knowledge
+<% end %>
+
 
 <% if false and current_user.present?%>
 <!--<%= link_to "Notes(#{current_user.notes.count}) ", my_notes_path , class: '' %><br />-->

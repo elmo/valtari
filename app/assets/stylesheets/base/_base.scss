@@ -23,6 +23,11 @@ body footer.page-footer{
     color:#5191e4
   }
 }
+
+.container{
+  position: relative
+}
+
 .inline-block{
   display: inline-block
 }
@@ -40,15 +45,26 @@ abbr[title] {
 
 //Logged in use
 .logged-in{
- background: #f9f9f9
+  background: #f9f9f9
 }
 
 
 // -------- Navigation ---------
-.brand-logo img{
-  width: 4.95em;
-  margin-top: 0.85em;
-  margin-left: 0.45em
+.brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  background: url('shape.svg');
+  background-size: 11.65rem;
+  background-repeat: no-repeat;
+  background-position: 0px -10px;
+  img{
+    width: 5.45em;
+    padding-right: 2rem;
+    margin-top: 0.85rem;
+    margin-left: 0.9rem;
+  }
 }
 
 nav{

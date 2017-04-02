@@ -19,6 +19,7 @@
     font-size: 12px
   }
 }
+
 #dropdown-filters{
   left:3rem!important;
   width: 94%!important;
@@ -29,9 +30,9 @@
 
   .nav-item{
     display: inline-block;
-    width: 150px;
+    width: 140px;
     margin-right: -4px;
-    padding: 9px 3px 9px 3px;
+    padding: 7px 3px 7px 3px;
     line-height: 20px;
     background: white;
     text-align: center;
@@ -77,9 +78,15 @@
   font-size: .9em;
 
 }
+.account-nav{
+  position: absolute;
+  right: 0
+}
+
 .user-nav{
   margin-bottom: -5px
 }
+
 .messages-nav i{
   font-size: 1.25em;
   margin-right: -14px;
@@ -88,6 +95,7 @@
 .mobile-nav {
   a.active { background: $blue; color:white }
 }
+
 .favorite-business{
   position: absolute;
   top:0;
@@ -109,9 +117,11 @@
     &:hover{ opacity: 0.18 }
   }
 }
+
 a.company-name{
   margin-left: 15px
 }
+
 .company-list tbody tr:hover{
    .favorite.not{ opacity: 0.1 }
 }
@@ -226,8 +236,9 @@ span.mm{
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
-    line-height: 60px
+    line-height: 94px
   }
+  nav{ height: 80px }
 }
 .column-entry{
   color: #999;
