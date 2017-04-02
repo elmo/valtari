@@ -1,7 +1,11 @@
 class My::VerificationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_verification, only: [:show, :edit, :update, :destroy]
-  before_action :set_business
+  before_action :set_business, except: [:index]
+
+  def index
+    @verifications = current_user.verifications.order(created_at: :desc).page(params[:page]).per(10)
+  end
 
   def create
     @verification = current_user.verifications.new(business: @business)
