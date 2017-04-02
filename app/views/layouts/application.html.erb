@@ -17,9 +17,8 @@
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
-        <div class="row">
           <% if controller_name != 'sessions' %>
-            <div class="container wide user-nav">
+            <div class="user-nav">
               <nav>
                 <div class="nav-wrapper">
                   <%= render partial: '/home/side_bar' if current_user.present? -%>
@@ -31,7 +30,6 @@
           <div class="col <%= (controller_name == 'sessions') ? '' : '' -%> s12">
             <%= yield %>
           </div>
-        </div>
       </div>
     </main>
 
