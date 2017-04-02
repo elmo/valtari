@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
   root to: "home#splash"
   get '/home' => 'home#index', as: :home
+  get '/knowledge' => 'home#knowledge', as: :knowledge
   get '/profile' => 'my/dashboard#home', as: :profile
   get '/admin' => 'admin/site#index', as: :admin
 
