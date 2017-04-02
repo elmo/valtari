@@ -1,12 +1,29 @@
 <div class="container">
-  <div class="row">
-      <div class="col s2">All:<%= Verification.count -%></div>
-      <div class="col s2">New:<%= Verification.status_new.count -%></div>
-      <div class="col s2">Pending:<%= Verification.status_pending.count -%></div>
-      <div class="col s2">Complete:<%= Verification.status_complete.count -%></div>
+    <div class="col s12">
+     <div class="row">
+      <div class="col s2"><%= link_to 'All', admin_verifications_path %> (<%= Verification.count -%>)</div>
+      <div class="col s2"><%= link_to 'New', admin_verifications_path(status: 'new') %> (<%= Verification.status_new.count -%>)</div>
+      <div class="col s2"><%= link_to 'Pending', admin_verifications_path(status: 'pending') %> (<%= Verification.status_pending.count -%>)</div>
+      <div class="col s2"><%= link_to 'Complete', admin_verifications_path(status: 'complete') %> (<%= Verification.status_complete.count -%>)</div>
+      <div class="col s2"><%= link_to 'Needs assignment', admin_verifications_path(view: 'needs') %> (<%= Verification.needs_assignment.count -%>)</div>
+    </div>
+
+     <div class="row">
+         <div class="col s2">Assigned to:</div>
+      <% User.with_role(:admin).each do |user| -%>
+         <div class="col s3"><%= link_to user.name, admin_verifications_path(assigned: user.id) %>(<%= Verification.assigned_to(user).count %>)</div>
+      <% end %>
+    </div>
+     <div class="row">
+       <div class="col s2">Completed by:</div>
+      <% User.with_role(:admin).each do |user| -%>
+         <div class="col s3"><%= link_to user.name, admin_verifications_path(completed: user.id) %>(<%= Verification.completed_by(user).count %>)</div>
+      <% end %>
+    </div>
   </div>
+
   <div class="row">
-    <div class="col s12 l8 offset-l2">
+    <div class="col s12">
       <div class="card">
         <div class="card-content">
           <% if @verifications.empty? %>

@@ -3,7 +3,13 @@ class Admin::VerificationsController < Admin::AdminController
   before_action :set_verification, only: [:show, :edit, :update, :show, :complete]
 
   def index
-    @verifications = Verification.all.page(params[:page]).per(20)
+    scope = Verification
+    scope = scope.needs_assignment if params[:view].present?
+    scope = scope.where(status: params[:status] ) if params[:status].present?
+    scope = scope.where(assigned_to_user_id: params[:assigned]) if params[:assigned].present?
+    scope = scope.where(completed_by_user_id: params[:completed]) if params[:completed].present?
+    scope = scope.where(user_id: params[:user]) if params[:user].present?
+    @verifications = scope.page(params[:page]).per(10)
   end
 
   def show
