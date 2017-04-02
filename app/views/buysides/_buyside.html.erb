@@ -1,7 +1,7 @@
 <tr>
   <td><%= link_to buyside.title, buyside_path(buyside) %>
     <br />
-    <%= buyside.user.name -%>
+    <%= link_to buyside.user.name, user_path(buyside.user)-%>
     <%= link_to  new_my_message_path(recipient_id: buyside.user.id ) do %>
       <i class="ion-email" data-pack="default" data-tags="box, square, container"></i>
     <% end %>
