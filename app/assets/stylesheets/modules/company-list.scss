@@ -29,7 +29,7 @@
 	}
 	th.sorted-up:after{
 	    content: ' ';
-	    background: url(/assets/up-arrow.svg) no-repeat;
+	    background: url(up-arrow.svg) no-repeat;
 	    position: absolute;
 	    top: 13px;
 	    right: 6px;
@@ -39,13 +39,24 @@
 	}
 	th.sorted-down:after{
 	    content: ' ';
-	    background: url(/assets/down-arrow.svg) no-repeat;
+	    background: url(down-arrow.svg) no-repeat;
 	    position: absolute;
 	    top: 13px;
 	    right: 6px;
 	    background-size: 9px;
 	    width: 14px;
 	    height: 9px;
+	}
+	tr{
+	  background: #fafafa
+	}
+	.is-verified td{
+	    font-weight: 600;
+	    border-radius: 0;
+	    &:nth-child(2) { color: #45d851 }
+	}
+	.is-pending, .is-verified{
+		background-color: white
 	}
 }
 .user-view{
