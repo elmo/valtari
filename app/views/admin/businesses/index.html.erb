@@ -8,9 +8,38 @@
             <%= link_to "OK (#{Business.ok.count})" , admin_businesses_path(duplication_status: 'ok' ), class:'sub-item' -%>
             <%= link_to "Dupe (#{Business.dupe.count})", admin_businesses_path(duplication_status: 'dupe'), class:'sub-item' -%>
             <a class="dropdown-button sub-item" href="#!" data-activates="dropdown-scopes">Totals<i class="material-icons right">arrow_drop_down</i></a>
-              <ul id="dropdown-scopes" class="dropdown-content">
+              <ul id="dropdown-scopes" class="dropdown-content dropdown-content-full">
                 <%= render partial: '/admin/businesses/scopes'-%>
               </ul>
+            <div class="sub-item">
+               <a class="dropdown-button sub-item" href="#!" data-activates="dropdown-filters">Filters<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown-filters" class="dropdown-content dropdown-content-full">
+                  <h4>Containing</h4>
+                    <% with_filters.in_groups_of(6).each do |group| -%>
+                      <div class="row">
+                        <% group.compact.each do |filter| %>
+                          <div class="col s2">
+                            <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+                            <%= label_tag filter, filter.to_s.humanize.gsub(/With /, '') -%>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+
+                <h4>Missing</h4>
+                 <% without_filters.in_groups_of(6).each do |group| -%>
+                    <div class="row">
+                      <% group.compact.each do |filter| %>
+                        <div class="col s2">
+                          <%= check_box_tag filter, 'true', params[filter] == 'true' -%>
+                          <%= label_tag filter, filter.to_s.humanize.gsub(/Without /, '') -%>
+                        </div>
+                      <% end %>
+                    </div>
+                <% end %>
+
+              </ul>
+            </div>
            <%= link_to 'See User View', businesses_path, class: 'right-link' %>
            <%= link_to 'Export CSV', export_admin_businesses_path(format: :csv), class: 'right-link' -%>
         </div>
