@@ -91,5 +91,6 @@ task load_businesses: :environment do
     Business.where(address: a).update_all(address: a.split("\r").reverse.join(' ') )
  end
  ActiveRecord::Base.connection.execute("update businesses set postal_code = concat('0' || postal_code) where length(postal_code) = 4 ")
+ Business.update_all(duplication_status: Buiness::DUPLICATION_STATUS_READY )
 end 
 
