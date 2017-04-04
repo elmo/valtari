@@ -9,9 +9,9 @@ class BusinessesController < ApplicationController
     scope = Business
     params[:division1] = 'United States and Canada'
     q = params[:q]
-    ordering = { created_at: :asc }
-    current_sort_direction = params[:sort_direction] || 'desc'
-    @sort_direction = current_sort_direction == 'desc' ? 'asc' : 'desc'
+    ordering = { company_name: :asc }
+    current_sort_direction = params[:sort_direction] || 'asc'
+    @sort_direction = current_sort_direction  # == 'desc' ? 'asc' : 'desc'
     if q =~ /\@/ # input is an email address
       scope = scope.where(email: q)
     elsif q =~ /\d/ # input contains a digit
