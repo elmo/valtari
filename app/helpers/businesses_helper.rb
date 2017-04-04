@@ -90,11 +90,11 @@ module BusinessesHelper
         verification = business.verifications.order(created_at: :desc).first
         case verification.status
           when Verification::STATUS_NEW
-            return ("<i class='ion-clipboard'></i> " + format_date(verification.created_at)).html_safe
+            return ("<i class='ion-help-circled'></i> " + format_date(verification.created_at)).html_safe
           when Verification::STATUS_PENDING
             return "verfication in progress"
           when Verification::STATUS_COMPLETE
-            return ("<i class='ion-checkmark-circled'></i> " + format_date(verification.updated_at)).html_safe
+            return ("Verified on " + format_date(verification.updated_at)).html_safe
           else
             return ""
          end
