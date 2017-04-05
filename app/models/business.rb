@@ -174,6 +174,14 @@ class Business < ApplicationRecord
     verification_status == VERIFICATION_STATUS_REQUESTED
   end
 
+  def sic_code_name
+     SicCode.where(code: sic_code).first.try(:name)
+  end
+
+  def naics_code_name
+     Industry.where(code: naics_code).first.try(:name)
+  end
+
   private
 
   def log_changes
