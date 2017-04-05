@@ -8,17 +8,14 @@
         <%= following_user_link(campaign.user, remote: false) -%>
     </td>
   <td><%= campaign.stage %></td>
-  <td><%= campaign.revenue_lower %></td>
-  <td><%= campaign.revenue_upper %></td>
-  <td><%= campaign.ebitda_lower %></td>
-  <td><%= campaign.ebitda_upper %></td>
+  <td><%= campaign.revenue_lower %> &mdash; <%= campaign.revenue_upper %></td>
+  <td><%= campaign.ebitda_lower %> &mdash; <%= campaign.ebitda_upper %></td>
   <td><%= campaign.industry_classifications.collect(&:name).join(', ') %></td>
-  <td>
-    <%= link_to(edit_my_campaign_path(campaign) , class: "inline-link") do %>
+  <td> <%= link_to(edit_my_campaign_path(campaign) , class: "inline-link") do %>
       <i class="material-icons tiny">mode_edit</i>
     <% end %>
     <%= link_to(my_campaign_path(campaign), method: :delete, data: { confirm: 'Are you sure want to remove this campaign?' }, class: "inline-link") do  %>
       <i class="material-icons tiny">delete </i>
-    <% end %>
-  </td>
+    <% end %></td>
+
 </tr>
