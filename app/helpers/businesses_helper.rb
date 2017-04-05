@@ -102,4 +102,8 @@ module BusinessesHelper
      return ""
    end
 
+   def reverse_sort(sort)
+     (sort.to_sym == :asc) ? :desc : :asc
+   end
+
 end
