@@ -34,16 +34,10 @@
     </div>
 
   <ul id="slide-out" class="side-nav mobile-nav">
-      <li><%= link_to 'Companies', businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" %>
-        </li>
-      <li><%= link_to 'Campaigns', my_campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" %>
-        </li>
-      <li><%= link_to 'Buysides', buysides_path, class: "#{(controller_name == 'buysides') ? 'active' : '' } nav-item" %>
-        </li>
-      <li><%= link_to 'Events', events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" %>
-        </li>
-      <li><%= link_to 'People', my_followings_path, class: "#{(controller_name == 'people') ? 'active' : '' } nav-item" %>
-        </li>
+      <li><%= link_to 'Companies', businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" %> </li>
+      <li><%= link_to 'Campaigns', my_campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" %> </li>
+      <li><%= link_to 'Events', events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" %> </li>
+      <li><%= link_to 'People', my_followings_path, class: "#{(controller_name == 'people') ? 'active' : '' } nav-item" %> </li>
       <li><a class="messages-nav" href="<%=my_messages_path%>">Messages</a></li>
       <li><div class="divider"></div></li>
       <li><%= link_to 'Account', edit_user_registration_path %></li>
