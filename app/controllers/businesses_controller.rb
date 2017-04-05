@@ -6,7 +6,7 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    scope = Business
+    scope = Business.includes(:verifications)
     params[:division1] = 'United States and Canada'
     q = params[:q]
     ordering = { company_name: :asc }
