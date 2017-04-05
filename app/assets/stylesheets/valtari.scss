@@ -120,7 +120,7 @@ a.company-name{
 }
 
 .sub{
-  height: 2.25em;
+  height: 2.2em;
   margin-bottom: 10px;
   margin-top: -3px;
   border-bottom: 1px solid #f5f5f5;
@@ -191,6 +191,29 @@ span.mm{
   font-weight: 400;
 }
 
+mm{ display:block;margin:0;padding:0;border:0;position:relative; 
+  .input-field{
+    margin: 0.95em 0 0 1em;
+    padding-right: 3em;
+  }
+  &:before{ 
+    content: "$";
+    position: absolute;
+    margin-top: 11px; 
+  }
+  &:after{     
+    content: "M";
+    position: absolute;
+    margin-top: -41px;
+    right: 60px; 
+  }
+  dash{
+    position: absolute;
+    right: -12px;
+    top: 11px;
+  }
+}
+
 .card-title{
   a {
       color: #111
@@ -236,30 +259,6 @@ span.mm{
 .column-entry{
   color: #999;
   font-weight: 200
-}
-
-
-mm{ display:block;margin:0;padding:0;border:0;position:relative; 
-  .input-field{
-    margin: 0.95em 0 0 1em;
-    padding-right: 3em;
-  }
-  &:before{ 
-    content: "$";
-    position: absolute;
-    margin-top: 11px; 
-  }
-  &:after{     
-    content: "MM";
-    position: absolute;
-    margin-top: -47px;
-    right: 10px; 
-  }
-  dash{
-    position: absolute;
-    right: -12px;
-    top: 11px;
-  }
 }
 
 note-meta {
