@@ -31,6 +31,10 @@
                     <%= link_to business.company_name, business_path(business), class:'company-name' %>
                     </td>
                     <td>
+                        <%= business.sic_code_name -%>
+                        <%= business.naics_code_name -%>
+                    </td>
+                    <td>
                       <% if eligible_for_verification_request?(business) %>
                          <%= form_for([:my, business, Verification.new] ) do |f| %>
                            <%= f.submit 'Request Verification'%>
