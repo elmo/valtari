@@ -9,6 +9,6 @@
     </div>
   <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
 
-  <%= render partial: '/campaigns/campaigns' %>
+  <%= render partial: '/campaigns/campaigns', locals: {campaigns: @campaigns } %>
   </div>
 </div>
