@@ -1,4 +1,4 @@
-<ul id="dropdown" class="dropdown-content">
+<ul id="dropdown" class="account dropdown-content">
   <% if current_user.present? %><li><%= link_to 'Profile', user_path(current_user) %></li><% end %>
   <li class="divider"></li>
   <li><%= link_to 'Account', edit_user_registration_path %></li>
