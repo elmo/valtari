@@ -1,16 +1,11 @@
 require 'csv'
 
-desc 'convert business tsv'
+desc 'clean up geos'
 
-task convert_business_tsv: :environment do
-  CSV.open('db/full_businesses.csv', 'w') do |csv|
-    File.open('db/newfile.tsv') do |f|
-      f.each_line do |tsv|
-        tsv.chomp!
-        csv << tsv.split(/\t/)
-      end
-    end
-  end
+task cleanup_geos: :environment do
+ ActiveRecord::Base.connection.execute("update businesses set country = rtrim(country)")
+ ActiveRecord::Base.connection.execute("update businesses set country = ltrim(country)")
+ Business.all.each { |business| business.set_geo(force: true) }     
 end
 
 
