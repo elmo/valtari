@@ -44,6 +44,32 @@ class Geo < ApplicationRecord
   end
 
 
+  def self.geo_code_canada
+    Business.within_country('Canada').where(state: canadian_provences).each {|business| process_canadian(business: business) }
+    nil
+  end
+
+  def self.process_canadian(business:)
+      geo = Geo.where(division2: 'Canada',  division3: business.state).first
+      return if geo.nil?
+      business.geo = geo
+      business.division1 = business.geo.division1 if business.geo.division1.present?
+      business.division2 = business.geo.division2 if business.geo.division2.present?
+      business.division3 = business.geo.division3 if business.geo.division3.present?
+      business.division4 = business.geo.division4 if business.geo.division4.present?
+      business.division5 = businessegeo.division5 if business.geo.division5.present?
+      business.save
+  end
+
+  def self.canadian_provences
+     [
+       "Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador",
+       "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward Island",
+       "Quebec", "Saskatchewan", "Yukon Territory"
+     ]
+  end
+
+
   def self.state_abbrev_map
     {
       AK: "Alaska",
