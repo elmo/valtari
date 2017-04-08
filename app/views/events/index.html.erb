@@ -1,8 +1,7 @@
 <div class="card">
   <div class="card-content calendar">
     <div class="sub">
-      <%= link_to 'My Events', businesses_url, class: 'sub-item active' %>
-      <%= link_to 'All', my_businesses_path, class: 'sub-item' %>
+      <%= link_to 'All Events', my_businesses_path, class: 'sub-item active' %>
       <%= link_to 'Create Event', new_my_event_path, class: 'waves-effect btn right float-margin' %>
     </div>
     <%= month_calendar events: @events, attribute: :start_date, end_attribute: :end_date do |date, events| %>

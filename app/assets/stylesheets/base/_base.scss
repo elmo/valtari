@@ -49,55 +49,6 @@ abbr[title] {
 }
 
 
-// -------- Navigation ---------
-.brand-logo {
-  position: absolute;
-  color: #fff;
-  display: inline-block;
-  white-space: nowrap;
-  background: url('shape.svg');
-  background-size: 11.65rem;
-  background-repeat: no-repeat;
-  background-position: 0px -10px;
-  img{
-    width: 5.45em;
-    padding-right: 2rem;
-    margin-top: 0.85rem;
-    margin-left: 0.9rem;
-  }
-}
-
-nav{
-	background: transparent;
-  box-shadow: none;
-  i.material-icons{
-    font-size: 1.6rem;
-    color: #cbcbcb;
-  }
-  .dropdown-content li > a{
-    color: #7c8e9b
-  }
-  &.secondary{
-    background: white!important
-  }
-}
-
-nav ul{
-  font-size:.9em;
-  a {
-    color: #333;
-    font-size: 1em;
-    font-weight: 400;
-    &:hover{
-      background-color: transparent;
-      color: #111;
-    }
-  }
-  li.sign-in{
-    a{ color: #FFF }
-  }
-}
-
 .userView{
   background: #262261
 }

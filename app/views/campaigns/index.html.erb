@@ -1,11 +1,12 @@
 <div class="card">
   <div class="card-content">
     <div class="sub">
-    <%= link_to "My Campaigns", my_campaigns_path, class: 'sub-item' %>
-    <%= link_to "All", campaigns_path, class: 'sub-item active' %>
+    <%= link_to "All Campaigns", campaigns_path, class: 'sub-item active' %>
     <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
+    
     Create Campaign
     <% end %>
+    <%= link_to "My Campaigns", my_dashboard_path, class: 'right-link' %>
     </div>
   <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
 
