@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "home#splash"
   get '/home' => 'home#index', as: :home
   get '/knowledge' => 'home#knowledge', as: :knowledge
-  get '/profile' => 'my/dashboard#home', as: :profile
+  get '/dashboard' => 'my/dashboard#home', as: :my_dashboard
   get '/admin' => 'admin/site#index', as: :admin
 
   resources :businesses, only: [:index, :show]

@@ -1,4 +1,6 @@
 <ul id="dropdown" class="account dropdown-content">
+  <li><%= link_to 'Dashboard', my_dashboard_path -%></li>
+  <li class="divider"></li>
   <% if current_user.present? %><li><%= link_to 'Profile', user_path(current_user) %></li><% end %>
   <li class="divider"></li>
   <li><%= link_to 'Account', edit_user_registration_path %></li>
@@ -24,7 +26,7 @@
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="account-nav hide-on-med-and-down">
             <li><a class="messages-nav" href="<%=my_messages_path%>"><i class="ion-email"></i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown"><%= current_user.name %></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-constrainwidth="false"><%= current_user.name %></a></li>
             <%  if current_user.present? and current_user.admin? %>
               <li><%= link_to 'Admin', admin_path -%></li>
             <% end %>

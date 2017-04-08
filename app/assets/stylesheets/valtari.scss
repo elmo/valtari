@@ -20,13 +20,15 @@
 
 .side-bar nav .nav-wrapper, .user-nav nav .nav-wrapper  {
 
+  font-size: .9rem;
+
   .nav-item{
     display: inline-block;
     width: 140px;
     margin-right: -4px;
     padding: 7px 3px 7px 3px;
     line-height: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
     text-align: center;
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
@@ -43,7 +45,7 @@
     }
   }
 
-  a { color: #6e7d8b; font-weight: 400; }
+  a { color: #333; font-weight: 400; }
   i { 
     height: 20px; 
     font-size: .85em; 
@@ -68,21 +70,10 @@
   @media only screen and (max-width: 993px) {
     display: none
   }
-  font-size: .9em;
 
 }
 
-.account.dropdown-content{
-  margin-top: 75px
-}
-.account-nav{
-  position: absolute;
-  right: 0
-}
 
-.user-nav{
-  margin-bottom: -5px
-}
 
 .messages-nav i{
   font-size: 1.25em;
@@ -103,15 +94,15 @@
     opacity: 0.05;
     width: 16px;
     height: 16px;
-    border-top: 12px solid #fa1405;
-    border-right: 15px solid transparent;
+    border-top: 16px solid #C6E7FF;
+    border-right: 17px solid transparent;
     opacity: 0.01;
-    transition: opacity .6s ease-in-out;
-   -moz-transition: opacity .6s ease-in-out;
-   -webkit-transition: opacity .6s ease-in-out;
+    transition: opacity .3s ease-in-out;
+   -moz-transition: opacity .3s ease-in-out;
+   -webkit-transition: opacity .3s ease-in-out;
     &.favorite{ opacity: 1}
     &.not.favorite{ opacity: 0.01}
-    &:hover{ opacity: 0.18 }
+    &:hover{ opacity: 0.85 }
   }
 }
 
@@ -120,7 +111,7 @@ a.company-name{
 }
 
 .company-list tbody tr:hover{
-   .favorite.not{ opacity: 0.1 }
+   .favorite.not{ opacity: 0.25 }
 }
 
 .sub{

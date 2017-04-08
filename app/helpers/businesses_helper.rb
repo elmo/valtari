@@ -9,7 +9,7 @@ module BusinessesHelper
       end
     else
       link_to(my_business_user_businesses_path(business.id), method: :post, remote: remote) do
-         content_tag(:div, class: "favorite not") do
+         content_tag(:div, class: "favorite not", onclick: "Materialize.toast('Company Saved', 2000)") do
            ''
          end
       end
