@@ -12,13 +12,19 @@ class BusinessesController < ApplicationController
     ordering = { company_name: :asc }
     current_sort_direction = params[:sort_direction] || 'desc'
     @sort_direction = current_sort_direction  # == 'desc' ? 'asc' : 'desc'
-    if q =~ /\@/ # input is an email address
-      scope = scope.where(email: q)
-    elsif q =~ /\d/ # input contains a digit
-      scope =  scope.where(['phone = ?',   q.gsub(/\D/, '')])
-    elsif q.present?
-      scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
+    sic_code = SicCode.where(name: params[:q]).first
+    if sic_code.present?
+      scope = scope.where(sic_code: sic_code.code)
+    else
+      if q =~ /\@/ # input is an email address
+        scope = scope.where(email: q)
+      elsif q =~ /\d/ # input contains a digit
+        scope =  scope.where(['phone = ?',   q.gsub(/\D/, '')])
+      elsif q.present?
+        scope = scope.where(['lower(company_name) like ? ', '%' + q.downcase + '%'])
+      end
     end
+
     # Sort
     if params[:sort].present?
       ordering = "company_name #{current_sort_direction}" if params[:sort] == 'company-name'

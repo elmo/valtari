@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require materialize-sprockets
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require moment

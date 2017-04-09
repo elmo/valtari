@@ -1,11 +1,12 @@
 <div id="search" class="input-field">
     <%= form_tag businesses_path, id: 'business-search', class: 'search-bar', role: 'search',  method: :get do %>
-      <%= text_field_tag :q, params[:q], type: 'search', placeholder: 'Search' -%>
+      <%= text_field_tag :q, params[:q], placeholder: 'Search', autocomplete: :off,  data: { autocomplete_source: suggest_path } -%>
       <%= hidden_field_tag :division1, params[:division1] -%>
       <%= hidden_field_tag :division2, params[:division2] -%>
       <%= hidden_field_tag :division3, params[:division3] -%>
       <%= hidden_field_tag :division4, params[:division4] -%>
       <%= hidden_field_tag :division5, params[:division5] -%>
+
   <% end %>
   <i class="material-icons">search</i>
 </div>
@@ -31,8 +32,7 @@
                     <%= link_to business.company_name, business_path(business), class:'company-name' %>
                     </td>
                     <td>
-                        <%= business.sic_code_name -%>
-                        <%= business.naics_code_name -%>
+                      <%= business.sic_code_name -%>
                     </td>
                     <td>
                       <% if eligible_for_verification_request?(business) %>
@@ -55,3 +55,10 @@
         </section>
   </div>
 
+<script>
+jQuery(function() {
+  return $('#q').autocomplete({
+    source: $('#q').data('autocomplete-source')
+  });
+});
+</script>
