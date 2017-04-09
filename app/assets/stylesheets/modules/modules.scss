@@ -40,7 +40,7 @@ body{
 	}
 }
 .geo-list{
-  margin: 2px 0 9px;
+  margin: 5px 0 23px;
   > div{ 
     margin: 0 0 -1px 0; 
     border-top: 1px solid $light-gray; 
@@ -52,7 +52,7 @@ body{
     display: inline-block;
     font-size: 13px;
     margin: 0 3px 0 0;
-    color: #438cb9;
+    color: $link-color;
     padding: 2px 4px 1px;
     &:hover{
     	color: black
