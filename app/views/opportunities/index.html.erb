@@ -1,12 +1,24 @@
 <div class="card">
   <div class="card-content">
-   <div class="card-title">Sell-side listings</div>
-    <% if @opportunities.any? %>
-    <%= render partial: '/opportunities/opportunities' %>
-    <% else %>
-       <p>There are no sell-side listings in the system.</p>
-       <%= link_to 'Add a sell-side listing', new_my_opportunity_path -%>
-    <% end %>
+    <div class="sub">
+      <%= link_to campaigns_path, class: 'sub-item active' do %>
+        All Listings (<%= current_user.opportunities.count -%>)
+        <% end %>
+        <%= link_to campaigns_path, class: 'sub-item' do %>
+        Matches
+        <% end %>
+
+      <%= link_to 'Create Sell-side Listing', new_my_opportunity_path, class: "waves-effect btn right float-margin" -%>
+      <%= link_to "My Listings", my_dashboard_path, class: 'right-link' %>
+    </div>
+      <% if @opportunities.any? %>
+        <%= render partial: '/opportunities/opportunities' %>
+      <% else %>
+       <p>Start the First Sell-side Opportunity!  &nbsp; <%= link_to 'Create Listing', new_my_opportunity_path, class: "link-color" -%>
+       </p>
+       
+      <% end %>
+    
   </div>
 </div>
 

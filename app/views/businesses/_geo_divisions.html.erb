@@ -8,6 +8,7 @@
 
 <% if params[:division1].present? %>
 <div>
+  &nbsp; Filter by Region: 
   <%  names_within_division1(params[:division1]).each do |name| %>
       <%= link_to name, businesses_path(division1: params[:division1],
                                         division2: name, q: params[:q] ),
