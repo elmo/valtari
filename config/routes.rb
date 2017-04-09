@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/knowledge' => 'home#knowledge', as: :knowledge
   get '/dashboard' => 'my/dashboard#home', as: :my_dashboard
   get '/admin' => 'admin/site#index', as: :admin
+  get '/suggest' => 'suggestions#index', as: :suggest
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
