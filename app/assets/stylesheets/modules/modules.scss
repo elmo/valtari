@@ -1,5 +1,28 @@
 @import "company-list";
 
+// ---
+.notice{
+  z-index: 99;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 14em;
+  color: #9ca0b4;
+  position: absolute;
+  right: 0;
+}
+
+.alert{
+  z-index: 99;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 14em;
+  color: #9ca0b4;
+  position: absolute;
+  right: 0;
+}
+
 body{ 
 	nav.pagination{ 
 	  a {     
@@ -17,29 +40,31 @@ body{
 	}
 }
 .geo-list{
-  margin: 2px 0 9px;
-  > div{ margin: 0 0 -1px 0; border-top:1px solid $light-gray; line-height:25px;
+  margin: 5px 0 23px;
+  > div{ 
+    margin: 0 0 -1px 0; 
+    border-top: 1px solid $light-gray; 
+    line-height: 25px;
+    font-size: 13px;
     &:first-child{ border-top:none } 
   }
    a {
     display: inline-block;
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: .25px;
-    margin: 0 9px 0 1px;
-    color: #438cb9;
+    font-size: 13px;
+    margin: 0 3px 0 0;
+    color: $link-color;
     padding: 2px 4px 1px;
     &:hover{
     	color: black
     }
     &.active{
       color: white;
-      background: #369ddd;
+      background: #45b8ff;
       &.third{
-        background: #47aff0
+        background: #37abf3
       }
       &.fourth{
-        background: #80ccff
+        background: #219cef
       }
     }
   }

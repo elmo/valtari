@@ -22,7 +22,7 @@
               <nav>
                 <div class="nav-wrapper">
                   <%= render partial: '/home/side_bar' if current_user.present? -%>
-                  <%= render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
+                  <%# render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
                 </div>
               </nav>
             </div>

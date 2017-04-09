@@ -13,11 +13,12 @@
 
 <div class="card">
   <div class="card-content company-list user-view">
+    
     <div class="sub">
         <a href="#" class="sub-item active">All</a>
         <%= link_to 'Saved', my_businesses_path, class: 'sub-item' %>
       </div>
-      <h4>Companies</h4>
+      
         <section>
            <%= render partial: 'geo_divisions' %>
             <table class="user-view resizable">

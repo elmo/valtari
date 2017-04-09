@@ -1,14 +1,18 @@
 <div class="card">
   <div class="card-content">
     <div class="sub">
-    <%= link_to "All Campaigns", campaigns_path, class: 'sub-item active' %>
+    <%= link_to campaigns_path, class: 'sub-item active' do %>
+      All Campaigns (<%= current_user.campaigns.count -%>)
+    <% end %>
+    <%= link_to campaigns_path, class: 'sub-item' do %>
+      Matches
+    <% end %>
     <%= link_to new_my_campaign_path, class: "waves-effect btn right float-margin" do %>
     
     Create Campaign
     <% end %>
     <%= link_to "My Campaigns", my_dashboard_path, class: 'right-link' %>
     </div>
-  <div class="card-title">Campaigns (<%= current_user.campaigns.count -%>) </div>
 
   <%= render partial: '/campaigns/campaigns', locals: {campaigns: @campaigns } %>
   </div>
