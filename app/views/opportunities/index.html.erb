@@ -9,16 +9,14 @@
         <% end %>
 
       <%= link_to 'Create Sell-side Listing', new_my_opportunity_path, class: "waves-effect btn right float-margin" -%>
-      <%= link_to "My Listings", my_dashboard_path, class: 'right-link' %>
+      <%= link_to "My Listings", my_opportunities_path, class: 'right-link' %>
     </div>
       <% if @opportunities.any? %>
         <%= render partial: '/opportunities/opportunities' %>
       <% else %>
        <p>Start the First Sell-side Opportunity!  &nbsp; <%= link_to 'Create Listing', new_my_opportunity_path, class: "link-color" -%>
        </p>
-       
       <% end %>
-    
   </div>
 </div>
 

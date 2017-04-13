@@ -1,6 +1,6 @@
 class My::CampaignsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :set_campaign, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
     @campaigns = current_user.campaigns.order(created_at: :desc).page(params[:page]).per(10)
@@ -46,6 +46,22 @@ class My::CampaignsController < ApplicationController
     @campaign.destroy
     respond_to do |format|
       format.html { redirect_to my_campaigns_url, notice: 'Campaign was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def publish
+    @campaign.publish!
+    respond_to do |format|
+      format.html { redirect_back(fallback_location:  my_campaigns_url, notice: 'Campaign was successfully published.') }
+      format.json { head :no_content }
+    end
+  end
+
+  def unpublish
+    @campaign.unpublish!
+    respond_to do |format|
+      format.html { redirect_back(fallback_location:  my_campaigns_url, notice: 'Campaign was successfully unpublished.') }
       format.json { head :no_content }
     end
   end

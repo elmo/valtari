@@ -1,6 +1,6 @@
 class My::OpportunitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
+  before_action :set_opportunity, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
     @opportunities = current_user.opportunities.order(created_at: :desc).page(params[:page]).per(10)
@@ -45,6 +45,22 @@ class My::OpportunitiesController < ApplicationController
     @opportunity.destroy
     respond_to do |format|
       format.html { redirect_to my_opportunities_url, notice: 'Opportunity was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def publish
+    @opportunity.publish!
+    respond_to do |format|
+      format.html { redirect_to my_opportunities_url, notice: 'Opportunity was successfully published.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def unpublish
+    @opportunity.unpublish!
+    respond_to do |format|
+      format.html { redirect_to my_opportunities_url, notice: 'Opportunity was successfully has been unpublished.' }
       format.json { head :no_content }
     end
   end

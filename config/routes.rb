@@ -26,7 +26,12 @@ Rails.application.routes.draw do
       resources :verifications
     end
     resources :events
-    resources :campaigns
+    resources :campaigns do
+      member do
+        put 'publish'
+        put 'unpublish'
+      end
+    end
     resources :capitals
     resources :messages do
       member do
@@ -34,7 +39,12 @@ Rails.application.routes.draw do
       end
     end
     resources :notes, only: [:index, :show]
-    resources :opportunities
+    resources :opportunities do
+      member do
+        put 'publish'
+        put 'unpublish'
+      end
+    end
     resources :searches
   end
 
