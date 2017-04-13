@@ -9,4 +9,14 @@ class Opportunity < ApplicationRecord
   validates_presence_of :ebidta_amount
   has_many :opportunity_industry_classifications
   has_many :industry_classifications, through: :opportunity_industry_classifications, class_name: 'IndustryClassification'
+  scope :published, -> { where(published: true) }
+
+  def publish!
+    update_attributes(published: true)
+  end
+
+  def unpublish!
+    update_attributes(published: false)
+  end
+
 end

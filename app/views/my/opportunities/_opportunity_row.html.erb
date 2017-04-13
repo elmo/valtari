@@ -10,5 +10,7 @@
     <%= link_to(my_opportunity_path(opportunity), method: :delete, data: { confirm: 'Are you sure want to remove this opportunity?' }, class: "inline-link") do  %>
       <i class="material-icons tiny">delete </i>
     <% end %>
+    <%= opportunity_published_link(opportunity) -%>
   </td>
+
 </tr>

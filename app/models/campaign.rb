@@ -16,4 +16,14 @@ class Campaign < ApplicationRecord
   STAGE_EARLY = 'Early'
   STAGE_EXPANSION = 'Expansion'
   STAGE_LATER = 'Later'
+  scope :published, -> { where( published: true ) }
+
+  def publish!
+    update_attributes(published: true)
+  end
+
+  def unpublish!
+    update_attributes(published: false)
+  end
+
 end

@@ -11,6 +11,7 @@
       <% current_user.campaigns.each do |campaign| %>
       <li class="collection-item">
         <%= render partial: '/campaigns/campaign_item', locals: {campaign: campaign } -%>
+        <%= campaign_published_link(campaign) -%>
       </li>
       <% end %>
     </ul>

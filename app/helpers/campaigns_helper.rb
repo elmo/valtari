@@ -21,4 +21,8 @@ module CampaignsHelper
     ]
   end
 
+  def campaign_published_link(campaign)
+    (campaign.published?) ? link_to('unpublish', unpublish_my_campaign_path(campaign), method: :put)  : link_to('publish',  publish_my_campaign_path(campaign), method: :put )
+  end
+
 end
