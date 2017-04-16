@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416031514) do
+ActiveRecord::Schema.define(version: 20170416180810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,11 @@ ActiveRecord::Schema.define(version: 20170416031514) do
     t.decimal  "decimal",    precision: 8, scale: 2
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+  end
+
+  create_table "cim_authorizations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cim_id"
   end
 
   create_table "cims", force: :cascade do |t|
@@ -348,6 +353,7 @@ ActiveRecord::Schema.define(version: 20170416031514) do
     t.string   "profile_url"
     t.integer  "organization_id"
     t.boolean  "declined_to_state_organization", default: false
+    t.boolean  "cim",                            default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

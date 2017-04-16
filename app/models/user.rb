@@ -26,7 +26,7 @@ class User < ApplicationRecord
    has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
    has_many :user_industry_classifications
    has_many :industry_classifications, through: :user_industry_classifications, class_name: 'IndustryClassification'
-
+   has_many :cim_authorizations
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )
@@ -101,5 +101,22 @@ class User < ApplicationRecord
   def following?(user)
     Following.exists?(user_id: self.id, other_user_id: user.id)
   end
+
+  def authorized_for_cim!(cim:)
+    cim_authorizations.find_or_create_by(cim_id: cim.id)
+  end
+
+  def authorized_for_cim?(cim:)
+    cim_authorizations.exists?(cim_id: cim.id)
+  end
+
+  def deauthorized_for_cim!(cim:)
+    cim_authorizations.where(cim_id: cim.id).destroy_all
+  end
+
+  def authorized_cims
+    cim_authorizations.collect(&:cim)
+  end
+
 
 end
