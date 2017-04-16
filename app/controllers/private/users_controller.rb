@@ -1,0 +1,67 @@
+class Private::UsersController < ApplicationController
+  layout 'cim'
+  before_action :set_cim
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @users = @cim.authorized_users
+  end
+
+  def show
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def edit
+  end
+
+  def create
+    @user = @cim.create_user_for_cim(email: user_params[:email] )
+    respond_to do |format|
+      if @user.persisted?
+        format.html { redirect_to private_cim_users_path(@cim) , notice: 'User was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to private_cim_user_path(@user), notice: 'User was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to private_cim_users_url, notice: 'User was successfully destroyed.' }
+    end
+  end
+
+  def remove
+    user = User.find(params[:user_id])
+    user.deauthorized_for_cim!(cim: @cim)
+    redirect_to private_cim_users_url(@cim)
+  end
+
+  private
+
+    def set_cim
+      @cim = Cim.friendly.find(params[:cim_id])
+    end
+
+    def set_user
+      @user = User.friendly.find(params[:id])
+    end
+
+    def user_params
+      params.require(:user).permit(:email)
+    end
+end

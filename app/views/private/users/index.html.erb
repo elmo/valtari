@@ -1,0 +1,21 @@
+<h3>Authorized users for <%= @cim.name -%></h3>
+<table>
+  <thead>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% @users.each do |user| -%>
+   <tr>
+      <td> <%= user.email -%></td>
+      <td> <%= @cim.password_for_email(email: user.email) -%></td>
+      <td> <%= link_to 'remove', private_cim_user_remove_path(@cim,user), method: :put, data: {confirm: "Are you sure that you want to remove this user?"} -%></td>
+   </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Add new user to CIM', new_private_cim_user_path(@cim) -%>
+</p>

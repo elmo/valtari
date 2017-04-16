@@ -1,0 +1,7 @@
+<h1>Give a new user access </h1>
+
+<%= simple_form_for([:private, @cim, @user]) do |f| %>
+  <%= f.input :email -%>
+  <%= f.submit 'Add', class: 'btn' -%>
+<% end %>
+

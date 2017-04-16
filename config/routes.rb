@@ -76,7 +76,11 @@ Rails.application.routes.draw do
   end
 
   namespace :private  do
-    resources :cims
+    resources :cims do
+      resources :users do
+         put 'remove'
+      end
+    end
   end
 
 end
