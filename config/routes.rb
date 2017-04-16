@@ -74,5 +74,10 @@ Rails.application.routes.draw do
    resources :sic_codes
    resources :revenues
   end
+
+  namespace :private  do
+    resources :cims
+  end
+
 end
 

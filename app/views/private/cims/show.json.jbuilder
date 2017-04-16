@@ -1,0 +1,1 @@
+json.partial! "cims/cim", cim: @cim

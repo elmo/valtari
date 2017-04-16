@@ -1,0 +1,11 @@
+<%= simple_form_for([:private, @cim]) do |f| %>
+  <%= f.error_notification %>
+   <%= f.input :name %>
+   <%= f.label :html, "HTML" %>
+   <%= f.file_field :html %>
+
+   <%= f.label :html, "PDF" %>
+   <%= f.file_field :pdf %>
+
+  <%= f.button :submit %>
+<% end %>
