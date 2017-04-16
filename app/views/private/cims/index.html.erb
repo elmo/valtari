@@ -1,0 +1,25 @@
+<h1>Cims</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cims.each do |cim| %>
+      <tr>
+        <td><%= cim.name %>
+           <%= link_to 'Show', private_cim_path(cim) %>
+           <%= link_to 'Edit', edit_private_cim_path(cim) %>
+           <%= link_to 'Destroy', private_cim_path(cim) , method: :delete, data: { confirm: 'Are you sure?' } %>
+       </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cim', new_private_cim_path %>

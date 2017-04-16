@@ -1,0 +1,11 @@
+<p>
+  <%= link_to 'Download PDF', private_cim_path(format: :pdf) -%>
+</p>
+
+<%= @cim.html.read.html_safe  %>
+
+<% if current_user.admin? %>
+  <p> <%= link_to 'Edit', edit_private_cim_path(@cim) %> | <%= link_to 'Back', private_cims_path %> </p>
+<% end %>
+
+
