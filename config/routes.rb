@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount PostgresqlLoStreamer::Engine => 'event_photo', as: 'event_photo'
   mount Judge::Engine => '/judge'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
+
   root to: "home#splash"
   get '/home' => 'home#index', as: :home
   get '/knowledge' => 'home#knowledge', as: :knowledge
@@ -75,6 +76,9 @@ Rails.application.routes.draw do
    resources :revenues
   end
 
+  scope '/private' do
+    devise_for :users, as: :private, controllers: { sessions: 'private/sessions'}
+  end
   namespace :private  do
     resources :cims do
       resources :users do
