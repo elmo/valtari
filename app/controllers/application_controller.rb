@@ -5,11 +5,20 @@ class ApplicationController < ActionController::Base
   helper_method :resource_name, :resource, :devise_mapping
 
   def after_sign_in_path_for(resource)
+   if  resource.authorized_cims.any?
+     after_cim_sign_in_path_for(resource)
+   else
     businesses_path
+   end
   end
 
   def after_sign_up_path_for(resource)
     edit_my_interests_path
+  end
+
+  def after_cim_sign_in_path_for(resource)
+    cim = resource.authorized_cims.first
+    private_cim_path(cim)
   end
 
   def not_found

@@ -1,0 +1,2 @@
+class CimUser < User
+end
