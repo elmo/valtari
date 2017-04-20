@@ -9,13 +9,21 @@
 
 .thin {
   font-weight: 200;
-  color:black;
   background: white;
   padding: 20px;
   width: 60%;
   margin: 0 auto;
 }
 
+.fixed-whiteout{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
 
 .dropdown-content-full{
   left: 0!important;
