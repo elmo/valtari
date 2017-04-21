@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Users</th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
            <%= link_to 'Edit', edit_private_cim_path(cim) %>
            <%= link_to 'Destroy', private_cim_path(cim) , method: :delete, data: { confirm: 'Are you sure?' } %>
        </td>
+       <td><%= link_to 'users', private_cim_users_path(cim)-%></td>
       </tr>
     <% end %>
   </tbody>

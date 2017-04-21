@@ -118,5 +118,17 @@ class User < ApplicationRecord
     cim_authorizations.collect(&:cim)
   end
 
+  def client_for_cim!(cim: )
+    add_role(:client, cim)
+  end
+
+  def remove_client_from_cim!(cim: )
+    remove_role(:client, cim)
+  end
+
+  def client_for_cim?(cim: )
+    has_role?(:client, cim)
+  end
+
 
 end

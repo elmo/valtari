@@ -1,7 +1,7 @@
 class Private::UsersController < ApplicationController
   layout 'cim'
   before_action :set_cim
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client]
 
   def index
     @users = @cim.authorized_users
@@ -51,6 +51,16 @@ class Private::UsersController < ApplicationController
     redirect_to private_cim_users_url(@cim)
   end
 
+  def client
+    @user.client_for_cim!(cim: @cim)
+    redirect_back(fallback_location: private_cim_users_path(@cim), notice: "User #{@user.email} is now a client for this cim." )
+  end
+
+  def remove_client
+    @user.remove_client_from_cim!(cim: @cim)
+    redirect_back(fallback_location: private_cim_users_path(@cim), notice: "User #{@user.email} is no longer a client for this cim." )
+  end
+
   private
 
     def set_cim
@@ -58,7 +68,7 @@ class Private::UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.friendly.find(params[:id])
+      @user = User.find(params[:user_id])
     end
 
     def user_params

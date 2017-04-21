@@ -11,7 +11,7 @@ class Private::CimsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html
+      format.html {render tempate: 'show', layout: false}
       format.pdf do
         send_data(@cim.pdf.read, filename: @cim.name.dasherize + ".pdf" , disposition: 'inline', type: 'application/pdf')
       end

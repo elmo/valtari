@@ -5,6 +5,7 @@ class Cim < ApplicationRecord
   mount_uploader :html, CimHtmlUploader
   mount_uploader :pdf, CimPdfUploader
   friendly_id :slug_candidates, use: :slugged
+  resourcify
 
   def to_param
     slug
