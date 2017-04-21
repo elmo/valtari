@@ -1,5 +1,4 @@
-class Private::UsersController < ApplicationController
-  layout 'cim'
+class Private::UsersController < Private::PrivateController
   before_action :set_cim
   before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client]
 
