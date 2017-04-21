@@ -80,11 +80,6 @@ Rails.application.routes.draw do
      get "/private/sessions/new" => "private/sessions"
   end
 
-
-  #scope '/private' do
-  #  devise_for :users, as: :private, controllers: { sessions: 'private/sessions'}
-  #end
-
   namespace :private  do
     resources :sessions, only: [:new, :create]
     resources :cims do

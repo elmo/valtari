@@ -1,5 +1,6 @@
 class Private::CimsController < Private::PrivateController
   before_action :set_cim, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:index, :edit, :update, :destroy]
 
   def index
     @cims = Cim.all
@@ -51,6 +52,10 @@ class Private::CimsController < Private::PrivateController
   end
 
   private
+
+  def admin_only
+    not_found unless current_user.admin?
+  end
 
   def set_cim
     @cim = Cim.friendly.find(params[:id])
