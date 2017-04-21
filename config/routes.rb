@@ -76,10 +76,17 @@ Rails.application.routes.draw do
    resources :revenues
   end
 
-  scope '/private' do
-    devise_for :users, as: :private, controllers: { sessions: 'private/sessions'}
+  devise_scope :user do
+     get "/private/sessions/new" => "private/sessions"
   end
+
+
+  #scope '/private' do
+  #  devise_for :users, as: :private, controllers: { sessions: 'private/sessions'}
+  #end
+
   namespace :private  do
+    resources :sessions, only: [:new, :create]
     resources :cims do
       resources :users do
          put 'remove'

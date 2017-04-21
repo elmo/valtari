@@ -1,5 +1,4 @@
 class Private::CimsController < Private::PrivateController
-
   before_action :set_cim, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -53,16 +52,12 @@ class Private::CimsController < Private::PrivateController
 
   private
 
-    def set_cim
-      @cim = Cim.friendly.find(params[:id])
-    end
+  def set_cim
+    @cim = Cim.friendly.find(params[:id])
+  end
 
-    def cim_params
-      params.require(:cim).permit(:name,:html,:pdf)
-    end
-
-  def set_devise_mapping
-    request.env["devise.mapping"] = Devise.mappings[:user]
+  def cim_params
+    params.require(:cim).permit(:name,:html,:pdf)
   end
 
 end
