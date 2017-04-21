@@ -1,7 +1,14 @@
-<h1>Give a new user access </h1>
-
-<%= simple_form_for([:private, @cim, @user]) do |f| %>
-  <%= f.input :email -%>
-  <%= f.submit 'Add', class: 'btn' -%>
-<% end %>
-
+<div class="card">
+  <div class="card-content">
+      <div class="card-title">Give a new user access to <%= @cim.name -%></div>
+      <% if (!current_user.admin? and !current_user.client_for_cim?)  %>
+        <p>You are can invite anyone within the email domain of <%= current_user.email.split('@').last -%></p>
+       <% end %>
+       <p> Enter the email address of the person you'd like to invite.</p>
+       <%= simple_form_for([:private, @cim, @user]) do |f| %>
+       <%= f.input :email -%>
+       <%= f.submit 'Add', class: 'btn' -%>
+      <% end %>
+    </div>
+  </div>
+</div>

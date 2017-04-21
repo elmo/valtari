@@ -3,20 +3,26 @@
   <thead>
     <th>Email</th>
     <th>Password</th>
-    <th>Remove</th>
-    <th>Client</th>
+   <% if (current_user.admin? and current_user.client_for_cim?(cim: @cim))  %>
+     <th>Remove</th>
+     <th>Client</th>
+   <% end %>
   </thead>
   <tbody>
   <% @users.each do |user| -%>
    <tr>
-       <td> <%= user.email -%> <%= user.client_for_cim?(cim: @cim) ? '(client)' : ''  -%> </td>
+      <td> <%= user.email -%> <%= user.client_for_cim?(cim: @cim) ? '(client)' : ''  -%> </td>
       <td> <%= @cim.password_for_email(email: user.email) -%></td>
-      <td> <%= link_to 'remove', private_cim_user_remove_path(@cim,user), method: :put, data: {confirm: "Are you sure that you want to remove this user?"} -%></td>
-      <td>
-        <% if !user.client_for_cim?(cim: @cim) %>
-          <%= link_to 'make client', private_cim_user_client_path(@cim,user), method: :put -%>
-        <% else  %>
-          <%= link_to 'remove client priveleges', private_cim_user_remove_client_path(@cim,user), method: :put -%>
+        <% if (current_user.admin? and current_user.client_for_cim?(cim: @cim) )  %>
+          <td><%= link_to 'remove', private_cim_user_remove_path(@cim,user), method: :put, data: {confirm: "Are you sure that you want to remove this user?"} -%></td>
+          <% if current_user.admin? %>
+            <td>
+              <% if !user.client_for_cim?(cim: @cim) %>
+               <%= link_to 'make client', private_cim_user_client_path(@cim,user), method: :put -%>
+             <% else  %>
+               <%= link_to 'remove client priveleges', private_cim_user_remove_client_path(@cim,user), method: :put -%>
+             <% end %>
+          <% end %>
         <% end %>
       </td>
    </tr>

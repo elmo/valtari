@@ -130,5 +130,4 @@ class User < ApplicationRecord
     has_role?(:client, cim)
   end
 
-
 end
