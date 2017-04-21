@@ -1,7 +1,4 @@
-class Private::CimsController < ApplicationController
-  before_action :set_devise_mapping
-  before_action :authenticate_user!
-  layout 'cim'
+class Private::CimsController < Private::PrivateController
 
   before_action :set_cim, only: [:show, :edit, :update, :destroy]
 
