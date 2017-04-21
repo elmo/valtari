@@ -3,19 +3,27 @@
   <thead>
     <th>Email</th>
     <th>Password</th>
-    <th></th>
+    <th>Remove</th>
+    <th>Client</th>
   </thead>
   <tbody>
   <% @users.each do |user| -%>
    <tr>
-      <td> <%= user.email -%></td>
+       <td> <%= user.email -%> <%= user.client_for_cim?(cim: @cim) ? '(client)' : ''  -%> </td>
       <td> <%= @cim.password_for_email(email: user.email) -%></td>
       <td> <%= link_to 'remove', private_cim_user_remove_path(@cim,user), method: :put, data: {confirm: "Are you sure that you want to remove this user?"} -%></td>
+      <td>
+        <% if !user.client_for_cim?(cim: @cim) %>
+          <%= link_to 'make client', private_cim_user_client_path(@cim,user), method: :put -%>
+        <% else  %>
+          <%= link_to 'remove client priveleges', private_cim_user_remove_client_path(@cim,user), method: :put -%>
+        <% end %>
+      </td>
    </tr>
   <% end %>
   </tbody>
 </table>
 
 <p>
-  <%= link_to 'Add new user to CIM', new_private_cim_user_path(@cim) -%>
+  <%= link_to 'Create a new user to CIM', new_private_cim_user_path(@cim) -%>
 </p>

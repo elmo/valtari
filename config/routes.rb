@@ -83,6 +83,8 @@ Rails.application.routes.draw do
     resources :cims do
       resources :users do
          put 'remove'
+         put 'client'
+         put 'remove_client'
       end
     end
   end
