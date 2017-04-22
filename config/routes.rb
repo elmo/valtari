@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount PostgresqlLoStreamer::Engine => 'event_photo', as: 'event_photo'
+  mount PostgresqlLoStreamer::Engine => 'asset_data', as: 'asset_data'
   mount Judge::Engine => '/judge'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
 
@@ -83,6 +84,7 @@ Rails.application.routes.draw do
   namespace :private  do
     resources :sessions, only: [:new, :create]
     resources :cims do
+      resources :cim_assets, only: [:new, :create, :destroy, :show]
       resources :users do
          put 'remove'
          put 'client'

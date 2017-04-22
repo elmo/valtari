@@ -1,6 +1,6 @@
-<h1>Editing Cim: <%= @cim.name -%> </h1>
+<h1>Editing: <%= @cim.name -%> </h1>
 <%= render 'form', cim: @cim %>
-
+<%= render partial: '/private/cim_assets/index'  -%>
 <p>
 <%= link_to "View", private_cim_path(@cim), class: 'btn', target: '_blank' %>
 <%= link_to 'Users', private_cim_users_path(@cim)  -%> (<%= @cim.cim_authorizations.count -%>)
