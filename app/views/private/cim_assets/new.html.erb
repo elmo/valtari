@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-content">
+  <div class="card-title">Upload a new Asset </div>
+       <%= simple_form_for([:private, @cim, @cim_asset], multipart: true) do |f| %>
+       <%= f.file_field :data -%>
+       <%= f.submit 'Add', class: 'btn' -%>
+      <% end %>
+    </div>
+  </div>
+</div>

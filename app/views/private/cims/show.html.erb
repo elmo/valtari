@@ -1,1 +1,16 @@
+<script>
+  <% @cim.cim_assets.each do |asset| %>
+     <% next unless asset.filename  =~  /js$/ %>
+     <%= raw(include_cim_asset_data(filename: asset.filename)) %>
+  <% end %>
+</script>
+
+<style>
+  <% @cim.cim_assets.each do |asset| %>
+     <% next unless asset.filename  =~  /css$/ %>
+     <%= raw(include_cim_asset_data(filename: asset.filename)) %>
+  <% end %>
+</style>
+
 <%= @cim.html.read.html_safe  %>
+
