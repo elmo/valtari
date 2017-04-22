@@ -70,6 +70,8 @@ GEM
       mime-types (>= 1.16)
     carrierwave-postgresql (0.2.0)
       carrierwave (~> 0.10.0)
+    chart-js-rails (0.1.2)
+      railties (> 3.1)
     city-state (0.0.13)
       rubyzip (~> 1.1)
     coffee-rails (4.2.1)
@@ -289,6 +291,7 @@ DEPENDENCIES
   best_in_place
   byebug
   carrierwave-postgresql
+  chart-js-rails
   city-state
   coffee-rails (~> 4.2)
   country_select
@@ -329,4 +332,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
