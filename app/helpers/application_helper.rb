@@ -17,6 +17,10 @@ module ApplicationHelper
     date.strftime(date_format)
   end
 
+  def format_date_and_time(time)
+    time.strftime(date_and_time_format)
+  end
+
   def industry_classification_thumbnail_image(industry_classification)
     image_tag("industry_thumbs/#{industry_classification.name.downcase.underscore}.jpg", class: 'center-cropped')
   end

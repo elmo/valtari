@@ -1,4 +1,10 @@
 <h3>Authorized users for <%= @cim.name -%></h3>
+
+<% if current_user.admin? %>
+  <p><%= link_to 'Edit', edit_private_cim_path(@cim) -%> </p>
+<% end %>
+
+
 <table>
   <thead>
     <th>Email</th>
@@ -6,6 +12,7 @@
    <% if (current_user.admin? and current_user.client_for_cim?(cim: @cim))  %>
      <th>Remove</th>
      <th>Client</th>
+     <th>Visits</th>
    <% end %>
   </thead>
   <tbody>
@@ -25,6 +32,7 @@
           <% end %>
         <% end %>
       </td>
+      <td> <%= link_to user.cim_accesses.where(cim_id: @cim.id).count, private_cim_cim_accesses_path(@cim, user_id: user.id ) -%> </td>
    </tr>
   <% end %>
   </tbody>

@@ -15,6 +15,7 @@
                  <%= link_to 'Edit', edit_private_cim_path(cim) %>
                  <%= link_to 'Delete', private_cim_path(cim) , method: :delete, data: { confirm: 'Are you sure you want to destroy this CIM?' } %>
                  <%= link_to 'Users', private_cim_users_path(cim)  -%> (<%= cim.cim_authorizations.count -%>)
+                 <%= link_to 'Visits', private_cim_cim_accesses_path(cim)  -%> (<%= cim.cim_accesses.count -%>)
                </td>
              </tr>
            <% end %>
