@@ -1,6 +1,7 @@
 class Private::CimsController < Private::PrivateController
   before_action :set_cim, only: [:show, :edit, :update, :destroy]
   before_action :admin_only, only: [:index, :edit, :update, :destroy]
+  after_action :log_access, only: [:show]
 
   def index
     @cims = Cim.all
@@ -63,6 +64,10 @@ class Private::CimsController < Private::PrivateController
 
   def cim_params
     params.require(:cim).permit(:name,:html,:pdf)
+  end
+
+  def log_access
+    CimAccess.create!(user: current_user, cim: @cim, ip: request.remote_ip)
   end
 
 end

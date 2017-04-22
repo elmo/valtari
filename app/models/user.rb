@@ -26,7 +26,8 @@ class User < ApplicationRecord
    has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
    has_many :user_industry_classifications
    has_many :industry_classifications, through: :user_industry_classifications, class_name: 'IndustryClassification'
-   has_many :cim_authorizations
+   has_many :cim_authorizations, dependent: :destroy
+   has_many :cim_accesses, dependent: :destroy
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )

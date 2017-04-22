@@ -1,0 +1,41 @@
+<h1>Visits to <%= @cim.name -%> </h1>
+
+<p>
+<%= link_to 'Manage', private_cim_users_path(@cim) -%>
+</p>
+
+
+<p>
+  Visits by user:
+  <% @cim.authorized_users.each do |user| -%>
+      <%= link_to "#{user.email} (#{user.cim_accesses.where(cim_id: @cim.id).count})" , private_cim_cim_accesses_path(@cim, user_id: user.id ) -%>
+  <% end %>
+</p>
+
+<% if @visiting_user.present? %>
+  <p>Visits by user: <%= @visiting_user.name  -%> (<%= @visiting_user.email-%>)
+</p>
+<% end %>
+
+<% if @cim_accesses.empty? %>
+    <p>There are no recorded visits by <%= @visiting_user.name  -%> (<%= @visiting_user.email-%>).</p>
+<% else %>
+
+<table>
+  <thead>
+    <th>User</th>
+    <th>IP</th>
+    <th>Time</th>
+  </thead>
+  <tbody>
+     <% @cim_accesses.each do |cim_access|-%>
+       <tr>
+           <td><%= cim_access.user.name -%> (<%= cim_access.user.email -%>) </td>
+           <td><%= cim_access.ip -%></td>
+           <td><%= format_date_and_time(cim_access.created_at.in_time_zone('Eastern Time (US & Canada)')) -%> EST</td>
+       </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<% end %>

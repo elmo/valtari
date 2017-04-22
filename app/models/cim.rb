@@ -1,6 +1,7 @@
 class Cim < ApplicationRecord
   has_many :cim_authorizations, dependent: :destroy
   has_many :cim_assets, dependent: :destroy
+  has_many :cim_accesses, dependent: :destroy
   extend FriendlyId
   validates_presence_of :name
   mount_uploader :html, CimHtmlUploader
