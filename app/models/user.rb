@@ -131,4 +131,8 @@ class User < ApplicationRecord
     has_role?(:client, cim)
   end
 
+  def send_cim_invitation(cim:)
+    CimMailer.invitation(user: self, cim: cim).deliver
+  end
+
 end

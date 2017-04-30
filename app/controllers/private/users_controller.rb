@@ -1,6 +1,6 @@
 class Private::UsersController < Private::PrivateController
   before_action :set_cim
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client, :invite]
 
   def index
     scope = @cim.cim_authorizations.where(cim_authorizations: {cim_id: @cim.id } )
@@ -62,6 +62,11 @@ class Private::UsersController < Private::PrivateController
   def remove_client
     @user.remove_client_from_cim!(cim: @cim)
     redirect_back(fallback_location: private_cim_users_path(@cim), notice: "User #{@user.email} is no longer a client for this cim." )
+  end
+
+  def invite
+    @user.send_cim_invitation(@cim)
+    redirect_back(fallback_location: private_cim_users_path(@cim), notice: "Inviation to #{@user.email} has been resent" )
   end
 
   private

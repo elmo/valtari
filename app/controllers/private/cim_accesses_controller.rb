@@ -1,5 +1,4 @@
 class Private::CimAccessesController < Private::PrivateController
-
   before_action :set_cim
   before_action :admin_or_client_only
 
