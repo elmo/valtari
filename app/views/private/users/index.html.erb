@@ -33,11 +33,12 @@
         <% end %>
       </td>
       <td> <%= link_to user.cim_accesses.where(cim_id: @cim.id).count, private_cim_cim_accesses_path(@cim, user_id: user.id ) -%> </td>
+      <td> <%= link_to 're-send invitation' , private_cim_user_invite_path(@cim, user_id: user.id), method: :put  -%> </td>
    </tr>
   <% end %>
   </tbody>
 </table>
 
 <p>
-  <%= link_to 'Create a new user to CIM', new_private_cim_user_path(@cim) -%>
+  <%= link_to 'Create a new user and invite to CIM', new_private_cim_user_path(@cim) -%>
 </p>

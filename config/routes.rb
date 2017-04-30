@@ -90,6 +90,7 @@ Rails.application.routes.draw do
          put 'remove'
          put 'client'
          put 'remove_client'
+         put 'invite'
       end
     end
   end
