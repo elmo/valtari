@@ -65,7 +65,7 @@ class Private::UsersController < Private::PrivateController
   end
 
   def invite
-    @user.send_cim_invitation(@cim)
+    @user.send_cim_invitation(cim: @cim)
     redirect_back(fallback_location: private_cim_users_path(@cim), notice: "Inviation to #{@user.email} has been resent" )
   end
 
