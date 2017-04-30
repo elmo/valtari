@@ -23,12 +23,13 @@ class Cim < ApplicationRecord
       user.authorized_for_cim!(cim: self)
     else
       user = User.new(email: email)
-      user.password =  password_for_email(email: email)
+      user.password = password_for_email(email: email)
       user.password_confirmation = user.password
       user.cim = true
       user.save
       user.authorized_for_cim!(cim: self) if user.persisted?
     end
+    user.send_cim_invitation(cim: self)
     user
   end
 
