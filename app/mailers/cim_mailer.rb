@@ -1,16 +1,16 @@
 class CimMailer < ActionMailer::Base
-  default from: 'support@valtariexchnage.com'
+  default from: 'support@valtariexchange.com'
   layout false
 
   def invitation(user:, cim:)
    headers "X-SMTPAPI" => {
-      "sub": {
+      sub: {
         "%invited_user%" => [user.email],
         "%password%" => [cim.password_for_email(email: user.email)],
-        "%cim_or_pirch_book%" => ["CIM"],
-        "url" => [ Rails.application.routes.url_helpers.private_cim_url(cim , host: ENV['CIM_HOST'] )  ]
+        "%cim_or_pitch_book%" => ["CIM"],
+        "%url%" => [ Rails.application.routes.url_helpers.private_cim_url(cim , host: ENV['CIM_HOST'] )  ]
     },
-   "filters": {
+   filters: {
      "templates": {
        "settings": {
          "enable": 1,
