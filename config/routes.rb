@@ -84,6 +84,9 @@ Rails.application.routes.draw do
   namespace :private  do
     resources :sessions, only: [:new, :create]
     resources :cims do
+      collection do
+        get 'welcome'
+      end
       resources :cim_accesses, only: [:index]
       resources :cim_assets, only: [:new, :create, :destroy, :show]
       resources :users do

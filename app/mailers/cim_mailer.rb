@@ -8,7 +8,7 @@ class CimMailer < ActionMailer::Base
         "%invited_user%" => [user.email],
         "%password%" => [cim.password_for_email(email: user.email)],
         "%cim_or_pitch_book%" => ["CIM"],
-        "%url%" => [ Rails.application.routes.url_helpers.private_cim_url(cim , host: ENV['CIM_HOST'] )  ]
+        "%url%" => [ Rails.application.routes.url_helpers.welcome_private_cims_url(host: ENV['CIM_HOST'] )  ]
     },
    filters: {
      "templates": {

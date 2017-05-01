@@ -16,6 +16,9 @@ class Private::CimsController < Private::PrivateController
     end
   end
 
+  def welcome
+  end
+
   def new
     @cim = Cim.new
   end

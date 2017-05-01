@@ -1,7 +1,7 @@
 class CimFailure < Devise::FailureApp
 
   def redirect_url
-     new_private_user_session_path
+    return '/private/sessions/new'
   end
 
   def respond

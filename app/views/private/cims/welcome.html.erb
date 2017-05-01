@@ -1,0 +1,9 @@
+<h1>Welcome to Valtari Exchange</h1>
+
+<p>The following presentations have been shared with me: <p>
+
+<ul>
+<% current_user.authorized_cims.each do |cim| %>
+    <li><%= link_to cim.name, private_cim_path(cim) -%></li>
+<% end%>
+</ul>

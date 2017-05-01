@@ -17,8 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_cim_sign_in_path_for(resource)
-    cim = resource.authorized_cims.first
-    private_cim_path(cim)
+    welcome_private_cims_path
   end
 
   def not_found
