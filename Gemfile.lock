@@ -160,6 +160,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
+    oj (3.0.3)
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
@@ -218,6 +219,8 @@ GEM
       railties (>= 4.2.0, < 5.1)
     rmagick (2.16.0)
     rolify (5.1.0)
+    rollbar (2.14.1)
+      multi_json
     rspec-core (3.5.0)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -317,6 +320,7 @@ DEPENDENCIES
   logidze
   materialize-sass
   momentjs-rails
+  oj
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-linkedin-oauth2
@@ -328,6 +332,7 @@ DEPENDENCIES
   rails (~> 5.0.0)
   rmagick
   rolify
+  rollbar
   rspec-rails (= 3.5.0)
   sass-rails (~> 5.0)
   sendgrid-actionmailer

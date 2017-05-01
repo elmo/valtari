@@ -55,6 +55,8 @@ gem 'underscore-rails'
 gem 'dotenv-rails'
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
+gem 'rollbar'
+gem 'oj'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
