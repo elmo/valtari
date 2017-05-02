@@ -45,7 +45,7 @@ class Cim < ApplicationRecord
 
   def save_shortened_url
     url = Rails.application.routes.url_helpers.welcome_private_cims_url(host: ENV['CIM_HOST'] )
-    key = Base64.encode64(url)[0..6]
+    key = Base64.encode64(SecureRandom.uuid)[0..6]
     Shortener::ShortenedUrl.generate(url, custom_key: key, owner: self)
   end
 
