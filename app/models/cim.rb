@@ -8,6 +8,8 @@ class Cim < ApplicationRecord
   mount_uploader :pdf, CimPdfUploader
   friendly_id :slug_candidates, use: :slugged
   resourcify
+  has_shortened_urls
+  after_create :save_shortened_url
 
   def to_param
     slug
@@ -39,6 +41,17 @@ class Cim < ApplicationRecord
 
   def authorized_users
     cim_authorizations.collect(&:user)
+  end
+
+  def save_shortened_url
+    url = Rails.application.routes.url_helpers.welcome_private_cims_url(host: ENV['CIM_HOST'] )
+    key = Base64.encode64(url)[0..6]
+    Shortener::ShortenedUrl.generate(url, custom_key: key, owner: self)
+  end
+
+  def short_url
+    save_shortened_url if shortened_urls.empty?
+    Rails.application.routes.url_helpers.shortened_url(shortened_urls.last.unique_key, host: ENV['CIM_HOST'] )
   end
 
 end
