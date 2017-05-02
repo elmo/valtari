@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422153502) do
+ActiveRecord::Schema.define(version: 20170502133248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -292,6 +292,20 @@ ActiveRecord::Schema.define(version: 20170422153502) do
     t.string   "query"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shortened_urls", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type", limit: 20
+    t.text     "url",                               null: false
+    t.string   "unique_key", limit: 10,             null: false
+    t.integer  "use_count",             default: 0, null: false
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["owner_id", "owner_type"], name: "index_shortened_urls_on_owner_id_and_owner_type", using: :btree
+    t.index ["unique_key"], name: "index_shortened_urls_on_unique_key", unique: true, using: :btree
+    t.index ["url"], name: "index_shortened_urls_on_url", using: :btree
   end
 
   create_table "sic_codes", force: :cascade do |t|

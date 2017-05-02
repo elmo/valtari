@@ -253,6 +253,8 @@ GEM
       faraday (~> 0.9)
       mimemagic
       smtpapi (~> 0.1)
+    shortener (0.5.5)
+      rails (>= 3.0.7)
     simple_calendar (2.2.2)
       rails (>= 3.0)
     simple_form (3.2.1)
@@ -337,6 +339,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sendgrid-actionmailer
   sendgrid-ruby
+  shortener
   simple_calendar (~> 2.0)
   simple_form
   spring
