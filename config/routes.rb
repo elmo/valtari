@@ -87,6 +87,7 @@ Rails.application.routes.draw do
     resources :cims do
       collection do
         get 'welcome'
+        get 'teaser'
       end
       resources :cim_accesses, only: [:index]
       resources :cim_assets, only: [:new, :create, :destroy, :show]
