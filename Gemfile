@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'bullet'
 gem 'chart-js-rails'
 gem 'judge'
 gem 'best_in_place'
