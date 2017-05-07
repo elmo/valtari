@@ -3,7 +3,7 @@ class Private::UsersController < Private::PrivateController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client, :invite]
 
   def index
-    scope = @cim.cim_authorizations.where(cim_authorizations: {cim_id: @cim.id } )
+    scope = @cim.cim_authorizations.includes(:user).where(cim_authorizations: {cim_id: @cim.id } )
     if !current_user.admin? and !current_user.client_for_cim?(cim: @cim )
       scope = scope.joins(:user).where(["users.email like ? ", current_user.email.split('@').last ])
     end

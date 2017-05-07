@@ -40,7 +40,7 @@ class Cim < ApplicationRecord
   end
 
   def authorized_users
-    cim_authorizations.collect(&:user)
+    cim_authorizations.includes(:user).collect(&:user)
   end
 
   def save_shortened_url

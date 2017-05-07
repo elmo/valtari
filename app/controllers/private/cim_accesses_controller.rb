@@ -3,7 +3,7 @@ class Private::CimAccessesController < Private::PrivateController
   before_action :admin_or_client_only
 
   def index
-    scope = @cim_accesses= @cim.cim_accesses
+    scope = @cim_accesses= @cim.cim_accesses.includes(:user)
    if params[:user_id].present?
       @visiting_user = User.find(params[:user_id])
       scope = scope.where(user_id: @visiting_user.id)
