@@ -19,6 +19,12 @@ class Private::CimsController < Private::PrivateController
   def welcome
   end
 
+  def teaser
+   respond_to do |format|
+     format.html {render tempate: 'teaser', layout: 'cim-teaser'}
+   end
+  end
+
   def new
     @cim = Cim.new
   end
