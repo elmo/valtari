@@ -403,7 +403,7 @@ var canvas13 = function(){
   var topThreshold = 10;
 
   var modifyCtx = function(ctx) {
-    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
+    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'small', Chart.defaults.global.defaultFontFamily);
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     return ctx;
@@ -617,7 +617,7 @@ var pie14 = function(){
 
     slice.transition().delay(function (d, i) {
       return arcAnimDur + i * secIndividualdelay;
-    }).duration(secDur).attr("stroke-width", "3px");
+    }).duration(secDur).attr("stroke-width", "1px");
 
     var midAngle = function midAngle(d) {
       return d.startAngle + (d.endAngle - d.startAngle) / 2;
@@ -1186,7 +1186,7 @@ var pie20 = function() {
 
   var dataset = [ 23.5, 1.96, 4.60, 0.24, 35.83,  0.63, 28.97, 4.25];
 
-  var labels = [ 'Founders 23.5%', ' Key Employees/Trust 1.96%', 'Erasmic Venture Fund Ltd. 4.60%', 'Individual Investors 0.24%', 'Norwest Venture Partners 35.83%','SVB India 0.63%', 'IDG Venture India 28.97%','ESOP Pool 4.25%' ];
+  var labels = [ 'Founders 23.5%', 'Key Employees/Trust 1.96%', 'Erasmic Venture Fund Ltd. 4.60%', 'Individual Investors 0.24%', 'Norwest Venture Partners 35.83%','SVB India 0.63%', 'IDG Venture India 28.97%','ESOP Pool 4.25%' ];
 
   // var colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9'];
   // var colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d'];
@@ -1246,7 +1246,7 @@ var pie20 = function() {
         return colors[i];
       },
       d: arc,
-      "stroke-width": "40px"
+      "stroke-width": "37px"
     }).attr("transform", function (d, i) {
       return "rotate(-180, 0, 0)";
     }).style("opacity", 0).transition().delay(function (d, i) {
@@ -1255,7 +1255,7 @@ var pie20 = function() {
 
     slice.transition().delay(function (d, i) {
       return arcAnimDur + i * secIndividualdelay;
-    }).duration(secDur).attr("stroke-width", "2px");
+    }).duration(secDur).attr("stroke-width", "0px");
 
     var midAngle = function midAngle(d) {
       return d.startAngle + (d.endAngle - d.startAngle) / 2;
