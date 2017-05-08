@@ -5,85 +5,6 @@ body{
   display: none 
 }
 
-@media (max-width: 1025px){
-	.btn13{ right: -75px; top: 4px; }
-	.btn13 .icon {
-	  height: 3px;
-	  width: 25px;
-	  top: 20px;
-	}
-	.btn13 .icon:before {
-	  height: 3px;
-	  width: 25px;
-	  top: 20px;
-	  content:"";
-	}
-	.btn13 .icon:after {
-	  height: 3px;
-	  width: 25px;
-	  top: 10px;
-	  content:"";
-	}
-	.map-size{
-	  width:100%;
-	  height:250px;
-	}
-	#trigger{
-	  top: -56px
-	}
-	.canvas-wrap{
-	  height: 450px
-	}
-	time img{
-	  right: 20%
-	}
-
-}
-
-@media (min-width: 768px){
-  .inline-canvas2{ width:640px; height:380px; margin-right:40px; display:inline-block }
-	.inline-canvas{  width:260px; height:380px; display:inline-block }
-  .chart-wrapper.inline{
-	  display: inline-block;
-	  width: 620px;
-	}
-  .geo-map{ width:620px; display: block; margin: 0 auto; }
-  .geo-map.wide{ width: 100%}
-	.pie-wrapper{
-	  width:100%;
-	  height: 200px;
-	}
-	#pieChart14{
-	  height:300px;
-	  margin-left: -45px
-	}
-	#pieChart15{
-	  margin-left: -58px
-	}
-	#pieChart15two{
-	  margin-left: -38px
-	}
-	#pieChart16{
-	  height: 360px
-	}
-	#pieChart20{
-		margin-right:-50px;
-	}
-	table tbody tr td, table thead tr th{
-      border:1px solid white;
-  	}
-}
-
-@media (min-width: 1025px){
-	.pie-wrapper{
-		height: 330px
-	}
-	#pieChart14, #pieChart15{
-	  margin-left: -55px
-	}
-}
-
-
 /*---------------------------------------------------------------------------------
 
 	App: WebSlides
@@ -447,8 +368,8 @@ input:focus,
 textarea:focus,
 button{
   text-decoration: none;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
   outline: none;
   box-shadow:none;
 }
@@ -475,9 +396,11 @@ nav a[rel="external"] em,
 /*Layer/Box Shadow*/
 .shadow {
   position: relative;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+  background: #ffffff; /* Old Browsers */
+  background: -webkit-linear-gradient(top,#ffffff,#fbfbfb); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,#ffffff,#fbfbfb); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,#ffffff,#fbfbfb); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, #ffffff, #fbfbfb); /*Standard*/
 }
 .shadow:before,.shadow:after {
   z-index: -1;
@@ -3504,7 +3427,7 @@ ul.text-size{
   position: absolute;
   z-index: 999;
   right: -75px;
-  top: -50px;
+  top: -54px;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
@@ -3590,6 +3513,7 @@ ul.text-size{
   -webkit-transition-delay: 0s, 0.2s, 0.4s;
   transition: top 0.2s ease 0s, width 0.2s ease 0.2s, transform 0.2s ease 0.4s;
   top: 0;
+  left:1px;
   width: 50%;
 }
 
@@ -3617,17 +3541,22 @@ ul.text-size{
   padding: 5px 4px 5px 30px;
   border-radius: 0;
   color: #000;
-  font-size: 14px;
-  line-height: 15px
+  font-size: 1.65rem;
+  line-height: 2.3rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .panel a.section.selector {
-    font-weight: 600;
-    padding: 6px 4px 6px 21px;
+  font-weight: 500;
+  padding: 6px 4px 6px 21px;
 }
 
 .panel a:hover{
   color:#3af;
+  text-decoration: underline
 }
 
 .panel a:target{
@@ -3641,14 +3570,18 @@ ul.text-size{
 }
 
 .panel li.selected {
-    background-color: rgba(141, 156, 199, 0.4);
-    border-top: 1px solid transparent;
-    color: white;
+  background-color: rgba(141, 156, 199, 0.4);
+  border-top: 1px solid transparent;
+  color: white;
 }
 
 .panel .head{
-  padding-left: 20px;
-  padding-bottom: 10px
+  padding-left: 22px;
+  padding-bottom: 21px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 1.3rem;
+  padding-top: 5px;
 }
 
 
@@ -3779,3 +3712,87 @@ ul.steps.flexblock ul li{
   padding: 0 2.3rem 2.3rem;
   max-width: 800px
 }
+
+
+
+@media (max-width: 1025px){
+  .btn13{ right: -75px; top: 4px; }
+  .btn13 .icon {
+    height: 3px;
+    width: 25px;
+    top: 20px;
+  }
+  .btn13 .icon:before {
+    height: 3px;
+    width: 25px;
+    top: 20px;
+    content:"";
+  }
+  .btn13 .icon:after {
+    height: 3px;
+    width: 25px;
+    top: 10px;
+    content:"";
+  }
+  .map-size{
+    width:100%;
+    height:250px;
+  }
+  #trigger{
+    top: -52px
+  }
+  .canvas-wrap{
+    height: 450px
+  }
+  time img{
+    right: 20%
+  }
+
+}
+
+.inline-canvas2{ width:590px; height:380px; margin-bottom:3rem  }
+.inline-canvas{  width:260px; height:380px; }
+
+@media (min-width: 768px){
+  .inline-canvas2{ width:640px; height:380px; margin-right:40px; display:inline-block }
+  .inline-canvas{  width:260px; height:380px; display:inline-block }
+  .chart-wrapper.inline{
+    display: inline-block;
+    width: 620px;
+  }
+  .geo-map{ width:620px; display: block; margin: 0 auto; }
+  .geo-map.wide{ width: 100%}
+  .pie-wrapper{
+    width:100%;
+    height: 200px;
+  }
+  #pieChart15{
+    margin-left: -58px
+  }
+  #pieChart15two{
+    margin-left: -38px
+  }
+  #pieChart16{
+    height: 360px
+  }
+  #pieChart20{
+    margin-right:-50px;
+  }
+  table tbody tr td, table thead tr th{
+      border:1px solid white;
+    }
+}
+
+@media (min-width: 1025px){
+  .pie-wrapper{
+    height: 330px
+  }
+  #pieChart14, #pieChart15{
+    margin-left: -55px
+  }
+}
+
+  #pieChart14{
+    height: 150px;
+    margin-left: -15px
+  }
