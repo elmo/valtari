@@ -1798,10 +1798,7 @@ function linear(p) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__easing__ = __webpack_require__(14);
 /* harmony export (immutable) */ __webpack_exports__["a"] = scrollTo;
-
-
-var SCROLLABLE_CONTAINER = document.getElementById('webslides');
-
+//var SCROLLABLE_CONTAINER = document.getElementById('webslides');
 /**
  * Smoothly scrolls to a given Y position using Easing.Swing. It'll run a
  * callback upon finishing.
@@ -1810,6 +1807,7 @@ var SCROLLABLE_CONTAINER = document.getElementById('webslides');
  * @param {function} cb Callback function to call upon completion.
  */
 function scrollTo(y) {
+  var SCROLLABLE_CONTAINER = document.getElementById('webslides');
   var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
   var cb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
 
