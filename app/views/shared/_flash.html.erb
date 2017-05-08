@@ -1,4 +1,8 @@
 <% if controller_name != 'sessions' && action_name != 'new' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <% if alert.present? %>
+      <script> Materialize.toast('<%= alert -%>', 3000) </script>
+  <% end %>
+  <% if notice.present? %>
+      <script> Materialize.toast('<%=notice-%>', 3000) </script>
+  <% end %>
 <% end %>

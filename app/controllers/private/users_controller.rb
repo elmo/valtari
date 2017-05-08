@@ -1,6 +1,7 @@
 class Private::UsersController < Private::PrivateController
   before_action :set_cim
   before_action :set_user, only: [:show, :edit, :update, :destroy, :client, :remove_client, :invite]
+  before_action :check_authorization
 
   def index
     scope = @cim.cim_authorizations.includes(:user).where(cim_authorizations: {cim_id: @cim.id } )

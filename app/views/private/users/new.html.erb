@@ -1,6 +1,6 @@
-<div class="card">
-  <div class="card-content">
-      <div class="card-title">Give a new user access to <%= @cim.name -%></div>
+<div class="row">
+  <div class="col s9">
+      <h3> Give a new user access to <%= @cim.name -%></h3>
       <% if (!current_user.admin? and !current_user.client_for_cim?(cim: @cim))  %>
         <p>You are can invite anyone within the email domain of <%= current_user.email.split('@').last -%></p>
        <% end %>

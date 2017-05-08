@@ -13,8 +13,8 @@
   <main class="<%= (current_user.present?) ? 'logged-in' : 'logged-in' -%>">
     <%= render partial: '/shared/cim_user_navigation' %>
     <%= render partial: '/shared/flash' %>
-    <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
-      <div class="col s12">
+    <div class="row">
+      <div class="col s9 offset-s1">
         <%= yield %>
       </div>
    </div>

@@ -1,7 +1,11 @@
 <% if notice.present? %>
-<div class="flash flash-notice"><%= notice %></div>
+    <div class="flash flash-notice"><%= notice %>
+<a class="btn" onclick="Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})">Toast!</a>
+    </div>
 <% end %>
 
 <% if alert.present? %>
-<div class="flash flash-alert"><%= alert %></div>
+<div class="flash flash-alert"><%= alert %>
+<a class="btn" onclick="Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})">Toast!</a>
+</div>
 <% end %>

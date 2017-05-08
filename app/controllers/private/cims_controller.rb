@@ -1,6 +1,7 @@
 class Private::CimsController < Private::PrivateController
   before_action :set_cim, only: [:show, :edit, :update, :destroy]
   before_action :admin_only, only: [:index, :edit, :update, :destroy]
+  before_action :check_authorization, except: [:welcome]
   after_action :log_access, only: [:show]
 
   def index
@@ -19,6 +20,12 @@ class Private::CimsController < Private::PrivateController
   def welcome
   end
 
+  def teaser
+   respond_to do |format|
+     format.html {render tempate: 'teaser', layout: 'cim-teaser'}
+   end
+  end
+
   def new
     @cim = Cim.new
   end
@@ -31,7 +38,7 @@ class Private::CimsController < Private::PrivateController
 
     respond_to do |format|
       if @cim.save
-        format.html { redirect_to private_cim_path(@cim) , notice: 'Cim was successfully created.' }
+        format.html { redirect_to edit_private_cim_path(@cim) , notice: 'Cim was successfully created.' }
       else
         format.html { render :new }
       end
@@ -41,7 +48,7 @@ class Private::CimsController < Private::PrivateController
   def update
     respond_to do |format|
       if @cim.update(cim_params)
-        format.html { redirect_to private_cim_path(@cim), notice: 'Cim was successfully updated.' }
+        format.html { redirect_to edit_private_cim_path(@cim), notice: 'Cim was successfully updated.' }
       else
         format.html { render :edit }
       end
