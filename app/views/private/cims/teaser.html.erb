@@ -868,11 +868,10 @@
     <div class="swipe-icon"></div>
  
     <script type="text/javascript">
-    $(document).on('turbolinks:load', function() {
+    $(function ($) {
 
       alert('hey');
-      window.ws = new WebSlides({}); 
-      $(function ($) {
+      //window.ws = new WebSlides({}); 
         $('body').fadeIn();
           var hashpath = window.location.hash; 
           if (hashpath === '#slide=8') {
@@ -909,7 +908,6 @@
           setTimeout(function() {
               $('.swipe-icon').fadeOut('slow');
           }, 8000);
-      });
 
 
     /////////  Sidepanel Slide Navigation Feedback ////////
