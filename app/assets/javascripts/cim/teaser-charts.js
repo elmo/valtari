@@ -546,13 +546,13 @@ var canvas14 = function(){
 
 var pie14 = function(){ 
 
-  var dataset = [24.31, 1.10, 6.02, 7.79, 12.7, 48.08];
+  var dataset = [ 12.7, 24.31, 1.10, 6.02, 7.79,  48.08];
 
-  var labels = ['Europe 24.3%', 'Africa 1.10%', 'Latin America 7.79%', 'Oceania 1.1%', 'North America 12.7%', 'Asia 48.1%'];
+  var labels = ['North America 12.7%','Europe 24.3%', 'Africa 1.10%', 'Latin America 7.79%', 'Oceania 1.1%',  'Asia 48.1%'];
 
   // let colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd'];
   // let colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d', '#1a1a1a'];
-  var colors = ["#0078b4", "#4039ad", "#2ecc71", "#333", "#fa1405", "#2a2577"];
+  var colors = ["#fa1405", "#0078b4", "#4039ad", "#2ecc71", "#999",  "#2a2577"];
 
   var width = document.querySelector("#pieChart14").offsetWidth,
       height = document.querySelector("#pieChart14").offsetHeight,
