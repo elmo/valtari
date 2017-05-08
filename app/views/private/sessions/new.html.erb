@@ -1,11 +1,10 @@
-<div class="card">
-  <div class="card-content">
-    <div class="card-title">Login </div>
+<div class="row">
+  <div class="col s9">
+    <h3>Login </h3>
        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= f.input :email, required: false, autofocus: true %>
         <%= f.input :password, required: false %>
         <%= f.button :submit, "Log in" %>
       <% end %>
-    </div>
   </div>
 </div>

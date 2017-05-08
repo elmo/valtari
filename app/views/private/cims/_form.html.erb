@@ -1,11 +1,11 @@
+<div class="row">
+<div class="s4">
 <%= simple_form_for([:private, @cim]) do |f| %>
   <%= f.error_notification %>
    <%= f.input :name %>
    <%= f.label :html, "HTML" %>
    <%= f.file_field :html %>
-
-   <%= f.label :html, "PDF" %>
-   <%= f.file_field :pdf %>
-
-  <%= f.button :submit %>
+  <%= f.button :submit, 'Save' %>
 <% end %>
+</div>
+</div>

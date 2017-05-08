@@ -1,9 +1,15 @@
-<h1>Editing: <%= @cim.name -%> </h1>
-<%= render 'form', cim: @cim %>
-<%= render partial: '/private/cim_assets/index'  -%>
-<p>
-<%= link_to "View", private_cim_path(@cim), class: 'btn', target: '_blank' %>
-<%= link_to 'Users', private_cim_users_path(@cim)  -%> (<%= @cim.cim_authorizations.count -%>)
-<%= link_to 'Visits', private_cim_cim_accesses_path(@cim)  -%> (<%= @cim.cim_accesses.count -%>)
-<%= link_to 'List all CIMs', private_cims_path %>
-</p>
+<div class="row">
+<div class="col s5">
+   <h3>Editing: <%= @cim.name -%> </h3>
+  <%= link_to "View", private_cim_path(@cim), class: 'btn', target: '_blank' %>
+  <%= link_to 'Users', private_cim_users_path(@cim)  -%> (<%= @cim.cim_authorizations.count -%>)
+  <%= link_to 'Visits', private_cim_cim_accesses_path(@cim)  -%> (<%= @cim.cim_accesses.count -%>)
+  <%= link_to 'List all CIMs', private_cims_path %>
+   <%= render 'form', cim: @cim %>
+  </div>
+</div>
+<div class="row">
+  <div class="col s4">
+   <%= render partial: '/private/cim_assets/index'  -%>
+  </div>
+</div>

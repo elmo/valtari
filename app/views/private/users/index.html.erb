@@ -1,7 +1,9 @@
+<div class="row">
+<div class="col s9">
 <h3>Authorized users for <%= @cim.name -%></h3>
 
 <% if current_user.admin? %>
-  <p><%= link_to 'Edit', edit_private_cim_path(@cim) -%> </p>
+  <p><%= link_to 'Edit', edit_private_cim_path(@cim), class: 'btn' -%> </p>
 <% end %>
 
 
@@ -40,5 +42,7 @@
 </table>
 
 <p>
-  <%= link_to 'Create a new user and invite to CIM', new_private_cim_user_path(@cim) -%>
+  <%= link_to 'Create a new user and invite to CIM', new_private_cim_user_path(@cim), class: 'btn' -%>
 </p>
+</div>
+</div>

@@ -1,6 +1,6 @@
 class Private::CimAccessesController < Private::PrivateController
   before_action :set_cim
-  before_action :admin_or_client_only
+  before_action :check_authorization
 
   def index
     scope = @cim_accesses= @cim.cim_accesses.includes(:user)
@@ -12,10 +12,6 @@ class Private::CimAccessesController < Private::PrivateController
   end
 
   private
-
-  def admin_or_client_only
-    not_found if (!current_user.admin? and !current_user.client_for_cim?(cim: @cim ))
-  end
 
   def set_cim
     @cim = Cim.friendly.find(params[:cim_id])
