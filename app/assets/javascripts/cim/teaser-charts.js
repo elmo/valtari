@@ -35,7 +35,7 @@ var canvas8 = function(){
             data: barChartData,
             options: {
               responsive: true,
-              maintainAspectRatio:true,
+              maintainAspectRatio:false,
               scales: { 
                 xAxes: [{
                   gridLines:{

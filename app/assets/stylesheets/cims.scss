@@ -3751,7 +3751,7 @@ ul.steps.flexblock ul li{
 }
 
 .inline-canvas2{ width:590px; height:380px; margin-bottom:3rem  }
-.inline-canvas{  width:260px; height:380px; }
+.inline-canvas{  width:270px; height:380px; }
 
 @media (min-width: 768px){
   .inline-canvas2{ width:640px; height:380px; margin-right:40px; display:inline-block }
@@ -3787,14 +3787,15 @@ ul.steps.flexblock ul li{
   .pie-wrapper{
     height: 330px
   }
-  #pieChart15{
-    margin-left: -75px
-  }
-  #pieChart15two{
+  #pieChart15, #pieChart15two{
     margin-left: -75px
   }
 
 }
-  #pieChart14{
-    margin-left: -65px
-  }
+
+#pieChart14{
+  margin-left: -65px
+}
+#pieChart15, #pieChart15two{
+  margin:10px 0 10px -30px;
+}
