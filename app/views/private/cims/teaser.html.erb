@@ -163,7 +163,7 @@
                   60486 Frankfurt Germany<br>
                   info@valtari.com<br>
                   Tel: +1 800 705 2592<br>
-                  <%= image_tag('cim/valtari.png') %>
+                  <%= image_tag('cim/valtari.png', class:'sm') %>
                 </div>
               </li>
             </ul>
@@ -573,21 +573,65 @@
           <!-- .end .wrap -->
         </section>
         <section class="bg-white">
-          <div class="wrap size-90">
+          <div class="wrap size-80">
             <h3>2. Market Overview</h3>
             <p class="text-intro">One in seven deaths throughout the world is caused due to cancer.</p>
-              <small><strong>Projections of all cancers in 2030 by HDI and sex (millions), worldwide</strong></small>
-              <br><br>
+            <div class="clear-float">
+              <div class="content-left">
+                <p>
+                When countries are grouped according to income, cancer is the second leading cause of death in high-income countries (following cardiovascular diseases) and the third leading cause of death in low and middle-income countries (following cardiovascular diseases and infectious and parasitic diseases).</p>
+              </div>
+              <div class="content-left"><p>
+                Cancer is often considered a disease of affluence, but about 70% of cancer deaths occur in low- and middle-income countries.</p>
+              </div>
+            </div> <br><br>
+              <h5>Projections of all cancers in 2030 by HDI and sex (millions), worldwide</h5>
+              <div class="tiny">a. Based on demographic changes (UN) plus trends in rates of six cancers on the basis of changing annual age-adjusted incidence in 101 cancer registries 1988–2002</div>
+              <div class="tiny">b. Excluding non-melanoma skin cancers</div>
+
+              <br>
               <div class="inline-canvas2">
-                <canvas id="canvas12-2" width="760" height="500"></canvas>
+                <canvas id="canvas12-2" width="680" height="500"></canvas>
                 <div class="labels"><span>High HDI</span><span>Medium HDI</span><span>Low HDI</span></div>
               </div>
               <div class="inline-canvas">
-                <canvas id="canvas2" width="300" height="500"></canvas>
+                <canvas id="canvas2" width="260" height="500"></canvas>
                 <div class="labels"><span></span></div>
               </div>
               <br><br><small style="text-align:center">Total projected 2030 incidence: <b>males 12.85, females 10.77, both 23.62</b></small>
-
+              <br><br>
+              <h4>2.1 Cancer Incidence and Mortality Statistics</h4>
+              <p class="text-intro">In 2012, cancer caused 15% of total number of deaths recorded globally.</p>
+              <p>The following statistics show that cancer has become a leading cause of death in the world.</p> 
+              <ul class="flexblock cells">
+                <li class="bg-primary">
+                  <h2>32.6 million</h2>
+                  people living with cancer in 2012
+                </li>
+                <li class="bg-purple-pale">
+                  <h2>15%</h2>
+                  of global deaths in 2012 were from cancer
+                </li>
+                <li class="bg-secondary">
+                  <h2>130 million</h2>
+                  estimated deaths from cancer in 2030
+                </li>
+              </ul>
+              <ul class="flexblock cells">
+                <li class="bg-violet">
+                  <h2>8.2 Million</h2>
+                  deaths from cancer worldwide in 2012
+                </li>
+                <li class="bg-violet-dark">
+                  <h2>14.1 million</h2>
+                  new cases of cancer worldwide in 2012
+                </li>
+                <li class="bg-black-blue">
+                  <h2>46%</h2>
+                  of deaths caused by common cancers
+                  <small>(lung, liver, stomach or bowel cancer)</small>
+                </li>
+              </ul>
           </div>
           <!-- end .wrap-->
         </section>
@@ -673,7 +717,7 @@
             <div class="chart-wrapper">
               <strong>Geographic Distribution of Cancer Cases in Asia – 2012</strong>
               <small>Source: Globocan 2012</small>
-              <div id="pieChart16" class="pie-wrapper"></div>
+              <div id="pieChart16" class="pie-wrapper larger"></div>
             </div>
           </div>
         </section>
@@ -836,9 +880,10 @@
               </div>
             </div>
             <div>
-              <br><h5 style="margin-bottom:0">Shareholding Structure</h5>
+              <br>
               <div>
-                <ul class="description">
+                <ul class="description float">
+                  <h5 style="margin-bottom:0">Shareholding Structure</h5><br>
                   <li><span class="text-label">Founders</span> 23.53%</li>
                   <li><span class="text-label">Key Employees & Founders Trust</span> 1.96%</li>
                   <li><span class="text-label">Erasmic Venture Fund Ltd.</span> 4.60%</li>
@@ -848,8 +893,7 @@
                   <li><span class="text-label">SVB India</span> 0.63%</li>
                   <li><span class="text-label">ESOP Pool</span> 4.25%</li>
                 </ul>
-                <br>
-                <div class="chart-wrapper inline">
+                    <div class="chart-wrapper inline">
                     <div id="pieChart20" class="pie-wrapper"></div>
                   </div>
               </div>
@@ -1142,7 +1186,6 @@
       ]);
       var options = {
         displayMode: 'regions',
-        magnifyingGlass: {enable: true, zoomFactor: 7.5},
         colorAxis: {values: ['No data', 100], colors: ['#006090', '#006090'],},
         backgroundColor: 'transparent',
         datalessRegionColor: '#ececec',

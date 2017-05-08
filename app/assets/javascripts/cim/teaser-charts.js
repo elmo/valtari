@@ -179,7 +179,7 @@ var canvas12 = function(){
                   animationDuration: 0
                 },
                 animation: {
-                  duration: 2000,
+                  duration: 4500,
                   onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -282,7 +282,7 @@ var canvas12two = function(){
               },  
               events: false,
               animation: {
-                duration: 2000,
+                duration: 4500,
                 onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -668,6 +668,8 @@ var pie14 = function(){
     setTimeout(draw, 800);
   };
 };
+
+
 
 
 /////////////////
@@ -1202,8 +1204,8 @@ var pie20 = function() {
   var radius;
 
   // calculate minimum of width and height to set chart radius
-  if (minOfWH > 175) {
-    radius = 175;
+  if (minOfWH > 155) {
+    radius = 145;
   } else {
     radius = minOfWH;
   }

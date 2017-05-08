@@ -845,8 +845,6 @@ var Slide = function () {
         canvas12two();
       }
       if (hashpath === '#slide=12') {
-        canvas12();
-        canvas12two();
         canvas13();        
       }
       if (hashpath === '#slide=13') {

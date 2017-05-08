@@ -139,7 +139,7 @@ Base
     background-color: #111;
   }
   .bg-black-blue {
-    background-color: #123;
+    background-color: #1d156f;
   }
   .bg-blue {
     background-color: #346;
@@ -170,18 +170,23 @@ Base
   }
 
   .bg-violet{
-    background: #262261;
+    background: #3830a8;
+    /* linear-gradient(to bottom, #000 0%, #1a1b28 50%, #262261 100%)*/
+  }
+  .bg-purple-pale{
+    background: #5159e9
+  }
+  .bg-violet-dark{
+    background: #302992;
     /* linear-gradient(to bottom, #000 0%, #1a1b28 50%, #262261 100%)*/
   }
   /* BG Apple Keynote*/
-
   .bg-apple {
     background: linear-gradient(to bottom, #000 0%, #1a2028 50%, #293845 100%);
   }
 
 
   /* BG Facebook */
-
   .bg-facebook {
     background: #3b5998;
   }
@@ -190,7 +195,9 @@ Base
   /*Font Color*/
   .bg-trans-dark,.bg-trans-gradient,
   .bg-primary,
+  .bg-violet-dark,
   .bg-secondary,
+  .bg-purple-pale,
   .bg-blue,
   .bg-green,.bg-purple,.bg-red,.bg-facebook,.bg-violet,.bg-apple,[class*="bg-black"],[class*="bg-gradient-"] {
     color: #fff;
