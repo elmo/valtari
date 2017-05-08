@@ -833,40 +833,63 @@ var Slide = function () {
       this.el.classList.add(CLASSES.CURRENT);
       //When to execute charts! -Peter
            
-      var hashpath = window.location.hash; 
-
+        var hashpath = window.location.hash; 
+      if (hashpath === '#slide=7') {
+        canvas8();
+      }
+      if (hashpath === '#slide=9') {
+        canvas8();
+      }
+      if (hashpath === '#slide=11') {
+        canvas12();
+        canvas12two();
+      }
+      if (hashpath === '#slide=12') {
         canvas12();
         canvas12two();
         canvas13();        
-
+      }
+      if (hashpath === '#slide=13') {
+        canvas12();
+        canvas12two();
         d3.select("#pieChart14").selectAll("svg").remove();
         pie14();
         canvas14();
-    
+      }
+      if (hashpath === '#slide=14') {
+        canvas13();
         d3.select("#pieChart15").selectAll("svg").remove();
         d3.select("#pieChart15two").selectAll("svg").remove();
         pie15();
         pie15two();
-
+      }
+      if (hashpath === '#slide=15') {
+        d3.select("#pieChart14").selectAll("svg").remove();
+        pie14();
+        canvas14();
         d3.select("#pieChart16").selectAll("svg").remove();
         pie16();
-   
+      }
+      if (hashpath === '#slide=16') {
         d3.select("#pieChart15").selectAll("svg").remove();
         d3.select("#pieChart15two").selectAll("svg").remove();
         d3.select("#pieChart17").selectAll("svg").remove();
         pie15();
         pie15two();
         pie17();
-    
+      }  
+      if (hashpath === '#slide=17') {
         d3.select("#pieChart16").selectAll("svg").remove();
         pie16();
-    
+      }  
+      if (hashpath === '#slide=18') {
         d3.select("#pieChart17").selectAll("svg").remove();
         pie17();
-    
+      }    
+      if (hashpath === '#slide=19') {
         d3.select("#pieChart20").selectAll("svg").remove();
         pie20();
-              
+      } 
     }
 
     /**
