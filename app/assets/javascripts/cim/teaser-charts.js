@@ -1,5 +1,109 @@
 //Chart.js 
 
+
+google.charts.load('current', {'packages':['geochart'], mapsApiKey: 'AIzaSyCcj-LukLZQXjzXiawjLWhhkqEjatMjkRI'});
+  
+google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = google.visualization.arrayToDataTable([
+        ["Country",  "Cases"],
+        ["Denmark",338.1],                          
+        ["France",324.6],
+        ["Australia",323.0],                    
+        ["Belgium",321.1],                        
+        ["Norway",318.3],                            
+        ["United States",318],                        
+        ["Ireland",307.9],                      
+        ["Korea, Republic of",307.8],                      
+        ["The Netherlands",304.8],                          
+        ["New Caledonia",297.9],                        
+        ["Slovenia",296.3],                        
+        ["Canada",295.7],                            
+        ["New Zealand",295],                          
+        ["Czech Republic",293.8],                          
+        ["Switzerland",287],                          
+        ["Hungary",285.4],                    
+        ["Iceland",284.3],                      
+        ["Germany",283.8],                          
+        ["Israel",283.2],                            
+        ["Luxembourg",280.3],                            
+        ["Italy",278.6],                      
+        ["Slovakia",276.9],                        
+        ["United Kingdom",272.9],                            
+        ["Sweden",270],                    
+        ["Serbia",269.7],                      
+        ["Croatia",266.9],                        
+        ["Barbados",263.1],                        
+        ["Armenia",257],                        
+        ["Finland",256.8],                      
+        ["French Polynesia",255],                            
+        ["Austria",254.1],                          
+        ["Lithuania",251.9],                        
+        ["Uruguay",251],                      
+        ["Spain",249],                      
+        ["Latvia",246.8],              
+        ["Portugal",246.2],                          
+        ["Martinique",245],                        
+        ["Malta",242.9],                              
+        ["Estonia",242.8],                            
+        ["FYR Macedonia",239.3],                            
+        ["Montenegro",238.3],                          
+        ["Kazakhstan",236.5],                          
+        ["Bulgaria",234.8],                            
+        ["Poland",229.6],                            
+        ["Romania",224.2],                            
+        ["Belarus",218.7],                      
+        ["Cuba",218],                          
+        ["Japan",217.1],                            
+        ["Argentina",216.7],                          
+        ["Puerto Rico",211.1],
+        ["Unknown",0],
+    ]);
+
+var options = {
+  displayMode: 'regions',
+  colorAxis: {values: ['No data', 210,  330], colors: ['#a8bff0', '#7c87e8', '#344b9f'],},
+  backgroundColor: 'transparent',
+  datalessRegionColor: '#dbdff6',
+  defaultColor: '#EFEFEF',
+};
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart-incidence'));
+  chart.draw(data, options);
+}
+
+
+google.charts.setOnLoadCallback(drawMarketMap);
+function drawMarketMap() {
+  var data = google.visualization.arrayToDataTable([
+    ['Country'],
+    ["Germany"],
+    ["United States"],
+    ["China"],
+    ["Italy"],
+    ["Vietnam"],
+    ["Indonesia"],
+    ["India"],
+  ]);
+
+  var options = {
+    displayMode: 'regions',
+    backgroundColor: 'transparent',
+    datalessRegionColor: '#FFF',
+    defaultColor: '#6d83cd',
+    legend: 'none',
+  };
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart-market'));
+  chart.draw(data, options);
+
+}
+
+
+
+
+
+
+
 /////////////////
 // Bar Graph 1 //
 /////////////////
@@ -31,6 +135,7 @@ var barChartData = {
 var canvas8 = function(){
         var ctx = document.getElementById("canvas1").getContext("2d");
         myBar = new Chart(ctx, {
+            legend: { position: 'left'},
             type: 'bar',
             data: barChartData,
             options: {
@@ -179,7 +284,7 @@ var canvas12 = function(){
                   animationDuration: 0
                 },
                 animation: {
-                  duration: 4500,
+                  duration: 4000,
                   onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -282,7 +387,7 @@ var canvas12two = function(){
               },  
               events: false,
               animation: {
-                duration: 4500,
+                duration: 4000,
                 onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -383,7 +488,7 @@ var canvas13 = function(){
               },  
               events: false,
               animation: {
-                duration: 2000,
+                duration: 3000,
                 onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -546,7 +651,7 @@ var canvas14 = function(){
 
 var pie14 = function(){ 
 
-  var dataset = [ 12.7, 24.31, 1.10, 6.02, 7.79,  48.08];
+  var dataset = [ 12.7, 24.31, 1.10, 6.02, 7.79, 48.08];
 
   var labels = ['North America 12.7%','Europe 24.3%', 'Africa 1.10%', 'Latin America 7.79%', 'Oceania 1.1%',  'Asia 48.1%'];
 

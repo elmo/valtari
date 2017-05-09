@@ -847,7 +847,7 @@ var Slide = function () {
       if (hashpath === '#slide=12') {
         canvas13();        
       }
-      if (hashpath === '#slide=13') {
+      if (hashpath === '#slide=13') { 
         canvas12();
         canvas12two();
         d3.select("#pieChart14").selectAll("svg").remove();
