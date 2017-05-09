@@ -1,0 +1,32 @@
+<h3>Thank you for your inquiry</h3>
+
+<p>Someone will be in touch with you soon.</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cim_inquiry.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cim_inquiry.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @cim_inquiry.phone %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @cim_inquiry.company %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @cim_inquiry.comment %>
+</p>
+
+<p>
+In the meantime, please feel free to <%= link_to 'Check out or example', teaser_private_cims_path -%>.
+</p>

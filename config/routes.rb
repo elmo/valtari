@@ -84,6 +84,7 @@ Rails.application.routes.draw do
 
   namespace :private  do
     resources :sessions, only: [:new, :create]
+    resources :cim_inquiries, only: [:new,:create,:show]
     resources :cims do
       collection do
         get 'welcome'
