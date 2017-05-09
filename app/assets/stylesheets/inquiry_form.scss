@@ -1,0 +1,128 @@
+
+.notify-box {
+    position: fixed;
+    z-index: 200;
+    width: 390px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+.notify-input {
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 22px;
+    color: #32325d;
+}
+
+@media (min-width: 880px){
+.notify-box {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.notify-header {
+    padding: 50px 115px 45px 55px;
+    overflow: hidden;
+    max-height: 265px;
+    transition: max-height .25s ease-in-out;
+}
+.notify-form {
+    padding: 0 42px 55px;
+    position: relative;
+}
+
+.notify-header h3, .notify-success h3 {
+    margin-bottom: 10px;
+}
+.common-BodyTitle {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 28px;
+    color: #32325d;
+}
+.common-BodyText {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    color: #6b7c93;
+}
+
+.notify-success {
+    padding: 50px 115px 50px 55px;
+    display: none;
+}
+
+.notify-close {
+    position: absolute;
+    z-index: 100;
+    right: 38px;
+    top: 38px;
+    width: 51px;
+    height: 51px;
+    font-size: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+}
+
+.notify-form:before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 1000px;
+    background: #f5fbff;
+    transform: skewY(-12deg);
+    z-index: -1;
+}
+
+.notify-input.email .submit-button {
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 9px 13px;
+    font: inherit;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .025em;
+    color: #6772e5;
+    cursor: pointer;
+    position: relative;
+    transition: all .15s ease;
+    padding-left: 25px;
+}
+
+
+.notify-input input[type=email], .notify-input input[type=text] {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 9px 13px;
+    background: transparent;
+    font: inherit;
+    color: #32325d;
+}
+
+.notify-input.email .submit-button:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    bottom: 7px;
+    width: 2px;
+    background: #f6f9fc;
+}
