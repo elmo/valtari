@@ -311,7 +311,7 @@ label {
 
 p, .nice{
   padding-right: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   line-height: 2.5rem
 }
 
@@ -434,7 +434,7 @@ nav a[rel="external"] em,
 }
 
 .frame,.shadow {
-  padding: 2.4rem;
+  padding: 0 2.4rem 2.4rem ;
 }
 .radius {border-radius: .4rem;}
 
@@ -961,7 +961,7 @@ h5 {
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.25rem;
 }
 
 h6 {
@@ -1457,8 +1457,8 @@ section,.slide
     padding-bottom: 10.2rem;
   }
   .text-intro{
-    font-size: 2.1rem;
-    line-height: 3.1rem;
+    font-size: 2.65rem;
+    line-height: 3.5rem;
   }
 }
 /*slide no padding (full card, .embed> youtube video...) */
@@ -1829,7 +1829,7 @@ h1 + .flexblock,
 h2 + .flexblock,
 h3 + .flexblock,
 div + ul, div + ol{
-  margin-top: 3.2rem;
+  margin-top: 2rem;
 }
 
 .flexblock li h2,
@@ -2720,14 +2720,14 @@ p + .work {
 
 .chapter {
   display: inline-block;
-  font-size: 1.55rem;
+  font-size: 1.75rem;
   line-height: 3.2rem;
   padding-right: .8rem;
 }
 
 .toc-page {
   float: right;
-  font-size: 1.55rem;
+  font-size: 1.75rem;
 }
 
 .toc li .toc-page:before {
@@ -3380,7 +3380,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   line-height: 2.65rem
 }
 .text-size{
-  font-size: 1.5rem;
+  font-size: 1.85rem;
 }
 ul.text-size{
   padding-left: 2rem
@@ -3688,7 +3688,7 @@ ul.steps.flexblock ul li{
   margin-left: -65px
 }
 #pieChart15, #pieChart15two{
-  margin: 10px 0 10px -30px;
+  margin: 2px 0 10px -30px;
 }
 
 .canvas-wrap{

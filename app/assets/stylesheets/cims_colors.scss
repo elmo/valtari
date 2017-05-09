@@ -384,7 +384,7 @@ Base
   }
 
   .steps > li:nth-child(2) {
-    background-color: #dde5f3;
+    background-color: #f8f8f9;
   }
 
   .steps > li:nth-child(3) {
@@ -399,12 +399,12 @@ Base
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
   }
-
+/*
   .steps > li:hover,
   .steps.blink li:hover>a {
     background-color: #b8cef7;
   }
-
+*/
   @media (min-width: 1024px) {
     .process.step-2 {
       border-left-color: #e8eef7;
@@ -415,9 +415,9 @@ Base
     .process.step-4 {
       border-left-color: #cdd8ec;
     }
-    .steps li:hover + li [class*="step-"] {
+  /*  .steps li:hover + li [class*="step-"] {
       border-left-color: #b8cef7;
-    }
+    }*/
   }
 
 
