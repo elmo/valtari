@@ -580,10 +580,10 @@
             <div class="clear-float">
               <div class="content-left">
                 <p>
-                When countries are grouped according to income, cancer is the second leading cause of death in high-income countries (following cardiovascular diseases) and the third leading cause of death in low and middle-income countries (following cardiovascular diseases and infectious and parasitic diseases).</p>
+                When countries are grouped according to income, cancer is the second leading cause of death in high-income countries (following cardiovascular diseases) and the third leading cause of death in low and middle-income countries (following </p>
               </div>
               <div class="content-left"><p>
-                Cancer is often considered a disease of affluence, but about 70% of cancer deaths occur in low- and middle-income countries.</p>
+               cardiovascular diseases and infectious and parasitic diseases). Cancer is often considered a disease of affluence, but about 70% of cancer deaths occur in low- and middle-income countries.</p>
               </div>
             </div> <br><br>
               <h5>Projections of all cancers in 2030 by HDI and sex (millions), worldwide</h5>
@@ -650,8 +650,9 @@
           <!-- .end .wrap -->
         </section>
         <section class="bg-white">
-          <div class="wrap size-90">
+          <div class="wrap size-90 map-wrap">
             <h3>World cancer cases 2012 per 100,000 population</h3>
+            <strong>50 Highest Cancer Cases by Country</strong><br>
             <small>Source: World Health Organization</small>
             <div id="geochart-incidence" class="geo-map"></div>
             <br><br><br>
@@ -794,7 +795,7 @@
                 </ul>
             </div>
           </div>
-
+          <br><br>
           <table style="font-size:1.3rem">
             <thead style="color:white;">
              <tr>
@@ -836,7 +837,7 @@
               </tr>
             </tbody>
           </table>
-          <br>
+          <br><br>
           <%= image_tag('cim/treatments.png', class: 'img-pad') %>
         </div>
         </section>
@@ -903,8 +904,61 @@
         </section>
         <section class="bg-white">
           <div class="wrap size-80">
-            <h4>InnovaHealth's global market footprint</h4>
-            <div id="geochart-market" class="geo-map wide"></div>
+            <h4>InnovaHealth's global market footprint</h4><br>
+              <div id="geochart-market" class="geo-map zoom"></div>
+            <br>
+            <%= image_tag('cim/companies.png') %>
+          </div>
+        </section>
+        <section>
+          <div class="wrap size-80">
+            <h3>3.1 InnovaHealth’s Focus</h3>
+            <p class="text-intro">InnovaHealth's focus is mostly on the low resource markets</p>
+            <div class="clear-float">
+              <div class="content-left">
+                <p>Low resource markets are characterised by:</p>
+                <ul class="text-size">
+                  <li>A large populatoin</li>
+                  <li>Low availability of trained surgeons</li>
+                  <li>Low availability of expensive Radiation Therapy equipment</li>
+                  <li>High percentage of healthcare delivery dependence on the public sector</li>
+                </ul>
+              </div>
+              <div class="content-left">
+                <p>The incidence and mortality rate from lung, liver, breast and prostrate cancers is high in these regions. Liver and Lung Cancers are characterised by a high percentage of inoperable tumours. This requires solutions with acceptable survival rates, less expensive, easy to acquire and train. </p>
+                <p> 
+                Given the disease and geographic characteristics, InnovaHealth’s current and future focus markets and organs are:
+                </p>
+                <p>
+                <span style="color:#0078b4; font-weight:500">Current Focus</span><br>
+                North America, India, China, South-East Asia<br>
+                Liver, Lungs, Kidney, Pancreas<br>
+                <p>
+                <span style="color:red; font-weight:500">Next Phase</span><br>
+                Egypt, West Africa<br>
+                Breast, Prostate <br>
+                </p>
+              </div>
+            </div>
+              <br><br>
+              <%= image_tag("cim/resource-map.png", class: "center") %>
+              </div>
+          </div>
+        </section>
+        <section class="bg-violet">
+          <div class="wrap">
+            <div class="cta">
+              <div class="number">
+                <p><span>4</span></p>
+              </div>
+              <!--end .number -->
+              <div class="benefit">
+                <p class="text-subtitle"></p>
+                <h2>InnovaHealth's Offerings</h2>
+              </div>
+              <!--end .benefit -->
+            </div>
+            <!--end .cta -->
           </div>
         </section>
       </article>
@@ -991,210 +1045,6 @@
     })();
 
 
-      google.charts.load('current', {'packages':['geochart']});
-      google.charts.setOnLoadCallback(drawRegionsMap);
-      google.charts.setOnLoadCallback(drawMarketMap);
-
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country',  'Cases'],
-          ["Iraq",1],
-          ["Bhutan",1],
-          ["Democratic Republic of the Congo",1],
-          ["Liechtenstein",1],
-          ["Maldives",1],
-          ["Sudan",1],
-          ["Zimbabwe",1],
-          ["Mauritania",1],
-          ["Mozambique",41],
-          ["Nigeria",11],
-          ["Swaziland",31],
-          ["Tanzania",141],
-          ["Guyana",1],
-          ["Namibia",1],
-          ["Senegal",1],
-          ["Turkmenistan",1],
-          ["Afghanistan",51],
-          ["Andorra",1],
-          ["Fiji",1],
-          ["Gabon",1],
-          ["Uzbekistan",1],
-          ["Cameroon",1],
-          ["Cuba",199],
-          ["Faroe Islands",1],
-          ["El Salvador",1],
-          ["Caribbean",1],
-          ["Ethiopia",1],
-          ["Mongolia",161],
-          ["Puerto Rico",1],
-          ["Samoa",1],
-          ["Myanmar",1],
-          ["Nicaragua",1],
-          ["Seychelles",1],
-          ["Tajikistan",1],
-          ["Dominican Republic",1],
-          ["Guinea",1],
-          ["Barbados",1],
-          ["CI",1],
-          ["Laos",131],
-          ["Libya",1],
-          ["Panama",1],
-          ["Bahrain",1],
-          ["Benin",1],
-          ["Ghana",1],
-          ["Haiti",1],
-          ["Montenegro",1],
-          ["Somalia",1],
-          ["Syria",1],
-          ["Ecuador",1],
-          ["Honduras",1],
-          ["Madagascar",151],
-          ["Papua New Guinea",144],
-          ["Tunisia",15],
-          ["Angola",1],
-          ["Botswana",41],
-          ["Cyprus",1],
-          ["Algeria",1],
-          ["Bahamas",1],
-          ["New Caledonia",1],
-          ["Uganda",111],
-          ["Yemen",1],
-          ["Zambia",2],
-          ["Antarctica",2],
-          ["Paraguay",2],
-          ["Jamaica",2],
-          ["Palestine",2],
-          ["Bolivia",2],
-          ["Bosnia and Herzegovina",2],
-          ["Vietnam",142],
-          ["Kenya",142],
-          ["Luxembourg",2],
-          ["Niger",12],
-          ["Kuwait",12],
-          ["Hawaii",12],
-          ["Scotland",2],
-          ["Cambodia",142],
-          ["Uruguay",222],
-          ["Kyrgyzstan",2],
-          ["Saudi Arabia",2],
-          ["Indonesia",2],
-          ["Azerbaijan",2],
-          ["United Arab Emirates",2],
-          ["Mauritius",2],
-          ["Morocco",2],
-          ["Albania",3],
-          ["South Korea",223],
-          ["Kazakhstan",183],
-          ["Macedonia",53],
-          ["Venezuela",63],
-          ["Taiwan",73],
-          ["Qatar",63],
-          ["Jordan",63],
-          ["Iceland",63],
-          ["Guatemala",43],
-          ["Costa Rica",103],
-          ["Hong Kong",33],
-          ["San Marino",43],
-          ["Colombia",64],
-          ["Moldova",44],
-          ["Armenia",134],
-          ["Malta",34],
-          ["Nepal",85],
-          ["Lebanon",185],
-          ["Malaysia",115],
-          ["Serbia",45],
-          ["Peru",65],
-          ["Trinidad and Tobago",35],
-          ["Lithuania",5],
-          ["Estonia",6],
-          ["Georgia",116],
-          ["Iran",7],
-          ["Chile",7],
-          ["Latvia",7],
-          ["Thailand",7],
-          ["Egypt",174],
-          ["Slovenia",338],
-          ["Mexico",8],
-          ["Belarus",8],
-          ["Slovakia",9],
-          ["Sri Lanka",69],
-          ["Croatia",119],
-          ["Philippines",19],
-          ["Bangladesh",10],
-          ["Turkey",110],
-          ["Romania",113],
-          ["Italy",204],
-          ["South Africa",185],
-          ["Hungary",345],
-          ["Pakistan",116],
-          ["Portugal",166],
-          ["Ukraine",119],
-          ["Greece",179],
-          ["Oman",19],
-          ["Argentina",109],
-          ["Singapore",50],
-          ["Bulgaria",70],
-          ["Japan",125],
-          ["Czech Republic ",126],
-          ["Ireland",206],
-          ["China",167],
-          ["Finland",172],
-          ["Brazil",133],
-          ["Norway",184],
-          ["Austria",215],
-          ["Denmark",3380],
-          ["Belgium",201],
-          ["New Zealand",242],
-          ["Spain",183],
-          ["Switzerland",157],
-          ["Russia",152],
-          ["Poland",165],
-          ["Israel",153],
-          ["Sweden",181],
-          ["Netherlands",158],
-          ["France",369],
-          ["Australia",373],
-          ["Canada",295.7],
-          ["India",4],
-          ["Germany",258],
-          ["United Kingdom",314],
-          ["United States",340],
-          ["Unknown",0],
-              ]);
-
-    var options = {
-      displayMode: 'regions',
-      magnifyingGlass: {enable: true, zoomFactor: 7.5},
-      colorAxis: {values: ['No data', 100, 200, 300], colors: ['#a8bff0', '#7c87e8', '#6d83cd' ,'#344b9f'],},
-      backgroundColor: 'transparent',
-      datalessRegionColor: '#ececec',
-      defaultColor: '#f5f5f5',
-    };
-      var chart = new google.visualization.GeoChart(document.getElementById('geochart-incidence'));
-      chart.draw(data, options);
-    }
-
-    function drawMarketMap() {
-      var data = google.visualization.arrayToDataTable([
-        ['Country',  'Cases'],
-        ["Germany",1],
-        ["United States",1],
-        ["China",1],
-        ["Italy",1],
-        ["Vietnam",1],
-        ["Indonesia",1],
-        ["India",1],
-      ]);
-      var options = {
-        displayMode: 'regions',
-        colorAxis: {values: ['No data', 100], colors: ['#006090', '#006090'],},
-        backgroundColor: 'transparent',
-        datalessRegionColor: '#ececec',
-        defaultColor: '#f5f5f5',
-        legend: 'none'
-      };
-      var chart = new google.visualization.GeoChart(document.getElementById('geochart-market'));
-      chart.draw(data, options);
-    }
+   
   });
 </script>

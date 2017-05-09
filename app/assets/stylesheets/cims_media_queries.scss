@@ -1,0 +1,81 @@
+
+
+@media (max-width: 1025px){
+  .btn13{ right: -75px; top: 4px; }
+  .btn13 .icon {
+    height: 3px;
+    width: 25px;
+    top: 20px;
+  }
+  .btn13 .icon:before {
+    height: 3px;
+    width: 25px;
+    top: 20px;
+    content:"";
+  }
+  .btn13 .icon:after {
+    height: 3px;
+    width: 25px;
+    top: 10px;
+    content:"";
+  }
+  .map-size{
+    width:100%;
+    height:250px;
+  }
+  #trigger{
+    top: -52px
+  }
+  time img{
+    right: 20%
+  }
+
+}
+
+@media (min-width: 768px){
+  .inline-canvas2{ width:640px; height:450px; margin-right:40px; display:inline-block }
+  .inline-canvas{  width:260px; height:450px; display:inline-block }
+  .chart-wrapper.inline{
+    display: inline-block;
+    width: 620px;
+  }
+  .geo-map{ 
+    display: block;
+    margin:0 auto;
+    width:620px;
+    &.zoom{
+      height: 350px; overflow:hidden; zoom:1.5;
+      > div{ display: block; margin: 0 auto; width: 750px} 
+      svg{ margin-top: -30px; }
+    }
+  }
+  .pie-wrapper{
+    width:100%;
+    height: 200px;
+  }
+  #pieChart15{
+    margin-left: -58px
+  }
+  #pieChart15two{
+    margin-left: -38px
+  }
+  #pieChart16{
+    height: 360px
+  }
+  #pieChart20{
+    margin-right:-50px;
+  }
+  table tbody tr td, table thead tr th{
+      border:1px solid white;
+    }
+}
+
+@media (min-width: 1025px){
+  .pie-wrapper{
+    height: 330px
+  }
+  #pieChart15, #pieChart15two{
+    margin-left: -75px
+  }
+
+}
