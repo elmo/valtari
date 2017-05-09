@@ -1,7 +1,7 @@
 //Chart.js 
 
 
-google.charts.load('current', {'packages':['geochart'], mapsApiKey: 'AIzaSyCcj-LukLZQXjzXiawjLWhhkqEjatMjkRI'});
+google.charts.load('current', {'packages':['geochart'] });
   
 google.charts.setOnLoadCallback(drawRegionsMap);
 
