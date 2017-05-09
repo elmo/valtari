@@ -1,0 +1,24 @@
+<h3>CIM Inquries</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cim_inquiries.each do |cim_inquiry| %>
+      <tr>
+          <td><%= cim_inquiry.name -%></td>
+          <td><%= cim_inquiry.company -%></td>
+          <td><%= cim_inquiry.phone -%></td>
+          <td><%= cim_inquiry.email -%></td>
+          <td><%= format_date(cim_inquiry.created_at) -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<%= simple_form_for([:private, @cim_inquiry] ) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+  <%= f.input :company %>
+  <%= f.input :comment %>
+  <%= f.button :submit, 'Submit Inquiry' %>
+<% end %>

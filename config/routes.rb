@@ -53,6 +53,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
    resources :activity_logs, only: [:index]
+   resources :cim_inquiries, only: [:index]
    resources :divisions, only: [:index]
    resources :verifications do
       member do
@@ -84,6 +85,7 @@ Rails.application.routes.draw do
 
   namespace :private  do
     resources :sessions, only: [:new, :create]
+    resources :cim_inquiries, only: [:new,:create,:show]
     resources :cims do
       collection do
         get 'welcome'

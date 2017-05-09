@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502133248) do
+ActiveRecord::Schema.define(version: 20170509144147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,16 @@ ActiveRecord::Schema.define(version: 20170502133248) do
   create_table "cim_authorizations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "cim_id"
+  end
+
+  create_table "cim_inquiries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "company"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cims", force: :cascade do |t|
