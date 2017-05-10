@@ -3488,7 +3488,7 @@ ul.text-size{
 }
 
 .menu-trigger-open .lines {
-  background: #222;
+  background: #FFF;
   -moz-transition: background 0.2s ease 0s;
   -o-transition: background 0.2s ease 0s;
   -webkit-transition: background 0.2s ease;
@@ -3498,7 +3498,7 @@ ul.text-size{
 
 .menu-trigger-open .lines:before,
 .menu-trigger-open .lines:after {
-  background: #222;
+  background: #FFF;
   -moz-transition: top 0.2s ease 0s, width 0.2s ease 0.2s, -moz-transform 0.2s ease 0.4s;
   -o-transition: top 0.2s ease 0s, width 0.2s ease 0.2s, -o-transform 0.2s ease 0.4s;
   -webkit-transition: top 0.2s ease, width 0.2s ease, -webkit-transform 0.2s ease;
@@ -3524,29 +3524,28 @@ ul.text-size{
 
 .panel {
   padding: 20px 0;
-  color:rgba(0, 0, 0, 0.87);
-  background: #fff;
+  color: white;
+  background: #3830a8;
   z-index: 99
 }
 
 .panel a{
   display: block;
-  padding: 5px 4px 5px 30px;
+  padding: 9px 37px 9px 52px;
   border-radius: 0;
-  color: #000;
+  color: #FFF;
+  font-weight: 500;
   font-size: 1.65rem;
   line-height: 2.3rem;
-  font-weight:400;
   width: 100%;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  opacity: 1
 }
 
 .panel a.section.selector {
   font-weight: 600;
-  padding: 6px 4px 6px 21px;
+  padding: 9px 4px 9px 25px;
 }
 
 .panel a:target{
