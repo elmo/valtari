@@ -139,6 +139,7 @@ ol {
 b,
 strong {
   font-weight: 600;
+  line-height: 3.2rem
 }
 
 a {
@@ -2374,6 +2375,15 @@ CV / News
     width: 50%;
   }
 }
+.stretch-bottom{
+  width: 100%;
+  margin: 0;
+  padding: 25px 65px 50px;
+  right: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 
 /*=========================================
 .flexblock sublist
@@ -3782,6 +3792,18 @@ ul.steps.flexblock ul li{
   margin: 0 auto 4rem;
   display: block;
   height: 25rem
+}
+
+.img-machine2{
+  margin: 0 auto 4rem;
+  display: block;
+  height: 37rem;
+}
+
+.alltraex{
+  max-width: 19rem;
+  display: block;
+  margin: -3rem auto 3rem;
 }
 
 .img-dasams{

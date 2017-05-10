@@ -1542,9 +1542,9 @@ var pie24 = function() {
 
 var pie24two = function() {
 
-  var dataset = [ 75, 15, 10];
+  var dataset = [ 10, 75, 15 ];
 
-  var labels = [ 'Renal, Pancreas, Bone 10%', 'Liver 75%', 'Lung 15%' ];
+  var labels = [ 'Renal, Pancreas, Bone 10%', 'Liver 75%', 'Lung 15%', ];
 
   // var colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9'];
   // var colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d'];
