@@ -139,6 +139,7 @@ ol {
 b,
 strong {
   font-weight: 600;
+  line-height: 3.2rem
 }
 
 a {
@@ -2316,7 +2317,7 @@ li:hover .overlay {
     transform: scale(1);
   }
   .medium-font{
-    font-size:1.9rem
+    font-size: 1.9rem
   }
 }
 
@@ -2373,6 +2374,15 @@ CV / News
   .activity .summary {
     width: 50%;
   }
+}
+.stretch-bottom{
+  width: 100%;
+  margin: 0;
+  padding: 25px 65px 50px;
+  right: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 /*=========================================
@@ -3385,10 +3395,11 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   line-height: 2.65rem
 }
 .text-size{
-  font-size: 1.85rem;
+  font-size: 1.65rem;
 }
 ul.text-size{
-  padding-left: 2rem
+  padding-left: 2rem;
+  li{ padding-bottom: 6px; line-height: 2.5rem }
 }
 .padding{
   padding: 3rem 3rem 3rem 0
@@ -3782,6 +3793,18 @@ ul.steps.flexblock ul li{
   margin: 0 auto 4rem;
   display: block;
   height: 25rem
+}
+
+.img-machine2{
+  margin: 0 auto 4rem;
+  display: block;
+  height: 37rem;
+}
+
+.alltraex{
+  max-width: 19rem;
+  display: block;
+  margin: -3rem auto 3rem;
 }
 
 .img-dasams{
