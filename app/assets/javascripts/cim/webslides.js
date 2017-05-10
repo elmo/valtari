@@ -888,6 +888,12 @@ var Slide = function () {
         d3.select("#pieChart20").selectAll("svg").remove();
         pie20();
       } 
+      if (hashpath === '#slide=23') {
+        d3.select("#pieChart24").selectAll("svg").remove();
+        d3.select("#pieChart24two").selectAll("svg").remove();
+        pie24two();
+        pie24();
+      } 
     }
 
     /**
