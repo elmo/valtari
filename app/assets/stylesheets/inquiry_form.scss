@@ -12,7 +12,6 @@ o-touch .cd-nugget-info a:hover {
   fill: #5e6e8d;
 }
 .cd-popup-trigger {
-    display: none;
     z-index: 9;
     position: absolute;
     top: 70px;
@@ -31,8 +30,24 @@ o-touch .cd-nugget-info a:hover {
     color: #91acc5;
     text-decoration: none;
     transition: all .15s ease;
+    -webkit-animation: 5s ease 0s normal forwards 1 fadein;
+    animation: 5s ease 0s normal forwards 1 fadein;
+    @media(max-width:768px){
+        right: 18px
+    }
 }
 
+@keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+}
 
 /* -------------------------------- 
 popup 
@@ -46,12 +61,13 @@ popup
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(23, 22, 25, 0.9);
+  background-color: rgba(40, 41, 64, 0.48);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  z-index: 9999
 }
 .cd-popup.is-visible {
   opacity: 1;
@@ -59,7 +75,6 @@ popup
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
   transition: opacity 0.3s 0s, visibility 0s 0s;
-  z-index: 9999
 }
 
 .cd-popup-container {

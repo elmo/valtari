@@ -3234,7 +3234,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 .text-size{
   font-size: 1.65rem;
 }
-ul.text-size{
+.text-size{
   padding-left: 2rem;
   li{ padding-bottom: 6px; line-height: 2.5rem }
 }
@@ -3557,8 +3557,9 @@ ul.steps.flexblock ul li{
 
 .fact-padding{
   margin: 0;
-  padding: 0 2.3rem 2.3rem;
-  max-width: 800px
+  padding: 1rem 4.3rem 3.3rem;
+  max-width: 800px;
+  border-radius:2px
 }
 
 .inline-canvas2{ width:590px; height:400px; margin-bottom:3rem  }
@@ -3672,4 +3673,20 @@ ul.steps.flexblock ul li{
     padding: 0 3rem 0 0;
     margin: 1rem 0rem 3rem;
   }
+}
+
+.bg-chicago{
+  background-image: url('cim/chicago.png');
+}
+
+.blink svg {
+    font-size: 2.3rem;
+    margin: 0 1rem .5rem .1rem;
+}
+
+.competition{
+  width:100%;
+  max-width: 76rem;
+  display: block;
+  margin: 0 auto
 }
