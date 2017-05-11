@@ -403,25 +403,7 @@ nav a[rel="external"] em,
   background: -moz-linear-gradient(top,#ffffff,#fbfbfb); /*Fx 3.6-15*/
   background: linear-gradient(to bottom, #ffffff, #fbfbfb); /*Standard*/
 }
-.shadow:before,.shadow:after {
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 1.6rem;
-  left: 2.4rem;
-  width: 50%;
-  top: 80%;
-  max-width:300px;
-  transform: rotate(-3deg);
-}
-.shadow:after
-{
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  transform: rotate(3deg);
-  right: 2.4rem;
-  left: auto;
-}
+
 
 /*=== 1.1 WRAP/CONTAINER === */
 
@@ -3412,7 +3394,7 @@ ul.text-size{
 }
 
 .panel a.selector.active{
-  background: #3af;
+  background: #4c4cff;
   color: white;
 }
 
@@ -3442,7 +3424,6 @@ header{
 }
 
 a:hover, a:active, a:focus {
-  outline: 0;
   opacity: 0.65;
 }
 
@@ -3659,14 +3640,36 @@ ul.steps.flexblock ul li{
   height: 37rem;
 }
 
+.img-machine3{
+  margin: 3rem auto 3rem;
+  display: block;
+  height: 27rem;
+}
+
 .alltraex{
   max-width: 19rem;
   display: block;
   margin: -3rem auto 3rem;
 }
 
+.naxos{
+  max-width: 12rem;
+  display: block;
+  margin: 0 auto;
+}
+
 .img-dasams{
   max-width: 36rem;
-  margin-top: 39px;
+  margin-top: 37px;
   display: block;
+}
+
+.quad {
+  img{
+    padding: 0 3rem 0 0;
+  }
+  p{    
+    padding: 0 3rem 0 0;
+    margin: 1rem 0rem 3rem;
+  }
 }

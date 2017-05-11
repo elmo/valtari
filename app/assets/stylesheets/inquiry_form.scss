@@ -46,7 +46,7 @@ popup
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(53, 49, 86, 0.9);
+  background-color: rgba(23, 22, 25, 0.9);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
@@ -94,6 +94,9 @@ popup
   right: 8px;
   width: 30px;
   height: 30px;
+    &:hover{
+        opacity: 1!important
+    }
 }
 .cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
   content: '';
@@ -130,6 +133,30 @@ popup
   .cd-popup-container {
     margin: 8em auto;
   }
+}
+.cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  height: 3px;
+  background-color: #8f9cb5;
+}
+.cd-popup-container .cd-popup-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 8px;
+}
+.cd-popup-container .cd-popup-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
 }
 .img-replace {
   /* replace text with an image */
@@ -172,7 +199,7 @@ popup
   }
 }
 .notify-header {
-    padding: 50px 115px 45px 55px;
+    padding: 50px 90px 45px 55px;
     overflow: hidden;
     max-height: 265px;
     transition: max-height .25s ease-in-out;
@@ -203,22 +230,6 @@ popup
     display: none;
 }
 
-.notify-close {
-    position: absolute;
-    z-index: 100;
-    right: 38px;
-    top: 38px;
-    width: 51px;
-    height: 51px;
-    font-size: 0;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .25s;
-}
 
 .notify-form:before {
     content: '';
@@ -227,8 +238,8 @@ popup
     left: 0;
     right: 0;
     height: 1000px;
-    background: #f5fbff;
-    transform: skewY(-12deg);
+    background: #F8F8F8;
+    transform: skewY(-13deg);
     z-index: -1;
 }
 
