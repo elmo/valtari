@@ -1,5 +1,44 @@
-<div class="layover"> 
-</div> 
+<div class="layover"></div> 
+<a href="#" class="cd-popup-trigger">Contact Sales</a>
+
+<div class="cd-popup" role="alert">
+  <div class="cd-popup-container">
+    <div class="notify-box">
+      <button class="notify-close">Close</button>
+      <div class="notify-header">
+        <h3 class="common-BodyTitle">Put us to work</h3>
+        <p class="common-BodyText">Ready to impress your audience with a stunning presentation?  &nbsp;So are we.</p>
+      </div>
+      <form class="notify-form" action="/payments">
+        <div class="notify-input">
+            <input class="email-field" required="required" type="text" placeholder="Name*">
+        </div>
+        <div class="notify-input">
+            <input class="email-field" required="required" type="text" placeholder="Phone*">
+        </div>
+      <!--  <div class="notify-input">
+            <input class="email-field" required="required" type="text" placeholder="Company">
+        </div>
+        <div class="notify-input">
+            <input class="email-field" required="required" type="text" placeholder="Comment">
+        </div> -->
+        <div class="notify-input email">
+          <input class="email-field" required="required" type="email" name="email" placeholder="Email*">
+          <button class="submit-button" type="submit">CONTACT</button>
+        </div>
+        <p class="notify-error methods" style="display: none;">Please select one more more payment methods you’d like to get notified about.</p>
+        <p class="notify-error email" style="display: none;">Please enter your email address.</p>
+      </form>
+      <div class="notify-success">
+        <%= image_tag('cim/get-notified.svg', class: 'icon') %>
+        <h3 class="common-BodyTitle">Thank you!</h3>
+        <p class="common-BodyText">We’ll reach out as soon as more payment types are&nbsp;ready.</p>
+      </div>
+    </div>
+    <a href="#0" class="cd-popup-close img-replace">Close</a>
+  </div> <!-- cd-popup-container -->
+</div> <!-- cd-popup -->
+
   <!-- SIDE Left panel -->
   <div id="slider" class="panel">
     <div id="trigger" class="menu-link-wrapper">
@@ -78,6 +117,7 @@
     </div>
   </div>
 
+<!--begin slides -->
   <main role="main" id="panel">
     <time>
       <%= image_tag('cim/valtari-abc.png') %>
@@ -1250,10 +1290,29 @@ $(document).ready(function() {
         setTimeout(function() {
             $('.swipe-icon').fadeOut('slow');
         }, 8000);
+        setTimeout(function() {
+            $('.cd-popup-trigger').fadeIn('slow');
+        }, 5000);
 
+    //open popup for inquiry form
+    $('.cd-popup-trigger').on('click', function(event){
+      event.preventDefault();
+      $('.cd-popup').addClass('is-visible');
+    });
+    //close popup
+    $('.cd-popup').on('click', function(event){
+      if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+        event.preventDefault();
+        $(this).removeClass('is-visible');
+      }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+          $('.cd-popup').removeClass('is-visible');
+        }
+    });
 
-  /////////  Sidepanel Slide Navigation Feedback ////////
-  //on page load
 
   //on navigating by clicking a slide in the sidepanel
   $(function() {
@@ -1274,11 +1333,13 @@ $(document).ready(function() {
     overlayColor: 'rgba(0,0,0,0)',
     shown: function(slider, trigger){
       $('.layover').addClass('is-visible');
+      $('.panel').addClass('shadow');
     },
     hidden: function(slider, trigger){
       $('.menu-link-wrapper .menu-link').removeClass('menu-trigger-open');
       $('.menu-link-wrapper').removeClass('close-pos');
       $('.layover').removeClass('is-visible');
+      $('.panel').removeClass('shadow');
     },
   });
 
