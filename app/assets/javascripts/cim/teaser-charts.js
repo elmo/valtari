@@ -1309,8 +1309,8 @@ var pie20 = function() {
   var radius;
 
   // calculate minimum of width and height to set chart radius
-  if (minOfWH > 155) {
-    radius = 145;
+  if (minOfWH > 125) {
+    radius = 125;
   } else {
     radius = minOfWH;
   }

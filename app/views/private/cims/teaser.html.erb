@@ -12,16 +12,16 @@
       <div class="notify-form">
       <%= form_for(@cim_inquiry, url: url_for([:private, @cim_inquiry]) , method: :post, remote: true ) do |f| %>
         <div class="notify-input">
-          <%= f.text_field :name,  required: 'required', class: 'email-field', placeholder: 'Name'  %>
-        </div>
-        <div class="notify-input">
-          <%= f.text_field :company,  required: 'required', class: 'email-field', placeholder: 'Company'  %>
-        </div>
-        <div class="notify-input">
-          <%= f.text_field :phone, required: 'required',  class: 'email-field',   placeholder: 'Phone'  %>
+          <%= f.text_field :name,  required: 'required', class: 'email-field', placeholder: 'Name*'  %>
         </div>
         <div class="notify-input email">
-            <%= f.text_field :email, required: 'required', class: 'email-field',  placeholder: 'Your email address'  %>
+            <%= f.text_field :email, required: 'required', class: 'email-field',  placeholder: 'Your email address*'  %>
+        </div>
+        <div class="notify-input">
+          <%= f.text_field :phone, required: 'required',  class: 'email-field',   placeholder: 'Phone*'  %>
+        </div>
+        <div class="notify-input">
+          <%= f.text_field :company, class: 'email-field', placeholder: 'Company'  %>
         </div>
         <div class="notify-input email">
             <%= f.text_field :comment, class: 'email-field', placeholder: 'Comments / Questions?'  %>
@@ -32,9 +32,9 @@
       <% end %>
       </div>
       <div class="notify-success">
-        <%= image_tag('cim/get-notified.svg', class: 'icon') %>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
         <h3 class="common-BodyTitle">Thank you!</h3>
-        <p class="common-BodyText">We’ll reach out as soon as more payment types are&nbsp;ready.</p>
+        <p class="common-BodyText">We’ll reach out as soon as possible.</p>
       </div>
     </div>
   </div> <!-- cd-popup-container -->
@@ -932,7 +932,7 @@
                 <li><span class="text-label">SVB India</span> 0.63%</li>
                 <li><span class="text-label">ESOP Pool</span> 4.25%</li>
               </ul>
-                  <div class="chart-wrapper inline">
+                <div class="chart-wrapper inline">
                   <div id="pieChart20" class="pie-wrapper"></div>
                 </div>
             </div>
