@@ -55,7 +55,9 @@ popup
 .cd-popup {
   position: fixed;
   display: flex;
-  align-items:center;
+  @media(min-width:880px){
+    align-items:center;
+  }
   justify-content: center;
   left: 0;
   top: 0;
@@ -94,7 +96,10 @@ popup
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 3em 1em
+  padding: 3em 0;
+  @media (max-width: 880px){
+    padding: 11vh 0 0
+  }
 }
 
 .cd-popup-container .cd-buttons:after {
@@ -258,13 +263,14 @@ popup
     z-index: -1;
 }
 
-.notify-input.email .submit-button {
+.notify-input .submit-button {
     margin: 0;
     border: none;
     outline: none;
     background: transparent;
     padding: 9px 13px;
     font: inherit;
+    width:100%;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
@@ -273,11 +279,10 @@ popup
     cursor: pointer;
     position: relative;
     transition: all .15s ease;
-    padding-left: 25px;
 }
 
 
-.notify-input input[type=email], .notify-input input[type=text] {
+.notify-input input[type=text] {
     border: none;
     outline: none;
     margin: 0;
