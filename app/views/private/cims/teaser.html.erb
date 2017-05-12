@@ -1,7 +1,7 @@
-<div class="layover"></div> 
+<div class="layover"></div>
 <a href="#" class="cd-popup-trigger">Contact Sales</a>
 
-<div class="cd-popup" role="alert">
+<div class="cd-popup" role="alert" >
   <div class="cd-popup-container">
     <div class="notify-box">
       <a href="#0" class="cd-popup-close img-replace">Close</a>
@@ -9,26 +9,28 @@
         <h3 class="common-BodyTitle">Put us to work.</h3>
         <p class="common-BodyText">Impress your next audience with a stunning presentation.</p>
       </div>
-      <form class="notify-form" action="/payments">
+      <div class="notify-form">
+      <%= form_for(@cim_inquiry, url: url_for([:private, @cim_inquiry]) , method: :post, remote: true ) do |f| %>
         <div class="notify-input">
-            <input class="email-field" required="required" type="text" placeholder="Name*">
+          <%= f.text_field :name,  required: 'required', class: 'email-field', placeholder: 'Name'  %>
         </div>
         <div class="notify-input">
-            <input class="email-field" required="required" type="text" placeholder="Phone*">
-        </div>
-      <!-- <div class="notify-input">
-            <input class="email-field" required="required" type="text" placeholder="Company">
+          <%= f.text_field :company,  required: 'required', class: 'email-field', placeholder: 'Company'  %>
         </div>
         <div class="notify-input">
-            <input class="email-field" required="required" type="text" placeholder="Comment">
-        </div> -->
+          <%= f.text_field :phone, required: 'required',  class: 'email-field',   placeholder: 'Phone'  %>
+        </div>
         <div class="notify-input email">
-          <input class="email-field" required="required" type="email" name="email" placeholder="Email*">
-          <button class="submit-button" type="submit">CONTACT</button>
+            <%= f.text_field :email, required: 'required', class: 'email-field',  placeholder: 'Your email address'  %>
         </div>
-        <p class="notify-error methods" style="display: none;">Please select one more more payment methods you’d like to get notified about.</p>
-        <p class="notify-error email" style="display: none;">Please enter your email address.</p>
-      </form>
+        <div class="notify-input email">
+            <%= f.text_field :comment, class: 'email-field', placeholder: 'Comments / Questions?'  %>
+        </div>
+        <div class="notify-input email">
+          <%= f.button 'CONTACT', class: 'submit-button' -%>
+        </div>
+      <% end %>
+      </div>
       <div class="notify-success">
         <%= image_tag('cim/get-notified.svg', class: 'icon') %>
         <h3 class="common-BodyTitle">Thank you!</h3>
@@ -638,7 +640,7 @@
             <br><br>
             <h4>2.1 Cancer Incidence and Mortality Statistics</h4>
             <p class="text-intro">In 2012, cancer caused 15% of total number of deaths recorded globally.</p>
-            <p>The following statistics show that cancer has become a leading cause of death in the world.</p> 
+            <p>The following statistics show that cancer has become a leading cause of death in the world.</p>
             <ul class="flexblock cells">
               <li class="bg-primary">
                 <h2>32.6 million</h2>
@@ -961,7 +963,7 @@
             </div>
             <div class="content-left">
               <p>The incidence and mortality rate from lung, liver, breast and prostrate cancers is high in these regions. Liver and Lung Cancers are characterised by a high percentage of inoperable tumours. This requires solutions with acceptable survival rates, less expensive, easy to acquire and train. </p>
-              <p> 
+              <p>
               Given the disease and geographic characteristics, InnovaHealth’s current and future focus markets and organs are:
               </p>
               <p>
@@ -1020,10 +1022,10 @@
            <div class="content-left">
             <h5>DASAM™</h5>
             <p>
-              InnovaHealth’s DASAM™ is an Integrated Treatment Planning & Robotic Navigation system for CT guided tumor Ablation. It was introduced in India in late 2013. DASAM is USFDA, Japanese PMDA, European CE and China CFDA approve among many other regulatory clearances. It is installed in top medical facilities in India, Australia, China, Germany, USA, Vietnam etc. 
+              InnovaHealth’s DASAM™ is an Integrated Treatment Planning & Robotic Navigation system for CT guided tumor Ablation. It was introduced in India in late 2013. DASAM is USFDA, Japanese PMDA, European CE and China CFDA approve among many other regulatory clearances. It is installed in top medical facilities in India, Australia, China, Germany, USA, Vietnam etc.
             </p>
             <p>
-              DASAM™ is an image-guided, physician controlled stereotactic accessory to a Computed Tomography (CT) system. It is intended for the stereotactic spatial positioning & orientation of an end effector and instrument guide. DASAM™ assists in manual advancement of one or more instruments such as rigid straight needles and probes during CT guided percutaneous procedures on organs and anatomical structures in the thorax, abdomen and pelvis. 
+              DASAM™ is an image-guided, physician controlled stereotactic accessory to a Computed Tomography (CT) system. It is intended for the stereotactic spatial positioning & orientation of an end effector and instrument guide. DASAM™ assists in manual advancement of one or more instruments such as rigid straight needles and probes during CT guided percutaneous procedures on organs and anatomical structures in the thorax, abdomen and pelvis.
             </p>
             <p>
               DASAM can perform a Biopsy in 20-30 minutes and ablation in approximately 2 hours. DASAM can perform 4-6 procedures per day in normal use.
@@ -1047,7 +1049,7 @@
          </div>
         </div>
       </section>
-      
+
       <section class="fullscreen">
         <div class="card-50">
           <figure>
@@ -1075,7 +1077,7 @@
               <div class="bg-gradient-h fact-padding">
                 <p class="text-intro"><br>DASAM is produced at a cost of approximately $30,000.</p>
                 <p class="description">
-                 The price for distributors and in the Great Lakes region is set at approximately $180,000. For customers outside of this metropolitan area, it is set at $200,000. The Company assembles DASAM at its Tennessee plant with the majority of supplies coming from the United States and Canada. 
+                 The price for distributors and in the Great Lakes region is set at approximately $180,000. For customers outside of this metropolitan area, it is set at $200,000. The Company assembles DASAM at its Tennessee plant with the majority of supplies coming from the United States and Canada.
                 </p>
               </div>
           </div>
@@ -1135,12 +1137,12 @@
             </div>
           </div><br><br>
           <p class="text-intro">Road Map</p>
-            <ul class="flexblock steps">  
+            <ul class="flexblock steps">
                 <li>
                   <span> </span>
                   <h2>2014+</h2>
                   <p>Launch & Establish products in IO</p>
-                  <small>ALLTRA EX™<br> 
+                  <small>ALLTRA EX™<br>
                     DASAM™</small>
                 </li>
                 <li>
@@ -1151,7 +1153,7 @@
                   <small>AUDIFY, DASAM™ Suite<br>
                     Multimodality fusion<br>
                     TACE/TARE support<br>
-                    Surgical/Lap ablation<br> 
+                    Surgical/Lap ablation<br>
                   </small>
                 </li>
                 <li>
@@ -1240,7 +1242,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
             </div>
           </div><br><br>
           <%= image_tag('cim/audify.png') %>
-      </section>      
+      </section>
       <section>
         <div class="wrap size-80">
           <p class="text-intro">AUDIFY™ enhancements to address market needs</p><br>
@@ -1365,7 +1367,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
               </ul>
             </div>
             <div class="content-left">
-             <%= image_tag('cim/robot.png', class: 'spine') %>      
+             <%= image_tag('cim/robot.png', class: 'spine') %>
             </div>
           </div><br><br>
           <p class="text-size">Status of the all the products in development</p>
@@ -1454,12 +1456,12 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
       <section class="bg-violet">
         <span class="background-left-bottom bg-chicago"></span>
         <div class="wrap size-80">
-          
+
          <h2>Operational Details</h2>
          <p class="text-intro">5.1 Facility Details</p>
          <div class="content-left">
           <p>InnovaHealth operates out of its headquarters in Chicago, Illinois. The Company’s facility is built over an area of 10,500 Sq. ft. of which 7,000 Sq. ft. of area is utilized for manufacturing, and 3,500 Sq. ft. is utilized for office space. The office area houses the Company’s corporate office and administrative department.</p>
-          
+
          </div>
          <div class="content-left">
           <p>The Company also has a virtual office in Seattle, Washington. This facility is primarily used for advanced research and development programs.</p>
@@ -1609,7 +1611,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                   <p class="year">
                     <%= image_tag('cim/profile2.png') %>
                   </p>
-                  
+
                   <p class="summary">
                    <strong> K Puhazhendi </strong><br>Director, Engineering<br><br>
 
@@ -1621,7 +1623,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                   </p>
                 </a>
               </li>
-              
+
             </ul>
          </div>
       </section>
@@ -1740,6 +1742,6 @@ $(document).ready(function() {
     });
   })();
 
-   
+
 });
 </script>

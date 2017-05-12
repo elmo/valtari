@@ -1,5 +1,9 @@
+//= require turbolinks
 //= require cim/webslides.js
 //= require jquery
+//= require jquery-ui
+//= require jquery_ujs
+//= require turbolinks
 //= require cim/slidereveal.js
 //= require cim/teaser-charts.js
 //= require cim/fa-icons.js
