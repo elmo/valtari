@@ -2358,6 +2358,12 @@ CV / News
   .activity .summary {
     width: 50%;
   }
+  .activity .company {
+    width: 23%;
+  }
+  .activity .listing {
+    width: 76%;
+  }
 }
 .stretch-bottom{
   width: 100%;
@@ -3680,7 +3686,9 @@ ul.steps.flexblock ul li{
 .bg-chicago{
   background-image: url('cim/chicago.png');
 }
-
+.no-hover:hover{
+  opacity: 1
+}
 .blink svg {
     font-size: 2.3rem;
     width:2rem;
