@@ -1,5 +1,6 @@
 class Private::CimInquiriesController < Private::PrivateController
   before_action :set_cim_inquiry, only: [:show]
+  skip_before_filter :verify_authenticity_token
 
   def new
     @cim_inquiry = CimInquiry.new
@@ -14,9 +15,11 @@ class Private::CimInquiriesController < Private::PrivateController
 
     respond_to do |format|
       if @cim_inquiry.save
-        format.html { redirect_to [:private, @cim_inquiry], notice: 'Your inquiry has been received.' }
+        format.html { redirect_to teaser_private_cims_url, notice: 'Your inquiry has been received.' }
+        format.js
       else
         format.html { render :new }
+        format.js
       end
     end
   end
