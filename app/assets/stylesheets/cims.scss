@@ -3428,6 +3428,10 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   margin: -1px 0;
 }
 
+.logo1{
+  max-width: 275px;
+  margin: -11px 0;
+}
 header{
   opacity:1!important
 }
@@ -3686,6 +3690,7 @@ ul.steps.flexblock ul li{
 
 .bg-chicago{
   background-image: url('cim/chicago.png');
+  background-size: 54%
 }
 .bg-resource-map{
   background-image: url('cim/resource-map.png');
@@ -3735,6 +3740,17 @@ ul.steps.flexblock ul li{
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.patents{
+  max-width: 74rem;
+  width:100%;
+  display: block;
+  margin: 0.75rem auto;
+}
+
+.nudge {
+  margin-left: -8px;
 }
 
 @keyframes stroke {
