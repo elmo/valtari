@@ -1502,7 +1502,8 @@ section,.slide
   }
   .content-left {
     float: left;
-    padding-right: 10px
+    padding-right: 10px;
+    z-index:8
   }
   .content-right {
     float: right;
@@ -3686,6 +3687,10 @@ ul.steps.flexblock ul li{
 .bg-chicago{
   background-image: url('cim/chicago.png');
 }
+.bg-resource-map{
+  background-image: url('cim/resource-map.png');
+}
+
 .no-hover:hover{
   opacity: 1
 }

@@ -947,7 +947,7 @@
           <%= image_tag('cim/companies.png') %>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h2>3.1 InnovaHealth’s Focus</h2>
           <p class="text-intro">InnovaHealth's focus is mostly on the low resource markets</p>
@@ -966,20 +966,25 @@
               <p>
               Given the disease and geographic characteristics, InnovaHealth’s current and future focus markets and organs are:
               </p>
-              <p>
+            </div>
+          </div><br><br>
+          <div class="content-left">
+            <p>
               <span style="color:#0078b4; font-weight:500">Current Focus</span><br>
               North America, India, China, South-East Asia<br>
               Liver, Lungs, Kidney, Pancreas<br>
-              <p>
-              <span style="color:red; font-weight:500">Next Phase</span><br>
-              Egypt, West Africa<br>
-              Breast, Prostate <br>
-              </p>
-            </div>
+            </p>
           </div>
-            <br><br>
-            <%= image_tag("cim/resource-map.png", class: "center") %>
-            </div>
+          <div class="content-left">
+            <p>
+              <span style="color:red; font-weight:500">Next Phase</span><br>
+              Egypt, United Kingdom, West Africa<br>
+              Breast, Prostate <br>
+            </p>
+          </div>
+            <br>
+          <div id="geochart-resource" class="geo-map">
+          </div>
         </div>
       </section>
       <section class="bg-violet">
@@ -1055,11 +1060,7 @@
           <figure>
             <%= image_tag('cim/dasams.png') %>
             <figcaption>
-              <a href="https://unsplash.com/@dburka" title="Daniel Burka">
-                <svg class="fa-camera">
-                  <use xlink:href="#fa-camera"></use>
-                </svg>
-              </a>
+ DASAM Imagery
             </figcaption>
           </figure>
           <!-- end figure-->

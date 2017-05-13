@@ -42,7 +42,9 @@
   .geo-map{ 
     display: block;
     margin:0 auto;
-    width:620px;
+    width:100%;
+    div{margin: 0 auto; display:block}
+/*    width:620px; */
     &.zoom{
       height: 350px; overflow:hidden; zoom:1.5;
       > div{ display: block; margin: 0 auto; width: 750px} 
@@ -102,5 +104,10 @@
   }
   .text-intro{
     margin-top: 2rem
+  }
+  [class*="card-"] figure img {
+    margin: 10rem auto 0rem;
+    display: block;
+    width: 20rem;
   }
 }

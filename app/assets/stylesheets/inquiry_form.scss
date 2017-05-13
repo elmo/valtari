@@ -191,7 +191,10 @@ popup
 .notify-box {
     position: fixed;
     z-index: 200;
-    width: 390px;
+    width:100%;
+    @media (min-width:768px){
+        width: 390px;
+    }
     text-align: left;
     overflow: hidden;
     background: #fff;
@@ -258,8 +261,12 @@ popup
     left: 0;
     right: 0;
     height: 1000px;
-    background: #F8F8F8;
-    transform: skewY(-13deg);
+    background-image: url(cim/shape.png);
+    transform: skewY(0deg);
+    z-index: -1;
+    background-size: 23rem;
+    background-repeat: no-repeat;
+    background-position: -1rem 22rem;
     z-index: -1;
 }
 

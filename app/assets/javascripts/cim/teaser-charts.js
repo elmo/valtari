@@ -1,8 +1,8 @@
-//Chart.js 
-
+//Chart.js, google charts, d3
 
 google.charts.load('current', {'packages':['geochart'] });
-  
+
+//////
 google.charts.setOnLoadCallback(drawRegionsMap);
 
     function drawRegionsMap() {
@@ -73,6 +73,7 @@ var options = {
 }
 
 
+//////////
 google.charts.setOnLoadCallback(drawMarketMap);
 function drawMarketMap() {
   var data = google.visualization.arrayToDataTable([
@@ -97,6 +98,48 @@ function drawMarketMap() {
   chart.draw(data, options);
 
 }
+
+
+
+
+
+google.charts.setOnLoadCallback(drawResourceMap);
+function drawResourceMap() {
+  var data = google.visualization.arrayToDataTable([
+    ['Country', 'Phase'],
+    ["India", 1],
+    ["United States", 1],
+    ["United Kingdom", 2],
+    ["Mauritania", 2],
+    ["Mali", 2],
+    ["Cape Verde", 2],
+    ["Senegal", 2],
+    ["Guinea", 2],
+    ["Cote D'ivoire", 2],
+    ["Gambia", 2],
+    ["Liberia", 2],
+    ["Sierra Leone", 2],
+    ["Egypt", 2],
+    ["China", 1],
+    ["Vietnam", 1],
+    ["Cambodia", 1],
+    ["Thailand", 1],
+  ]);
+
+  var options = {
+    displayMode: 'regions',
+    colorAxis: {values: [1,2], colors: ['#0078b4', '#fa1405'],},
+    backgroundColor: 'transparent',
+    datalessRegionColor: '#FFF',
+    defaultColor: '#6d83cd',
+    legend: 'none',
+  };
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart-resource'));
+  chart.draw(data, options);
+
+}
+
+
 
 
 
