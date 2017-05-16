@@ -43,6 +43,7 @@ gem 'ionicons-rails'
 gem 'materialize-sass'
 gem 'momentjs-rails'
 gem 'pikaday-gem'
+gem 'newrelic_rpm'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
