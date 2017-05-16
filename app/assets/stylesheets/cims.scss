@@ -3378,6 +3378,25 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   }
 }
 
+.side-nav{
+  overflow-y:scroll;
+  height: 100%
+}
+.side-nav::-webkit-scrollbar{
+  width: 6px;
+  background-color: transparent;
+}
+.side-nav::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #211b79;
+}
+.side-nav::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
 .panel a{
   display: block;
   padding: 9px 37px 9px 52px;
@@ -3657,7 +3676,13 @@ ul.steps.flexblock ul li{
 .img-machine3{
   margin: 3rem auto 3rem;
   display: block;
-  height: 27rem;
+  height: 26rem;
+}
+
+.img-suite{
+  width: 30rem;
+  display: block;
+  margin: 3rem auto
 }
 
 .alltraex{
