@@ -153,6 +153,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    newrelic_rpm (4.1.0.333)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -327,6 +328,7 @@ DEPENDENCIES
   logidze
   materialize-sass
   momentjs-rails
+  newrelic_rpm
   oj
   omniauth-facebook
   omniauth-google-oauth2
