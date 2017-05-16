@@ -56,7 +56,7 @@ class Verification < ApplicationRecord
     update(status: STATUS_COMPLETE)
   end
 
-  def completed_by!(user: user)
+  def completed_by!(user:)
     update_attributes(status: STATUS_COMPLETE, completed_by_user_id: user.id)
     business.verification_status_complete!
   end

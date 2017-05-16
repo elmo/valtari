@@ -6,7 +6,7 @@ class Admin::BusinessesController < Admin::AdminController
   def index
     params[:division1] = 'United States and Canada'
     params[:show_divisions] = 'true'
-    scope = Business.includes( [:last_updated_by_user] )
+    scope = Business.includes(:last_updated_by_user)
     q = params[:q]
     ordering = "lower(company_name) asc"
     current_sort_direction = params[:sort_direction] || 'desc'
