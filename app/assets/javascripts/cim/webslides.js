@@ -834,41 +834,41 @@ var Slide = function () {
       //When to execute charts! -Peter
            
         var hashpath = window.location.hash; 
-      if (hashpath === '#slide=7') {
+      if (hashpath === '#slide=8') {
         canvas8();
       }
-      if (hashpath === '#slide=9') {
+      if (hashpath === '#slide=10') {
         canvas8();
       }
-      if (hashpath === '#slide=11') {
+      if (hashpath === '#slide=12') {
         canvas12();
         canvas12two();
       }
-      if (hashpath === '#slide=12') {
+      if (hashpath === '#slide=13') {
         canvas13();        
       }
-      if (hashpath === '#slide=13') { 
+      if (hashpath === '#slide=14') { 
         canvas12();
         canvas12two();
         d3.select("#pieChart14").selectAll("svg").remove();
         pie14();
         canvas14();
       }
-      if (hashpath === '#slide=14') {
+      if (hashpath === '#slide=15') {
         canvas13();
         d3.select("#pieChart15").selectAll("svg").remove();
         d3.select("#pieChart15two").selectAll("svg").remove();
         pie15();
         pie15two();
       }
-      if (hashpath === '#slide=15') {
+      if (hashpath === '#slide=16') {
         d3.select("#pieChart14").selectAll("svg").remove();
         pie14();
         canvas14();
         d3.select("#pieChart16").selectAll("svg").remove();
         pie16();
       }
-      if (hashpath === '#slide=16') {
+      if (hashpath === '#slide=17') {
         d3.select("#pieChart15").selectAll("svg").remove();
         d3.select("#pieChart15two").selectAll("svg").remove();
         d3.select("#pieChart17").selectAll("svg").remove();
@@ -876,19 +876,19 @@ var Slide = function () {
         pie15two();
         pie17();
       }  
-      if (hashpath === '#slide=17') {
+      if (hashpath === '#slide=18') {
         d3.select("#pieChart16").selectAll("svg").remove();
         pie16();
       }  
-      if (hashpath === '#slide=18') {
+      if (hashpath === '#slide=19') {
         d3.select("#pieChart17").selectAll("svg").remove();
         pie17();
       }    
-      if (hashpath === '#slide=19') {
+      if (hashpath === '#slide=20') {
         d3.select("#pieChart20").selectAll("svg").remove();
         pie20();
       } 
-      if (hashpath === '#slide=23') {
+      if (hashpath === '#slide=24') {
         d3.select("#pieChart24").selectAll("svg").remove();
         d3.select("#pieChart24two").selectAll("svg").remove();
         pie24two();

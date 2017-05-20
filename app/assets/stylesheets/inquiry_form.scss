@@ -32,6 +32,7 @@ o-touch .cd-nugget-info a:hover {
     transition: all .15s ease;
     -webkit-animation: 5s ease 0s normal forwards 1 fadein;
     animation: 5s ease 0s normal forwards 1 fadein;
+    animation-delay: 5.5s;
     @media(max-width:1025px){
         right: 15px
     }
