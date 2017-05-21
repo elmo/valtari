@@ -14,28 +14,25 @@ o-touch .cd-nugget-info a:hover {
 .cd-popup-trigger {
     z-index: 9;
     position: absolute;
-    top: 70px;
+    bottom: -60px;
     right: 59px;
     white-space: nowrap;
-    height: 40px;
+    height: 59px;
     line-height: 40px;
     padding: 0 14px;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.88);
     border-radius: 4px;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .025em;
-    color: #91acc5;
+    color: white;
     text-decoration: none;
     transition: all .15s ease;
-    -webkit-animation: 5s ease 0s normal forwards 1 fadein;
-    animation: 5s ease 0s normal forwards 1 fadein;
-    animation-delay: 5.5s;
     @media(max-width:1025px){
         right: 15px
     }
+    &:hover{opacity: 1; bottom: -15px!important}
 }
 
 @keyframes fadein{
@@ -205,7 +202,7 @@ popup
 
 .notify-input {
     background: #fff;
-    box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+    box-shadow: 0 1px 3px rgba(40, 40, 62, 0.23), 0 1px 0 rgba(0, 0, 0, 0.06);
     border-radius: 4px;
     overflow: hidden;
     font-size: 16px;
@@ -262,12 +259,7 @@ popup
     left: 0;
     right: 0;
     height: 1000px;
-    background-image: url(cim/shape.png);
     transform: skewY(0deg);
-    z-index: -1;
-    background-size: 53rem;
-    background-repeat: no-repeat;
-    background-position: -6rem 2rem;
     z-index: -1;
 }
 
@@ -275,7 +267,7 @@ popup
     margin: 0;
     border: none;
     outline: none;
-    background: transparent;
+    background: #4652d2;
     padding: 9px 13px;
     font: inherit;
     width:100%;
@@ -283,7 +275,7 @@ popup
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: .025em;
-    color: #6772e5;
+    color: #FFF;
     cursor: pointer;
     position: relative;
     transition: all .15s ease;

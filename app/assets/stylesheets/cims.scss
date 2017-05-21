@@ -1957,7 +1957,12 @@ Blocks Links li>a = .flexblock.blink (.blink required)
   width: 100%;/* more control */
   -webkit-transition: .3s;
   transition: .3s;
-}/*
+}
+
+.flexblock.info li{
+  line-height: 28px
+}
+/*
 .flexblock li:hover{
   -webkit-transform: translateY(-.2rem);
   transform: translateY(-.2rem);
