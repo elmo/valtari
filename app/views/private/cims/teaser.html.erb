@@ -1,7 +1,7 @@
 <div class="layover"></div>
 <a href="#" class="cd-popup-trigger">Contact Sales</a>
 
-<div class="cd-popup" role="alert" >
+<div class="cd-popup" role="alert">
   <div class="cd-popup-container">
     <div class="notify-box">
       <a href="#0" class="cd-popup-close img-replace">Close</a>
@@ -27,7 +27,7 @@
             <%= f.text_field :comment, class: 'email-field', placeholder: 'Comments / Questions?'  %>
         </div>
         <div class="notify-input submit">
-          <%= f.button 'CONTACT', class: 'submit-button' -%>
+          <%= f.button 'CONTACT', class: 'submit-button ripplelink cyan' -%>
         </div>
       <% end %>
       </div>
@@ -1991,6 +1991,7 @@ $(document).ready(function(){
         pie17();
       }
       if (hashpath === '#slide=18') {
+        d3.select("#pieChart17").selectAll("svg").remove();
         pie17();
       }
       if (hashpath === '#slide=21') {
@@ -2001,8 +2002,31 @@ $(document).ready(function(){
         pie24two();
       }
       setTimeout(function() {
-       $('.cd-popup-trigger').animate({ "bottom": "-17px" }, "slow" );
-      }, 2000);
+       $('.cd-popup-trigger').animate({ "bottom": "-20px" }, "slow" );
+      }, 7000);
+
+      /*jQuery Click animate */
+      $(function(){
+        var ink, d, x, y;
+        $(".ripplelink").click(function(e){
+          if($(this).find(".ink").length === 0){
+              $(this).prepend("<span class='ink'></span>");
+          }
+               
+          ink = $(this).find(".ink");
+          ink.removeClass("animate");
+           
+          if(!ink.height() && !ink.width()){
+              d = Math.max($(this).outerWidth(), $(this).outerHeight());
+              ink.css({height: d, width: d});
+          }
+           
+          x = e.pageX - $(this).offset().left - ink.width()/2;
+          y = e.pageY - $(this).offset().top - ink.height()/2;
+           
+          ink.css({top: y+'px', left: x+'px'}).addClass("rip");
+        });
+      });
 
 });
 
