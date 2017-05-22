@@ -1774,19 +1774,20 @@ a#previous {
     position: absolute;
     line-height: 4.1rem;
   }
-  .swipe-icon{
-    display: none;
-    background: url('cim/swipe.png') no-repeat center top;
-    position:fixed;
-    bottom: 20px;
-    width: 90px;
-    height: 140px;
-    text-align: center;
-    background-size: 90px;
-    z-index: 999;
-    left:50%;
-    margin-left: -45px
-  }
+}
+
+.swipe-icon{
+  display: none;
+  background: url('cim/swipe.png') no-repeat center top;
+  position:fixed;
+  bottom: 20px;
+  width: 90px;
+  height: 140px;
+  text-align: center;
+  background-size: 90px;
+  z-index: 999;
+  left:50%;
+  margin-left: -45px
 }
 
 
