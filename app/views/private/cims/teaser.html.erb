@@ -121,7 +121,7 @@
 <!--begin slides -->
   <main role="main" id="panel">
     <time>
-      <%= image_tag('cim/valtari-abc.png') %>
+      <span style="opacity:0">May 2017</span><%= image_tag('cim/valtari-abc.png') %>
     </time>
 
     <article id="webslides">
@@ -1066,7 +1066,6 @@
             <h5>&nbsp; </h5>
             <p>DASAM consists of a stereotactic device and its accessories, software loaded on a computer, and a respiratory gating system. The accessories include a patient immobilizer and skin-markers. </p>
             <%= image_tag("cim/machine.png", class:'img-machine') %>
-            <%= image_tag("cim/DASAM.png", class:'img-dasam') %>
             <p>The technology used in DASAM to drive the robotic movement is Electro-Mechanical System. This is a Robotic system that uses motion control components to position a needle holding device at the planned point on the planned trajectory. This is done in such a manner that when the user advances a tool (electrode) of pre-specified length, the distal end of the tool will reach the tumor without the need for monitoring or any other feedback. The assumption is that the patient is immobilized and the tumor (target) is non-moving. These assumptions to a large extent are made good using accessories like the patient immobilizer and breath-hold monitoring device. </p>
             <p>Motion control is created by using the Electro-Mechanical System, Motion Control Software and Application Software. The combination of the three provides InnovaHealth with Robotic capabilities.</p>
           </div>
@@ -1274,7 +1273,8 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
             <div class="content-left quad"><%= image_tag('cim/picture3.png') %><p>Breast and Prostate</p></div>
             <div class="content-left quad"><%= image_tag('cim/picture4.png') %><p>Intraoperative US</p></div>
           </div>
-          <%= image_tag('cim/picture5.png') %>
+          <br><br><%= image_tag('cim/picture5.png', class: 'picture5') %><br>
+          <p>Audify</p>
         </div>
       </section>
       <section class="bg-white">
@@ -1315,7 +1315,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
               Thus, offering an unparalleled ability for physicians to screen for specific cancers, perform optical biopsies and monitor interventional therapies for clinical effectiveness and safety. The Company will require $2 million to launch this project. PROSCISET®’s workflow is shown below. </p>
             </div>
           </div><br>
-          <%= image_tag('cim/p-flow.png') %><br><br>
+          <%= image_tag('cim/p-flow.png', class:'ninetysix') %><br><br>
           <div class="content-left">
             <p class="text-intro">PROSCISET® Status</p>
             <ul class="text-size">
@@ -1387,8 +1387,8 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
                 <li>Build a hybrid system combining the tele and the autonomous approach.</li>
               </ul>
             </div>
-            <div class="content-left">
-             <%= image_tag('cim/robot.png', class: 'spine') %>
+            <div class="content-left">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+             <%= image_tag('cim/robot.png', class: 'robot') %>
             </div>
           </div><br><br>
           <p>Status of the all the products in development</p>
@@ -1516,7 +1516,6 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
            <p class="text-intro">InnovaHealth’s marketing strategy mostly consists of three channels:</p>
             <ul class="flexblock blink">
               <li>
-                <a href="#">
                   <h4>
                     <svg class="fa-users">
                       <use xlink:href="#fa-users"></use>
@@ -1526,10 +1525,8 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
                   <p>Key Opinion Leaders
 Key Opinion Leaders are major influencers in the medical fraternity. The Company uses Key Opinion Leaders’ or KOL’s websites as reference sites for marketing purposes. InnovaHealth also finds reference for its products in published clinical articles from KOLs.
 </p>
-                </a>
               </li>
               <li>
-                <a href="">
                   <h4>
                     <svg class="fa-calendar-minus-o">
                       <use xlink:href="#fa-calendar-minus-o"></use>
@@ -1538,10 +1535,8 @@ Key Opinion Leaders are major influencers in the medical fraternity. The Company
                   </h2>
                   <p>
 InnovaHealth attends various tradeshows and conferences that are focused on Interventional Oncology or Interventional Radiology. SIR, CIRSE, ECIO/WCIO, ISVIR and CMITO are some of the events the Company attends.</p>
-                </a>
               </li>
               <li>
-                <a href="#">
                   <h4>
                     <svg class="fa-newspaper-o">
                       <use xlink:href="#fa-newspaper-o"></use>
@@ -1698,7 +1693,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                       <%= image_tag('cim/logo1.png') %>
                     </p>
                     <p class="listing">
-                      <strong>Verb Surgical Inc.</strong><br><br>
+                      <strong>Verb Surgical Inc.</strong><br>
                       <strong>Market cap:</strong> Not disclosed<br>
                       <strong>Type:</strong>   Surgical Robotic Company 
                       <br><br>
@@ -1712,7 +1707,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo2.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Medtech SA</strong><br><br><strong>Market cap:</strong> $133 million<br><br>
+                   <strong>Medtech SA</strong><br><strong>Market cap:</strong> $133 million<br>
                    <strong>Type:</strong> Surgical Robotic Company 
                     <br><br>
                   Medtech SA is a France-based company that manufactures medical robots for surgical assistance. The Company's main product is the ROSA device, dedicated to neurosurgical procedures and combining neurosurgical planning software, navigation and robotic functions, haptic technology and visualization capabilities.
@@ -1725,7 +1720,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo3.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Titan Medical Inc.</strong><br><br><strong>Market cap:</strong> $98 million<br><br>
+                   <strong>Titan Medical Inc.</strong><br><strong>Market cap:</strong> $98 million<br>
                    <strong>Type:</strong> Surgical Robotic Company 
                     <br><br>
                    Titan Medical Inc. focuses on designing and development of robotic surgical system for the application in minimally invasive surgery (MIS).
@@ -1737,9 +1732,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo4.png') %>
                   </p>
                   <p class="listing">
-                   <strong>NeuroTherm</strong> (Pain Management)<br><br><strong>Announced:</strong> July 2014<br><br>
+                   <strong>NeuroTherm</strong> (Pain Management)<br><strong>Announced:</strong> July 2014<br>
                    <strong>Acquired:</strong> St. Jude 
-                    <br><br>
+                    <br>
                     <strong>Value: </strong>$200 million<br><br>
                    NeuroTherm provides Radio Frequency (RF) generators, RF cannula, intradiscal therapies, epidural catheters etc. The company was acquired by St. Jude Medical, which provides cardiovascular medical devices, neurostimulation devices etc. Through this acquisition, NeuroTherm’s radiofrequency ablation products will help St. Jude Medical to be a part of the chronic pain market.
                   </p>
@@ -1759,9 +1754,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo6.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Galil Medical</strong> <br><br>
-                   <strong>Announced:</strong> May 2016<br><br>
-                   <strong>Acquired by:</strong>  BTG<br><br>
+                   <strong>Galil Medical</strong> <br>
+                   <strong>Announced:</strong> May 2016<br>
+                   <strong>Acquired by:</strong>  BTG<br>
                    <strong>Value: </strong> $110 million
 
                    Dr. Gustafson has a broad experience encompassing most modern medical diagnostic imaging methods, including CT and Ultrasound.  <br><br>Galil Medical provides cryosurgical systems that deliver sub-zero temperatures to target diseased tissue for the cryosurgical ablation of benign tissue and cancerous tumors. The acquisition of Galil Medical by BTG will help BTG to expand its franchise into ablation market.

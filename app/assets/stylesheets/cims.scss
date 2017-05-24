@@ -110,13 +110,13 @@ p.drop, p.drop2{
 }
 
 h2.drop{
-  animation-delay:0.55s;
+  animation-delay:0.4s;
   padding-bottom:0.3em;
   color:white
 }
 
 p.drop{
-  animation-delay:.95s;
+  animation-delay:0.8s;
   text-align: right;
   margin-top: -3rem;
   color: #9697ff;
@@ -126,7 +126,7 @@ p.drop{
 }
 
 p.drop2{
-  animation-delay:1.5s;
+  animation-delay:1.2s;
   text-align: center;
   margin-top: 7rem;
   color: #c3c3ff;
@@ -134,7 +134,7 @@ p.drop2{
 }
 
 .keys{
-  animation-delay:1.95s;
+  animation-delay:1.6s;
 }
  
 @keyframes rotate {
@@ -148,8 +148,8 @@ p.drop2{
 }
 
 .content{
-  animation: rotate 1.85s;
-  animation-delay: 2.65s;
+  animation: rotate 1.25s;
+  animation-delay: 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -2508,6 +2508,7 @@ CV / News
 
 .activity img {
   display: block;
+  margin:9px auto
 }
 
 .activity .year,
@@ -2526,7 +2527,7 @@ CV / News
     float: left;
   }
   .activity .year {
-    width: 15%;
+    width: 24%;
   }
   .activity .title {
     width: 27%;
@@ -2534,7 +2535,7 @@ CV / News
     margin-left: 4%;
   }
   .activity .summary {
-    width: 50%;
+    width: 64%;
   }
   .activity .company {
     width: 23%;
@@ -2543,6 +2544,11 @@ CV / News
     width: 76%;
   }
 }
+
+.company img{
+  padding: 0 4rem;
+}
+
 .stretch-bottom{
   width: 100%;
   margin: 0;
@@ -3830,6 +3836,12 @@ ul.steps.flexblock ul li{
   margin:0 auto
 }
 
+.suite{
+  display:block;
+  margin: 4rem auto;
+  width: 30rem 
+}
+
 .img-dasam{
   max-width: 16rem;
   display: block;
@@ -3857,7 +3869,7 @@ ul.steps.flexblock ul li{
 }
 
 .img-suite{
-  width: 30rem;
+  width: 26rem;
   display: block;
   margin: 3rem auto
 }
@@ -3880,9 +3892,29 @@ ul.steps.flexblock ul li{
   display: block;
 }
 
+.picture5{
+  max-width: 73rem;
+  margin-top:3rem
+}
+
+.ninetysix{
+  max-width: 96%
+}
+
+.spine{
+  max-width: 48rem;
+  padding-left: 4rem;
+}
+
+.robot{
+  max-width: 34rem;
+  padding-left: 4rem;
+}
+
 .quad {
   img{
-    padding: 0 3rem 0 0;
+    max-width: 43rem;
+    padding: 32px 3rem 6px 0;
   }
   p{    
     padding: 0 3rem 0 0;
@@ -3892,9 +3924,9 @@ ul.steps.flexblock ul li{
 
 .bg-chicago{
   background-image: url('cim/chicago.png');
-  background-size: 54%;
-  -webkit-filter: opacity(.62);
-    filter: opacity(.62);
+  background-size: 47%;
+  -webkit-filter: opacity(.8);
+    filter: opacity(.8);
     background-position: 2% bottom
 }
 .bg-resource-map{
