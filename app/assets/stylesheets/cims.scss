@@ -261,7 +261,6 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #3830A8
 }
 
 *,
@@ -1791,6 +1790,10 @@ a#previous {
 
 
 /*=== 5.3 Slides - Background Images === */
+.preLoad{
+  display: none;
+  background-image: url('cim/front-page.jpg');
+}
 .front-page{
   background-image: url('cim/front-page.jpg');
 }
@@ -3781,8 +3784,12 @@ ul.steps.flexblock ul li{
 .inline-canvas{  width:270px; height:400px; }
 
 #pieChart14{
-  margin-left: -65px
+  margin-left: -65px;
+  @media (max-width: 480px){
+    margin-left:20px
+  }
 }
+
 #pieChart15, #pieChart15two{
   margin: 2px 0 10px -30px;
 }
@@ -3796,10 +3803,27 @@ ul.steps.flexblock ul li{
   width:100%;
 }
 
+.companies-img{
+  margin: 30px auto;
+  display:block;
+  max-width: 690px
+}
+
+.market-img{
+  max-width: 1100px;
+  margin:0 auto;
+  display:block
+}
+
 .pie-wrapper {
   width: 100%;
   position: relative;
-  min-height: 150px;
+  min-height: 170px;
+  text {
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
 }
 
 .pie-wrapper path {
@@ -3811,12 +3835,6 @@ ul.steps.flexblock ul li{
 .pie-wrapper path:hover {
   /* stroke-width: 10px; */
   fill: #efefef;
-}
-
-.pie-wrapper text {
-  font-size: .8em;
-  text-transform: uppercase;
-  letter-spacing: .5px;
 }
 
 .pie-wrapper.larger text{
