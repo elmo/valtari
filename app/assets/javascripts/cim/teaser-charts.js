@@ -73,36 +73,10 @@ var options = {
 }
 
 
-//////////
-google.charts.setOnLoadCallback(drawMarketMap);
-function drawMarketMap() {
-  var data = google.visualization.arrayToDataTable([
-    ['Country'],
-    ["Germany"],
-    ["United States"],
-    ["China"],
-    ["Italy"],
-    ["Vietnam"],
-    ["Indonesia"],
-    ["India"],
-  ]);
-
-  var options = {
-    displayMode: 'regions',
-    backgroundColor: 'transparent',
-    datalessRegionColor: '#FFF',
-    defaultColor: '#6d83cd',
-    legend: 'none',
-  };
-  var chart = new google.visualization.GeoChart(document.getElementById('geochart-market'));
-  chart.draw(data, options);
-
-}
 
 
 
-
-
+///
 google.charts.setOnLoadCallback(drawResourceMap);
 function drawResourceMap() {
   var data = google.visualization.arrayToDataTable([
@@ -327,7 +301,7 @@ var canvas12 = function(){
                   animationDuration: 0
                 },
                 animation: {
-                  duration: 4000,
+                  duration: 1100,
                   onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -430,7 +404,7 @@ var canvas12two = function(){
               },  
               events: false,
               animation: {
-                duration: 4000,
+                duration: 1100,
                 onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
@@ -531,7 +505,7 @@ var canvas13 = function(){
               },  
               events: false,
               animation: {
-                duration: 3000,
+                duration: 1000,
                 onComplete: function() {
                     this.chart.controller.draw();
                     drawValue(this, 1);
