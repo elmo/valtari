@@ -1,7 +1,7 @@
 <div class="layover"></div>
 <a href="#" class="cd-popup-trigger">Contact Sales</a>
 
-<div class="cd-popup" role="alert" >
+<div class="cd-popup" role="alert">
   <div class="cd-popup-container">
     <div class="notify-box">
       <a href="#0" class="cd-popup-close img-replace">Close</a>
@@ -27,7 +27,7 @@
             <%= f.text_field :comment, class: 'email-field', placeholder: 'Comments / Questions?'  %>
         </div>
         <div class="notify-input submit">
-          <%= f.button 'CONTACT', class: 'submit-button' -%>
+          <%= f.button 'CONTACT', class: 'submit-button ripplelink cyan' -%>
         </div>
       <% end %>
       </div>
@@ -121,23 +121,44 @@
 <!--begin slides -->
   <main role="main" id="panel">
     <time>
-      <%= image_tag('cim/valtari-abc.png') %>
+      <span style="opacity:0">May 2017</span><%= image_tag('cim/valtari-abc.png') %>
     </time>
 
     <article id="webslides">
+      <section class="slide bg-violet">
+        <div class="wrap size-50">
+            <div class="screen">
+              <div class="content extrusion">
+                <h2 class="drop">Modern <strong>CIM</strong></h2>
 
+                  <p class="drop">Valtari O&Uuml;</p>
+                  <p class="drop2">Left/Right Keys or Swipe to Navigate </p>
+                  <a href="#slide=2">               
+                    <ul class="arrows keys">
+                      <li>&#8593;</li>
+                      <li>&#8592;</li>
+                      <li>&#8595;</li>
+                      <li>&#8594;</li>
+                    </ul>
+                  </a>
+                  
+              </div>
+            </div>
+          </div>
+          <%= image_tag('cim/front-page.jpg', class: 'preLoad') %>
+      </section>
       <section class="slide bg-violet">
         <!--.wrap = container 1200px -->
         <span class="background front-page"></span>
 
           <div class="wrap size-50">
-            <h1 class="fadeInUp">InnovaHealth Corporation</h1>
-            <p class="text-intro fadeInUp"><strong>Information Memorandum</strong> &nbsp; Valtari O&Uuml;, January 2017</p>
-            <div class="content-left fadeInUp">
+            <h1 class="fadeIn">InnovaHealth Corporation</h1>
+            <p class="text-intro fadeIn"><strong>Information Memorandum</strong> &nbsp; Valtari O&Uuml;, January 2017</p>
+            <div class="content-left ">
               <p><%= image_tag('cim/innova.png', class: 'logo1' ) %></p>
             </div>
             <!-- .end .content-left -->
-            <div class="content-left fadeInUp">
+            <div class="content-left">
               <p><%= image_tag('cim/valtari.png', class: 'logo' ) %></p>
             </div>
             <!-- .end .content-left -->
@@ -150,7 +171,7 @@
         <!--.wrap = container 1200px -->
         <div class="wrap size-80">
           <h2>General Information</h2>
-            <ul class="flexblock">
+            <ul class="flexblock info">
             <li>
               <div>
                 <h2>
@@ -873,7 +894,7 @@
             </tr>
           </tbody>
         </table>
-        <br><br>
+        <br><br><br>
         <%= image_tag('cim/treatments.png', class: 'img-pad') %>
       </div>
       </section>
@@ -940,10 +961,22 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <h4>InnovaHealth's global market footprint</h4><br>
-            <div id="geochart-market" class="geo-map"></div>
-          <br>
-          <%= image_tag('cim/companies.png') %>
+          <h4>InnovaHealth maintains a global footprint throughout a wide swathe of the world’s largest markets</h4><br>
+          
+          <!--<ul class="description float" style="margin:0 0 0 50px">
+                <p style="margin-bottom:0">Innovahealth currently operates in:</p><br>
+                <li><span class="text-label">United States</span> </li>
+                <li><span class="text-label">Germany</span> </li>
+                <li><span class="text-label">Italy</span> </li>
+                <li><span class="text-label">India</span> </li>
+                <li><span class="text-label">China</span> </li>
+                <li><span class="text-label">Vietnam</span></li>
+                <li><span class="text-label">Indonesia</span> </li>
+            </ul> -->
+                  
+          <%= image_tag('cim/market-map.png', class: 'market-img') %><br>
+          <%= image_tag('cim/companies.png', class: 'companies-img') %><br>
+           
         </div>
       </section>
       <section class="bg-white">
@@ -981,7 +1014,7 @@
               Breast, Prostate <br>
             </p>
           </div>
-            <br>
+            <br><br><br>  
           <div id="geochart-resource" class="geo-map">
           </div>
         </div>
@@ -1002,7 +1035,7 @@
           <!--end .cta -->
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h2>3.1 InnovaHealth’s Offerings</h2>
           <div class="content-left"><p>
@@ -1019,7 +1052,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h2>4.1 Current Platforms</h2>
           <div class="clear-float">
@@ -1046,7 +1079,6 @@
             <h5>&nbsp; </h5>
             <p>DASAM consists of a stereotactic device and its accessories, software loaded on a computer, and a respiratory gating system. The accessories include a patient immobilizer and skin-markers. </p>
             <%= image_tag("cim/machine.png", class:'img-machine') %>
-            <%= image_tag("cim/DASAM.png", class:'img-dasam') %>
             <p>The technology used in DASAM to drive the robotic movement is Electro-Mechanical System. This is a Robotic system that uses motion control components to position a needle holding device at the planned point on the planned trajectory. This is done in such a manner that when the user advances a tool (electrode) of pre-specified length, the distal end of the tool will reach the tumor without the need for monitoring or any other feedback. The assumption is that the patient is immobilized and the tumor (target) is non-moving. These assumptions to a large extent are made good using accessories like the patient immobilizer and breath-hold monitoring device. </p>
             <p>Motion control is created by using the Electro-Mechanical System, Motion Control Software and Application Software. The combination of the three provides InnovaHealth with Robotic capabilities.</p>
           </div>
@@ -1054,7 +1086,7 @@
         </div>
       </section>
 
-      <section class="fullscreen">
+      <section class="fullscreen bg-white">
         <div class="card-50">
           <figure>
             <%= image_tag('cim/dasams.png') %>
@@ -1084,7 +1116,7 @@
           <!-- end .flex-content-->
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h5>ALLTRA EX™</h5><br>
           <div class="clear-float">
@@ -1118,7 +1150,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h2>4.2 Product and Technology Roadmap</h2>
           <p class="text-intro">InnovaHealth has a well defined roadmap for future products and technologies.</p>
@@ -1172,7 +1204,7 @@
               </ul>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h5>DASAM™ Suite</h5><br>
           <div class="clear-float">
@@ -1212,7 +1244,7 @@
           </div>
           </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <h5>AUDIFY™</h5><br>
           <div class="clear-float">
@@ -1243,7 +1275,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
           </div><br><br>
           <%= image_tag('cim/audify.png') %>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <p class="text-intro">AUDIFY™ enhancements to address market needs</p><br>
           <div class="clear-float">
@@ -1254,10 +1286,11 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
             <div class="content-left quad"><%= image_tag('cim/picture3.png') %><p>Breast and Prostate</p></div>
             <div class="content-left quad"><%= image_tag('cim/picture4.png') %><p>Intraoperative US</p></div>
           </div>
-          <%= image_tag('cim/picture5.png') %>
+          <br><br><%= image_tag('cim/picture5.png', class: 'picture5') %><br>
+          <p>Audify</p>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <div class="clear-float">
           <div class="content-left">
@@ -1284,7 +1317,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
         </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <p class="text-intro">PROSCISET™</p>
           <div class="clear-float">
@@ -1295,7 +1328,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
               Thus, offering an unparalleled ability for physicians to screen for specific cancers, perform optical biopsies and monitor interventional therapies for clinical effectiveness and safety. The Company will require $2 million to launch this project. PROSCISET®’s workflow is shown below. </p>
             </div>
           </div><br>
-          <%= image_tag('cim/p-flow.png') %><br><br>
+          <%= image_tag('cim/p-flow.png', class:'ninetysix') %><br><br>
           <div class="content-left">
             <p class="text-intro">PROSCISET® Status</p>
             <ul class="text-size">
@@ -1318,7 +1351,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
           </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <p class="text-intro">Expanding beyond Oncology</p>
           <p class="medium">The Company is working towards expanding beyond oncology, and is developing capabilities in spine surgery, neuro surgery and surgical robots.</p><br>
@@ -1356,7 +1389,7 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
          </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <p class="text-intro">Surgical Robot (low cost da Vinci®)</p>
           <div class="clear-float">
@@ -1367,8 +1400,8 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
                 <li>Build a hybrid system combining the tele and the autonomous approach.</li>
               </ul>
             </div>
-            <div class="content-left">
-             <%= image_tag('cim/robot.png', class: 'spine') %>
+            <div class="content-left">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+             <%= image_tag('cim/robot.png', class: 'robot') %>
             </div>
           </div><br><br>
           <p>Status of the all the products in development</p>
@@ -1496,7 +1529,6 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
            <p class="text-intro">InnovaHealth’s marketing strategy mostly consists of three channels:</p>
             <ul class="flexblock blink">
               <li>
-                <a href="#">
                   <h4>
                     <svg class="fa-users">
                       <use xlink:href="#fa-users"></use>
@@ -1506,10 +1538,8 @@ AUDIFY™ is a self-contained Ultrasound Guided Tumor Ablation Suite for liver a
                   <p>Key Opinion Leaders
 Key Opinion Leaders are major influencers in the medical fraternity. The Company uses Key Opinion Leaders’ or KOL’s websites as reference sites for marketing purposes. InnovaHealth also finds reference for its products in published clinical articles from KOLs.
 </p>
-                </a>
               </li>
               <li>
-                <a href="">
                   <h4>
                     <svg class="fa-calendar-minus-o">
                       <use xlink:href="#fa-calendar-minus-o"></use>
@@ -1518,10 +1548,8 @@ Key Opinion Leaders are major influencers in the medical fraternity. The Company
                   </h2>
                   <p>
 InnovaHealth attends various tradeshows and conferences that are focused on Interventional Oncology or Interventional Radiology. SIR, CIRSE, ECIO/WCIO, ISVIR and CMITO are some of the events the Company attends.</p>
-                </a>
               </li>
               <li>
-                <a href="#">
                   <h4>
                     <svg class="fa-newspaper-o">
                       <use xlink:href="#fa-newspaper-o"></use>
@@ -1560,7 +1588,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
             </div>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
          <h2>5.2 Sales and Marketing</h2>
            <p class="text-intro">Perfint’s customers in Asia mostly consist of Government Hospitals with Interventional Cancer Treatment Centers and Teaching Hospitals. </p>
@@ -1581,14 +1609,14 @@ There are many published articles about InnovaHealth. Moreover, the Company find
           
          </div>
       </section>
-      <section>
+      <section class="bg-white">
          <div class="wrap size-80">
            <h2>5.4 Management and Employees</h2>
            <p class="text-class">Organizational Structure</p>
            <%= image_tag('cim/orgchart.png', class:'no-hover') %>
          </div>
       </section>
-      <section>
+      <section class="bg-white">
          <div class="wrap size-80">
            <h2>Key management profiles</h2>
            <ul class="flexblock activity">
@@ -1661,14 +1689,14 @@ There are many published articles about InnovaHealth. Moreover, the Company find
             </ul>
          </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-70">
         <h2>Competitive Landscape</h2>
         <p class="text-intro">The following table shows how the Company compares with respect to its competitors in terms of intellectual property on the various technologies.</p><br>
         <%= image_tag('cim/competition.png', class: "competition no-hover") %>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
           <p class="text-intro">As summarized below, the company’s principal competitors are as follows:</p>
             <ul class="flexblock activity">
@@ -1678,7 +1706,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                       <%= image_tag('cim/logo1.png') %>
                     </p>
                     <p class="listing">
-                      <strong>Verb Surgical Inc.</strong><br><br>
+                      <strong>Verb Surgical Inc.</strong><br>
                       <strong>Market cap:</strong> Not disclosed<br>
                       <strong>Type:</strong>   Surgical Robotic Company 
                       <br><br>
@@ -1692,7 +1720,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo2.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Medtech SA</strong><br><br><strong>Market cap:</strong> $133 million<br><br>
+                   <strong>Medtech SA</strong><br><strong>Market cap:</strong> $133 million<br>
                    <strong>Type:</strong> Surgical Robotic Company 
                     <br><br>
                   Medtech SA is a France-based company that manufactures medical robots for surgical assistance. The Company's main product is the ROSA device, dedicated to neurosurgical procedures and combining neurosurgical planning software, navigation and robotic functions, haptic technology and visualization capabilities.
@@ -1705,7 +1733,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo3.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Titan Medical Inc.</strong><br><br><strong>Market cap:</strong> $98 million<br><br>
+                   <strong>Titan Medical Inc.</strong><br><strong>Market cap:</strong> $98 million<br>
                    <strong>Type:</strong> Surgical Robotic Company 
                     <br><br>
                    Titan Medical Inc. focuses on designing and development of robotic surgical system for the application in minimally invasive surgery (MIS).
@@ -1717,9 +1745,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo4.png') %>
                   </p>
                   <p class="listing">
-                   <strong>NeuroTherm</strong> (Pain Management)<br><br><strong>Announced:</strong> July 2014<br><br>
+                   <strong>NeuroTherm</strong> (Pain Management)<br><strong>Announced:</strong> July 2014<br>
                    <strong>Acquired:</strong> St. Jude 
-                    <br><br>
+                    <br>
                     <strong>Value: </strong>$200 million<br><br>
                    NeuroTherm provides Radio Frequency (RF) generators, RF cannula, intradiscal therapies, epidural catheters etc. The company was acquired by St. Jude Medical, which provides cardiovascular medical devices, neurostimulation devices etc. Through this acquisition, NeuroTherm’s radiofrequency ablation products will help St. Jude Medical to be a part of the chronic pain market.
                   </p>
@@ -1739,9 +1767,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
                     <%= image_tag('cim/logo6.png') %>
                   </p>
                   <p class="listing">
-                   <strong>Galil Medical</strong> <br><br>
-                   <strong>Announced:</strong> May 2016<br><br>
-                   <strong>Acquired by:</strong>  BTG<br><br>
+                   <strong>Galil Medical</strong> <br>
+                   <strong>Announced:</strong> May 2016<br>
+                   <strong>Acquired by:</strong>  BTG<br>
                    <strong>Value: </strong> $110 million
 
                    Dr. Gustafson has a broad experience encompassing most modern medical diagnostic imaging methods, including CT and Ultrasound.  <br><br>Galil Medical provides cryosurgical systems that deliver sub-zero temperatures to target diseased tissue for the cryosurgical ablation of benign tissue and cancerous tumors. The acquisition of Galil Medical by BTG will help BTG to expand its franchise into ablation market.
@@ -1760,7 +1788,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
             </ul>
         </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-80">
         <h2>5.6 Intellectual Property</h2>
         <div class="clear-float">
@@ -1774,7 +1802,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
         <%= image_tag('cim/patents.png', class: 'patents no-hover') %>
       </div>
       </section>
-      <section>
+      <section class="bg-white">
         <div class="wrap size-60">
           <p class="text-intro">Monitoring and Screening Patents</p>
           <%= image_tag('cim/patent1.png', class: 'no-hover') %><br><br>
@@ -1798,7 +1826,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
             <!--end .cta -->
           </div>
       </section>
-      <section>
+      <section class="bg-white">
           <div class="wrap size-60">
             <h2>6. Financial Information</h2>
               <p class="text-intro">Following are the Company’s financial estimates based on the current investment path
@@ -1810,7 +1838,7 @@ assuming current products only:</p>
             <%= image_tag('cim/finance2.png', class: 'no-hover') %>
           </div>
         </section>
-        <section>
+        <section class="bg-white">
             <div class="wrap size-60">
               <p class="text-intro">The Company’s estimated Balance Sheet based on the strategic investment possibility assuming the launch of new products is shown below:</p>
               <%= image_tag('cim/finance3.png', class: 'no-hover') %><br><br>
@@ -1833,14 +1861,14 @@ assuming current products only:</p>
             <!--end .cta -->
           </div>
         </section>
-        <section>
+        <section class="bg-white">
           <div class="wrap size-60">
             <p class="text-intro">
             MAXIO™ assisted procedures</p>
             <%= image_tag('cim/maxio.png', class: 'no-hover nudge') %>
           </div>
         </section>
-        <section>
+        <section class="bg-white">
           <div class="wrap size-60">
             <p class="text-intro">
             ROBIO EX™ assisted procedures</p>
@@ -1868,81 +1896,16 @@ assuming current products only:</p>
   <div class="swipe-icon"></div>
 
 <script type="text/javascript">
-$(window).load(function(){
-    window.ws = new WebSlides({});
-      $('body').fadeIn();
-        var hashpath = window.location.hash;
-        if (hashpath === '#slide=8') {
-          canvas8();
-        }
-        if (hashpath === '#slide=12') {
-          canvas12();
-          canvas12two();
-        }
-        if (hashpath === '#slide=13') {
-          canvas13();
-        }
-        if (hashpath === '#slide=14') {
-          pie14();
-          canvas14();
-        }
-       if (hashpath === '#slide=15') {
-          pie15();
-          pie15two();
-        }
-        if (hashpath === '#slide=16') {
-          pie16();
-        }
-        if (hashpath === '#slide=17') {
-          pie17();
-        }
-        if (hashpath === '#slide=20') {
-          pie20();
-        }
-        if (hashpath === '#slide=24') {
-          pie24();
-          pie24two();
-        }
-        setTimeout(function() {
-            $('.swipe-icon').fadeIn('slow');
-        }, 2000);
-        setTimeout(function() {
-            $('.swipe-icon').fadeOut('slow');
-        }, 8000);
-
-
-    //open popup for inquiry form
-    $('.cd-popup-trigger').on('click', function(event){
-      event.preventDefault();
-      $('.cd-popup').addClass('is-visible');
-    });
-    //close popup
-    $('.cd-popup').on('click', function(event){
-      if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-        event.preventDefault();
-        $(this).removeClass('is-visible');
-      }
-    });
-    //close popup when clicking the esc keyboard button
-    $(document).keyup(function(event){
-        if(event.which=='27'){
-          $('.cd-popup').removeClass('is-visible');
-        }
-    });
-
-
-  //on navigating by clicking a slide in the sidepanel
-  $(function() {
-    $('.selector').click(function() {
-      $('#slider a.selector').removeClass('active');
-      $(this).addClass('active');
-      setTimeout(function() {
-       $('#slider').slideReveal("hide");
-      }, 200);
-    });
+       
+  //Show swipe notification if touch device
+  window.addEventListener('touchstart', function() {
+   $('.swipe-icon').fadeIn('slow');
+    setTimeout(function() {
+        $('.swipe-icon').fadeOut('slow');
+    }, 4000);
   });
 
-   //Slide Reveal
+  //Slide Reveal
   $("#slider").slideReveal({
     trigger: $("#trigger"),
     push: false,
@@ -1960,6 +1923,40 @@ $(window).load(function(){
     },
   });
 
+  //open popup for inquiry form
+  $('.cd-popup-trigger').on('click', function(event){
+    event.preventDefault();
+    $('.cd-popup').addClass('is-visible');
+  });
+
+  //close popup
+  $('.cd-popup').on('click', function(event){
+    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+
+  //close popup when clicking the esc keyboard button
+  $(document).keyup(function(event){
+      if(event.which=='27'){
+        $('.cd-popup').removeClass('is-visible');
+      }
+  });
+
+
+  //on navigating by clicking a slide in the sidepanel
+  $(function() {
+    $('.selector').click(function() {
+      $('#slider a.selector').removeClass('active');
+      $(this).addClass('active');
+      setTimeout(function() {
+       $('#slider').slideReveal("hide");
+      }, 200);
+    });
+  });
+
+
   // Hamburger / arow icon
   (function() {
    // On icon click...
@@ -1971,5 +1968,75 @@ $(window).load(function(){
   })();
 
 
+$(document).ready(function(){
+  window.ws = new WebSlides({});
+  $('body').fadeIn();
+  $('#slider').slideReveal("hide");
+
+      var hashpath = window.location.hash;
+      if (hashpath === '#slide=9') {
+        canvas8();
+      }
+      if (hashpath === '#slide=13') {
+        canvas12();
+        canvas12two();
+      }
+      if (hashpath === '#slide=14') {
+        canvas13();
+      }
+      if (hashpath === '#slide=15') {
+        pie14();
+        canvas14();
+      }
+      if (hashpath === '#slide=16') {
+        pie15();
+        pie15two();
+      }
+      if (hashpath === '#slide=17') {
+        pie16();
+      }
+      if (hashpath === '#slide=18') {
+        pie17();
+      }
+      if (hashpath === '#slide=18') {
+        d3.select("#pieChart17").selectAll("svg").remove();
+        pie17();
+      }
+      if (hashpath === '#slide=21') {
+        pie20();
+      }
+      if (hashpath === '#slide=25') {
+        pie24();
+        pie24two();
+      }
+      setTimeout(function() {
+       $('.cd-popup-trigger').animate({ "bottom": "-20px" }, "slow" );
+      }, 7000);
+
+      /*jQuery Click animate */
+      $(function(){
+        var ink, d, x, y;
+        $(".ripplelink").click(function(e){
+          if($(this).find(".ink").length === 0){
+              $(this).prepend("<span class='ink'></span>");
+          }
+               
+          ink = $(this).find(".ink");
+          ink.removeClass("animate");
+           
+          if(!ink.height() && !ink.width()){
+              d = Math.max($(this).outerWidth(), $(this).outerHeight());
+              ink.css({height: d, width: d});
+          }
+           
+          x = e.pageX - $(this).offset().left - ink.width()/2;
+          y = e.pageY - $(this).offset().top - ink.height()/2;
+           
+          ink.css({top: y+'px', left: x+'px'}).addClass("rip");
+        });
+      });
+
 });
+
+
 </script>

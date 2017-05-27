@@ -14,27 +14,26 @@ o-touch .cd-nugget-info a:hover {
 .cd-popup-trigger {
     z-index: 9;
     position: absolute;
-    top: 70px;
+    bottom: -70px;
     right: 59px;
     white-space: nowrap;
-    height: 40px;
+    height: 70px;
     line-height: 40px;
-    padding: 0 14px;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 25px;
+    border:1px solid #3934ec;
+    color: #3934ec;    
+    background: white;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .025em;
-    color: #91acc5;
     text-decoration: none;
     transition: all .15s ease;
-    -webkit-animation: 5s ease 0s normal forwards 1 fadein;
-    animation: 5s ease 0s normal forwards 1 fadein;
     @media(max-width:1025px){
         right: 15px
     }
+    &:hover{opacity: 1; bottom: -15px!important}
 }
 
 @keyframes fadein{
@@ -63,7 +62,7 @@ popup
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(40, 41, 64, 0.48);
+  background-color: rgba(40, 41, 64, 0.77);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
@@ -197,14 +196,18 @@ popup
     }
     text-align: left;
     overflow: hidden;
-    background: #fff;
+    background: #f6f7ff; /* Old browsers */
+    background: -moz-linear-gradient(left, #f6f7ff 0%, #ffffff 48%, #f6f7ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f6f7ff 0%,#ffffff 48%,#f6f7ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f6f7ff 0%,#ffffff 48%,#f6f7ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f7ff', endColorstr='#f6f7ff',GradientType=1 ); /* IE6-9 */
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
 .notify-input {
     background: #fff;
-    box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+    box-shadow: 0 1px 3px rgba(40, 40, 62, 0.23), 0 1px 0 rgba(0, 0, 0, 0.06);
     border-radius: 4px;
     overflow: hidden;
     font-size: 16px;
@@ -243,8 +246,8 @@ popup
 }
 .common-BodyText {
     font-weight: 400;
-    font-size: 17px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 22px;
     color: #6b7c93;
 }
 
@@ -261,12 +264,7 @@ popup
     left: 0;
     right: 0;
     height: 1000px;
-    background-image: url(cim/shape.png);
     transform: skewY(0deg);
-    z-index: -1;
-    background-size: 53rem;
-    background-repeat: no-repeat;
-    background-position: -6rem 2rem;
     z-index: -1;
 }
 
@@ -274,7 +272,7 @@ popup
     margin: 0;
     border: none;
     outline: none;
-    background: transparent;
+    background: #4652d2;
     padding: 9px 13px;
     font: inherit;
     width:100%;
@@ -282,7 +280,7 @@ popup
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: .025em;
-    color: #6772e5;
+    color: #FFF;
     cursor: pointer;
     position: relative;
     transition: all .15s ease;
@@ -311,4 +309,73 @@ popup
     bottom: 7px;
     width: 2px;
     background: #f6f9fc;
+}
+
+
+
+
+/*click align*/
+.ripplelink{
+  text-decoration:none;
+  overflow:hidden;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.ripplelink:hover{
+    z-index:1000;
+  box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  background:rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  -webkit-transform:scale(0);
+     -moz-transform:scale(0);
+       -o-transform:scale(0);
+          transform:scale(0);
+}
+
+.rip {
+    -webkit-animation:ripple 0.65s linear;
+   -moz-animation:ripple 0.65s linear;
+    -ms-animation:ripple 0.65s linear;
+     -o-animation:ripple 0.65s linear;
+        animation:ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {opacity: 0; -webkit-transform: scale(2.5);}
+}
+@-moz-keyframes ripple {
+    100% {opacity: 0; -moz-transform: scale(2.5);}
+}
+@-o-keyframes ripple {
+    100% {opacity: 0; -o-transform: scale(2.5);}
+}
+@keyframes ripple {
+    100% {opacity: 0; transform: scale(2.5);}
+}
+
+
+.cyan{
+  background:#00bcd4;
+}
+
+.lightgreen{
+  background:#8bc34a;
+}
+
+.amber{
+  background:#ffc107;
+}
+
+.orange{
+  background:#ff9800;
 }
