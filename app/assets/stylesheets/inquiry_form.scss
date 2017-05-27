@@ -20,7 +20,7 @@ o-touch .cd-nugget-info a:hover {
     height: 70px;
     line-height: 40px;
     padding: 6px 25px;
-    border:1px solid #3934ec;
+    border:1px solid blue;
     color: #3934ec;    
     background: white;
     border-radius: 4px;
@@ -33,7 +33,7 @@ o-touch .cd-nugget-info a:hover {
     @media(max-width:1025px){
         right: 15px
     }
-    &:hover{opacity: 1; bottom: -15px!important}
+    &:hover{opacity: 1; bottom: -15px!important; background: #3830a8; color: white; border-color: #3830a8}
 }
 
 @keyframes fadein{
