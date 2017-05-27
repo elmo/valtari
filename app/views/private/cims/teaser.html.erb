@@ -49,7 +49,22 @@
     </div>
     <div class="head">Contents</div>
     <div class="side-nav">
+      <a class="section selector" href="#slide=1">
+      I. Preview Page
+      </a>
+      <a class="section selector" href="#slide=2">
+      II. Title 
+      </a>
+      <a class="section selector" href="#slide=3">
+      III. General Information 
+      </a>
+      <a class="section selector" href="#slide=4">
+      IV. Disclaimer
+      </a>
       <a class="section selector" href="#slide=5">
+      IV. Table of Contents
+      </a>
+      <a class="section selector" href="#slide=6">
       1. Executive Summary
       </a>
       <a class="selector" href="#slide=7">
@@ -121,7 +136,10 @@
 <!--begin slides -->
   <main role="main" id="panel">
     <time>
-      <span style="opacity:0">May 2017</span><%= image_tag('cim/valtari-abc.png') %>
+      <span style="opacity:0">May 2017</span>
+      <a href="http://www.valtari.com/" target="_blank"> 
+       <%= image_tag('cim/valtari-abc.png') %>
+      </a>
     </time>
 
     <article id="webslides">
@@ -131,7 +149,7 @@
               <div class="content extrusion">
                 <h2 class="drop">Modern <strong>CIM</strong></h2>
 
-                  <p class="drop">Valtari O&Uuml;</p>
+                  <p class="drop">Valtari</p>
                   <p class="drop2">Left/Right Keys or Swipe to Navigate </p>
                   <a href="#slide=2">               
                     <ul class="arrows keys">
@@ -196,17 +214,6 @@
             <li>
               <div>
                 <h2>
-                  Armin Garver
-                </h2>
-                Managing Partner <br>
-                agarver@valtari.com<br>
-                Tel: +1 312 555 0202
-                </paragraph>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h2>
                   Jody Windsor
                 </h2>
               Consulting Partner<br>
@@ -217,8 +224,9 @@
             <li>
               <div>
                <h2>Valtari O&Uuml;</h2>
-                Franklin 51<br>
-                60486 Frankfurt Germany<br>
+                Franklinstra&szlig;e 51<br>
+                60486 Frankfurt <br>
+                Germany<br>
                 info@valtari.com<br>
                 Tel: +1 800 705 2592<br>
                 <%= image_tag('cim/valtari.png', class:'sm') %>
@@ -1883,7 +1891,7 @@ assuming current products only:</p>
               <div>
                     <%= image_tag('cim/valtari-white.png', class:'final') %>
                   <br>
-                  <small>© 2017 Valtari OÜ</small>
+                  <small>© 2017 Valtari O&Uuml;</small>
               </div>
               <!--end .benefit -->
             </div>
