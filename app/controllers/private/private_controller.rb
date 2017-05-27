@@ -5,7 +5,8 @@ class Private::PrivateController < ApplicationController
   private
 
   def check_access
-    authenticate_user! if action_name != 'teaser' and controller_name != 'cim_inquiry'
+    return if controller_name == 'cim_inquiries'
+    authenticate_user! if action_name != 'teaser'
   end
 
   def check_authorization
