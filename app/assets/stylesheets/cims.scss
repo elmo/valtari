@@ -479,7 +479,7 @@ label {
 
 p, .nice{
   padding-right: 3rem;
-  font-size: 1.65rem;
+  font-size: 1.45rem;
   line-height: 2.5rem
 }
 
@@ -1144,7 +1144,7 @@ h3.alignleft + p.alignright {margin-top: .4rem;margin-bottom: 0;}
     line-height: 5.6rem;
   }
   h4 {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     line-height: 4.8rem;
   }
 }
@@ -2523,6 +2523,12 @@ CV / News
 
 .activity .summary {
   width: 100%;
+  strong{
+    font-size:2rem
+  }
+  span{
+    font-size: 2rem
+  }
 }
 
 @media (min-width: 768px) {
@@ -3427,7 +3433,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   line-height: 2.65rem
 }
 .text-size{
-  font-size: 1.65rem;
+  font-size: 1.45rem;
 }
 .text-size{
   padding-left: 2rem;
@@ -3761,12 +3767,26 @@ ul.steps.flexblock ul li{
   text-align: center
 }
 
-.labels span{
-  width: 30%;
-  display: inline-block;
-  font-size: 13px;
-  letter-spacing: .6px;
-  text-transform: uppercase;
+.labels {
+  span{
+    width: 30%;
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
+}
+
+.flex-labels{
+  display:flex;
+  max-width: 82%;
+  span{
+    flex: 0 200px;
+    padding-left: 7px;
+    font-size: 13px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
 }
 
 .tight{
@@ -3786,7 +3806,7 @@ ul.steps.flexblock ul li{
 #pieChart14{
   margin-left: -65px;
   @media (max-width: 480px){
-    margin-left:20px
+    margin-left:-24px
   }
 }
 
@@ -3851,9 +3871,7 @@ ul.steps.flexblock ul li{
   fill: #efefef;
 }
 
-.pie-wrapper.larger text{
-  font-size:1em
-}
+
 
 .pie-wrapper polyline {
   fill: none;
@@ -3930,12 +3948,17 @@ ul.steps.flexblock ul li{
 }
 
 .ninetysix{
-  max-width: 96%
+  max-width: 78%;
+  display: block;
+  margin: 0 auto
 }
 
 .spine{
-  max-width: 48rem;
-  padding-left: 4rem;
+  max-width: 68%;
+  padding-left: 0rem;
+  @media (max-width: 768px){
+    max-width: 79%
+  }
 }
 
 .robot{
@@ -3970,8 +3993,8 @@ ul.steps.flexblock ul li{
 }
 .blink svg {
     font-size: 2.3rem;
-    width:2rem;
-    margin: 0 1rem .1rem .1rem;
+    width: 1.4rem;
+    margin: 0 1rem 0.1rem 0.1rem;
 }
 
 .competition{

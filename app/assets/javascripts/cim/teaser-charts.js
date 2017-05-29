@@ -146,8 +146,8 @@ $(document).ready(function(){
             ['cn', 1],
             ['id', 1]
         ],
-         nullColor: '#d9e7ff',
-        color: '#8cc2ff',
+         nullColor: '#eff3f9',
+        color: '#a9d1ff',
         dataLabels: {
             enabled: true,
             color: '#000',
