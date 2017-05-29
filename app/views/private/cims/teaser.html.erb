@@ -509,8 +509,8 @@
         <div class="wrap size-80">
           <h2>1.2 Financial Summary</h2>
           <p class="text-intro">A snapshot of the Company’s expected earnings in two scenarios &mdash; based on the current investment path and on the strategic investment possibility.</p>
-          <div class="canvas-wrap">
-            <canvas id="canvas1"></canvas>
+          <div class="canvas-wrap can1">
+            <div id="canvas1"></div>
           </div>
         </div>
         <br><br><br><br><br><br>
@@ -970,20 +970,10 @@
       <section class="bg-white">
         <div class="wrap size-80">
           <h4>InnovaHealth maintains a global footprint throughout a wide swathe of the world’s largest markets</h4><br>
-          
-          <!--<ul class="description float" style="margin:0 0 0 50px">
-                <p style="margin-bottom:0">Innovahealth currently operates in:</p><br>
-                <li><span class="text-label">United States</span> </li>
-                <li><span class="text-label">Germany</span> </li>
-                <li><span class="text-label">Italy</span> </li>
-                <li><span class="text-label">India</span> </li>
-                <li><span class="text-label">China</span> </li>
-                <li><span class="text-label">Vietnam</span></li>
-                <li><span class="text-label">Indonesia</span> </li>
-            </ul> -->
                   
-          <%= image_tag('cim/market-map.png', class: 'market-img') %><br>
-          <%= image_tag('cim/companies.png', class: 'companies-img') %><br>
+          <div id="regionMap"></div>
+<br><br><br>
+          <%= image_tag('https://www.clipartsgram.com/image/1686321587-healthinsurance-logos.png', class: 'companies-img') %><br><br>
            
         </div>
       </section>
@@ -2018,7 +2008,7 @@ $(document).ready(function(){
         pie24two();
       }
       setTimeout(function() {
-       $('.cd-popup-trigger').animate({ "bottom": "-20px" }, "slow" );
+       $('.cd-popup-trigger').animate({ "bottom": "10px" }, "slow" );
       }, 7000);
 
       /*jQuery Click animate */

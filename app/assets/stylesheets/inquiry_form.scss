@@ -14,10 +14,10 @@ o-touch .cd-nugget-info a:hover {
 .cd-popup-trigger {
     z-index: 9;
     position: absolute;
-    bottom: -70px;
     right: 59px;
+    bottom:10px;
     white-space: nowrap;
-    height: 70px;
+    height: 54px;
     line-height: 40px;
     padding: 6px 25px;
     border:1px solid blue;
@@ -33,7 +33,7 @@ o-touch .cd-nugget-info a:hover {
     @media(max-width:1025px){
         right: 15px
     }
-    &:hover{opacity: 1; bottom: -15px!important; background: #3830a8; color: white; border-color: #3830a8}
+    &:hover{opacity: 1; background: #443cc1; color: white; border-color: #3830a8}
 }
 
 @keyframes fadein{

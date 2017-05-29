@@ -87,7 +87,9 @@
   }
 }
 
-
+.canvas-wrap{
+  height: 450px
+}
 
 @media (max-width: 768px){
   h1{
@@ -109,5 +111,12 @@
     margin: 10rem auto 0rem;
     display: block;
     width: 20rem;
+  }
+}
+
+@media (max-width: 400px){
+  .canvas-wrap{
+    margin-left: -55px;
+    width: 386px
   }
 }

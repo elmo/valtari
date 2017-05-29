@@ -102,7 +102,7 @@ function drawResourceMap() {
 
   var options = {
     displayMode: 'regions',
-    colorAxis: {values: [1,2], colors: ['#0078b4', '#fa1405'],},
+    colorAxis: {values: [1,2], colors: ['#8cc2ff', '#fa1405'],},
     backgroundColor: 'transparent',
     datalessRegionColor: '#FFF',
     defaultColor: '#6d83cd',
@@ -115,6 +115,60 @@ function drawResourceMap() {
 
 
 
+// Country Market Map
+//   Instanciate the map
+
+$(document).ready(function(){
+
+ Highcharts.mapChart('regionMap', {
+    chart: {
+        borderWidth: 0
+    },
+
+    title: {
+        text: null
+    },
+
+    legend: {
+        enabled: false
+    },
+    credits:{
+      enabled: false
+    },
+    series: [{
+        name: 'Country',
+        mapData: Highcharts.maps['custom/world-highres2'],
+        data: [
+            ['de', 1],
+            ['us', 1],
+            ['vn', 1],
+            ['in', 1],
+            ['cn', 1],
+            ['id', 1]
+        ],
+         nullColor: '#d9e7ff',
+        color: '#8cc2ff',
+        dataLabels: {
+            enabled: true,
+            color: '#000',
+            style: {
+              fontWeight:'bold',
+              fontSize: '15px',
+              textOutline: '#FFF'
+              },           
+            formatter: function () {
+                if (this.point.value) {
+                    return this.point.name;
+                }
+            }
+        },
+        tooltip: {
+            headerFormat: '',
+            pointFormat: '{point.name}'
+        }
+    }]
+  });
+});
 
 
 
@@ -125,118 +179,102 @@ function drawResourceMap() {
 // Bar Graph 1 //
 /////////////////
 
-var barChartData = {
-    labels: ["2016", "2017", "2018", "2019", "2020", "2021"],
-    datasets: [{
-        label: 'Current Investment Path EBITDA',
-        backgroundColor: "#ff6976",
-        data: [-0.1, 0.3, 1.8, 2.9, 4.3, 5.4]
-    }, {
-        label: 'Current Investment Path PBT',
-        backgroundColor: "#0078b4",
-        data: [-0.1, 0, 1.4, 6.2, 11.9, 19.7],
-    }, {
-        /* type: 'line',*/
-        label: 'Strategic Investment Possibilities EBITDA',
-        backgroundColor: "#ff1125",
-        data: [-1.2, 0, 1.3, 2.4, 3.6, 4.4]
-    }, {
-       /* type: 'line',*/
-        label: 'Strategic Investment Possibilities PBT',
-        backgroundColor: "#262261",
-        data: [-1.2, -0.9, 0.1, 4.2, 10.2, 18.8]
-    }, ]
-
-};
-
 var canvas8 = function(){
-        var ctx = document.getElementById("canvas1").getContext("2d");
-        myBar = new Chart(ctx, {
-            legend: { position: 'left'},
-            type: 'bar',
-            data: barChartData,
-            options: {
-              responsive: true,
-              maintainAspectRatio:false,
-              scales: { 
-                xAxes: [{
-                  gridLines:{
-                 /*  color:"#3e3e3e",
-                   zeroLineColor:"#3e3e3e" */
-                 }
-                }],
-                yAxes: [{
-                  ticks: {
-                   suggestedMax: 25,    // minimum will be 0, unless there is a lower value.
-                  },
-                  scaleLabel: {
-                    display: true,
-                    labelString: '$ in millions'
-                  },
-                  gridLines:{
-                /*  color:"#3e3e3e",
-                  zeroLineColor:"#FAFAFA" */
-                }
-                }]
-              },  
-               events: false,
-               tooltips: {
-                  enabled: false
-                },
-                hover: {
-                  animationDuration: 0
-                },
-                animation: {
-                  duration: 3000,
-                  onComplete: function() {
-                    this.chart.controller.draw();
-                    drawValue(this, 1);
-                  },
-                  onProgress: function(state) {
-                    var animation = state.animationObject;
-                    drawValue(this, animation.currentStep / animation.numSteps);
-                  }
-                }
-            }
-  });
+    Highcharts.setOptions ({
+        colors:[
+            '#0078b4',
+            '#ff1125',
+            '#3f3fab',
+            '#ae14c5',
 
-  var myBar = null;
-
-  Chart.defaults.global.defaultFontColor = "#000";
-  // Font color for values inside the bar
-  var insideFontColor = '111,111,111';
-  // Font color for values above the bar
-  var outsideFontColor = '171,171,170';
-  // How close to the top edge bar can be before the value is put inside it
-  var topThreshold = 20;
-
-  var modifyCtx = function(ctx) {
-    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
-    return ctx;
-  };
-
-  var fadeIn = function(ctx, obj, x, y, black, step) {
-    var ctx = modifyCtx(ctx);
-    var alpha = 0;
-    ctx.fillStyle = black ? 'rgba(' + outsideFontColor + ',' + step + ')' : 'rgba(' + insideFontColor + ',' + step + ')';
-    ctx.fillText(obj, x, y);
-  };
-
-  var drawValue = function(context, step) {
-    var ctx = context.chart.ctx;
-
-    context.data.datasets.forEach(function (dataset) {
-      for (var i = 0; i < dataset.data.length; i++) {
-        var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
-        var textY = (model.y > topThreshold) ? model.y - 3 : model.y + 20;
-        fadeIn(ctx, dataset.data[i], model.x, textY, model.y > topThreshold, step);
-      }
+        ]
     });
-  };
-
+    var chart = new Highcharts.Chart({
+    chart: {
+        renderTo:'canvas1',
+        type:'column'
+    },
+    title:{
+        text:''
+    },
+    credits:{enabled:false},
+    legend:{
+    },
+    tooltip:{
+        shared:true,
+        borderColor: '#000000',
+        style: {
+            color: 'white',
+            fontWeight: 'light'
+        }        
+    },
+    plotOptions: {
+        series: {
+            shadow:false,
+            borderWidth:0,
+            pointPadding:0,
+            animation: {
+               duration: 900,
+            }
+        },
+        column: {
+            dataLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 200 
+                }
+            },
+      },
+    },
+    xAxis:{
+        categories:['2016','2017','2018','2019','2020','2021'],
+        lineColor:'#efefef',
+        lineWidth:1,
+        tickColor:'#efefef',
+        tickLength:3,
+    },
+    yAxis:{
+        lineColor:'#efefef',
+        lineWidth:1,
+        tickColor:'#efefef',
+        tickWidth:1,
+        ceiling:25,
+        floor:-10,
+        tickInterval: 5,
+        tickLength:3,
+        gridLineColor:'#efefef',
+        title:{
+            text:'in $ millions',
+            rotation:0,
+            margin:45,
+            style:{
+                color:'#333'
+            }
+        }
+    },    
+    series: [{
+        showInLegend: false,
+        groupPadding:.2,
+        color:'rgba(204,204,204,0)',
+        grouping:false,
+    },{
+        name:'Current Investment Path EBITDA',
+        data: [-0.2,0.4,1.8,2.9,5.3,6.7]
+    },{
+        name:'Current Investment Path PBT',
+        data: [-0.1,0.3,1.8,6.2,11.9, 19.7]
+    },{
+        name:'Strategic Investment Possibilities EBITDA',
+        data: [-0.9,0.3,1.4,2.4,3.6, 4.7]
+    },{
+        name:'Strategic Investment Possibilities',
+        data: [-0.9,-0.6,0.1, 4.2,10.2, 18.8,]
+    }]    
+  });
 };
+
+
+
 
 
 

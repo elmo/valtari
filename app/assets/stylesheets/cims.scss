@@ -1770,7 +1770,7 @@ a#previous {
   #navigation #counter {    
     right: 1.2rem;
     position: absolute;
-    line-height: 4.1rem;
+    line-height: 4.8rem;
   }
 }
 
@@ -3443,7 +3443,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   position: absolute;
   z-index: 999;
   right: -75px;
-  top: -54px;
+  top: -52px;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
@@ -3794,8 +3794,22 @@ ul.steps.flexblock ul li{
   margin: 2px 0 10px -30px;
 }
 
-.canvas-wrap{
-  height: 450px
+
+.highcharts-tooltip-box {
+  fill: black;
+  fill-opacity: 0.6;
+}
+
+#regionMap{
+  path {
+    stroke: white;
+  }
+  text{
+    font-family: "San Francisco", helvetica, arial, sans-serif
+  }
+  .highcharts-tooltip-box {
+    fill: white;
+  }
 }
 
 /* D3 Piechart*/
@@ -4027,3 +4041,6 @@ ul.steps.flexblock ul li{
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
+
+
+
