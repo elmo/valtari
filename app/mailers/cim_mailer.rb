@@ -22,5 +22,10 @@ class CimMailer < ActionMailer::Base
     mail(to: user.email, subject: "You have been invited to view a presentation on Valtari Exchange")
   end
 
+  def notify_admin(cim_inquiry:)
+    @cim_inquiry = cim_inquiry
+    mail(to: 'sstepanik@valtari.com', subject: "customer inquiry: #{cim_inquiry.email}")
+  end
+
 
 end
