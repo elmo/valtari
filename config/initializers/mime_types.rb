@@ -3,7 +3,7 @@
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
 
- Ra})ck::Mime::MIME_TYPES.merge!({
+ Rack::Mime::MIME_TYPES.merge!({
   ".ogg"     => "application/ogg",
   ".ogx"     => "application/ogg",
   ".ogv"     => "video/ogg",
@@ -12,3 +12,4 @@
   ".m4v"     => "video/mp4",
   ".mp3"     => "audio/mpeg",
   ".m4a"     => "audio/mpeg"
+ })
