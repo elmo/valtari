@@ -146,7 +146,7 @@ $(document).ready(function(){
             ['cn', 1],
             ['id', 1]
         ],
-         nullColor: '#eff3f9',
+        nullColor: '#eff3f9',
         color: '#a9d1ff',
         dataLabels: {
             enabled: true,
@@ -154,7 +154,8 @@ $(document).ready(function(){
             style: {
               fontWeight:'bold',
               fontSize: '15px',
-              textOutline: '#FFF'
+              textOutline: '#FFF',
+              fontFamily: 'Roboto',
               },           
             formatter: function () {
                 if (this.point.value) {

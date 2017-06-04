@@ -14,6 +14,7 @@ module Valtari
     # -- all .rb files in that directory are automatically loaded.
     config.action_controller.permit_all_parameters = true
     config.active_record.time_zone_aware_types = [:datetime, :time]
-     config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('lib')
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
   end
 end

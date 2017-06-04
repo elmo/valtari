@@ -143,26 +143,9 @@
     </time>
 
     <article id="webslides">
-      <section class="slide bg-violet">
-        <div class="wrap size-50">
-            <div class="screen">
-              <div class="content extrusion">
-                <h2 class="drop">Modern <strong>CIM</strong></h2>
+      <section class="slide video">
+          <%= video_tag "demo.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
 
-                  <p class="drop">Valtari</p>
-                  <p class="drop2">Left/Right Keys or Swipe to Navigate </p>
-                  <a href="#slide=2">               
-                    <ul class="arrows keys">
-                      <li>&#8593;</li>
-                      <li>&#8592;</li>
-                      <li>&#8595;</li>
-                      <li>&#8594;</li>
-                    </ul>
-                  </a>
-                  
-              </div>
-            </div>
-          </div>
           <%= image_tag('cim/front-page.jpg', class: 'preLoad') %>
       </section>
       <section class="slide bg-violet">
@@ -172,7 +155,7 @@
           <div class="wrap size-50">
             <h1 class="fadeIn">InnovaHealth Corporation</h1>
             <p class="text-intro fadeIn"><strong>Information Memorandum</strong> &nbsp; Valtari O&Uuml;, January 2017</p>
-            <div class="content-left ">
+            <div class="content-left">
               <p><%= image_tag('cim/innova.png', class: 'logo1' ) %></p>
             </div>
             <!-- .end .content-left -->
@@ -721,7 +704,6 @@
           <small>Source: World Health Organization</small>
           <div id="geochart-incidence" class="geo-map"></div>
           <br><br><br>
-
 
           <div class="content-left">
             <strong>Geographical Distribution of Estimated Cancer Cases</strong><br>
@@ -1611,7 +1593,6 @@ There are many published articles about InnovaHealth. Moreover, the Company find
       <section class="bg-white">
          <div class="wrap size-80">
            <h2>5.4 Management and Employees</h2>
-           <p class="text-class">Organizational Structure</p>
            <%= image_tag('cim/orgchart.png', class:'no-hover') %>
          </div>
       </section>
