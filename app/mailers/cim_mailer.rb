@@ -1,5 +1,5 @@
 class CimMailer < ActionMailer::Base
-  default from: 'support@valtariexchange.com'
+  default from: 'info@valtariexchange.com'
   layout false
 
   def invitation(user:, cim:)
