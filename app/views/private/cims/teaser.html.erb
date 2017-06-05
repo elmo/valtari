@@ -144,9 +144,15 @@
 
     <article id="webslides">
       <section class="slide video">
-          <%= video_tag "demo.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+          <%= video_tag "demo.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video", id: "intro-video" %>
           <%= image_tag('cim/front-page.jpg', class: 'preLoad') %>
       </section>
+
+      <script>
+       player = new MediaElementPlayer('#intro-video',{ features: [], videoWidth: 1323, videoHeight: 995 });
+       player.play();
+     </script>
+
       <section class="slide bg-violet">
         <!--.wrap = container 1200px -->
         <span class="background front-page"></span>

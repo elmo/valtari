@@ -60,6 +60,7 @@ gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 gem 'rollbar'
 gem 'oj'
+gem "mediaelement_rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
