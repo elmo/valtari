@@ -237,6 +237,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 body {
   line-height: 1;
+  height:100%;
 }
 
 blockquote, q {
@@ -261,6 +262,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%
 }
 
 *,
@@ -279,11 +281,6 @@ video {
   vertical-align: baseline;
 }
 
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
 
 audio:not([controls]) {
   display: none;
@@ -4065,5 +4062,161 @@ ul.steps.flexblock ul li{
   }
 }
 
+//------------------------------------------------------
+//  first slide intro stuff
+//-------------------------------------------------------
+
+#video-background{
+  background: #eee;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  iframe{
+    box-sizing: border-box;
+    height: 56.25vw;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    width: 177.77777778vh;
+  }
+}
+
+.front-center{
+  color:white;
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+ 
+
+//------------------------------------
+//  vars 
+//-------------------------------------
+$color-alpha: #4D84F1;
+$ease-cb: cubic-bezier(.4, 0, .2, 1);
+$mq-med: 40em;
+$mq-lg: 62em;
+
+.mast {
+
+  @media (min-width: $mq-med) {
+    flex-direction: row;
+    justify-content: space-around;
+ 
+  }
+  .title-line {
+    display: block;
+    padding-bottom: 0.1em;
+    overflow-y: hidden;
+    font-weight: 100;
+    strong{
+      font-weight: 500
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      //animation: text-up-in 1s $ease-cb both;
+    }
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 115%;
+    max-width: 23em;
+    @media (min-width: $mq-med) {
+      font-size: 140%;
+    }
+  }
+
+}
+
+.blocker{
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background: trasparent;
+  z-index: 1
+}
+
+//------------------------------------
+//  Animation
+//-------------------------------------
+.anim {
+  .mast .title-line {
+    span {
+      font-size: 8rem;
+      margin-bottom: 1rem;
+      animation: text-up 1s $ease-cb both;
+    }
+    &:nth-of-type(2) span {
+      font-size: 7rem;
+      animation-delay: 0.2s;
+      margin-top: -15px;
+    }
+    &:nth-of-type(3) span {
+      animation-delay: 0.4s;
+    }
+    &:nth-of-type(4) span {
+      animation-delay: 0.6s;
+    }
+  }
+  .mast__text {
+    font-size: 1.28rem;
+    padding-left: 5px;
+    padding-right:0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    animation: fade-in 1s 0.5s ease both;
+  }
+}
+
+//------------------------------------
+//  Keyframes: Text Up animation
+//-------------------------------------
+@keyframes text-up {
+  from {
+    transform: translate3d(0, 150%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+//------------------------------------
+//  keyframes: Slide up to reveal
+//-------------------------------------
+@keyframes slide-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -110%, 0);
+  }
+}
+//------------------------------------
+//  keyframes: fade in
+//-------------------------------------
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 
