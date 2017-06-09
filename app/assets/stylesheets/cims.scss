@@ -2,7 +2,7 @@
   // They will automatically be included in application.css.
   // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-  display: none 
+  background: white 
 }
 
 /*---------------------------------------------------------------------------------
@@ -2605,7 +2605,8 @@ CV / News
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 3rem
+  padding-bottom: 3rem;
+  overflow-wrap: normal
 }
 
 .number,
@@ -3444,11 +3445,13 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 /* Slide trigger button */
 #trigger{
   position: absolute;
-  z-index: 999;
+  z-index: -1;
   right: -75px;
   top: -52px;
+  display: none;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
+  animation-delay: 5s;
 }
 .menu-link-wrapper {
   width: 65px;
@@ -3818,6 +3821,9 @@ ul.steps.flexblock ul li{
 }
 
 #regionMap{
+  display: block;
+  margin: -38px auto;
+  padding: 0 20px;
   path {
     stroke: white;
   }
@@ -3835,9 +3841,11 @@ ul.steps.flexblock ul li{
 }
 
 .companies-img{
-  margin: 30px auto;
+  margin: 10px auto;
   display:block;
-  max-width: 690px
+  max-width: 890px;
+  filter: saturate(0) brightness(113%);
+  -webkit-filter: saturate(0) brightness(113%);
 }
 
 .market-img{
@@ -4062,6 +4070,61 @@ ul.steps.flexblock ul li{
   }
 }
 
+
+/* RegionMap */
+.land {
+  fill: #eaeaea;
+  fill-opacity: 1;
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  transition: 0.2s ease-out;
+  pointer-events:none
+}
+.land.three, .land.one, .land.two, .land.four, .land.five, .land.six, .land.seven, .land.eight{
+    pointer-events: auto!important
+}
+.land.eight{
+  fill: #1E8BC3
+}
+.land.seven{
+  fill: #1E824C
+}
+.land.six{
+  fill: #26C281
+}
+.land.five{
+  fill: #00B16A
+}
+.land.four{
+  fill: #0a733b;
+}
+.land.three{
+  fill: #8eb5e2;
+}
+.land.two{
+  fill: #59ABE3
+}
+.land.one{
+  fill: #8cc2ff
+}
+.land:hover {
+  fill: #f5f5f5;
+}
+
+#tooltip {
+  padding: 15px;
+  color: #080808;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 31.82%;
+  left: 50%;
+  font-size: 4rem;
+  width: 200px;
+  margin-left: -100px;
+}
+
 //------------------------------------------------------
 //  first slide intro stuff
 //-------------------------------------------------------
@@ -4100,6 +4163,8 @@ ul.steps.flexblock ul li{
    -webkit-justify-content: center;
    justify-content: center;
 }
+
+
  
 
 //------------------------------------
@@ -4111,7 +4176,6 @@ $mq-med: 40em;
 $mq-lg: 62em;
 
 .mast {
-
   @media (min-width: $mq-med) {
     flex-direction: row;
     justify-content: space-around;
@@ -4123,11 +4187,13 @@ $mq-lg: 62em;
     overflow-y: hidden;
     font-weight: 100;
     strong{
-      font-weight: 500
+      font-weight: 400
     }
     span {
       position: relative;
       display: inline-block;
+      font-size: 9rem;
+      font-weight: 100;
       //animation: text-up-in 1s $ease-cb both;
     }
   }
@@ -4143,13 +4209,22 @@ $mq-lg: 62em;
 
 }
 
+.back{
+  z-index: 8;
+  padding: 4rem;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%,rgba(0,0,0,0) 100%);
+  background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.39) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6515065', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 .blocker{
   position: fixed;
   left:0;
   right:0;
   top:0;
   bottom:0;
-  background: trasparent;
+  background: transparent;
   z-index: 1
 }
 
@@ -4157,31 +4232,43 @@ $mq-lg: 62em;
 //  Animation
 //-------------------------------------
 .anim {
+  &.go{
+    animation: blur-in 4s forwards;
+    filter: blur(50px);
+  }
   .mast .title-line {
     span {
-      font-size: 8rem;
-      margin-bottom: 1rem;
-      animation: text-up 1s $ease-cb both;
+    /*  animation: text-up 1s $ease-cb both;*/
+    }
+    &:nth-of-type(1) span {
+      animation-delay: 1.6s;
+      margin-top: -3px;
     }
     &:nth-of-type(2) span {
+      animation-delay: 1.8s;
       font-size: 7rem;
-      animation-delay: 0.2s;
-      margin-top: -15px;
     }
     &:nth-of-type(3) span {
-      animation-delay: 0.4s;
-    }
-    &:nth-of-type(4) span {
-      animation-delay: 0.6s;
+      animation-delay: 2s;
     }
   }
   .mast__text {
-    font-size: 1.28rem;
-    padding-left: 5px;
-    padding-right:0;
+    font-size: 1.85rem;
+    margin: 13px auto 0;
+    padding: 0;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    animation: fade-in 1s 0.5s ease both;
+    letter-spacing: 1.65px;
+ /*  animation: fade-in 1s 2.5s ease both; */
+    text-align: center
+  }
+}
+
+@keyframes blur-in {
+  from {
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(0px);
   }
 }
 

@@ -1,3 +1,10 @@
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
+
+
 <div class="layover"></div>
 <a href="#" class="cd-popup-trigger">Contact Sales</a>
 
@@ -147,20 +154,22 @@
 
         <div id="video-background">
           <div class="blocker"></div>
-          <iframe src="https://player.vimeo.com/video/102919605?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          <iframe id="myvideo" src="https://player.vimeo.com/video/220861304?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
         </div>
 
-            <div class="front-center anim">
-              <div class="mast">
-                  <div class="title-line">
-                    <span><strong>Modern</strong> CIM</span>
-                  </div>
-                  <div class="title-line">
-                    <span>by Valtari</span>
-                  </div>
-                  <p class="mast__text">Left / Right or Swipe to navigate</p>
-              </div>  
-            </div>
+        <div class="front-center anim">
+          <div class="back">
+            <div class="mast">
+              <div class="title-line">
+                <span><strong>Modern</strong> CIM</span>
+              </div>
+              <div class="title-line">
+                <span>by Valtari</span>
+              </div>
+              <p class="mast__text">Left / Right or Swipe to navigate</p>
+            </div>  
+          </div>
+        </div>
 
             <!--  <a href="#slide=2">               
                 <ul class="arrows keys">
@@ -713,7 +722,7 @@
       <section class="bg-white">
         <div class="wrap size-80">
 
-            <strong>Estimated age standardized incidence rates for cancer across (per 100,000).</strong>
+            <h5><strong>Estimated age standardized incidence rates for cancer across (per 100,000).</strong></h5>
             <small>Source: Globocan 2012; Data for all cancers excluding non-melanoma skin cancer</small>
 
             <div style="height:1200px">
@@ -977,11 +986,11 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <h4>InnovaHealth maintains a global footprint throughout a wide swathe of the world’s largest markets</h4><br>
+          <p class="text-intro"><strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets</p><br>
 
-          <div id="regionMap"></div>
+          <%= render partial: "regions" %>
 <br><br><br>
-          <%= image_tag('https://www.clipartsgram.com/image/1686321587-healthinsurance-logos.png', class: 'companies-img') %><br><br>
+          <%= image_tag('http://www.ampco.com.au/wp-content/themes/organic_business/images/clientsthing-grayscale.png', class: 'companies-img') %><br><br>
 
         </div>
       </section>
@@ -1982,6 +1991,8 @@ assuming current products only:</p>
   })();
 
 
+
+
 $(document).ready(function(){
   window.ws = new WebSlides({});
   $('body').fadeIn();
@@ -2024,8 +2035,8 @@ $(document).ready(function(){
         pie24two();
       }
       setTimeout(function() {
-       $('.cd-popup-trigger').animate({ "bottom": "14px" }, "slow" );
-      }, 7000);
+       $('.cd-popup-trigger').animate({ "bottom": "19px" }, "slow" );
+      }, 17000);
 
       /*jQuery Click animate */
       $(function(){
@@ -2049,6 +2060,18 @@ $(document).ready(function(){
           ink.css({top: y+'px', left: x+'px'}).addClass("rip");
         });
       });
+
+  /* PreLoader */
+  var iframe = document.querySelector('iframe');
+  var player = new Vimeo.Player(iframe);
+
+  player.on('play', function() {
+    setTimeout(function(){ 
+      $('body').addClass('loaded');
+      $('.anim').addClass('go');
+    }, 2800);
+  });
+
 
 });
 
