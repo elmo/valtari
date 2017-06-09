@@ -43,7 +43,7 @@
     display: block;
     margin:0 auto;
     width:100%;
-    div{margin: 0 auto; display:block}
+    div{margin: 0 auto; width: 760px; display:block}
 /*    width:620px; */
     &.zoom{
       height: 350px; overflow:hidden; zoom:1.5;
@@ -96,7 +96,7 @@
 
 @media (max-width: 768px){
   h1{
-    max-width: 255px;
+    max-width: 215px;
     text-align: left;
     font-size: 2.9rem;
     line-height: 4rem

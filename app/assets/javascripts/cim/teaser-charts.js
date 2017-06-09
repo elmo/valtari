@@ -119,54 +119,31 @@ function drawResourceMap() {
 //   Instanciate the map
 
 $(document).ready(function(){
+  const map = document.getElementById('regionMap');
+  const country = document.querySelectorAll('.land');
+  const toolTip = document.getElementById('tooltip');
+  const message = toolTip.innerHTML;
 
- Highcharts.mapChart('regionMap', {
-    chart: {
-        borderWidth: 0
-    },
+  // grab the country name and display
+  function showCountryName() {
+      let countryName = event.target.getAttribute('title');
+      toolTip.innerHTML = countryName;
+  }
 
-    title: {
-        text: null
-    },
+  // show the default text
+  function hideCountryName() {
+    toolTip.innerHTML = ' ';
+  }
 
-    legend: {
-        enabled: false
-    },
-    credits:{
-      enabled: false
-    },
-    series: [{
-        name: 'Country',
-        mapData: Highcharts.maps['custom/world-highres2'],
-        data: [
-            ['de', 1],
-            ['us', 1],
-            ['vn', 1],
-            ['in', 1],
-            ['cn', 1],
-            ['id', 1]
-        ],
-         nullColor: '#eff3f9',
-        color: '#a9d1ff',
-        dataLabels: {
-            enabled: true,
-            color: '#000',
-            style: {
-              fontWeight:'bold',
-              fontSize: '15px',
-              textOutline: '#FFF'
-              },           
-            formatter: function () {
-                if (this.point.value) {
-                    return this.point.name;
-                }
-            }
-        },
-        tooltip: {
-            headerFormat: '',
-            pointFormat: '{point.name}'
-        }
-    }]
+  // set event listener on the map
+  map.addEventListener('mouseover', function(event){
+    // if the mouse hovers over a country
+    if (event.target.classList.contains('land')) {
+      showCountryName();
+    }
+    else {
+      hideCountryName();
+    }
   });
 });
 
