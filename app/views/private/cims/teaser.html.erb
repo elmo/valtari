@@ -2066,6 +2066,7 @@ $(document).ready(function(){
   var player = new Vimeo.Player(iframe);
 
   player.on('play', function() {
+    console.log('play');
     setTimeout(function(){ 
       $('body').addClass('loaded');
       $('.anim').addClass('go');
