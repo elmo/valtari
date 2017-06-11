@@ -126,7 +126,7 @@ $(document).ready(function(){
 
   // grab the country name and display
   function showCountryName() {
-      let countryName = event.target.getAttribute('title');
+      var countryName = event.target.getAttribute('title');
       toolTip.innerHTML = countryName;
   }
 
