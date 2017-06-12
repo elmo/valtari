@@ -153,6 +153,7 @@ Base
   }
 
 
+
   /* BG Facebook */
   .bg-facebook {
     background: #3b5998;
@@ -376,11 +377,12 @@ Base
   ============================================= */
 
   .steps > li:nth-child(1) {
-    background-color: #e8eef7;
+    background-color: #3f3fab;
+    color:white
   }
 
   .steps > li:nth-child(2) {
-    background-color: #f8f8f9;
+    background-color: #f5f8ff;
   }
 
   .steps > li:nth-child(3) {
@@ -403,7 +405,7 @@ Base
 */
   @media (min-width: 1024px) {
     .process.step-2 {
-      border-left-color: #e8eef7;
+      border-left-color: #3f3fab;
     }
     .process.step-3 {
       border-left-color: #f8f8f9;

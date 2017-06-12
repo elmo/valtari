@@ -3916,7 +3916,7 @@ ul.steps.flexblock ul li{
 .img-machine3{
   margin: 3rem auto 3rem;
   display: block;
-  height: 26rem;
+  height: 16rem;
 }
 
 .img-suite{
@@ -4307,4 +4307,10 @@ $mq-lg: 62em;
 
 .player .video-wrapper{
   background-color: green!important
+}
+
+.bg-nurse{
+  background: url(/assets/cim/glass-18047436193dda087a7ad1bf9c0aee3d9e9f2058f25419e048b86f857b6dcfe8.png) no-repeat;
+  background-size: cover;
+  color: white;
 }
