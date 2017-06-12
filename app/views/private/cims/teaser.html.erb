@@ -167,11 +167,11 @@
                 <span>by Valtari</span>
               </div>
               <p class="mast__text">Left / Right or Swipe to navigate</p>
-            </div>  
+            </div>
           </div>
         </div>
 
-            <!--  <a href="#slide=2">               
+            <!--  <a href="#slide=2">
                 <ul class="arrows keys">
                   <li>&#8593;</li>
                   <li>&#8592;</li>
@@ -179,7 +179,7 @@
                   <li>&#8594;</li>
                 </ul>
               </a>  -->
-          
+
         <%= image_tag('cim/front-page.jpg', class: 'preLoad') %>
       </section>
 
@@ -2076,21 +2076,26 @@ else {
 
 // Handle messages received from the player
 function onMessageReceived(e) {
-    var data = JSON.parse(e.data);
-    
+    var data;
+    if (e.data != "[object Object]" ) {
+      data = JSON.parse(e.data);
+    } else {
+      data = e.data;
+    }
+
     switch (data.event) {
         case 'ready':
             onReady();
             break;
-           
+
         case 'playProgress':
             onPlayProgress(data.data);
             break;
-            
+
         case 'pause':
             onPause();
             break;
-           
+
         case 'finish':
             onFinish();
             break;
@@ -2100,11 +2105,11 @@ function onMessageReceived(e) {
 // Helper function for sending a message to the player
   function post(action, value) {
       var data = { method: action };
-      
+
       if (value) {
           data.value = value;
       }
-      
+
       f[0].contentWindow.postMessage(JSON.stringify(data), url);
   }
 
@@ -2124,18 +2129,18 @@ function onMessageReceived(e) {
   }
 
   function onPlayProgress(data) {
-      console.log(data.seconds + 's played');
-      
+      //console.log(data.seconds + 's played');
+
        if (data.seconds > 0.01 && data.seconds < .9)
        {
-       $('body').addClass('loaded'); 
+       $('body').addClass('loaded');
        $('.anim').addClass('go');
        }
-  
+
   }
 
- 
-  
+
+
 });
 
 
