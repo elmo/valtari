@@ -4190,8 +4190,13 @@ $mq-lg: 62em;
       position: relative;
       display: inline-block;
       font-size: 9rem;
-      font-weight: 100;
+      font-weight: 600;
       //animation: text-up-in 1s $ease-cb both;
+    }
+    &.thin{
+      span{
+        font-weight: 100
+      }
     }
   }
 
@@ -4251,8 +4256,8 @@ $mq-lg: 62em;
     }
   }
   .mast__text {
-    font-size: 1.85rem;
-    margin: 13px auto 0;
+    font-size: 1.28rem;
+    margin: 14px auto 0;
     padding: 0;
     text-transform: uppercase;
     letter-spacing: 1.65px;
