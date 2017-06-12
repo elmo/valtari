@@ -4214,11 +4214,10 @@ $mq-lg: 62em;
 .back{
   z-index: 8;
   padding: 4rem;
-  background: rgba(0, 0, 0, 0.74);/*
-  background: -moz-radial-gradient(center, ellipse cover, rgba(1, 1, 4, 0.79) 0%, rgba(0,0,0,0.24) 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(1, 1, 4, 0.79) 0%,rgba(0,0,0,0.24) 100%);
-  background: radial-gradient(ellipse at center, rgba(1, 1, 4, 0.79) 0%,rgba(0,0,0,0.24) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6515065', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: rgba(0, 0, 0, 0.74);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
+  background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
 }
 
 .blocker{
