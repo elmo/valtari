@@ -1,9 +1,3 @@
-<div id="loader-wrapper">
-  <div id="loader"></div>
-  <div class="loader-section section-left"></div>
-  <div class="loader-section section-right"></div>
-</div>
-
 
 <div class="layover"></div>
 <a href="#" class="cd-popup-trigger">Contact Sales</a>
@@ -1994,6 +1988,7 @@ assuming current products only:</p>
 
 
 $(document).ready(function(){
+  $('.anim').addClass('go');
   window.ws = new WebSlides({});
   $('body').fadeIn();
   $('#slider').slideReveal("hide");
@@ -2126,10 +2121,9 @@ function onMessageReceived(e) {
   function onPlayProgress(data) {
       console.log(data.seconds + 's played');
       
-       if (data.seconds > 0.01 && data.seconds < .9)
+       if (data.seconds > 0.15 && data.seconds < 0.9)
        {
-       $('body').addClass('loaded'); 
-       $('.anim').addClass('go');
+         $('body').addClass('loaded'); 
        }
   
   }

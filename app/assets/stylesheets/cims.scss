@@ -2,9 +2,7 @@
   // They will automatically be included in application.css.
   // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-  background: url('http://orig01.deviantart.net/ec9d/f/2009/269/a/a/4_8_15_16_23_42_gif_by_emir0.gif') no-repeat;
-  background-position: center center;
-  background-size: cover
+  display: none
 }
 
 /*---------------------------------------------------------------------------------
@@ -3447,13 +3445,11 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 /* Slide trigger button */
 #trigger{
   position: absolute;
-  z-index: -1;
+  z-index: 9;
   right: -75px;
   top: -52px;
-  display: none;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-  animation-delay: 5s;
+  display: block;
+
 }
 .menu-link-wrapper {
   width: 65px;
@@ -3699,8 +3695,6 @@ time{
   font-size: 13px;
   z-index: 3;
   background: rgba(0, 0, 0, 0.02);
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
 }
 
 time img{
@@ -4156,6 +4150,7 @@ ul.steps.flexblock ul li{
 
 .front-center{
   color:white;
+  z-index: 99999999;
   display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row;
@@ -4214,9 +4209,10 @@ $mq-lg: 62em;
 .back{
   z-index: 8;
   padding: 4rem;
-  background: -moz-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%,rgba(0,0,0,0) 100%);
-  background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.39) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgba(0, 0, 0, 0.74);/*
+  background: -moz-radial-gradient(center, ellipse cover, rgba(1, 1, 4, 0.79) 0%, rgba(0,0,0,0.24) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(1, 1, 4, 0.79) 0%,rgba(0,0,0,0.24) 100%);
+  background: radial-gradient(ellipse at center, rgba(1, 1, 4, 0.79) 0%,rgba(0,0,0,0.24) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6515065', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
@@ -4235,8 +4231,8 @@ $mq-lg: 62em;
 //-------------------------------------
 .anim {
   &.go{
-    animation: blur-in 3s forwards;
-    filter: blur(50px);
+    animation: blur-in 4.85s forwards;
+    filter: blur(150px);
   }
   .mast .title-line {
     span {
@@ -4267,7 +4263,7 @@ $mq-lg: 62em;
 
 @keyframes blur-in {
   from {
-    filter: blur(50px);
+    filter: blur(150px);
   }
   to {
     filter: blur(0px);
@@ -4309,3 +4305,6 @@ $mq-lg: 62em;
 }
 
 
+.player .video-wrapper{
+  background-color: green!important
+}

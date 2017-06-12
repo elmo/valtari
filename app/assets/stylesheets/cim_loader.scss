@@ -89,12 +89,19 @@
     transform: rotate(-360deg);
   }
 }
+
+#loader-wrapper{
+  background: url('http://i.imgur.com/ppVmUUR.gif') no-repeat #000;
+  background-position: top left;
+  background-size: 144px
+}
+
 #loader-wrapper .loader-section {
   position: fixed;
   top: 0;
   width: 51%;
   height: 100%;
-  background: #FFF;
+  background: transparent;
   z-index: 10;
 }
 
@@ -131,6 +138,6 @@
   visibility: hidden;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: all 0.3s 1s ease-out;
-  transition: all 0.3s 1s ease-out;
+  -webkit-transition: all .00s 0s ease-out;
+  transition: all .00s 0s ease-out;
 }
