@@ -2062,18 +2062,80 @@ $(document).ready(function(){
       });
 
   /* PreLoader */
-  var iframe = document.querySelector('iframe');
-  var player = new Vimeo.Player(iframe);
+var f = $('iframe'),
+    url = f.attr('src').split('?')[0],
+    status = $('.status');
 
-  player.on('play', function() {
-    console.log('play');
-    setTimeout(function(){ 
-      $('body').addClass('loaded');
-      $('.anim').addClass('go');
-    }, 2800);
-  });
+// Listen for messages from the player
+if (window.addEventListener){
+    window.addEventListener('message', onMessageReceived, false);
+}
+else {
+    window.attachEvent('onmessage', onMessageReceived, false);
+}
 
+// Handle messages received from the player
+function onMessageReceived(e) {
+    var data = JSON.parse(e.data);
+    
+    switch (data.event) {
+        case 'ready':
+            onReady();
+            break;
+           
+        case 'playProgress':
+            onPlayProgress(data.data);
+            break;
+            
+        case 'pause':
+            onPause();
+            break;
+           
+        case 'finish':
+            onFinish();
+            break;
+    }
+}
 
+// Helper function for sending a message to the player
+  function post(action, value) {
+      var data = { method: action };
+      
+      if (value) {
+          data.value = value;
+      }
+      
+      f[0].contentWindow.postMessage(JSON.stringify(data), url);
+  }
+
+  function onReady() {
+      status.text('ready');
+      post('addEventListener', 'pause');
+      post('addEventListener', 'finish');
+      post('addEventListener', 'playProgress');
+  }
+
+  function onPause() {
+      status.text('paused');
+  }
+
+  function onFinish() {
+      status.text('finished');
+  }
+
+  function onPlayProgress(data) {
+      console.log(data.seconds + 's played');
+      
+       if (data.seconds > 1 && data.seconds < 2)
+       {
+       $('body').addClass('loaded'); 
+       $('.anim').addClass('go');
+       }
+  
+  }
+
+ 
+  
 });
 
 
