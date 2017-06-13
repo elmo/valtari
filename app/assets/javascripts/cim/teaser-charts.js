@@ -67,6 +67,13 @@ var options = {
   backgroundColor: 'transparent',
   datalessRegionColor: '#dbdff6',
   defaultColor: '#EFEFEF',
+  tooltip: {
+  textStyle: { 
+      fontSize: 24,
+      bold:true
+    },
+      isHtml: true,
+  },
 };
   var chart = new google.visualization.GeoChart(document.getElementById('geochart-incidence'));
   chart.draw(data, options);
