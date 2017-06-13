@@ -4202,7 +4202,8 @@ ul.steps.flexblock ul li{
 #section-1{
   @media (max-width:767px){
       background-image: url('cim/scans.png');
-      background-size: cover
+      background-size: cover;
+      padding: 0
   }
 }
 
@@ -4275,6 +4276,9 @@ $mq-lg: 62em;
   background: -moz-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
   background: -webkit-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
   background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
+  @media (max-width: 768px) {
+    background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.7) 0%, rgba(0, 0, 0, 0.48) 100%);
+  }
 }
 
 .blocker{

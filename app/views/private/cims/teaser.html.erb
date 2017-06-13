@@ -162,7 +162,7 @@
                   <span>by Valtari</span>
                 </div>
 
-                <p class="mast__text">Left / Right or Swipe to navigate</p>
+                <p class="mast__text">Left/Right Keys or Swipe to navigate</p>
                 <%= image_tag('cim/arrows.png', class: 'arrow-keys') %>
               </div>
             </div>
@@ -1922,12 +1922,13 @@ assuming current products only:</p>
 <script type="text/javascript">
 
 //Show swipe notification if touch device
-$(window).one( "touchstart", function() {
- $('.swipe-icon').fadeIn('slow');
-  setTimeout(function() {
+if ($(window).width() < 769) {
+  $('.swipe-icon').fadeIn('slow');
+    setTimeout(function() {
       $('.swipe-icon').fadeOut('slow');
-  }, 4000);
-});
+  }, 8000);
+}
+
 
 
 //Slide Reveal
