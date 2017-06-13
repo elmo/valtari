@@ -42,7 +42,7 @@
   .geo-map{ 
     display: block;
     margin:0 auto;
-    width:100%;
+    max-width:80%;
     div{margin: 0 auto; width: 760px; display:block}
 /*    width:620px; */
     &.zoom{

@@ -151,21 +151,23 @@
           <iframe id="myvideo" src="https://player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
         </div>
 
-        <div class="front-center anim">
-          <div class="back">
-            <div class="mast">
-              <div class="title-line">
-                <span><strong>Modern</strong> CIM</span>
-              </div>
-              <div class="title-line thin">
-                <span>by Valtari</span>
-              </div>
+        <a class="section selector" href="#slide=2">
+          <div class="front-center anim">
+            <div class="back">
+              <div class="mast">
+                <div class="title-line">
+                  <span><strong>Modern</strong> CIM</span>
+                </div>
+                <div class="title-line thin">
+                  <span>by Valtari</span>
+                </div>
 
-              <p class="mast__text">Left / Right or Swipe to navigate</p>
-              <%= image_tag('cim/arrows.png', class: 'arrow-keys') %>
+                <p class="mast__text">Left / Right or Swipe to navigate</p>
+                <%= image_tag('cim/arrows.png', class: 'arrow-keys') %>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
 
             <!--  <a href="#slide=2">
                 <ul class="arrows keys">
@@ -986,7 +988,7 @@
 
           <%= render partial: "regions" %>
 <br><br><br>
-          <%= image_tag('http://www.ampco.com.au/wp-content/themes/organic_business/images/clientsthing-grayscale.png', class: 'companies-img') %><br><br>
+          <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
 
         </div>
       </section>
@@ -1013,7 +1015,7 @@
           </div><br><br>
           <div class="content-left">
             <p>
-              <span style="color:#0078b4; font-weight:500">Current Focus</span><br>
+              <span style="color:#312b90; font-weight:500">Current Focus</span><br>
               North America, India, China, South-East Asia<br>
               Liver, Lungs, Kidney, Pancreas<br>
             </p>
@@ -1026,7 +1028,7 @@
             </p>
           </div>
             <br><br><br>
-          <div id="geochart-resource" class="geo-map">
+          <%= render partial: "phases" %>
           </div>
         </div>
       </section>
@@ -2039,13 +2041,13 @@ $(document).ready(function(){
       }
       setTimeout(function() {
        $('#trigger').fadeIn();
-      }, 3400);
+      }, 3600);
       setTimeout(function() {
        $('#navigation').fadeIn();
       }, 3800);
       setTimeout(function() {
-       $('time a').fadeIn();
-      }, 4200);
+       $('time a img').fadeIn();
+      }, 4000);
       setTimeout(function() {
        $('.cd-popup-trigger').animate({ "bottom": "19px" }, "slow" );
       }, 7000);

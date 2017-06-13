@@ -69,7 +69,7 @@ var options = {
   defaultColor: '#EFEFEF',
   tooltip: {
   textStyle: { 
-      fontSize: 24,
+      fontSize: 20,
       bold:true
     },
       isHtml: true,
@@ -123,7 +123,7 @@ function drawResourceMap() {
 
 
 // Country Market Map
-//   Instanciate the map
+// Instanciate the map
 
 $(document).ready(function(){
   const map = document.getElementById('regionMap');
@@ -153,6 +153,41 @@ $(document).ready(function(){
     }
   });
 });
+
+
+// Country Market Map
+// Instanciate the map
+
+$(document).ready(function(){
+  const map = document.getElementById('phaseMap');
+  const country = document.querySelectorAll('.land');
+  const toolTip = document.getElementById('tooltip2');
+  const message = toolTip.innerHTML;
+
+  // grab the country name and display
+  function showCountryName() {
+      var countryName = event.target.getAttribute('title');
+      toolTip.innerHTML = countryName;
+  }
+
+  // show the default text
+  function hideCountryName() {
+    toolTip.innerHTML = ' ';
+  }
+
+  // set event listener on the map
+  map.addEventListener('mouseover', function(event){
+    // if the mouse hovers over a country
+    if (event.target.classList.contains('land')) {
+      showCountryName();
+    }
+    else {
+      hideCountryName();
+    }
+  });
+});
+
+
 
 
 
