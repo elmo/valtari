@@ -1,6 +1,6 @@
 
 <div class="layover"></div>
-<a href="#" class="cd-popup-trigger">Contact Sales</a>
+<a href="#" class="cd-popup-trigger ripplelink">Contact Sales</a>
 
 <div class="cd-popup" role="alert">
   <div class="cd-popup-container">
@@ -93,10 +93,10 @@
         3. Company Overview
       </a>
       <a class="section selector" href="#slide=22">
-        3.1 Innovahealth's Focus
+        3.1 InnovaHealth's Focus
       </a>
       <a class="section selector" href="#slide=23">
-        4. InovaHealths’S Offeringss
+        4. InnovaHealths’S Offerings
       </a>
       <a class="selector" href="#slide=25">
         4.1. Current Platforms
@@ -160,7 +160,9 @@
               <div class="title-line thin">
                 <span>by Valtari</span>
               </div>
+
               <p class="mast__text">Left / Right or Swipe to navigate</p>
+              <%= image_tag('cim/arrows.png', class: 'arrow-keys') %>
             </div>
           </div>
         </div>
@@ -1915,78 +1917,83 @@ assuming current products only:</p>
 
 <script type="text/javascript">
 
-  //Show swipe notification if touch device
-  window.addEventListener('touchstart', function() {
-   $('.swipe-icon').fadeIn('slow');
-    setTimeout(function() {
-        $('.swipe-icon').fadeOut('slow');
-    }, 4000);
-  });
+//Show swipe notification if touch device
+$(window).one( "touchstart", function() {
+ $('.swipe-icon').fadeIn('slow');
+  setTimeout(function() {
+      $('.swipe-icon').fadeOut('slow');
+  }, 4000);
+});
 
-  //Slide Reveal
-  $("#slider").slideReveal({
-    trigger: $("#trigger"),
-    push: false,
-    overlay: true,
-    overlayColor: 'rgba(0,0,0,0)',
-    shown: function(slider, trigger){
-      $('.layover').addClass('is-visible');
-      $('.panel').addClass('shadow');
-    },
-    hidden: function(slider, trigger){
-      $('.menu-link-wrapper .menu-link').removeClass('menu-trigger-open');
-      $('.menu-link-wrapper').removeClass('close-pos');
-      $('.layover').removeClass('is-visible');
-      $('.panel').removeClass('shadow');
-    },
-  });
 
-  //open popup for inquiry form
-  $('.cd-popup-trigger').on('click', function(event){
+//Slide Reveal
+$("#slider").slideReveal({
+  trigger: $("#trigger"),
+  push: false,
+  overlay: true,
+  overlayColor: 'rgba(0,0,0,0)',
+  shown: function(slider, trigger){
+    $('.layover').addClass('is-visible');
+    $('.panel').addClass('shadow');
+  },
+  hidden: function(slider, trigger){
+    $('.menu-link-wrapper .menu-link').removeClass('menu-trigger-open');
+    $('.menu-link-wrapper').removeClass('close-pos');
+    $('.layover').removeClass('is-visible');
+    $('.panel').removeClass('shadow');
+  },
+});
+
+//open popup for inquiry form
+$('.cd-popup-trigger').on('click', function(event){
+  event.preventDefault();
+  $('.cd-popup').addClass('is-visible');
+});
+
+//close popup
+$('.cd-popup').on('click', function(event){
+  if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
     event.preventDefault();
-    $('.cd-popup').addClass('is-visible');
-  });
+    $(this).removeClass('is-visible');
+  }
+});
 
-  //close popup
-  $('.cd-popup').on('click', function(event){
-    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-      event.preventDefault();
-      $(this).removeClass('is-visible');
+//close popup when clicking the esc keyboard button
+$(document).keyup(function(event){
+    if(event.which=='27'){
+      $('.cd-popup').removeClass('is-visible');
     }
+});
+
+
+//on navigating by clicking a slide in the sidepanel
+$(function() {
+  $('.selector').click(function() {
+    $('#slider a.selector').removeClass('active');
+    $(this).addClass('active');
+    setTimeout(function() {
+     $('#slider').slideReveal("hide");
+    }, 200);
   });
+});
 
-  //close popup when clicking the esc keyboard button
-  $(document).keyup(function(event){
-      if(event.which=='27'){
-        $('.cd-popup').removeClass('is-visible');
-      }
+
+// Hamburger / arow icon
+(function() {
+ // On icon click...
+  $('.menu-link-wrapper').on('click.mobileNav', function(){
+    // Toggle the open/closed state of the menu icon
+    $('.menu-link-wrapper .menu-link').toggleClass('menu-trigger-open');
+    $('.menu-link-wrapper').toggleClass('close-pos');
   });
+})();
 
 
-  //on navigating by clicking a slide in the sidepanel
-  $(function() {
-    $('.selector').click(function() {
-      $('#slider a.selector').removeClass('active');
-      $(this).addClass('active');
-      setTimeout(function() {
-       $('#slider').slideReveal("hide");
-      }, 200);
-    });
-  });
-
-
-  // Hamburger / arow icon
-  (function() {
-   // On icon click...
-    $('.menu-link-wrapper').on('click.mobileNav', function(){
-      // Toggle the open/closed state of the menu icon
-      $('.menu-link-wrapper .menu-link').toggleClass('menu-trigger-open');
-      $('.menu-link-wrapper').toggleClass('close-pos');
-    });
-  })();
-
-
-
+$(document).on('turbolinks:click', function (event) {
+  if (event.target.getAttribute('href').charAt(0) === '#') {
+    return event.preventDefault()
+  }
+})
 
 $(document).ready(function(){
   $('.anim').addClass('go');
@@ -2030,6 +2037,15 @@ $(document).ready(function(){
         pie24();
         pie24two();
       }
+      setTimeout(function() {
+       $('#trigger').fadeIn();
+      }, 3400);
+      setTimeout(function() {
+       $('#navigation').fadeIn();
+      }, 3800);
+      setTimeout(function() {
+       $('time a').fadeIn();
+      }, 4200);
       setTimeout(function() {
        $('.cd-popup-trigger').animate({ "bottom": "19px" }, "slow" );
       }, 7000);
@@ -2098,6 +2114,7 @@ function onMessageReceived(e) {
     }
 }
 
+// Vimeo detect if playing
 // Helper function for sending a message to the player
   function post(action, value) {
       var data = { method: action };
@@ -2133,9 +2150,12 @@ function onMessageReceived(e) {
 
   }
 
-
-
 });
+
+
+if ($(window).width() < 768) { 
+   $('#video-background').remove();
+} 
 
 
 </script>

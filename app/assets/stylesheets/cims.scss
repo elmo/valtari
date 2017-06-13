@@ -222,8 +222,12 @@ ul.arrows {
   }
 }
 
-
-
+.arrow-keys{
+  display: none;
+  margin: 14px auto;
+  opacity: .85;
+  width: 6.5rem;
+}
 
 
 /*=========================================
@@ -1420,6 +1424,7 @@ footer,
 #navigation {
   width: 100%;
   padding: 0.8rem;
+  display: none;
 }
 
 header p,
@@ -3448,8 +3453,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   z-index: 9;
   right: -75px;
   top: -52px;
-  display: block;
-
+  display: none
 }
 .menu-link-wrapper {
   width: 65px;
@@ -3570,7 +3574,8 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 
 .side-nav{
   overflow-y:scroll;
-  height: 100%
+  height: 100%;
+  padding-bottom: 6rem;
 }
 .side-nav::-webkit-scrollbar{
   width: 6px;
@@ -3695,6 +3700,9 @@ time{
   font-size: 13px;
   z-index: 3;
   background: rgba(0, 0, 0, 0.02);
+  a{
+    display: none
+  }
 }
 
 time img{
@@ -3796,6 +3804,13 @@ ul.steps.flexblock ul li{
   border-radius:2px
 }
 
+#canvas1 {
+  @media(max-width:768px){
+   margin-left: -3.25rem;
+   min-width: 6.5rem;
+ }
+}
+
 .inline-canvas2{ width:590px; height:400px; margin-bottom:3rem  }
 .inline-canvas{  width:270px; height:400px; }
 
@@ -3834,6 +3849,24 @@ ul.steps.flexblock ul li{
 /* D3 Piechart*/
 .chart-wrapper{
   width:100%;
+}
+
+.google-visualization-tooltip{
+  width:220px !important;
+  border: 1px solid #dedede!important;
+  background:white;
+  box-shadow:none!important;
+  li span{
+    font-family: "San Francisco", helvetica, arial, sans-serif!important;
+    font-weight:200!important;
+  }
+  li:first-child{
+    margin-bottom:-8px!important;
+    padding-bottom:0!important
+  }
+}
+.geochart-incidence div{
+  position: relative!important
 }
 
 .companies-img{
@@ -4147,10 +4180,16 @@ ul.steps.flexblock ul li{
     width: 177.77777778vh;
   }
 }
+#section-1{
+  @media (max-width:767px){
+      background-image: url('cim/scans.png');
+      background-size: cover
+  }
+}
 
 .front-center{
   color:white;
-  z-index: 99999999;
+  z-index: 9;
   display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row;
@@ -4203,7 +4242,6 @@ $mq-lg: 62em;
   &__text {
     color: rgba(255, 255, 255, 0.7);
     font-size: 115%;
-    max-width: 23em;
     @media (min-width: $mq-med) {
       font-size: 140%;
     }
@@ -4255,13 +4293,12 @@ $mq-lg: 62em;
     }
   }
   .mast__text {
-    font-size: 1.28rem;
+    font-size: 1.45rem;
     margin: 14px auto 0;
     padding: 0;
     text-transform: uppercase;
     letter-spacing: 1.65px;
- /*  animation: fade-in 1s 2.5s ease both; */
-    text-align: center
+    text-align: center;
   }
 }
 
