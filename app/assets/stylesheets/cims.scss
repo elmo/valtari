@@ -421,10 +421,6 @@ img:hover {
   filter: alpha(opacity=90);
 }
 
-svg:not(:root) {
-  overflow: visible;
-}
-
 figure {
   position: relative;
   margin: 0;
@@ -2535,7 +2531,9 @@ CV / News
     font-size: 2rem
   }
 }
-
+.activity .testimony{
+  img{ max-width: 17rem }
+}
 @media (min-width: 768px) {
   .activity p {
     float: left;
@@ -3641,13 +3639,15 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 
 
 .logo{
-  max-width: 155px;
+  max-width: 188px;
   margin: -1px 0;
 }
 
 .logo1{
-  max-width: 205px;
-  margin: -11px 0;
+  max-width: 248px;
+  margin: -8px auto 0;
+  text-align: left;
+  display: block
 }
 header{
   opacity:1!important
@@ -3807,13 +3807,14 @@ ul.steps.flexblock ul li{
 
 #canvas1 {
   @media(max-width:768px){
-   margin-left: -3.25rem;
-   min-width: 6.5rem;
+    margin-left: -3.25rem;
+    min-width: 6.5rem;
  }
 }
 
 .inline-canvas2{ width:590px; height:400px; margin-bottom:3rem  }
 .inline-canvas{  width:270px; height:400px; }
+
 
 #pieChart14{
   margin-left: -65px;
@@ -3832,11 +3833,17 @@ ul.steps.flexblock ul li{
   fill-opacity: 0.6;
 }
 
+.svgMap{
+  display: block;
+  margin:auto
+}
+
 #regionMap, #phaseMap{
   display: block;
-  margin:-55px auto -88px;
-  max-width: 90%;
-  padding: 0 2px;
+  margin-top: -55px;
+  margin-bottom: -88px;
+  text-align:center;
+  padding: 0;
   path {
     stroke: white;
   }
@@ -4129,25 +4136,25 @@ ul.steps.flexblock ul li{
     pointer-events: auto!important
 }
 .land.eight{
-  fill: #1E8BC3
+  fill: #62abff
 }
 .land.seven{
-  fill: #1E824C
+  fill: #85bdff
 }
 .land.six{
-  fill: #26C281
+  fill: #6296f1
 }
 .land.five{
-  fill: #00B16A
+  fill: #678ae6
 }
 .land.four{
-  fill: #0a733b;
+  fill: #6f96ff;
 }
 .land.three{
-  fill: #8eb5e2;
+  fill: #8cc2ff;
 }
 .land.two{
-  fill: #59ABE3
+  fill: #6296f1
 }
 .land.one{
   fill: #8cc2ff
@@ -4156,9 +4163,6 @@ ul.steps.flexblock ul li{
   opacity: 0.36!important
 }
 
-#phaseMap{
-  position: relative
-}
 
 #tooltip, #tooltip2 {
   padding: 15px;
@@ -4374,7 +4378,24 @@ $mq-lg: 62em;
 }
 
 .bg-nurse{
-  background: url(/assets/cim/glass-18047436193dda087a7ad1bf9c0aee3d9e9f2058f25419e048b86f857b6dcfe8.png) no-repeat;
+  background: url(/assets/cim/glass.png) no-repeat;
   background-size: cover;
   color: white;
+}
+
+.bg-asia{
+  background: url(/assets/cim/asia.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: -47rem;
+  color: white;  
+  @media (max-width: 768px){
+    background-position-y: -53rem
+  }
+}
+
+.bg-patents{
+  background: url(/assets/cim/patnts.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  background-position-y: -7rem;
 }
