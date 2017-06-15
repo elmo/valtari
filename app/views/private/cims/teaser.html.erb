@@ -68,64 +68,64 @@
       <a class="section selector" href="#slide=6">
       1. Executive Summary
       </a>
-      <a class="selector" href="#slide=7">
+      <a class="selector" href="#slide=8">
         1.1. Investment Considerations
       </a>
-      <a class="selector" href="#slide=8" onclick="canvas8();">
+      <a class="selector" href="#slide=9" onclick="canvas8();">
         1.2. Financial Summary
        </a>
-      <a class="selector" href="#slide=9">
+      <a class="selector" href="#slide=10">
         1.3. Transaction Summary
       </a>
-      <a class="selector" href="#slide=10">
+      <a class="selector" href="#slide=11">
         1.4. Transaction Process
       </a>
-      <a class="selector section" href="#slide=11">
+      <a class="selector section" href="#slide=12">
         2. Market Overview
       </a>
-      <a class="selector" href="#slide=12" onclick="canvas12(); canvas12two();">
-        2.1 Cancer Incidence and Mortality Statistics
+      <a class="selector" href="#slide=14" onclick="canvas13();">
+        2.1 Cancer Incidence Rates
       </a>
-      <a class="selector" href="#slide=17" onclick="pie17();">
+      <a class="selector" href="#slide=18" id="run17">
         2.2 Interventional Oncology – Ablation Therapy
       </a>
-      <a class="section selector" href="#slide=19">
+      <a class="section selector" href="#slide=20">
         3. Company Overview
       </a>
-      <a class="section selector" href="#slide=22">
+      <a class="section selector" href="#slide=23">
         3.1 InnovaHealth's Focus
       </a>
-      <a class="section selector" href="#slide=23">
+      <a class="section selector" href="#slide=25">
         4. InnovaHealths’S Offerings
       </a>
-      <a class="selector" href="#slide=25">
+      <a class="selector" href="#slide=26">
         4.1. Current Platforms
       </a>
-      <a class="selector" href="#slide=28">
+      <a class="selector" href="#slide=29">
         4.2. Product and Technology Roadmap
       </a>
-      <a class="selector section" href="#slide=36">
+      <a class="selector section" href="#slide=37">
        5. Operational Details
       </a>
-      <a href="#slide=37">
+      <a href="#slide=38">
        5.1 Facility Details
       </a>
-      <a href="#slide=38">
+      <a href="#slide=39">
        5.2 Sales and Marketing
       </a>
-      <a class="selector" href="#slide=39">
+      <a class="selector" href="#slide=40">
        5.3 Customers
       </a>
-      <a class="selector" href="#slide=40">
+      <a class="selector" href="#slide=41">
        5.4 Management and Employees
       </a>
       <a class="selector" href="#slide=43">
        5.5 Competive Landscape
       </a>
-      <a class="selector" href="#slide=46">
+      <a class="selector" href="#slide=45">
        5.6 Intellectual Property
       </a>
-      <a class="selector" href="#slide=50">
+      <a class="selector" href="#slide=54">
        5.7 Certifications
       </a>
       <a class="section" href="#slide=51">
@@ -209,32 +209,32 @@
             <li>
               <div>
                 <h2>
-                  Ross Bureau
+                 Scott Stepanik
                 </h2>
-                Principal <br>
-                rbureau@valtari.com<br>
-                Tel: +1 312 555 1919
+                Founder & CEO<br>
+                sstepanik@valtari.com<br>
+                Tel: +1 800 705 2592
               </div>
             </li>
             <li>
               <div>
                 <h2>
-                 Jaycob Crisp
+                 Elliott Blatt
                 </h2>
-                  Managing Partner <br>
-                  jcrisp@valtari.com<br>
-                  Tel: +1 312 555 8888
+                  CTO <br>
+                  eblatt@valtari.com<br>
+                  Tel: +1 800 705 2592
                   </paragraph>
               </div>
             </li>
             <li>
               <div>
                 <h2>
-                  Jody Windsor
+                  Peter Tschann-Grimm
                 </h2>
-              Consulting Partner<br>
-              jwindsor@valtari.com<br>
-              Tel: +1 312 555 0404
+              VP of Product<br>
+              pgrimm@valtari.com<br>
+              Tel: +1 800 705 2592
               </div>
             </li>
             <li>
@@ -449,7 +449,7 @@
         <div class="wrap size-80">
           <h2> 1.1 Investment Considerations</h2>
         <br>
-        <ul class="flexblock activity">
+        <ul class="flexblock activity bg-gradient-h">
             <li>
               <a href="#" title="UX Designer at ACME">
                 <div>
@@ -697,6 +697,7 @@
               <li class="bg-secondary">
                 <h2>130 million</h2>
                 estimated deaths from cancer in 2030
+                <small> &nbsp;</small>
               </li>
             </ul>
             <ul class="flexblock cells">
@@ -719,7 +720,7 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-
+          <h2>2.1 Cancer Incidence Rates</h2>
             <h5><strong>Estimated age standardized incidence rates for cancer across (per 100,000).</strong></h5>
             <small>Source: Globocan 2012; Data for all cancers excluding non-melanoma skin cancer</small>
 
@@ -986,12 +987,13 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <p class="text-intro"><strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets</p><br>
-
+          <h2>Global Footprint</h2>
+          <p class="text-intro">
+            <strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets
+          </p>
           <%= render partial: "regions" %>
           <br><br><br>
           <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
-
         </div>
       </section>
       <section class="bg-white">
@@ -1053,7 +1055,7 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <h2>3.1 InnovaHealth’s Offerings</h2>
+          <h2>4 InnovaHealth’s Offerings</h2>
           <div class="content-left"><p>
           InnovaHealth offers two Platforms: DASAM™ and ALLTRA EX™. DASAM™ and ALLTRA EX™ ™ are designed around InnovaHealth’s core technology platforms: Robotic Navigation, Target Visualization Technology, Treatment Planning Workflow Software and Post Procedure Verification Technology. These solutions are used in procedures like biopsy, drug delivery, ablation, drainage, fine needle aspiration, and in varied pain care procedures for both cancerous and non-cancerous pain. </p><p>
           The Company currently has four patents from US Patent office for the Robotic Navigation technology and has a pending patent for the Treatment Planning Workflow Software. Moreover, the Company has licensed 4 patents from NASA as part of its tissue characterization technology development, and has an additional patent pending that will fit into its DASAM™ workflow. </p><p>
@@ -1635,7 +1637,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
       </section>
       <section class="bg-white">
          <div class="wrap size-80">
-           <h2>Key management profiles</h2>
+           <h2>5.5 Key management profiles</h2>
            <ul class="flexblock activity">
               <li>
                   <div>
@@ -1820,9 +1822,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
         <h2>5.6 Intellectual Property</h2>
 
          <div class="clear-float">
-          <div>
+          <p class="text-intro">
             The Company’s portfolio of patents consists of <span class="medium">6 granted patents, 2 pending patents and patents licensed from NASA, CIMTEC and Western.</span><br>
-          </div><br><br>
+          </p><br><br>
          </div>
 
           <div class="content-left">
@@ -1832,17 +1834,17 @@ There are many published articles about InnovaHealth. Moreover, the Company find
               <p>The Company plans to increase the number of patents in its portfolio to 38 by 2018. Currently, the Company has patents in three areas – robotics assistance for CT guided interventions, ultrasound guide interventional systems, and monitoring & screening.<br><br><br></p>
           </div><br><br><br><br>
           
-  
-        
         <%= image_tag('cim/patents.png', class: 'patents no-hover') %>
       </div>
       </section>
-      <section class="bg-patents ">
+      <section class="bg-white">
         <div class="wrap size-60">
+          <h2>5.7 Patents</h2>
           <p class="text-intro">Monitoring and Screening Patents</p>
           <%= image_tag('cim/patent1.png', class: 'no-hover') %><br><br><br>
-           <p class="text-intro">Ultrasound Guided Interventional System Patents</p>
-          <%= image_tag('cim/patent2.png', class: 'no-hover') %>
+          <p class="text-intro">Ultrasound Guided Interventional System Patents</p>
+          <%= image_tag('cim/patent2.png', class: 'no-hover') %><br><br><br>
+          <%= image_tag('cim/patnts.png') %>
         </div>
       </section>
       <section class="bg-violet">
@@ -1896,24 +1898,12 @@ assuming current products only:</p>
             <!--end .cta -->
           </div>
         </section>
-        <section class="bg-white">
-          <div class="wrap size-60">
-            <p class="text-intro">
-            MAXIO™ assisted procedures</p>
-            <%= image_tag('cim/maxio.png', class: 'no-hover nudge') %>
-          </div>
-        </section>
-        <section class="bg-white">
-          <div class="wrap size-60">
-            <p class="text-intro">
-            ROBIO EX™ assisted procedures</p>
-            <%= image_tag('cim/robioex.png', class: 'no-hover nudge') %>
-          </div>
-        </section>
-        <section class="bg-white">
+                <section class="bg-white">
          <div class="wrap size-80">
-           <h2>Key management profiles</h2>
-           <ul class="flexblock activity">
+           <h2>7. Appendix</h2>
+           <p class="text-intro">Clinical Advisors</p>
+           <div class="content-left">
+            <ul class="flexblock activity persons two-column">
               <li>
                   <div>
                     <p class="year">
@@ -1922,7 +1912,7 @@ assuming current products only:</p>
                     <p class="summary">
                       <strong>Dr. David D. Cross</strong><br>
                       <span>Professor and Physics</span><br><br>
-                      Caltech<br>Pasadena, California (USA)<br><br><br>
+                      Caltech<br>Pasadena, California (USA)<br><br>
                     </p>
                   </div>
               </li>
@@ -1934,7 +1924,7 @@ assuming current products only:</p>
                   <p class="summary">
                     <strong>Prof. Sarah Goldman</strong><br>
                       <span>Professor and Director of Engineering</span><br><br>
-                      University of Chicago<br>Chicago, Illinois (USA)<br><br><br>
+                      University of Chicago<br>Chicago, Illinois (USA)<br><br>
                     </p>
                   </p>
                 </div>
@@ -1947,46 +1937,131 @@ assuming current products only:</p>
                   <p class="summary">
                   <strong>Dr. Elena Rahim</strong><br><span>Professor of Radiology</span><br><br>
                     Harvard University<br>
-                    Cambridge, Massachusetts (USA)<br><br><br>
+                    Cambridge, Massachusetts (USA)<br><br>
                   </p>
                 </div>
               </li>
-              <li><div>
+              <li>
+                <div>
                   <p class="year">
-                    <%= image_tag('cim/profile4.png') %>
+                    <%= image_tag('cim/person4.png') %>
                   </p>
                   <p class="summary">
-                   <strong>Dr. Barry Silverstein</strong><br><span>Director, Sales & Product Adoption</span> <br><br>
-                   <strong>Neil deGrasse Tyson, Ph.D.</strong><br><span>Director, Quality & Regulatory Assurance</span><br><br>
-                   Dr. Tyson joined InnovaHealth in July 2013 as Director, Verification & Validation and Engineering of Ultrasound guided Therapy Platform. Subsequently, his role has been expanded as Director — Quality Assurance and Regulatory Affairs.   <br><br>He has more than 20 years of product design experience in competitive medical device industry. <br><br>He has been instrumental in the design and development of Surgical C-Arm and Ultrasound products from concept to production in global markets.
+                   <strong>Dr. Lewis Seabrook</strong><br><span>Head of Interventional Surgery</span> <br><br>
+                    University of Chicago <br>Chicago, Illinois (USA)<br><br>
                   </p>
                 </div>
               </li>
-             <li><div>
+             <li>
+              <div>
                   <p class="year">
-                    <%= image_tag('cim/profile5.png') %>
+                    <%= image_tag('cim/person5.png') %>
                   </p>
                   <p class="summary">
-                   <strong>Lisa Randall, Ph.D</strong><br><span> Consultant, Advanced Technologies</span><br><br>
-                   Dr. Randall holds a doctorate degree in computer science and engineering from the University of Michigan, and master’s and bachelor’s degrees in electrical engineering. <br><br>She has authored several publications and holds 6 patents.
-                  <br><br>She was with Siemens Healthcare in the Seattle area for nearly 15 years as a scientist and a technical manager in the innovations group tasked with developing new applications in ultrasound imaging. <br><br>Dr. Randall worked on several applications including panoramic imaging, three-dimensional ultrasound, automatic quantification and computer-aided diagnosis. <br><br>
-                  She won multiple awards at Siemens including Inventor of the Year.
-
-
-                  </p></div>
-              </li>
-              <li><div>
-                  <p class="year">
-                    <%= image_tag('cim/profile6.png') %>
+                   <strong> Dr. Elena Rahim</strong><br><span>Professor of Radiology</span><br><br>
+                    Harvard University<br>
+                    Cambridge, Massachusetts (USA)
                   </p>
-                  <p class="summary">
-                   <strong>Max Tegmark, Ph.D.</strong><br><span>Consultant, Strategic Initiatives</span><br><br>
-                   Dr. Tegmark has a broad experience encompassing most modern medical diagnostic imaging methods, including CT and Ultrasound.  <br><br>He has worked in the medical imaging industry in research and management positions in both large (Siemens and GE) and small companies (Fischer Imaging, INTIO) before joining InnovaHealth.  <br><br>His industry positions have focused primarily on directing product R&D, but his management depth also includes manufacturing, product marketing and business management.  Whether as a research scientist, or in increasingly responsible managerial positions, his efforts have emphasized delivery of advanced product features, which provide sustainable competitive advantage.
-                  </p></div>
+                </div>
               </li>
             </ul>
+          </div>
+          <div class="content-left">
+              <ul class="flexblock two-column activity persons">
+                <li>
+                 <div>
+                  <p class="year">
+                    <%= image_tag('cim/person6.png') %>
+                  </p>
+                  <p class="summary">
+                   <strong> Dr. Christian Dalton</strong><br><span>Department of Gastroenterology </span><br><br>
+                       
+                        Mayo Clinic<br>
+                        Rochester, Minnesota (USA)<br>
+                  </p>
+                 </div>
+                </li>
+                <li>
+                  <div>
+                  <p class="year">
+                    <%= image_tag('cim/person7.png') %>
+                  </p>
+                  <p class="summary">
+                  <strong>Dr. Barry Silverstein</strong><br>
+                  <span>Professor of Oncology </span><br>
+                  <br>Brandeis University<br>
+                  Waltham, Massachusetts (USA)<br><br>
+                  </p>
+                </li>
+                <li>
+                  <div>
+                  <p class="year">
+                    <%= image_tag('cim/person8.png') %>
+                  </p>
+                  <p class="summary">
+                  <strong>Dr. Xinwen Chang</strong><br>
+                  <span>Head of Engineering and Robotics</span><br><br>
+                  Peking University<br>Beijing, China<br><br>
+                  </p>
+                </li>
+                <li>
+                  <div>
+                  <p class="year">
+                    <%= image_tag('cim/person9.png') %>
+                  </p>
+                  <p class="summary">
+                  <strong>Dr. Saul Simon</strong><br>
+                  <span>Director of Research, Cancer Centre </span><br>
+                  <br>Edinburgh University<br>
+                  Edinburgh, United Kingdom<br><br>
+                  </p>
+                </li>
+               <li>
+                  <div>
+                  <p class="year">
+                    <%= image_tag('cim/person10.png') %>
+                  </p>
+                  <p class="summary">
+                  <strong>Dr. Saul Simon</strong><br>
+                  <span>Director of Research, Cancer Centre </span><br>
+                  <br>Edinburgh University<br>
+                  Edinburgh, United Kingdom<br><br>
+                  </p>
+                </li>
+              </ul>
+            </div>
          </div>
       </section>
+
+        <section class="bg-white">
+          <div class="wrap size-70">
+            <p class="text-intro">Procedures
+            </p>
+            <h5><strong>DASAM™</strong> assisted procedures</h5><br>
+
+            <div class="flex-grid med-imgs">
+              <div class="col"><%= image_tag('cim/multi-probe.jpg') %><p>Multi-probe IRE ablation of liver mass</p></div>
+              <div class="col">&nbsp;&nbsp;<%= image_tag('cim/intra.jpg') %><p>&nbsp;&nbsp;Intra-operative registration</p></div>
+            </div><br><br>
+            <div class="flex-grid med-imgs">
+              <div class="col"><%= image_tag('cim/biopsy.jpg') %><p>Single needle biopsy of lung nodule</p></div>
+              <div class="col">&nbsp;<%= image_tag('cim/situ.jpg') %><p>&nbsp;Needle in situ</p></div>
+            </div>
+            <br><br>
+            <div class="flex-grid sm-imgs">
+              <div class="col"><%= image_tag('cim/planning.jpg') %><p>Planning in 3D and 2D</p></div>
+              <div class="col">&nbsp;<%= image_tag('cim/post-procedure.jpg') %><p>&nbsp;Post procedure image</p></div>
+            </div>
+            <br><br>
+          </div>
+        </section>
+        <section class="bg-white">
+          <div class="wrap size-60">
+            <p class="text-intro">
+            ROBIO EX™ assisted procedures</p>
+            <%= image_tag('cim/robioex.png', class: 'no-hover nudge') %>
+          </div>
+        </section>
 
         <section class="bg-violet">
            <div class="wrap size-40">
@@ -2246,10 +2321,17 @@ function onMessageReceived(e) {
 
 });
 
+$('#run17').click(function () { 
+   setTimeout(
+      function() {
+        pie17()
+    }, 20);
+});
 
 if ($(window).width() < 768) { 
    $('#video-background').remove();
 } 
+
 
 
 </script>

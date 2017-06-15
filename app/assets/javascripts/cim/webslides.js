@@ -357,7 +357,7 @@ var WebSlides = function () {
         _ref$minWheelDelta = _ref.minWheelDelta,
         minWheelDelta = _ref$minWheelDelta === undefined ? 2980 : _ref$minWheelDelta,
         _ref$scrollWait = _ref.scrollWait,
-        scrollWait = _ref$scrollWait === undefined ? 1850 : _ref$scrollWait,
+        scrollWait = _ref$scrollWait === undefined ? 1250 : _ref$scrollWait,
         _ref$slideOffset = _ref.slideOffset,
         slideOffset = _ref$slideOffset === undefined ? 50 : _ref$slideOffset;
 

@@ -1038,7 +1038,7 @@ li li {
 ul.description {
   padding: 0;
   display: inline-block;
-  margin-right: 72px;
+  margin-right: 56px;
   @media(max-width: 768px){
     width: 100%
   }
@@ -2497,6 +2497,13 @@ CV / News
   -webkit-flex-direction: column;
   flex-direction: column;
 }
+.flexblock.activity.bg-gradient-h{
+  border-radius:2px;
+  color:white;
+  li:first-child{
+    border-top:none
+  }
+}
 
 .activity li {
   position: relative;
@@ -2555,6 +2562,77 @@ CV / News
   .activity .listing {
     width: 76%;
   }
+  .activity .listing {
+    width: 76%;
+  }
+}
+@media (min-width: 768px) {
+  .activity.two-column .year {
+    width: 38%;
+  }
+  .activity.two-column .title {
+    width: 27%;
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .activity.two-column .summary {
+    width: 60%;
+    padding-right: 10px
+  }
+  .activity.two-column .company {
+    width: 23%;
+  }
+  .activity.two-column .listing {
+    width: 76%;
+  }
+  .activity.two-column .listing {
+    width: 76%;
+  }
+  .flex-grid.sm-imgs{
+    img{
+      max-height: 6.3em!important;
+    }
+  }
+}
+
+.flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+  img{
+    max-height: 8em
+  }
+  @media (max-width:768px){
+    img{
+      max-height: none;
+    }
+  }
+}
+
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+@media (max-width: 768px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+
+.persons img{
+  max-width: 12.8rem
 }
 
 .company img{
@@ -3639,13 +3717,13 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 
 
 .logo{
-  max-width: 188px;
+  max-width: 140px;
   margin: -1px 0;
 }
 
 .logo1{
-  max-width: 248px;
-  margin: -8px auto 0;
+  max-width: 193px;
+  margin: -7px 0 0;
   text-align: left;
   display: block
 }
@@ -3832,6 +3910,8 @@ ul.steps.flexblock ul li{
   fill: black;
   fill-opacity: 0.6;
 }
+
+svg{overflow: visible}
 
 .svgMap{
   display: block;
@@ -4386,16 +4466,14 @@ $mq-lg: 62em;
 .bg-asia{
   background: url(/assets/cim/asia.jpg) no-repeat;
   background-size: cover;
-  background-position-y: -47rem;
+  background-position-y: -10em;
   color: white;  
-  @media (max-width: 768px){
-    background-position-y: -53rem
-  }
+
 }
 
 .bg-patents{
   background: url(/assets/cim/patnts.jpg) no-repeat;
-  background-size: cover;
+  background-size: contain;
   color: white;
   background-position-y: -7rem;
 }
