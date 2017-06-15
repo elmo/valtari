@@ -68,64 +68,64 @@
       <a class="section selector" href="#slide=6">
       1. Executive Summary
       </a>
-      <a class="selector" href="#slide=7">
+      <a class="selector" href="#slide=8">
         1.1. Investment Considerations
       </a>
-      <a class="selector" href="#slide=8" onclick="canvas8();">
+      <a class="selector" href="#slide=9" onclick="canvas8();">
         1.2. Financial Summary
        </a>
-      <a class="selector" href="#slide=9">
+      <a class="selector" href="#slide=10">
         1.3. Transaction Summary
       </a>
-      <a class="selector" href="#slide=10">
+      <a class="selector" href="#slide=11">
         1.4. Transaction Process
       </a>
-      <a class="selector section" href="#slide=11">
+      <a class="selector section" href="#slide=12">
         2. Market Overview
       </a>
-      <a class="selector" href="#slide=12" onclick="canvas12(); canvas12two();">
-        2.1 Cancer Incidence and Mortality Statistics
+      <a class="selector" href="#slide=14" onclick="canvas13();">
+        2.1 Cancer Incidence Rates
       </a>
-      <a class="selector" href="#slide=17" onclick="pie17();">
+      <a class="selector" href="#slide=18" id="run17">
         2.2 Interventional Oncology – Ablation Therapy
       </a>
-      <a class="section selector" href="#slide=19">
+      <a class="section selector" href="#slide=20">
         3. Company Overview
       </a>
-      <a class="section selector" href="#slide=22">
+      <a class="section selector" href="#slide=23">
         3.1 InnovaHealth's Focus
       </a>
-      <a class="section selector" href="#slide=23">
+      <a class="section selector" href="#slide=25">
         4. InnovaHealths’S Offerings
       </a>
-      <a class="selector" href="#slide=25">
+      <a class="selector" href="#slide=26">
         4.1. Current Platforms
       </a>
-      <a class="selector" href="#slide=28">
+      <a class="selector" href="#slide=29">
         4.2. Product and Technology Roadmap
       </a>
-      <a class="selector section" href="#slide=36">
+      <a class="selector section" href="#slide=37">
        5. Operational Details
       </a>
-      <a href="#slide=37">
+      <a href="#slide=38">
        5.1 Facility Details
       </a>
-      <a href="#slide=38">
+      <a href="#slide=39">
        5.2 Sales and Marketing
       </a>
-      <a class="selector" href="#slide=39">
+      <a class="selector" href="#slide=40">
        5.3 Customers
       </a>
-      <a class="selector" href="#slide=40">
+      <a class="selector" href="#slide=41">
        5.4 Management and Employees
       </a>
       <a class="selector" href="#slide=43">
        5.5 Competive Landscape
       </a>
-      <a class="selector" href="#slide=46">
+      <a class="selector" href="#slide=45">
        5.6 Intellectual Property
       </a>
-      <a class="selector" href="#slide=50">
+      <a class="selector" href="#slide=54">
        5.7 Certifications
       </a>
       <a class="section" href="#slide=51">
@@ -449,7 +449,7 @@
         <div class="wrap size-80">
           <h2> 1.1 Investment Considerations</h2>
         <br>
-        <ul class="flexblock activity">
+        <ul class="flexblock activity bg-gradient-h">
             <li>
               <a href="#" title="UX Designer at ACME">
                 <div>
@@ -697,6 +697,7 @@
               <li class="bg-secondary">
                 <h2>130 million</h2>
                 estimated deaths from cancer in 2030
+                <small> &nbsp;</small>
               </li>
             </ul>
             <ul class="flexblock cells">
@@ -719,7 +720,7 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-
+          <h2>2.1 Cancer Incidence Rates</h2>
             <h5><strong>Estimated age standardized incidence rates for cancer across (per 100,000).</strong></h5>
             <small>Source: Globocan 2012; Data for all cancers excluding non-melanoma skin cancer</small>
 
@@ -986,12 +987,13 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <p class="text-intro"><strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets</p><br>
-
+          <h2>Global Footprint</h2>
+          <p class="text-intro">
+            <strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets
+          </p>
           <%= render partial: "regions" %>
           <br><br><br>
           <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
-
         </div>
       </section>
       <section class="bg-white">
@@ -1053,7 +1055,7 @@
       </section>
       <section class="bg-white">
         <div class="wrap size-80">
-          <h2>3.1 InnovaHealth’s Offerings</h2>
+          <h2>4 InnovaHealth’s Offerings</h2>
           <div class="content-left"><p>
           InnovaHealth offers two Platforms: DASAM™ and ALLTRA EX™. DASAM™ and ALLTRA EX™ ™ are designed around InnovaHealth’s core technology platforms: Robotic Navigation, Target Visualization Technology, Treatment Planning Workflow Software and Post Procedure Verification Technology. These solutions are used in procedures like biopsy, drug delivery, ablation, drainage, fine needle aspiration, and in varied pain care procedures for both cancerous and non-cancerous pain. </p><p>
           The Company currently has four patents from US Patent office for the Robotic Navigation technology and has a pending patent for the Treatment Planning Workflow Software. Moreover, the Company has licensed 4 patents from NASA as part of its tissue characterization technology development, and has an additional patent pending that will fit into its DASAM™ workflow. </p><p>
@@ -1635,7 +1637,7 @@ There are many published articles about InnovaHealth. Moreover, the Company find
       </section>
       <section class="bg-white">
          <div class="wrap size-80">
-           <h2>Key management profiles</h2>
+           <h2>5.5 Key management profiles</h2>
            <ul class="flexblock activity">
               <li>
                   <div>
@@ -1820,9 +1822,9 @@ There are many published articles about InnovaHealth. Moreover, the Company find
         <h2>5.6 Intellectual Property</h2>
 
          <div class="clear-float">
-          <div>
+          <p class="text-intro">
             The Company’s portfolio of patents consists of <span class="medium">6 granted patents, 2 pending patents and patents licensed from NASA, CIMTEC and Western.</span><br>
-          </div><br><br>
+          </p><br><br>
          </div>
 
           <div class="content-left">
@@ -1832,17 +1834,17 @@ There are many published articles about InnovaHealth. Moreover, the Company find
               <p>The Company plans to increase the number of patents in its portfolio to 38 by 2018. Currently, the Company has patents in three areas – robotics assistance for CT guided interventions, ultrasound guide interventional systems, and monitoring & screening.<br><br><br></p>
           </div><br><br><br><br>
           
-  
-        
         <%= image_tag('cim/patents.png', class: 'patents no-hover') %>
       </div>
       </section>
-      <section class="bg-patents ">
+      <section class="bg-white">
         <div class="wrap size-60">
+          <h2>5.7 Patents</h2>
           <p class="text-intro">Monitoring and Screening Patents</p>
           <%= image_tag('cim/patent1.png', class: 'no-hover') %><br><br><br>
-           <p class="text-intro">Ultrasound Guided Interventional System Patents</p>
-          <%= image_tag('cim/patent2.png', class: 'no-hover') %>
+          <p class="text-intro">Ultrasound Guided Interventional System Patents</p>
+          <%= image_tag('cim/patent2.png', class: 'no-hover') %><br><br><br>
+          <%= image_tag('cim/patnts.png') %>
         </div>
       </section>
       <section class="bg-violet">
@@ -1975,7 +1977,7 @@ assuming current products only:</p>
                    <strong> Dr. Christian Dalton</strong><br><span>Department of Gastroenterology </span><br><br>
                        
                         Mayo Clinic<br>
-                        Rochester, Minnesota (USA)<br><br>
+                        Rochester, Minnesota (USA)<br>
                   </p>
                  </div>
                 </li>
@@ -2036,6 +2038,7 @@ assuming current products only:</p>
             <p class="text-intro">Procedures
             </p>
             <h5><strong>DASAM™</strong> assisted procedures</h5><br>
+
             <div class="flex-grid med-imgs">
               <div class="col"><%= image_tag('cim/multi-probe.jpg') %><p>Multi-probe IRE ablation of liver mass</p></div>
               <div class="col">&nbsp;&nbsp;<%= image_tag('cim/intra.jpg') %><p>&nbsp;&nbsp;Intra-operative registration</p></div>
@@ -2318,10 +2321,17 @@ function onMessageReceived(e) {
 
 });
 
+$('#run17').click(function () { 
+   setTimeout(
+      function() {
+        pie17()
+    }, 20);
+});
 
 if ($(window).width() < 768) { 
    $('#video-background').remove();
 } 
+
 
 
 </script>

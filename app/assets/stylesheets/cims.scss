@@ -2497,6 +2497,13 @@ CV / News
   -webkit-flex-direction: column;
   flex-direction: column;
 }
+.flexblock.activity.bg-gradient-h{
+  border-radius:2px;
+  color:white;
+  li:first-child{
+    border-top:none
+  }
+}
 
 .activity li {
   position: relative;
@@ -2561,7 +2568,7 @@ CV / News
 }
 @media (min-width: 768px) {
   .activity.two-column .year {
-    width: 45%;
+    width: 38%;
   }
   .activity.two-column .title {
     width: 27%;
@@ -2569,7 +2576,7 @@ CV / News
     margin-left: 4%;
   }
   .activity.two-column .summary {
-    width: 50%;
+    width: 60%;
     padding-right: 10px
   }
   .activity.two-column .company {
@@ -2625,7 +2632,7 @@ CV / News
 
 
 .persons img{
-  max-width: 16rem
+  max-width: 12.8rem
 }
 
 .company img{
@@ -4466,7 +4473,7 @@ $mq-lg: 62em;
 
 .bg-patents{
   background: url(/assets/cim/patnts.jpg) no-repeat;
-  background-size: cover;
+  background-size: contain;
   color: white;
   background-position-y: -7rem;
 }
