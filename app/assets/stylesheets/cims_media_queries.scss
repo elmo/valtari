@@ -1,4 +1,19 @@
 
+@media (max-width: 1250px){
+  #section-2{
+    h1{ font-size:4.7rem }
+    .text-intro { font-size: 2.25rem; }
+  }
+}
+
+
+@media (max-width: 1060px){
+  #section-2{
+    h1{ font-size:4.4rem }
+    .text-intro { font-size: 2.05rem; }
+  }
+}
+
 
 @media (max-width: 1025px){
   .btn13{ right: -75px; top: 4px; }
@@ -29,7 +44,6 @@
   time img{
     right: 20%
   }
-
 }
 
 @media (min-width: 768px){
@@ -96,7 +110,6 @@
 
 @media (max-width: 768px){
   h1{
-    max-width: 215px;
     text-align: left;
     font-size: 2.9rem;
     line-height: 4rem

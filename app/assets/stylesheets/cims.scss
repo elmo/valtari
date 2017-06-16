@@ -1777,7 +1777,7 @@ a#previous {
 
 .swipe-icon{
   display: none;
-  background: url('cim/swipe.png') no-repeat center top;
+  background: url('cim/swipe.svg') no-repeat center top;
   position:fixed;
   bottom: 20px;
   width: 90px;
@@ -1793,6 +1793,8 @@ a#previous {
 /*=== 5.3 Slides - Background Images === */
 .preLoad{
   opacity: 0;
+  position: absolute;
+  z-index:-9;
   background-image: url('cim/front-page.jpg');
 }
 .front-page{
@@ -3740,7 +3742,11 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 .logo1{
   max-width: 238px;
   margin: -19px 15px 0 0;
-  float: left
+  float: left;
+  @media (max-width: 768px){
+    max-width: 125px;
+    margin: -12px 18px 14px -1px;
+  }
 }
 header{
   opacity:1!important
