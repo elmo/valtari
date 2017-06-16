@@ -2601,7 +2601,8 @@ CV / News
 .flex-grid .col {
   flex: 1;
   img{
-    max-height: 8em
+    max-height: 9.9em;
+    min-height: 9em
   }
   @media (max-width:768px){
     img{
@@ -2631,8 +2632,20 @@ CV / News
 }
 
 
-.persons img{
-  max-width: 12.8rem
+.flexblock.persons {
+  img{
+    max-width: 12.8rem
+  }
+  li p.summary{
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
+.flexblock.certs {
+  img{
+    max-height: 4.8em
+  }
 }
 
 .company img{
@@ -3687,7 +3700,7 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 
 .panel a.section.selector {
   font-weight: 600;
-  padding: 9px 4px 9px 25px;
+  padding: 16px 4px 13px 25px;
 }
 
 .panel a:target{
@@ -3717,15 +3730,14 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
 
 
 .logo{
-  max-width: 140px;
-  margin: -1px 0;
+  max-width: 146px;
+  margin: -8px 0;
 }
 
 .logo1{
-  max-width: 193px;
-  margin: -7px 0 0;
-  text-align: left;
-  display: block
+  max-width: 238px;
+  margin: -19px 15px 0 0;
+  float: left
 }
 header{
   opacity:1!important
