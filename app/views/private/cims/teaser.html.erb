@@ -148,7 +148,7 @@
 
         <div id="video-background">
           <div class="blocker"></div>
-          <iframe id="myvideo" src="https://player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          <iframe id="myvideo" src="//player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
         </div>
 
         <a class="section selector" href="#slide=2">
@@ -317,10 +317,10 @@
                 </ol>
               </li>
               <li>
-                <a href="#" title=""><span class="chapter">Company Overview</span>
+                <a href="#"><span class="chapter">Company Overview</span>
                 <span class="toc-page">19</span></a>
                 <ol>
-                  <li><a href="#" title=""><span class="chapter">InnovaHealth's Focus</span>
+                  <li><a href="#"><span class="chapter">InnovaHealth's Focus</span>
                     <span class="toc-page">22</span></a>
                   </li>
                 </ol>
@@ -2487,14 +2487,11 @@ function onMessageReceived(e) {
   }
 
   function onPlayProgress(data) {
-      
      if (data.seconds > 0.15 && data.seconds < 0.9)
      {
        $('body').addClass('loaded'); 
      }
-
   }
-
 });
 
 $('#run17').click(function () { 

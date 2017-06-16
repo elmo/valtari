@@ -1344,7 +1344,7 @@ var pie17 = function() {
     }).attr("points", function (d) {
       var pos = outerArc.centroid(d);
       pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
-      return [arc.centroid(d), outerArc.centroid(d), pos];
+      return [arc.centroid(d), outerArc.centroid(d), pos];x
     });
   };
 
@@ -1365,7 +1365,7 @@ var pie20 = function() {
 
   var dataset = [ 23.5, 1.96, 4.60, 0.24, 35.83,  0.63, 28.97, 4.25];
 
-  var labels = [ 'Founders 23.5%', 'Key Employees/Trust 1.96%', 'Erasmic Venture Fund Ltd. 4.60%', 'Individual Investors 0.24%', 'Norwest Venture Partners 35.83%','SVB India 0.63%', 'IDG Venture India 28.97%','ESOP Pool 4.25%' ];
+  var labels = [ 'Founders 23.5%', 'Key Employ/Trust 1.96%', 'Erasmic Vtr. Fund Ltd. 4.60%', 'Individual Invest 0.24%', 'Norwest Vtr. Partners 35.83%','SVB India 0.63%', 'IDG Vtr. India 28.97%','ESOP Pool 4.25%' ];
 
   // var colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9'];
   // var colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d'];

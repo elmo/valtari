@@ -476,7 +476,7 @@ label {
 
 p, .nice{
   padding-right: 3rem;
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   line-height: 2.5rem
 }
 
@@ -1792,7 +1792,7 @@ a#previous {
 
 /*=== 5.3 Slides - Background Images === */
 .preLoad{
-  display: none;
+  opacity: 0;
   background-image: url('cim/front-page.jpg');
 }
 .front-page{
@@ -2552,6 +2552,9 @@ CV / News
     width: 27%;
     margin-right: 4%;
     margin-left: 4%;
+    font-weight:500;
+    font-size: 1.2em;
+    line-height: 2.7rem
   }
   .activity .summary {
     width: 64%;
