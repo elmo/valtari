@@ -2393,7 +2393,7 @@ $(document).ready(function(){
       }, 4000);
       setTimeout(function() {
        $('.cd-popup-trigger').animate({ "bottom": "19px" }, "slow" );
-      }, 7000);
+      }, 17000);
 
       /*jQuery Click animate */
       $(function(){
@@ -2488,10 +2488,10 @@ function onMessageReceived(e) {
 
   function onPlayProgress(data) {
       
-       if (data.seconds > 0.15 && data.seconds < 0.9)
-       {
-         $('body').addClass('loaded'); 
-       }
+     if (data.seconds > 0.15 && data.seconds < 0.9)
+     {
+       $('body').addClass('loaded'); 
+     }
 
   }
 
