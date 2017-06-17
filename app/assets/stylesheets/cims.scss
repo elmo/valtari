@@ -417,15 +417,9 @@ img {
   max-width: 100%;
 }
 
-img:hover {
-  opacity: 0.90;
-  filter: alpha(opacity=90);
-}
-
 figure {
   position: relative;
   margin: 0;
-  line-height: 0;
 }
 
 optgroup {
@@ -4339,6 +4333,8 @@ svg{overflow: visible}
 .front-center{
   color:white;
   z-index: 9;
+   display:table-cell;
+   vertical-align:middle;
   display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row;
@@ -4347,10 +4343,9 @@ svg{overflow: visible}
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
+   position: relative
 }
 
-
- 
 
 //------------------------------------
 //  vars 
@@ -4527,4 +4522,73 @@ $mq-lg: 62em;
   background-size: contain;
   color: white;
   background-position-y: -7rem;
+}
+
+
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+    
+  a {
+    display: inline-block;
+    margin-bottom: 28px;
+    width: calc(50% - 4px);
+    margin-right: 8px;
+    text-decoration: none;
+    color: black;
+    &:hover{
+      opacity: 1
+    }
+  }
+
+  a:nth-of-type(2n) {
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: 50em) {
+    a {
+      width: calc(25% - 6px);
+    }
+    
+    a:nth-of-type(2n) {
+      margin-right: 8px;
+    }
+    
+    a:nth-of-type(4n) {
+      margin-right: 0;
+    }
+  }
+
+  figure {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  figcaption {
+    margin-top: 15px;
+  }
+
+  img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    background: #ccc;
+    transition: transform .2s ease-in-out;
+  }
+
+  .p a {
+    display: inline;
+    font-size: 13px;
+    margin: 0;
+    text-decoration: underline;
+    color: blue;
+  }
+
+  .p {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 100px;
+  }
 }

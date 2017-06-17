@@ -151,7 +151,6 @@
           <iframe id="myvideo" style="display:none" src="//player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
         </div>
 
-        <a class="section selector" href="#slide=2">
           <div class="front-center anim">
             <div class="back">
               <div class="mast">
@@ -167,7 +166,6 @@
               </div>
             </div>
           </div>
-        </a>
 
           <!--  <a href="#slide=2">
               <ul class="arrows keys">
@@ -987,7 +985,7 @@
           <p class="text-intro">
             <strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets
           </p>
-          <small><strong>GDP:</strong> Purchasing Power, in Billions. &nbsp; <strong>Growth:</strong> GDP Real Growth Rate. <%= image_tag('cim/gradient.png', class: 'grad-img') %>  </small>
+          <small><strong>GDP:</strong> Purchasing Power Parody, in Billions. &nbsp; <strong>Growth:</strong> GDP Real Growth Rate. <%= image_tag('cim/gradient.png', class: 'grad-img') %>  </small>
           <%= render partial: "regions" %>
           <br><br><br>
           <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
@@ -2135,109 +2133,127 @@ assuming current products only:</p>
          </div>
       </section>
 
-        <section class="bg-white">
-          <div class="wrap size-80">
-            <p class="text-intro">Procedures
-            </p>
-            <h5><strong>DASAM™</strong> assisted procedures</h5><br>
+      <section class="bg-white">
+        <div class="wrap size-80">
+          <p class="text-intro">Procedures
+          </p>
+          <h5><strong>DASAM™</strong> assisted procedures</h5><br>
 
-            <div class="flex-grid med-imgs">
-              <div class="col"><%= image_tag('cim/multi-probe.jpg') %><p>Multi-probe IRE ablation of liver mass</p></div>
-              <div class="col">&nbsp;&nbsp;<%= image_tag('cim/intra.jpg') %><p>&nbsp;&nbsp;Intra-operative registration</p></div>
-            </div><br><br>
-            <div class="flex-grid med-imgs">
-              <div class="col"><%= image_tag('cim/biopsy.jpg') %><p>Single needle biopsy of lung nodule</p></div>
-              <div class="col">&nbsp;<%= image_tag('cim/situ.jpg') %><p>&nbsp;Needle in situ</p></div>
-            </div>
-            <br><br>
-            <div class="flex-grid sm-imgs">
-              <div class="col"><%= image_tag('cim/planning.jpg') %><p>Planning in 3D and 2D</p></div>
-              <div class="col">&nbsp;<%= image_tag('cim/post-procedure.jpg') %><p>&nbsp;Post procedure image</p></div>
-            </div>
-            <br><br>
+          <div class="flex-grid med-imgs">
+            <div class="col"><%= image_tag('cim/multi-probe.jpg') %><p>Multi-probe IRE ablation of liver mass</p></div>
+            <div class="col">&nbsp;&nbsp;<%= image_tag('cim/intra.jpg') %><p>&nbsp;&nbsp;Intra-operative registration</p></div>
+          </div><br><br>
+          <div class="flex-grid med-imgs">
+            <div class="col"><%= image_tag('cim/biopsy.jpg') %><p>Single needle biopsy of lung nodule</p></div>
+            <div class="col">&nbsp;<%= image_tag('cim/situ.jpg') %><p>&nbsp;Needle in situ</p></div>
           </div>
-        </section>
+          <br><br>
+          <div class="flex-grid sm-imgs">
+            <div class="col"><%= image_tag('cim/planning.jpg') %><p>Planning in 3D and 2D</p></div>
+            <div class="col">&nbsp;<%= image_tag('cim/post-procedure.jpg') %><p>&nbsp;Post procedure image</p></div>
+          </div>
+          <br><br>
+        </div>
+      </section>
+
         <section class="bg-white">
-          <div class="wrap size-60">
+          <div class="wrap size-70">
             <p class="text-intro">
             ROBIO EX™ assisted procedures</p>
-            <%= image_tag('cim/robioex.png', class: 'no-hover nudge') %>
 
-              <div>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg">
+              <div class="image-grid">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg" alt="">
+                    <%= image_tag('cim/probe.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                      Multi-probe IRE ablation
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg02.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg02.jpg" alt="">
+                    <%= image_tag('cim/probe2.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore et dolore magna aliqua
+                      Multi-probe 2
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg03.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg03.jpg" alt="">
+                    <%= image_tag('cim/probe3.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore et dolore magna aliqua
+                      Multi-probe 3
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg04.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg04.jpg" alt="">
+                    <%= image_tag('cim/post-procedure.jpg') %>
                     <figcaption>
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Post procedural image
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg05.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg05.jpg" alt="">
+                    <%= image_tag('cim/plan3d.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore et dolore magna aliqua
+                      Planning in 3D and 2D
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg06.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg06.jpg" alt="">
+                    <%= image_tag('cim/intra2.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg" alt="">
+                    <%= image_tag('cim/liver3d.png') %>
                      <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore et dolore magna aliqua
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg" alt="">
+                    <%= image_tag('cim/liver2d.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg">
+                <a>
                   <figure>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg" alt="">
+                    <%= image_tag('cim/laparoscopic.png') %>
                     <figcaption>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                     Navigated Laparoscopic Liver Ablation
                     </figcaption>
                   </figure>
                 </a>
-                <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg10.jpg">
-               
+                <a>
+                  <figure>
+                    <%= image_tag('cim/microwave.png') %>
+                    <figcaption>
+                     Laparoscopic Microwave Ablation 
+                    </figcaption>
+                  </figure>
+                </a>
+                <a>
+                  <figure>
+                    <%= image_tag('cim/rfaguidance.png') %>
+                    <figcaption>
+                     RFA Guidance
+                    </figcaption>
+                  </figure>
+                </a>
+                <a>
+                  <figure>
+                    <%= image_tag('cim/thermoablation.png') %>
+                    <figcaption>
+                     Thermoablation
+                    </figcaption>
+                  </figure>
                 </a>
               </div>
 
