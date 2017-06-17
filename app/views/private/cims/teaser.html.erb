@@ -987,6 +987,7 @@
           <p class="text-intro">
             <strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets
           </p>
+          <small><strong>GDP: purchasing power, billions. Growth: GDP real growth rate. </strong> </small>
           <%= render partial: "regions" %>
           <br><br><br>
           <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
@@ -2341,8 +2342,7 @@ $(document).on('turbolinks:click', function (event) {
 })
 
 $(document).ready(function(){
-  $('.anim').addClass('go');
-  window.ws = new WebSlides({});
+    window.ws = new WebSlides({});
   $('body').fadeIn();
   $('#slider').slideReveal("hide");
 
@@ -2492,6 +2492,32 @@ function onMessageReceived(e) {
        $('body').addClass('loaded'); 
      }
   }
+
+  //SVG Maps
+  $description = $("#tooltip");
+
+  $('.blue').hover(function() {
+    
+  //  $(this).attr("class", "enabled heyo");
+    $description.addClass('show');
+    $description.html(
+      '<strong>' + $(this).attr('title') + '</strong> <br>' + 'GDP: $' + $(this).attr('gdp') + ' bn<br>Growth: ' + $(this).attr('growth')
+    );
+    
+  }, function() {
+    $description.removeClass('show');
+    
+  });
+
+  $(document).on('mousemove', function(e){
+    
+    $description.css({
+      left:  e.pageX  - 120,
+      top:   e.pageY - 220
+    });
+    
+  });
+
 });
 
 $('#run17').click(function () { 
@@ -2512,6 +2538,5 @@ if ($(window).width() < 768) {
    $('#video-background').remove();
 } 
 
-
-
+window.onload = function () { $('.anim').addClass('go'); }
 </script>
