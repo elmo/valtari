@@ -4567,6 +4567,8 @@ $mq-lg: 62em;
 
   figcaption {
     margin-top: 15px;
+    color:black;
+    font-size:1.5rem
   }
 
   img {
@@ -4576,19 +4578,5 @@ $mq-lg: 62em;
     display: block;
     background: #ccc;
     transition: transform .2s ease-in-out;
-  }
-
-  .p a {
-    display: inline;
-    font-size: 13px;
-    margin: 0;
-    text-decoration: underline;
-    color: blue;
-  }
-
-  .p {
-    text-align: center;
-    font-size: 13px;
-    padding-top: 100px;
   }
 }
