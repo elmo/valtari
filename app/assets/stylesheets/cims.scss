@@ -4006,6 +4006,12 @@ svg{overflow: visible}
   display:block
 }
 
+.grad-img{
+  width: 12.8rem;
+  position: absolute;
+  margin: 27px 0px 0 -126px;
+}
+
 .pie-wrapper {
   width: 100%;
   position: relative;
@@ -4238,34 +4244,34 @@ svg{overflow: visible}
     pointer-events: auto!important
 }
 .land.eight{
-  fill: #62abff
+  fill: #242575
 }
 .land.seven{
-  fill: #547be2
+  fill: #292a83
 }
 .land.six{
-  fill: #6296f1
+  fill: #292a83
 }
 .land.five{
-  fill: #678ae6
+  fill: #3e3f8f
 }
 .land.four{
-  fill: #6f96ff;
+  fill: #53549b
 }
 .land.three{
-  fill: #8cc2ff;
+  fill: #6969a8
 }
 .land.two{
-  fill: #75b6ff
+  fill: #7e7fb4
 }
 .land.one{
-  fill: #8cc2ff
+  fill: #9494c1
 }
 .land:hover{
   opacity: 0.36!important
 }
 
-#tooltip {
+#tooltip, #tooltip2 {
   pointer-events: none;
   position: absolute;
   font-size: 20px;
@@ -4287,7 +4293,10 @@ svg{overflow: visible}
   transform: translateX(-50%);
   display: none;
 }
-#tooltip.show {
+#tooltip2{
+  width: 260px
+}
+#tooltip.show, #tooltip2.show  {
   display: block;
 }
 

@@ -987,7 +987,7 @@
           <p class="text-intro">
             <strong>InnovaHealth maintains a global footprint </strong>throughout a wide swathe of the world’s largest markets
           </p>
-          <small><strong>GDP: purchasing power, billions. Growth: GDP real growth rate. </strong> </small>
+          <small><strong>GDP:</strong> Purchasing Power, in Billions. &nbsp; <strong>Growth:</strong> GDP Real Growth Rate. <%= image_tag('cim/gradient.png', class: 'grad-img') %>  </small>
           <%= render partial: "regions" %>
           <br><br><br>
           <%= image_tag('cim/companies2.png', class: 'companies-img') %><br><br>
@@ -997,8 +997,27 @@
         <div class="wrap size-80">
           <h2>3.1 InnovaHealth’s Focus</h2>
           <p class="text-intro">InnovaHealth's focus is mostly on the low resource markets</p>
-          <%= render partial: "phases" %>
-          <div class="clear">
+ 
+          <%= render partial: "phases" %> 
+          <div class="clear-float"> 
+           <div class="content-left">
+            <p>
+              <span style="color:#312b90; font-weight:500">Current Focus</span><br>
+              North America, India, China, South-East Asia<br>
+              Liver, Lungs, Kidney, Pancreas<br>
+            </p>
+          </div>
+          <div class="content-left">
+            <p>
+              <span style="color:red; font-weight:500">Next Phase</span><br>
+              Egypt, United Kingdom, West Africa<br>
+              Breast, Prostate <br>
+            </p>
+          </div>
+        </div>
+          <br><br><br>
+
+          <div class="clear-float">
             <div class="content-left">
               <p class="medium">Low resource markets are characterised by:</p>
               <ul class="text-size">
@@ -1014,20 +1033,6 @@
               Given the disease and geographic characteristics, InnovaHealth’s current and future focus markets and organs are:
               </p>
             </div>
-          </div><br><br>
-          <div class="content-left">
-            <p>
-              <span style="color:#312b90; font-weight:500">Current Focus</span><br>
-              North America, India, China, South-East Asia<br>
-              Liver, Lungs, Kidney, Pancreas<br>
-            </p>
-          </div>
-          <div class="content-left">
-            <p>
-              <span style="color:red; font-weight:500">Next Phase</span><br>
-              Egypt, United Kingdom, West Africa<br>
-              Breast, Prostate <br>
-            </p>
           </div>
           <br><br><br>
           
@@ -2493,30 +2498,6 @@ function onMessageReceived(e) {
      }
   }
 
-  //SVG Maps
-  $description = $("#tooltip");
-
-  $('.blue').hover(function() {
-    
-  //  $(this).attr("class", "enabled heyo");
-    $description.addClass('show');
-    $description.html(
-      '<strong>' + $(this).attr('title') + '</strong> <br>' + 'GDP: $' + $(this).attr('gdp') + ' bn<br>Growth: ' + $(this).attr('growth')
-    );
-    
-  }, function() {
-    $description.removeClass('show');
-    
-  });
-
-  $(document).on('mousemove', function(e){
-    
-    $description.css({
-      left:  e.pageX  - 120,
-      top:   e.pageY - 220
-    });
-    
-  });
 
 });
 
