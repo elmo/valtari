@@ -148,7 +148,7 @@
 
         <div id="video-background">
           <div class="blocker"></div>
-          <iframe id="myvideo" src="//player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          <iframe id="myvideo" style="display:none" src="//player.vimeo.com/video/221206690?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
         </div>
 
         <a class="section selector" href="#slide=2">
@@ -2343,8 +2343,8 @@ $(document).on('turbolinks:click', function (event) {
 
 $(document).ready(function(){
     window.ws = new WebSlides({});
-  $('body').fadeIn();
-  $('#slider').slideReveal("hide");
+    $('.anim').addClass('go');
+    $('#slider').slideReveal("hide");
 
       var hashpath = window.location.hash;
       if (hashpath === '#slide=9') {
@@ -2538,5 +2538,5 @@ if ($(window).width() < 768) {
    $('#video-background').remove();
 } 
 
-window.onload = function () { $('.anim').addClass('go'); }
+window.onload = function () { $('iframe').show(); }
 </script>
