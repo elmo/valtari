@@ -135,10 +135,10 @@ function drawResourceMap() {
 var canvas8 = function(){
     Highcharts.setOptions ({
         colors:[
-            '#0078b4',
-            '#ff1125',
+            '#8282d8',
             '#3f3fab',
-            '#ae14c5',
+            '#ff8d8d',
+            '#ff1125',
 
         ]
     });
@@ -148,16 +148,16 @@ var canvas8 = function(){
         type:'column'
     },
     title:{
-        text:''
+        text:'Scenario based Financial Projections'
     },
     credits:{enabled:false},
     legend:{
     },
     tooltip:{
         shared:true,
-        borderColor: '#000000',
+        borderColor: '#FFF',
         style: {
-            color: 'white',
+            color: 'black',
             fontWeight: 'light'
         }        
     },
@@ -191,9 +191,9 @@ var canvas8 = function(){
         lineWidth:1,
         tickColor:'#efefef',
         tickWidth:1,
-        ceiling:25,
+        ceiling:10,
         floor:-10,
-        tickInterval: 5,
+        tickInterval: 2,
         tickLength:3,
         gridLineColor:'#efefef',
         title:{
@@ -212,16 +212,16 @@ var canvas8 = function(){
         grouping:false,
     },{
         name:'Current Investment Path EBITDA',
-        data: [-0.2,0.4,1.8,2.9,5.3,6.7]
-    },{
-        name:'Current Investment Path PBT',
-        data: [-0.1,0.3,1.8,6.2,11.9, 19.7]
+        data: [-0.2, 0.3, 1.8, 2.9, 4.3, 5.4]
     },{
         name:'Strategic Investment Possibilities EBITDA',
-        data: [-0.9,0.3,1.4,2.4,3.6, 4.7]
+        data: [-0.2, 0.3, 2.5, 4.3, 6.3, 7.1]
     },{
-        name:'Strategic Investment Possibilities',
-        data: [-0.9,-0.6,0.1, 4.2,10.2, 18.8,]
+        name:'Current Investment Path PBT',
+        data: [-0.9, 0, 1.3, 2.4, 3.6, 4.4]
+    },{
+        name:'Strategic Investment Possibilities EBT',
+        data: [-0.9, 0, 1.9, 2.9, 4.8, 5.2 ]
     }]    
   });
 };
