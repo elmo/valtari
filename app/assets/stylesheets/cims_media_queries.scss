@@ -46,12 +46,16 @@
   }
 }
 
+#pieChart20{
+  margin-left: -6.8rem
+}
+
 @media (min-width: 768px){
   .inline-canvas2{ width:640px; height:450px; margin-right:40px; display:inline-block }
   .inline-canvas{  width:260px; height:450px; display:inline-block }
   .chart-wrapper.inline{
     display: inline-block;
-    width: 620px;
+    width: 320px;
   }
   .geo-map{ 
     display: block;
@@ -79,7 +83,8 @@
     height: 360px
   }
   #pieChart20{
-    margin-right:-50px;
+    margin-left: 7rem;
+    margin-top: 1.5rem;
   }
   table tbody tr td, table thead tr th{
       border:1px solid white;
@@ -104,8 +109,10 @@
   }
 }
 
-.canvas-wrap{
-  height: 450px
+@media (min-width: 1250px){
+  #pieChart20{
+    margin-left: 21rem
+  }
 }
 
 @media (max-width: 768px){
