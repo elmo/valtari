@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624032442) do
+ActiveRecord::Schema.define(version: 20170624043601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,15 @@ ActiveRecord::Schema.define(version: 20170624032442) do
     t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "deal_room_uploads", force: :cascade do |t|
+    t.integer  "deal_room_id"
+    t.integer  "user_id"
+    t.integer  "upload",             null: false
+    t.string   "original_file_name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "deal_rooms", force: :cascade do |t|

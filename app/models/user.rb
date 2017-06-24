@@ -29,6 +29,7 @@ class User < ApplicationRecord
    has_many :cim_authorizations, dependent: :destroy
    has_many :cim_accesses, dependent: :destroy
    has_many :deal_rooms
+   has_many :deal_room_uploads
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )
