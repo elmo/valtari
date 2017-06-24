@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col s12">
+    <%= @deal_room.name -%>
+  </div>
+</div>
+
+<div class="row">
+   <div class="col s12">
+   <%= link_to 'Edit', edit_private_deal_room_path(@deal_room) %> |
+   <%= link_to 'Back', private_deal_rooms_path %>
+  </div>
+</div>

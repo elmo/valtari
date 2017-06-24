@@ -28,6 +28,7 @@ class User < ApplicationRecord
    has_many :industry_classifications, through: :user_industry_classifications, class_name: 'IndustryClassification'
    has_many :cim_authorizations, dependent: :destroy
    has_many :cim_accesses, dependent: :destroy
+   has_many :deal_rooms
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )
