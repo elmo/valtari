@@ -37,7 +37,7 @@ class Private::DealRoomUploadsController < Private::PrivateController
   end
 
   def set_deal_room_upload
-    @deal_room_upload = @deal_room.deal_room_uploads.find(params[:id])
+    @deal_room_upload = @deal_room.deal_room_uploads.friendly.find(params[:id])
   end
 
   def deal_room_upload_params

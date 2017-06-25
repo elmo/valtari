@@ -37,7 +37,7 @@ class Private::DealRoomInvitationsController < Private::PrivateController
    end
 
    def set_deal_room_invitation
-     @deal_room_invitation = @deal_room.deal_room_invitations.find(params[:id])
+     @deal_room_invitation = @deal_room.deal_room_invitations.friendly.find(params[:id])
    end
 
    def deal_room_invitation_params
