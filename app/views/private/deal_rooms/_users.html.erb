@@ -1,7 +1,12 @@
 <ul>
- <% @deal_room_authorized_users.each do |user| -%>
-     <li><%= user.name -%> (<%=user.email-%>) </li>
+ <% @deal_room_authorizations.each do |authorization| -%>
+     <li>
+     <%= authorization.user.name -%> (<%=authorization.user.email-%>)
+     <% if authorization.user != @deal_room.user %>
+        <%= link_to 'x', private_deal_room_deal_room_authorization_path(@deal_room, authorization), method: :delete, data: {confirm: "Are you sure that you want to remove this authorization?" } -%>
+     <% end %>
+     </li>
 <% end %>
 </ul>
 
-<%= paginate(@deal_room_authorized_users) -%>
+<%= paginate(@deal_room_authorizations) -%>

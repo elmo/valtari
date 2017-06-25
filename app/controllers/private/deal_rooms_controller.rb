@@ -10,7 +10,7 @@ class Private::DealRoomsController < ApplicationController
 
   def show
     @deal_room_invitation = @deal_room.deal_room_invitations.new
-    @deal_room_authorized_users = User.joins(:deal_room_authorizations).page(params[:page]).per(10)
+    @deal_room_authorizations =  @deal_room.deal_room_authorizations.page(params[:page]).per(10)
   end
 
   def new
