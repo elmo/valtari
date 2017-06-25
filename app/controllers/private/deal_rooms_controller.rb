@@ -66,7 +66,7 @@ class Private::DealRoomsController < ApplicationController
     end
 
     def set_deal_room
-      @deal_room = current_user.deal_rooms.find(params[:id])
+      @deal_room = current_user.deal_rooms.friendly.find(params[:id])
     end
 
     def deal_room_params

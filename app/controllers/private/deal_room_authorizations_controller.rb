@@ -19,7 +19,7 @@ class Private::DealRoomAuthorizationsController < Private::PrivateController
    end
 
    def set_deal_room
-     @deal_room = current_user.deal_rooms.find(params[:deal_room_id])
+     @deal_room = current_user.deal_rooms.friendly.find(params[:deal_room_id])
    end
 
    def set_deal_room_authorization
