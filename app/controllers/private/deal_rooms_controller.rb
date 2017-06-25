@@ -1,4 +1,5 @@
 class Private::DealRoomsController < ApplicationController
+  layout 'deal_room'
   before_action :authenticate_user!
   before_action :set_deal_room, only: [:show, :edit, :update, :destroy]
   before_action :owner_required, only: [:edit, :update, :destroy]

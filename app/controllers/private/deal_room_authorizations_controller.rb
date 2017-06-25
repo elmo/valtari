@@ -1,4 +1,5 @@
 class Private::DealRoomAuthorizationsController < Private::PrivateController
+  layout 'deal_room'
   before_action :authenticate_user!
   before_action :set_deal_room
   before_action :set_deal_room_authorization, only: [:destroy]

@@ -3,7 +3,11 @@
      <li>
      <%= authorization.user.name -%> (<%=authorization.user.email-%>)
      <% if authorization.user != @deal_room.user %>
-        <%= link_to 'x', private_deal_room_deal_room_authorization_path(@deal_room, authorization), method: :delete, data: {confirm: "Are you sure that you want to remove this authorization?" } -%>
+         <% link_to private_deal_room_deal_room_authorization_path(@deal_room, authorization),
+             method: :delete,
+             data: {confirm: "Are you sure that you want to remove this authorization?" } do %>
+             <i class="material-icons tiny">delete</i>
+         <% end %>
      <% end %>
      </li>
 <% end %>
