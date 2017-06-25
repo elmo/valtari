@@ -3,6 +3,7 @@ class DealRoom < ApplicationRecord
   validates :name, presence: true
   has_many :deal_room_uploads
   has_many :deal_room_authorizations
+  has_many :deal_room_invitations
   after_create :create_deal_room_authorization
 
   accepts_nested_attributes_for :deal_room_uploads

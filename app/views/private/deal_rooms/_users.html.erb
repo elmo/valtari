@@ -1,0 +1,7 @@
+<ul>
+ <% @deal_room_authorized_users.each do |user| -%>
+     <li><%= user.name -%> (<%=user.email-%>) </li>
+<% end %>
+</ul>
+
+<%= paginate(@deal_room_authorized_users) -%>

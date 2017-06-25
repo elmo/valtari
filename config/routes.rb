@@ -89,6 +89,7 @@ Rails.application.routes.draw do
   namespace :private  do
     resources :deal_rooms do
        resources :deal_room_uploads
+       resources :deal_room_invitations
     end
     resources :sessions, only: [:new, :create]
     resources :cim_inquiries, only: [:new,:create,:show]

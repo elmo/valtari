@@ -1,0 +1,8 @@
+<%= simple_form_for([:private, @deal_room, DealRoomInvitation.new ]) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email -%>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit  %>
+  </div>
+<% end %>

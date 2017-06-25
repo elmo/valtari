@@ -1,0 +1,11 @@
+<%= simple_form_for([:private, @deal_room, @user ] ) do |f| %>
+  <%= input.email -%>
+<% end %>
+
+<ul>
+ <% @deal_room_authorized_users.each do |user| -%>
+     <li><%= user.name -%> (<%=user.email-%>) </li>
+<% end %>
+</ul>
+<%= paginate(@deal_room_authorized_users) -%>
+

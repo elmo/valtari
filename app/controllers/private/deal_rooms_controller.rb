@@ -1,12 +1,16 @@
 class Private::DealRoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_deal_room, only: [:show, :edit, :update, :destroy]
+  before_action :owner_required, only: [:edit, :update, :destroy]
+  before_action :authorization_required, only: [:show]
 
   def index
     @deal_rooms = current_user.deal_rooms.page(params[:page]).per(10)
   end
 
   def show
+    @deal_room_invitation = @deal_room.deal_room_invitations.new
+    @deal_room_authorized_users = User.joins(:deal_room_authorizations).page(params[:page]).per(10)
   end
 
   def new
@@ -50,6 +54,15 @@ class Private::DealRoomsController < ApplicationController
   end
 
   private
+
+    def owner_required
+      not_found unless current_user == @deal_room.user
+    end
+
+    def authorization_required
+      return true if current_user == @deal_room.user
+      not_found if @deal_room.authorized?(user: current_user)
+    end
 
     def set_deal_room
       @deal_room = current_user.deal_rooms.find(params[:id])
