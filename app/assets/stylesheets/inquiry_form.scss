@@ -20,7 +20,8 @@ o-touch .cd-nugget-info a:hover {
     height: 54px;
     line-height: 40px;
     padding: 6px 25px;
-    border:1px solid #dedede;
+    border: 1px solid;
+    outline:none;
     color: #3934ec;    
     background: white;
     border-radius: 4px;

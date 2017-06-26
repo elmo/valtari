@@ -137,7 +137,7 @@ var canvas8 = function(){
         colors:[
             '#8282d8',
             '#3f3fab',
-            '#ff7ca8',
+            '#de9fbd',
             '#ff1125',
 
         ]

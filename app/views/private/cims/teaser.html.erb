@@ -161,10 +161,11 @@
                   <span><strong>Modern</strong> CIM</span>
                 </div>
                 <div class="title-line thin">
-                  <span>by Valtari</span>
+                  <span><%= image_tag('cim/by-valtari.png', class: 'valtari') %></span>
                 </div>
 
-                <p class="mast__text">Left/Right Keys or Swipe to navigate</p>
+                <p class="mast__text">Right/Left Keys to Navigate</p>
+                <p class="mast__text mobile">Swipe Right/Left to navigate</p>
                 <%= image_tag('cim/arrows.png', class: 'arrow-keys') %>
               </div>
             </div>
@@ -2261,14 +2262,15 @@ assuming current products only:</p>
 
 <script type="text/javascript">
 
-//Show swipe notification if touch device
+//Show swipe icon if touch device
 if ($(window).width() < 769) {
-  $('.swipe-icon').fadeIn('slow');
-    setTimeout(function() {
+  setTimeout(function() {
+      $('.swipe-icon').fadeIn('slow');
+  }, 6000);
+  setTimeout(function() {
       $('.swipe-icon').fadeOut('slow');
-  }, 8000);
+  }, 12000);
 }
-
 
 
 //Slide Reveal
@@ -2288,6 +2290,7 @@ $("#slider").slideReveal({
     $('.panel').removeClass('shadow');
   },
 });
+
 
 //open popup for inquiry form
 $('.cd-popup-trigger').on('click', function(event){
@@ -2311,7 +2314,7 @@ $(document).keyup(function(event){
 });
 
 
-//on navigating by clicking a slide in the sidepanel
+//Upon navigating by clicking a slide in the sidepanel
 $(function() {
   $('.selector').click(function() {
     $('#slider a.selector').removeClass('active');
@@ -2323,7 +2326,7 @@ $(function() {
 });
 
 
-// Hamburger / arow icon
+// Nav Hamburger / Arow icon
 (function() {
  // On icon click...
   $('.menu-link-wrapper').on('click.mobileNav', function(){
@@ -2340,6 +2343,7 @@ $(document).on('turbolinks:click', function (event) {
   }
 })
 
+// Run animations on direct slide page load
 $(document).ready(function(){
     window.ws = new WebSlides({});
     $('.anim').addClass('go');
@@ -2426,83 +2430,9 @@ $(document).ready(function(){
          }
       });
 
-  /* PreLoader 
-    var f = $('iframe'),
-    url = f.attr('src').split('?')[0],
-    status = $('.status');
-
-  // Listen for messages from the player
-  if (window.addEventListener){
-      window.addEventListener('message', onMessageReceived, false);
-  }
-  else {
-      window.attachEvent('onmessage', onMessageReceived, false);
-  }
-
-  // Handle messages received from the player
-  function onMessageReceived(e) {
-    var data;
-    if (e.data != "[object Object]" ) {
-      data = JSON.parse(e.data);
-    } else {
-      data = e.data;
-    }
-
-    switch (data.event) {
-        case 'ready':
-            onReady();
-            break;
-
-        case 'playProgress':
-            onPlayProgress(data.data);
-            break;
-
-        case 'pause':
-            onPause();
-            break;
-
-        case 'finish':
-            onFinish();
-            break;
-    }
-  }
-
-  // Vimeo detect if playing
-  // Helper function for sending a message to the player
-  function post(action, value) {
-      var data = { method: action };
-
-      if (value) {
-          data.value = value;
-      }
-
-      f[0].contentWindow.postMessage(JSON.stringify(data), url);
-  }
-
-  function onReady() {
-      status.text('ready');
-      post('addEventListener', 'pause');
-      post('addEventListener', 'finish');
-      post('addEventListener', 'playProgress');
-  }
-
-  function onPause() {
-      status.text('paused');
-  }
-
-  function onFinish() {
-      status.text('finished');
-  }
-
-  function onPlayProgress(data) {
-     if (data.seconds > 0.15 && data.seconds < 0.9)
-     {
-       $('body').addClass('loaded'); 
-     }
-  }*/
-
 });
 
+// animation 17
 $('#run17').click(function () { 
    setTimeout(
       function() {
@@ -2510,6 +2440,7 @@ $('#run17').click(function () {
     }, 20);
 });
 
+// animation 25
 $('#run25').click(function () { 
    setTimeout(
       function() {
@@ -2517,9 +2448,9 @@ $('#run25').click(function () {
     }, 20);
 });
 
+//Hide video on small screens
 if ($(window).width() < 768) { 
    $('#video-background').remove();
 } 
 
-//window.onload = function () { $('iframe').show(); }
 </script>
