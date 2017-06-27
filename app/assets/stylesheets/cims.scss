@@ -227,7 +227,7 @@ ul.arrows {
 }
 
 .valtari{
-  max-width: 25rem
+  max-width: 22rem
 }
 
 /*=========================================
@@ -4390,9 +4390,9 @@ $mq-lg: 62em;
   @media(min-width:768px){
     padding: 4rem;
     background: rgba(0, 0, 0, 0.74);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
-    background: radial-gradient(ellipse at center, rgba(21, 19, 49, 0.39) 0%, transparent 100%);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(50, 73, 109, 0.4) 0%, transparent 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(50, 73, 109, 0.4) 0%, transparent 100%);
+    background: radial-gradient(ellipse at center, rgba(49, 73, 103, 0.4) 0%, transparent 100%)
   }
   @media (max-width: 768px) {
     text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.55);
