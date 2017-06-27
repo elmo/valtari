@@ -5,6 +5,8 @@ class DealRoomInvitation < ApplicationRecord
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   before_validation :find_or_create_user_for_deal_room
   after_create :send_invitation_by_email
+  after_create :log_activity
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
@@ -30,8 +32,11 @@ class DealRoomInvitation < ApplicationRecord
   private
 
   def send_invitation_by_email
-    p "sending email"
+    DealRoomMailer.invitation(user: user, deal_room: deal_room).deliver
   end
 
+  def log_activity
+    deal_room.deal_room_activities.create(user: user, message: "#{user.email} invited to room")
+  end
 
 end

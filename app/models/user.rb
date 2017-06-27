@@ -31,6 +31,8 @@ class User < ApplicationRecord
    has_many :deal_rooms
    has_many :deal_room_uploads
    has_many :deal_room_authorizations
+   has_many :deal_room_invitations
+   has_many :deal_room_ndas
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )

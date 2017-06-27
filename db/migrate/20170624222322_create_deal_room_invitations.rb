@@ -4,6 +4,7 @@ class CreateDealRoomInvitations < ActiveRecord::Migration[5.0]
       t.integer :deal_room_id
       t.integer :user_id
       t.string :email
+      t.timestamps
     end
   end
 end

@@ -3,7 +3,9 @@ class Private::DealRoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_deal_room, only: [:show, :edit, :update, :destroy]
   before_action :owner_required, only: [:edit, :update, :destroy]
+  before_action :nda_required, only: [:show]
   before_action :authorization_required, only: [:show]
+  after_action :log_activity, only: [:show]
 
   def index
     @deal_rooms = current_user.deal_rooms.page(params[:page]).per(10)
@@ -57,20 +59,37 @@ class Private::DealRoomsController < ApplicationController
   private
 
     def owner_required
-      not_found unless current_user == @deal_room.user
+      not_found unless room_owner?
+    end
+
+    def nda_required
+      return true if room_owner?
+      if current_user.deal_room_ndas.where(deal_room: @deal_room).exists?
+        return true
+      else
+        redirect_to new_private_deal_room_deal_room_nda_path(@deal_room), notice: "A signed NDA is required for admittance to this deal room." and return false
+      end
     end
 
     def authorization_required
-      return true if current_user == @deal_room.user
-      not_found if @deal_room.authorized?(user: current_user)
+      not_found unless  @deal_room.authorized?(user: current_user)
     end
 
     def set_deal_room
-      @deal_room = current_user.deal_rooms.friendly.find(params[:id])
+      @deal_room = current_user.deal_rooms.friendly.find(params[:id]) if action_name != 'show'
+      @deal_room = DealRoom.friendly.find(params[:id]) if action_name == 'show'
     end
 
     def deal_room_params
       params.require(:deal_room).permit(:name)
+    end
+
+    def room_owner?
+       current_user == @deal_room.user
+    end
+
+    def log_activity
+      @deal_room.deal_room_activities.create(user: current_user, message: "#{current_user.email} entered room")
     end
 
 end
