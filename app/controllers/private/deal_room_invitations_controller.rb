@@ -2,7 +2,7 @@ class Private::DealRoomInvitationsController < Private::PrivateController
   layout 'deal_room'
   before_action :authenticate_user!
   before_action :set_deal_room
-  before_action :set_deal_room_invitation, only: [:show, :destroy]
+  before_action :set_deal_room_invitation, only: [:show, :destroy, :resend]
   before_action :owner_required, only: [:create, :destroy]
 
   def show
@@ -23,6 +23,13 @@ class Private::DealRoomInvitationsController < Private::PrivateController
     @deal_room_invitation.destroy
     respond_to do |format|
       format.html { redirect_to private_deal_room_path(@deal_room) , notice: "Invitation was successfully deleted." }
+    end
+  end
+
+  def resend
+    @deal_room_invitation.resend
+    respond_to do |format|
+      format.html { redirect_to private_deal_room_path(@deal_room) , notice: "Invitation to #{@deal_room_invitation.email} resent." }
     end
   end
 

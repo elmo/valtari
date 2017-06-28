@@ -29,6 +29,11 @@ class DealRoomInvitation < ApplicationRecord
     [Base64.encode64(SecureRandom.uuid)[0..10]]
   end
 
+  def resend
+    DealRoomMailer.invitation(user: user, deal_room: deal_room).deliver
+    deal_room.deal_room_activities.create(user: user, message: "Invitation to #{user.email} resent.")
+  end
+
   private
 
   def send_invitation_by_email
