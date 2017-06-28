@@ -89,7 +89,11 @@ Rails.application.routes.draw do
   namespace :private  do
     resources :deal_rooms do
        resources :deal_room_uploads
-       resources :deal_room_invitations
+       resources :deal_room_invitations do
+          member do
+            put 'resend'
+          end
+       end
        resources :deal_room_authorizations, only: [:destroy]
        resources :deal_room_ndas, only: [:new,:create]
     end

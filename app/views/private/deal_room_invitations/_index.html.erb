@@ -4,11 +4,13 @@
  <ul>
  <% @deal_room.deal_room_invitations.each do |invitation| %>
      <% next unless invitation.persisted? %>
-     <li><%= invitation.email -%>
+     <li>
+       <%= format_date_and_time(invitation.created_at) -%>
+       <%= invitation.email -%>
        <%= link_to(private_deal_room_deal_room_invitation_path( @deal_room, invitation), method: :delete, data: {confirm: "Are you sure that you want to delete this invitation?" } ) do %>
          <i class="material-icons tiny">delete</i>
         <% end %>
-      @ <%= format_date_and_time(invitation.created_at) -%>
+        <%= link_to('resend', resend_private_deal_room_deal_room_invitation_path(@deal_room, invitation ) , method: :put ) %>
       </li>
     <% end %>
   </ul>
