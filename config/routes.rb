@@ -96,6 +96,7 @@ Rails.application.routes.draw do
        end
        resources :deal_room_authorizations, only: [:destroy]
        resources :deal_room_ndas, only: [:new,:create]
+       resources :deal_room_activities, only: [:index]
     end
     resources :sessions, only: [:new, :create]
     resources :cim_inquiries, only: [:new,:create,:show]

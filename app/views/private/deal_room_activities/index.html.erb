@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12">
+
+<h3>Activity for Deal Room</h3>
+
+<%= form_tag private_deal_room_deal_room_activities_path(@deal_room), id: "activity-search" , class: 'search-bar', role: 'search',  method: :get do %>
+  <%= text_field_tag :q, params[:q], type: "search", placeholder: "Search" %>
+  <%= submit_tag "Search", class: "btn" %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>User</th>
+    <th>Activity</th>
+  </tr>
+  <% @deal_room_activities.each do |activity| %>
+      <tr>
+         <td><%= format_date_and_time(activity.created_at) %></td>
+         <td><%= activity.user.email -%> </td>
+         <td><%= activity.message -%> </td>
+      </tr>
+  <% end %>
+</table>
+
+<%= paginate( @deal_room_activities, param_name: "activity_page" ) -%>
+
+</div>
+
+</div>
