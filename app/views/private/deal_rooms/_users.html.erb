@@ -3,15 +3,15 @@
 <ul>
  <% @deal_room_authorizations.each do |authorization| -%>
      <li>
-     <%= authorization.user.name -%> (<%=authorization.user.email-%>)
-     <% if authorization.user != @deal_room.user %>
+      <%= format_date_and_time(authorization.created_at) -%>
+      <%= authorization.user.name -%> (<%=authorization.user.email-%>)
+      <% if authorization.user != @deal_room.user %>
          <%= link_to private_deal_room_deal_room_authorization_path(@deal_room, authorization),
              method: :delete,
              data: {confirm: "Are you sure that you want to remove this authorization? Doing so will prevent this user from accessing this deal room." } do %>
              <i class="material-icons tiny">delete</i>
          <% end %>
      <% end %>
-     @ <%= format_date_and_time(authorization.created_at) -%>
      </li>
 <% end %>
 </ul>

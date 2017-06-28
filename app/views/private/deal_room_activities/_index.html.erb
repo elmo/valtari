@@ -2,9 +2,7 @@
 <ul>
   <% @deal_room_activities.each do |activity| %>
       <li>
-      <%= format_date_and_time(activity.created_at) %><br />
-        <%= activity.user.email -%>:
-        <%= activity.message -%>
+      <%= format_date_and_time(activity.created_at) %> <%= activity.message -%>
       </li>
   <% end %>
 <ul>
