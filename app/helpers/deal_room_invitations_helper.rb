@@ -1,0 +1,2 @@
+module DealRoomInvitationsHelper
+end

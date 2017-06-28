@@ -1,0 +1,21 @@
+<% if @deal_room.deal_room_uploads.any? -%>
+   <% @deal_room.deal_room_uploads.each do |upload| %>
+       <p>
+         <%= format_date_and_time(upload.created_at) -%>
+         <%= upload.original_file_name -%>
+         <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload) do %>
+           <i class="material-icons tiny">swap_vert</i>
+            <% end %>
+         <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload), method: :delete, data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
+           <i class="material-icons tiny">delete</i>
+         <% end %>
+       </p>
+   <% end %>
+<% else %>
+  <p>There are no uploads associated with this deal room.
+  </p>
+<% end %>
+
+<p>
+  <%= render partial: '/private/deal_room_uploads/form' %>
+</p>

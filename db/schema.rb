@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509144147) do
+ActiveRecord::Schema.define(version: 20170627144933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,65 @@ ActiveRecord::Schema.define(version: 20170509144147) do
     t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "deal_room_activities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "deal_room_id"
+    t.string   "message"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["deal_room_id"], name: "index_deal_room_activities_on_deal_room_id", using: :btree
+  end
+
+  create_table "deal_room_authorizations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "deal_room_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "deal_room_invitations", force: :cascade do |t|
+    t.integer  "deal_room_id"
+    t.integer  "user_id"
+    t.string   "email"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_deal_room_invitations_on_slug", using: :btree
+  end
+
+  create_table "deal_room_ndas", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "deal_room_id"
+    t.integer  "deal_room_invitation_id"
+    t.boolean  "i_have_read"
+    t.boolean  "i_agree"
+    t.string   "signature"
+    t.string   "ip_address"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "deal_room_uploads", force: :cascade do |t|
+    t.integer  "deal_room_id"
+    t.integer  "user_id"
+    t.integer  "upload",             null: false
+    t.string   "original_file_name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_deal_room_uploads_on_slug", using: :btree
+  end
+
+  create_table "deal_rooms", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_deal_rooms_on_slug", using: :btree
+    t.index ["user_id"], name: "index_deal_rooms_on_user_id", using: :btree
   end
 
   create_table "ebidta", force: :cascade do |t|

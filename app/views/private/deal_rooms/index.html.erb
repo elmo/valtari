@@ -1,0 +1,24 @@
+<h1>My Deal Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deal_rooms.each do |deal_room| %>
+      <tr>
+        <td><%= link_to deal_room.name, private_deal_room_path(deal_room) %>
+        <%= link_to 'Edit', edit_private_deal_room_path(deal_room), class: 'btn' %>
+        <%= link_to 'Destroy', private_deal_room_path(deal_room), class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Private Deal Room', new_private_deal_room_path %>

@@ -1,0 +1,1 @@
+json.partial! "private_deal_rooms/private_deal_room", private_deal_room: @private_deal_room

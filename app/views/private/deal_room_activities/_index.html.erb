@@ -1,0 +1,9 @@
+<ul>
+  <% @deal_room.deal_room_activities.order(created_at: :desc).each do |activity| %>
+      <li>
+      <%= format_date_and_time(activity.created_at) %><br />
+        <%= activity.user.email -%>:
+        <%= activity.message -%>
+      </li>
+  <% end %>
+<ul>

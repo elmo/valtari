@@ -1,0 +1,1 @@
+json.array! @private_deal_rooms, partial: 'private_deal_rooms/private_deal_room', as: :private_deal_room

@@ -1,0 +1,13 @@
+Hello <%= @user.email -%>,
+
+You've been invited to view a deal room on Valtari Exchange.
+
+Your membership account in Valtari has been created for you.
+
+<%= private_deal_room_url(@deal_room, host: ENV['CIM_HOST'] ) -%>
+
+Your password is: <%= DealRoom.password_for_email(email: @user.email) -%>.
+
+Best regards,
+
+Team Valtari

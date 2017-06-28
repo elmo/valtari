@@ -28,6 +28,11 @@ class User < ApplicationRecord
    has_many :industry_classifications, through: :user_industry_classifications, class_name: 'IndustryClassification'
    has_many :cim_authorizations, dependent: :destroy
    has_many :cim_accesses, dependent: :destroy
+   has_many :deal_rooms
+   has_many :deal_room_uploads
+   has_many :deal_room_authorizations
+   has_many :deal_room_invitations
+   has_many :deal_room_ndas
 
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )
@@ -117,6 +122,18 @@ class User < ApplicationRecord
 
   def authorized_cims
     cim_authorizations.collect(&:cim)
+  end
+
+  def authorized_deal_rooms
+    deal_room_authorizations.collect(&:deal_room)
+  end
+
+  def authorized_for_deal_room!(deal_room:)
+    deal_room_authorizations.find_or_create_by(deal_room_id: deal_room.id)
+  end
+
+  def deauthorize_for_deal_room!(deal_room:)
+    deal_room_authorizations.where(deal_room_id: deal_room.id).destroy_all
   end
 
   def client_for_cim!(cim: )
