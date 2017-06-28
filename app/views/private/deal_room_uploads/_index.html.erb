@@ -1,5 +1,6 @@
 <% if @deal_room.deal_room_uploads.any? -%>
-   <% @deal_room.deal_room_uploads.each do |upload| %>
+   <% @deal_room_uploads = @deal_room.deal_room_uploads.page(params[:upload_page]).per(10) -%>
+   <% @deal_room_uploads.each do |upload| %>
        <p>
          <%= format_date_and_time(upload.created_at) -%>
          <%= upload.original_file_name -%>
@@ -11,6 +12,7 @@
          <% end %>
        </p>
    <% end %>
+   <%= paginate(@deal_room_uploads, param_name: "upload_page" ) %>
 <% else %>
   <p>There are no uploads associated with this deal room.
   </p>
