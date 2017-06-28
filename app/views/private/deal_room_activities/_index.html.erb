@@ -1,5 +1,6 @@
+<% @deal_room_activities = @deal_room.deal_room_activities.page(params[:activity_page]).per(10).order(created_at: :desc) -%>
 <ul>
-  <% @deal_room.deal_room_activities.order(created_at: :desc).each do |activity| %>
+  <% @deal_room_activities.each do |activity| %>
       <li>
       <%= format_date_and_time(activity.created_at) %><br />
         <%= activity.user.email -%>:
@@ -7,3 +8,4 @@
       </li>
   <% end %>
 <ul>
+<%= paginate( @deal_room_activities, param_name: "activity_page" ) -%>

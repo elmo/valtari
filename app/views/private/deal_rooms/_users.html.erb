@@ -1,4 +1,5 @@
 <% if @deal_room.owned_by?(user: current_user) %>
+  <% @deal_room_authorizations =  @deal_room.deal_room_authorizations.page(params[:authorized_page]).per(10) %>
 <ul>
  <% @deal_room_authorizations.each do |authorization| -%>
      <li>
@@ -14,5 +15,5 @@
      </li>
 <% end %>
 </ul>
-<%= paginate(@deal_room_authorizations) -%>
+<%= paginate(@deal_room_authorizations, param_name: "authorized_page") -%>
 <% end %>
