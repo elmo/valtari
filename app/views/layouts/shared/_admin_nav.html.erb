@@ -1,25 +1,16 @@
-<div class="container wide admin-nav">
-  <nav>
-    <div class="nav-wrapper">
+<li><%= link_to 'Company Database', admin_businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" -%></li>
+<li><%= link_to 'Events', admin_events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" -%></li>
+<li><%= link_to 'Activity', admin_activity_logs_path, class: "#{(controller_name == 'acitvity_logs') ? 'active' : '' } nav-item" -%></li>
+<li><%= link_to 'Verifications Requests', admin_verifications_path, class: "#{(controller_name == 'verifications') ? 'active' : '' } nav-item" -%></li>
+<li><a class="dropdown-button nav-item" href="#!" data-activates="dropdown2">Other<i class="material-icons right">arrow_drop_down</i></a></li>
 
-    <ul class="left hide-on-med-and-down">
+ <ul id="dropdown2" class="account dropdown-content">
+  <li><%= link_to 'EBIDTAs', admin_ebidtas_path, class: "#{(controller_name == 'ebidtas') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'Revenues', admin_revenues_path, class: "#{(controller_name == 'revenues') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'NAISCs', admin_industries_path, class: "#{(controller_name == 'industries') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'SICs', admin_sic_codes_path, class: "#{(controller_name == 'sic_codes') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'Orgs', admin_organizations_path, class: "#{(controller_name == 'organizations') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'Cims', private_cims_path, class: "#{(controller_name == 'organizations') ? 'active' : '' }" -%></li>
+  <li><%= link_to 'Cim Inquires', admin_cim_inquiries_path, class: "#{(controller_name == 'cim_inquiries') ? 'active' : '' }" -%></li>
+ </ul>
 
-      <li><%= link_to 'Company Database', admin_businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item" -%></li>
-      <li><%= link_to 'Events', admin_events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" -%></li>
-      <li><%= link_to 'Activity', admin_activity_logs_path, class: "#{(controller_name == 'acitvity_logs') ? 'active' : '' } nav-item" -%></li>
-      <li><%= link_to 'Verifications Requests', admin_verifications_path, class: "#{(controller_name == 'verifications') ? 'active' : '' } nav-item" -%></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Other<i class="material-icons right">arrow_drop_down</i></a></li>
-
-       <ul id="dropdown2" class="dropdown-content">
-        <li><%= link_to 'EBIDTAs', admin_ebidtas_path, class: "#{(controller_name == 'ebidtas') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'Revenues', admin_revenues_path, class: "#{(controller_name == 'revenues') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'NAISCs', admin_industries_path, class: "#{(controller_name == 'industries') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'SICs', admin_sic_codes_path, class: "#{(controller_name == 'sic_codes') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'Orgs', admin_organizations_path, class: "#{(controller_name == 'organizations') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'Cims', private_cims_path, class: "#{(controller_name == 'organizations') ? 'active' : '' } nav-item" -%></li>
-        <li><%= link_to 'Cim Inquires', admin_cim_inquiries_path, class: "#{(controller_name == 'cim_inquiries') ? 'active' : '' } nav-item" -%></li>
-       </ul>
-      </ul>
-    </div>
-  </nav>
-</div>
