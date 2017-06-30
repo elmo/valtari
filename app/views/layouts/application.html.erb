@@ -17,16 +17,6 @@
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
-          <% if controller_name != 'sessions' %>
-            <div class="user-nav">
-              <nav>
-                <div class="nav-wrapper">
-                  <%= render partial: '/home/side_bar' if current_user.present? -%>
-                  <%# render partial: '/my/side_bar_secondary' if request.path =~ /\/my/ and current_user.present? -%>
-                </div>
-              </nav>
-            </div>
-          <% end %>
           <div class="col <%= (controller_name == 'sessions') ? '' : '' -%> s12">
             <%= yield %>
           </div>
@@ -36,11 +26,10 @@
     <footer class="page-footer light-gray">
       <div class="container">
         <div class="row">
-        <div class="col l6 s12">
+          <div class="col l6 s12">
             <h4 class=""> ©2017  Valtari Exchange</h4>
             <p class="grey-text"></p>
           </div>
-
         </div>
       </div>
       <div class="footer-copyright">

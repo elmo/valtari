@@ -36,35 +36,38 @@
   }
 }
 
-.side-bar nav .nav-wrapper, .user-nav nav .nav-wrapper  {
+.nav-wrapper{
 
-  font-size: .9rem;
-
+  display: flex;
+  justify-content: space-around;
+  li:first-child{ margin-left: 3rem }
+  li.right{ line-height: 70px }
   .nav-item{
-    display: inline-block;
-    width: 140px;
-    margin-right: -4px;
-    padding: 7px 3px 7px 3px;
-    line-height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    padding: 0 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 70px;
     text-align: center;
-    border-top: 1px solid #efefef;
-    border-bottom: 1px solid #efefef;
     transition: .2s;
+    vertical-align: super;
+    font-size:1rem;
     &.active {
-      background: white;
-      box-shadow: 0px 0px 20px #e7e7e7 inset;
-      color: black!important;    
+    //  background: white;
+    //  box-shadow: 0px 0px 20px #e7e7e7 inset;
+    //  color: black!important;    
       font-weight: 500;
-      &:hover{ color: black; background: white; box-shadow: 0px 0px 20px #e7e7e7 inset;}
+     // &:hover{ color: black; background: white; box-shadow: 0px 0px 20px #e7e7e7 inset;}
     }
     &:hover {
-      color: black;
-      background: rgb(245, 245, 245)
+    //  color: black;
+    //  background: rgb(245, 245, 245)
     }
   }
 
-  a { color: #444; font-weight: 400; }
+  a { 
+    color:rgba(255, 255, 255, 0.65); 
+    font-weight: 400; 
+    &:hover{ color:white }
+  }
   i { 
     height: 20px; 
     font-size: .85em; 
@@ -79,24 +82,25 @@
 
   li {
     list-style: none;
-    line-height: 14px;
+    line-height: 60px;
     &.active{
       background: white;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
   }
 
-  @media only screen and (max-width: 993px) {
-    display: none
+  .messages-nav i{
+    font-size: 1.25em;
+    margin-right: -14px;
+    line-height: 62px;
   }
 
 }
-
-
-
-.messages-nav i{
-  font-size: 1.25em;
-  margin-right: -14px;
+.user-nav{
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
 }
 
 .mobile-nav {
@@ -130,7 +134,7 @@ a.company-name{
 }
 
 .company-list tbody tr:hover{
-   .favorite.not{ opacity: 0.25 }
+  .favorite.not{ opacity: 0.25 }
 }
 
 .sub{
@@ -169,6 +173,10 @@ a.company-name{
     border: 1px solid #1e88e5;
     background: white!important;
   }
+}
+
+.admin-btn{
+  background-color: #57556f
 }
 
 .recent{
@@ -253,10 +261,7 @@ mm{ display:block;margin:0;padding:0;border:0;position:relative;
 }
 
 @media only screen and (min-width: 601px) {
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
-    line-height: 94px
-  }
-  nav{ height: 80px }
+  nav{ height: 70px }
 }
 .column-entry{
   color: #999;

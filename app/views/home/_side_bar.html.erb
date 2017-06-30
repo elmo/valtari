@@ -1,26 +1,26 @@
-<%= link_to businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item"  do %>
-<i class="ion-cube" data-pack="default" data-tags="box, square, container"></i>Companies
-<% end %>
+<li><%= link_to businesses_path, class: "#{(controller_name == 'businesses') ? 'active' : '' } nav-item"  do %>
+Companies
+<% end %></li>
 
-<%= link_to campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" do %>
-<i class="ion-speakerphone" data-pack="default" data-tags="box, square, container"></i>Campaigns
-<% end %>
+<li><%= link_to campaigns_path, class: "#{(controller_name == 'campaigns') ? 'active' : '' } nav-item" do %>
+Campaigns
+<% end %></li>
 
-<%= link_to opportunities_path, class: "#{(controller_name == 'opportunities') ? 'active' : '' } nav-item" do %>
-<i class="ion-ios-pricetags" data-pack="default" data-tags="box, square, container"></i>Opportunities
-<% end %>
+<li><%= link_to opportunities_path, class: "#{(controller_name == 'opportunities') ? 'active' : '' } nav-item" do %>
+Opportunities
+<% end %></li>
 
-<%= link_to events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" do %>
-<i class="ion-plane" data-pack="default" data-tags="box, square, container"></i>Events
-<% end %>
+<li><%= link_to events_path, class: "#{(controller_name == 'events') ? 'active' : '' } nav-item" do %>
+Events
+<% end %></li>
 
-<%= link_to my_followings_path, class: "#{(controller_name == 'followings') ? 'active' : '' } nav-item" do %>
-<i class="ion-person" data-pack="default" data-tags="box, square, container"></i>People
-<% end %>
+<li><%= link_to my_followings_path, class: "#{(controller_name == 'followings') ? 'active' : '' } nav-item" do %>
+People
+<% end %></li>
 
-<%= link_to knowledge_path, class: "#{(action_name == 'knowledge') ? 'active' : '' } nav-item" do %>
-<i class="ion-lightbulb" data-pack="default" data-tags="box, square, container"></i>Knowledge
-<% end %>
+<li><%= link_to knowledge_path, class: "#{(action_name == 'knowledge') ? 'active' : '' } nav-item" do %>
+Knowledge
+<% end %></li>
 
 
 <% if false and current_user.present?%>

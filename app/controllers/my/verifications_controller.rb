@@ -11,7 +11,7 @@ class My::VerificationsController < ApplicationController
     @verification = current_user.verifications.new(business: @business)
     respond_to do |format|
       if @verification.save
-        format.html {redirect_back(fallback_location: businesses_path, notice: 'Verification reqequest was successfully created.') }
+        format.html {redirect_back(fallback_location: businesses_path, notice: 'Verification request created.') }
       else
         format.html {render :new }
       end

@@ -15,28 +15,16 @@ form input.btn {
 }
 
 //Nav
-
 // -------- Navigation ---------
-.brand-logo {
-  position: absolute;
-  color: #fff;
-  display: inline-block;
-  white-space: nowrap;
-  background: url('shape.svg');
-  background-size: 11.65rem;
-  background-repeat: no-repeat;
-  background-position: 0px -10px;
-  img{
-    width: 5.45em;
-    padding-right: 2rem;
-    margin-top: 0.85rem;
-    margin-left: 0.9rem;
-  }
+.navigation{
+  margin-left: 103px
 }
 
 nav{
-  background: transparent;
+  background: #3e3d4c;
   box-shadow: none;
+  height: 70px;
+
   i.material-icons{
     font-size: 1.6rem;
     color: #cbcbcb;
@@ -47,17 +35,26 @@ nav{
   &.secondary{
     background: white!important
   }
+  .brand-logo {
+    position: absolute;
+    color: #FFF;
+    display: inline-block;
+    white-space: nowrap;
+    height: 100%;
+    img{
+      height:100%;
+    }
+  }
 }
 
 nav ul{
-  font-size:0.9rem;
   a {
     color: #333;
-    font-size: .9rem;
     font-weight: 400;
+    transition: .2s;
     &:hover{
       background-color: transparent;
-      color: #111;
+      color: white;
     }
   }
   li.sign-in{
@@ -85,6 +82,7 @@ nav ul{
   }
 }
 
+
 .account.dropdown-content{
   margin-top: 75px;
   overflow-y: visible;
@@ -104,15 +102,6 @@ nav ul{
     border-right: solid 8px transparent;
   }
 }
-.account-nav{
-  position: absolute;
-  right: 0
-}
-
-.user-nav{
-  margin: 14px 0
-}
-
 
 
 // Adds hover effect for btns
