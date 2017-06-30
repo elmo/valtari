@@ -152,4 +152,9 @@ class User < ApplicationRecord
     CimMailer.invitation(user: self, cim: cim).deliver
   end
 
+  def full_name
+    return nil if first_name.blank? or last_name.blank?
+    [first_name, last_name].join(' ')
+  end
+
 end

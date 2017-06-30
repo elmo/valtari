@@ -3,6 +3,7 @@ class Private::DealRoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_deal_room, only: [:show, :edit, :update, :destroy]
   before_action :owner_required, only: [:edit, :update, :destroy]
+  before_action :user_full_name_required, only: [:show]
   before_action :nda_required, only: [:show]
   before_action :authorization_required, only: [:show]
   after_action :log_activity, only: [:show]
@@ -70,8 +71,17 @@ class Private::DealRoomsController < ApplicationController
       end
     end
 
+    def user_full_name_required
+      return true if room_owner?
+      if current_user.full_name.present?
+        return true
+      else
+        redirect_to edit_private_deal_room_deal_room_user_path(@deal_room, current_user), notice: "Your first and last name is needed to proceed" and return false
+      end
+    end
+
     def authorization_required
-      not_found unless  @deal_room.authorized?(user: current_user)
+      not_found unless @deal_room.authorized?(user: current_user)
     end
 
     def set_deal_room
@@ -80,7 +90,7 @@ class Private::DealRoomsController < ApplicationController
     end
 
     def deal_room_params
-      params.require(:deal_room).permit(:name)
+      params.require(:deal_room).permit(:name,:company_name)
     end
 
     def room_owner?

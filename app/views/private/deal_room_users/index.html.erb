@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col s12">
+     <table>
+       <thead>
+         <th>Name</th>
+         <th>Email</th>
+       </thead>
+      <% @users.each do |user| %>
+       <tr>
+          <td><%= user.first_name -%> <%= user.last_name -%></td>
+          <td><%= user.email-%></td>
+       </tr>
+      <% end %>
+     </table>
+     <%= paginate(@users) %>
+  </div>
+</div>

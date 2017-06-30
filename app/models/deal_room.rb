@@ -1,6 +1,7 @@
 class DealRoom < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
+  validates :company_name, presence: true
   has_many :deal_room_uploads
   has_many :deal_room_authorizations
   has_many :deal_room_invitations
