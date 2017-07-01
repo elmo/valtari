@@ -13,8 +13,7 @@
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
             <ul class="navigation hide-on-med-and-down" id="nav-mobile">
-              <%= render partial: '/home/side_bar' if current_user.present? unless current_user.admin? -%>
-              <%= render partial: '/layouts/shared/admin_nav' if current_user.admin? -%>
+              <%= render partial: '/home/side_bar' if current_user.present? -%>
 
               <li class="right"><a class="dropdown-button" href="#!" data-activates="dropdown" data-constrainwidth="false"><%= current_user.first_name %></a></li>
               <% if current_user.present? and current_user.admin? %>
