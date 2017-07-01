@@ -75,6 +75,7 @@ nav ul{
     }
     li{
       min-height: 27px;
+      height: 48px
     }
   }
 }
@@ -97,15 +98,16 @@ nav ul{
     border-left: solid 8px transparent;
     border-right: solid 8px transparent;
   }
-  &#dropdown2{
-    width: 150px!important;
-    &:before{
-      left:12%;
-      right:0
-    }
-  }
 }
 
+#dropdown2{
+  width: 150px!important;
+  padding-bottom: 36px;
+  &:before{
+    left:12%;
+    right:0
+  }
+}
 
 // Adds hover effect for btns
 .btn:hover:before {

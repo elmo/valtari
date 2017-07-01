@@ -38,7 +38,6 @@
 
 .dropdown-button{
   i.material-icons.right{
-    line-height: 73px;
     margin-left: 3px;
   }
   &.active{
@@ -52,14 +51,11 @@
 
 .nav-wrapper{
 
-  display: flex;
-  justify-content: space-around;
   li.right{ line-height: 70px }
   .nav-item{
     padding: 0 18px;
     color: rgba(255, 255, 255, 0.6);
     line-height: 73px;
-    text-align: center;
     transition: .2s;
     vertical-align: super;
     font-size:1rem;
@@ -95,7 +91,8 @@
 
   li {
     list-style: none;
-    line-height: 60px;
+    height: 70px;
+//    line-height: 60px;
     &.active{
       background: white;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -107,8 +104,23 @@
     margin-right: -14px;
     line-height: 73px;
   }
-
 }
+
+//Admin nav
+.admin-nav {
+  height: 77px;
+  line-height: 77px!important;
+  .nav-wrapper{
+      a.nav-item { color: #b2b1b7; font-weight: 400 }
+      a.active.nav-item{
+        color: white;
+      }
+      .nav-item {
+        line-height: 69px;
+      }
+  }
+}
+
 .user-nav{
   position: absolute;
   top: 24px;
@@ -333,15 +345,6 @@ a.link, a.right-link{
     margin: 1px 15px 0 0;
     font-size: 14px;
 
-}
-
-//Admin nav
-.admin-nav nav{
-  margin-bottom: -11px;
-  a { color: #999; font-weight: 400 }
-  a.active.nav-item{
-    color: #000;
-  }
 }
 
 

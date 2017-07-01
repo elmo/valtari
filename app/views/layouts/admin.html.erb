@@ -12,12 +12,9 @@
     <main class="<% if current_user.present? %>logged-in<% end %>">
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
-      <div class="container <%= controller_name == 'businesses' ? 'wide' : '' -%>">
-        <div class="row">
+      <%= render partial: '/layouts/shared/admin_nav' if current_user.admin? -%>
             <%= yield %>
-           </main>
-        </div>
-      </div>
+      </main>
     <footer class="page-footer light-gray">
       <div class="container">
         <div class="row">
