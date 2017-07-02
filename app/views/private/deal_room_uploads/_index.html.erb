@@ -12,7 +12,7 @@
            <td><%= format_date_and_time(upload.created_at) %> </td>
            <td>
                <%= upload.user.full_name %>
-               <%= image_tag(upload.user.avatar.url) if upload.user.avatar.size > 0  %>
+               <%= avatar_image(upload.user, 'tiny-image') %>
            </td>
            <td><%= upload.original_file_name %> </td>
            <td>

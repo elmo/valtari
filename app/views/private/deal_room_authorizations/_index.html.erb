@@ -11,7 +11,7 @@
       <tr>
         <td>
           <%= link_to private_deal_room_deal_room_user_path(@deal_room, authorization.user) do %>
-              <%= image_tag(authorization.user.avatar.url, height: 50 ) if authorization.user.avatar.size > 0-%> <br/>
+              <%= avatar_image(authorization.user, 'tiny-image' ) %><br />
               <%= authorization.user.full_name %>
         <% end %>
             <br />
