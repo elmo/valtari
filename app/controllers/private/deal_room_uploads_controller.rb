@@ -11,6 +11,7 @@ class Private::DealRoomUploadsController < Private::PrivateController
         @deal_room.deal_room_uploads.create!(upload: upload, original_file_name: upload.original_filename, user: current_user)
       end
       format.html { redirect_to private_deal_room_path(@deal_room), notice: 'Upload was successfully saved.' }
+      format.js
     end
   end
 

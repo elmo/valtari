@@ -5,9 +5,12 @@ class Private::DealRoomUsersController < Private::PrivateController
   before_action :set_deal_room
 
   def index
+    scope = @deal_room.deal_room_authorizations
+    @deal_room_authorizations = scope.page(params[:page]).per(10)
   end
 
   def show
+     @user = User.friendly.find(params[:id])
   end
 
   def edit
@@ -32,7 +35,7 @@ class Private::DealRoomUsersController < Private::PrivateController
    end
 
    def user_params
-     params.require(:user).permit(:first_name, :last_name)
+     params.require(:user).permit(:first_name, :last_name,:avatar)
    end
 
 end

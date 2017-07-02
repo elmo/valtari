@@ -1,9 +1,15 @@
 class Private::DealRoomAuthorizationsController < Private::PrivateController
   layout 'deal_room'
   before_action :authenticate_user!
-  before_action :set_deal_room
+  before_action :set_deal_room, only: [:destroy,:index]
   before_action :set_deal_room_authorization, only: [:destroy]
   before_action :owner_required, only: [:destroy]
+
+
+  def index
+    scope = @deal_room.deal_room_authorizations.includes(:user)
+    @deal_room_authorizations = scope.page(params[:page]).per(10)
+  end
 
   def destroy
     @deal_room_authorization.destroy
@@ -19,7 +25,7 @@ class Private::DealRoomAuthorizationsController < Private::PrivateController
    end
 
    def set_deal_room
-     @deal_room = current_user.deal_rooms.friendly.find(params[:deal_room_id])
+     @deal_room = DealRoom.friendly.find(params[:deal_room_id])
    end
 
    def set_deal_room_authorization

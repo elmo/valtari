@@ -1,23 +1,33 @@
-<% if @deal_room.deal_room_uploads.any? -%>
-   <% @deal_room_uploads = @deal_room.deal_room_uploads.page(params[:upload_page]).per(10) -%>
-   <% @deal_room_uploads.each do |upload| %>
-       <p>
-         <%= format_date_and_time(upload.created_at) -%>
-         <%= upload.original_file_name -%>
-         <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload) do %>
-           <i class="material-icons tiny">swap_vert</i>
-            <% end %>
-         <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload), method: :delete, data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
-           <i class="material-icons tiny">delete</i>
-         <% end %>
-       </p>
-   <% end %>
-   <%= paginate(@deal_room_uploads, param_name: "upload_page" ) %>
-<% else %>
-  <p>There are no uploads associated with this deal room.
-  </p>
-<% end %>
-
-<p>
-  <%= render partial: '/private/deal_room_uploads/form' %>
-</p>
+<% if uploads.any? -%>
+  <table>
+    <thead>
+      <th>Date</th>
+      <th>Uploaded by</th>
+      <th>File Name</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% uploads.each do |upload| %>
+        <tr>
+           <td><%= format_date_and_time(upload.created_at) %> </td>
+           <td>
+               <%= upload.user.full_name %>
+               <%= image_tag(upload.user.avatar.url) if upload.user.avatar.size > 0  %>
+           </td>
+           <td><%=  upload.original_file_name %> </td>
+           <td>
+              <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload) do %>
+                 <i class="material-icons tiny">swap_vert</i>
+              <% end %>
+              <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
+                  method: :delete,
+                  data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
+                 <i class="material-icons tiny">delete</i>
+              <% end %>
+           </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+   <%= paginate(uploads, param_name: page_param ) %>
+<% end%>

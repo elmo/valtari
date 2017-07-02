@@ -34,6 +34,9 @@ class User < ApplicationRecord
    has_many :deal_room_invitations
    has_many :deal_room_ndas
 
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
    def followed_users
      User.where(id: followings.collect(&:other_user_id) )
    end
@@ -57,6 +60,14 @@ class User < ApplicationRecord
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def to_param
+    slug
+  end
+
+  def slug_candidates
+    [Base64.encode64(SecureRandom.uuid)[0..10]]
   end
 
   def master!

@@ -1,11 +1,15 @@
 class DealRoomInvitation < ApplicationRecord
   belongs_to :user
   belongs_to :deal_room
+  belongs_to :inviter, class_name: 'User', foreign_key: 'inviting_user_id'
   validates_presence_of :email
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+  validates :inviter, presence: true
   before_validation :find_or_create_user_for_deal_room
   after_create :send_invitation_by_email
   after_create :log_activity
+  scope :invited_by, -> (user) { where(inviting_user_id: user.id) }
+
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -22,7 +26,7 @@ class DealRoomInvitation < ApplicationRecord
   end
 
   def password_for_email(email:)
-    Base64.encode64(email)[0..5].upcase
+    SecureRandom.hex(3).upcase
   end
 
   def slug_candidates

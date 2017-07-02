@@ -1,0 +1,6 @@
+<% @deal_room_uploads = @deal_room.deal_room_uploads.by_user(@deal_room.user).page(params[:guest_uploads]).per(10) %>
+<h3>Uploaded Files by Owner (<%= @deal_room_uploads.count -%>)</h3>
+<p>These files have been uploaded by <%= @deal_room.user.full_name -%> and have been made available to all parties interested in this deal.</p>
+<div id="deal-room-guest-uploads">
+  <%= render partial: "/private/deal_room_uploads/index", locals: { uploads: @deal_room_uploads, page_param: :guest_uploads } %>
+</div>
