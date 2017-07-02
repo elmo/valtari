@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702154639) do
+ActiveRecord::Schema.define(version: 20170702203417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -182,6 +182,8 @@ ActiveRecord::Schema.define(version: 20170702154639) do
     t.integer  "deal_room_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "group"
+    t.index ["group"], name: "index_deal_room_authorizations_on_group", using: :btree
   end
 
   create_table "deal_room_invitations", force: :cascade do |t|
@@ -193,6 +195,8 @@ ActiveRecord::Schema.define(version: 20170702154639) do
     t.string   "slug"
     t.integer  "inviting_user_id"
     t.string   "status"
+    t.string   "group"
+    t.index ["group"], name: "index_deal_room_invitations_on_group", using: :btree
     t.index ["inviting_user_id"], name: "index_deal_room_invitations_on_inviting_user_id", using: :btree
     t.index ["slug"], name: "index_deal_room_invitations_on_slug", using: :btree
     t.index ["status"], name: "index_deal_room_invitations_on_status", using: :btree

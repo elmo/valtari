@@ -5,12 +5,13 @@ class DealRoomInvitation < ApplicationRecord
   validates_presence_of :email
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :inviter, presence: true
+  before_validation :set_group
   before_validation :find_or_create_user_for_deal_room
   after_create :send_invitation_by_email
   after_create :log_activity
   scope :invited_by, -> (user) { where(inviting_user_id: user.id) }
   scope :accepted, -> {where(status: STATUS_ACCECPTED) }
-
+  scope :within_group, -> (group) { where(group: group) }
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -52,6 +53,10 @@ class DealRoomInvitation < ApplicationRecord
   end
 
   private
+
+  def set_group
+    self.group = user.email.split('@').last
+  end
 
   def send_invitation_by_email
     DealRoomMailer.invitation(user: user, deal_room: deal_room).deliver

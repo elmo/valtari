@@ -4,6 +4,7 @@
     <thead>
       <th>Date</th>
       <th>To</th>
+      <th>Group</th>
       <th>Invited by</th>
       <th>Status</th>
       <th></th>
@@ -17,6 +18,9 @@
           <td>
               <%= invitation.inviter.full_name -%><br />
               <%= invitation.email -%>
+          </td>
+          <td>
+            <%= invitation.group -%>
           </td>
           <td>
             <%= invitation.status-%>

@@ -5,6 +5,7 @@
   <table>
     <thead>
       <th>Name</th>
+      <th>Group</th>
    </thead>
    <tbody>
     <% @deal_room_authorizations.each do |authorization| %>
@@ -17,6 +18,7 @@
             <br />
             <%= authorization.user.email -%>
         </td>
+        <td> <%= authorization.group -%> </td>
        <td>
            <%= link_to(private_deal_room_deal_room_authorization_path( @deal_room, authorization),
                        method: :delete,
