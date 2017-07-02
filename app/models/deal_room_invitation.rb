@@ -14,6 +14,10 @@ class DealRoomInvitation < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
+  STATUS_NEW = 'new'
+  STATUS_SENT = 'sent'
+  STATUS_ACCECPTED = 'accepted'
+
   def find_or_create_user_for_deal_room
     u = User.where(email: email).first
     if !u.present?
@@ -38,10 +42,15 @@ class DealRoomInvitation < ApplicationRecord
     deal_room.deal_room_activities.create(user: user, message: "Invitation to #{user.email} resent.")
   end
 
+  def accepted!
+    update_attributes(status: STATUS_ACCECPTED)
+  end
+
   private
 
   def send_invitation_by_email
     DealRoomMailer.invitation(user: user, deal_room: deal_room).deliver
+    update_attributes(status: STATUS_SENT)
   end
 
   def log_activity

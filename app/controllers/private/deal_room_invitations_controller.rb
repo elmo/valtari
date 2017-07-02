@@ -3,7 +3,7 @@ class Private::DealRoomInvitationsController < Private::PrivateController
   before_action :authenticate_user!
   before_action :set_deal_room
   before_action :set_deal_room_invitation, only: [:show, :destroy, :resend]
-  before_action :owner_required, only: [:create, :destroy]
+  before_action :owner_or_authorized_required, only: [:create, :destroy]
 
   def index
     scope = @deal_room.deal_room_invitations
@@ -16,6 +16,7 @@ class Private::DealRoomInvitationsController < Private::PrivateController
 
   def create
     @deal_room_invitation = @deal_room.deal_room_invitations.new(deal_room_invitation_params)
+    @deal_room_invitation.inviter = current_user
     respond_to do |format|
       if @deal_room_invitation.save
         format.html { redirect_to private_deal_room_path(@deal_room) , notice: "Invitation was successfully created." }
@@ -45,8 +46,14 @@ class Private::DealRoomInvitationsController < Private::PrivateController
      not_found unless current_user == @deal_room.user
    end
 
+   def owner_or_authorized_required
+     return true if @deal_room.owned_by?(user: current_user)
+     return true if @deal_room.deal_room_authorizations.where(user: current_user).exists?
+     not_found
+   end
+
    def set_deal_room
-     @deal_room = current_user.deal_rooms.friendly.find(params[:deal_room_id])
+     @deal_room = DealRoom.friendly.find(params[:deal_room_id])
    end
 
    def set_deal_room_invitation

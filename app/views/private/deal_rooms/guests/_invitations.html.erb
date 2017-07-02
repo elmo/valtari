@@ -1,20 +1,3 @@
+<% @deal_room_invitations = @deal_room.deal_room_invitations.invited_by(current_user)  -%>
+<%= render partial: "/private/deal_room_invitations/index", locals: {invitations: @deal_room_invitations } -%>
 <%= render partial: '/private/deal_room_invitations/form' -%>
-<% if @deal_room.owned_by?(user: current_user) %>
-<% if  @deal_room.deal_room_invitations.any? %>
- <ul>
- <% @deal_room.deal_room_invitations.each do |invitation| %>
-     <% next unless invitation.persisted? %>
-     <li>
-       <%= format_date_and_time(invitation.created_at) -%>
-       <%= invitation.email -%>
-       <%= link_to(private_deal_room_deal_room_invitation_path( @deal_room, invitation), method: :delete, data: {confirm: "Are you sure that you want to delete this invitation?" } ) do %>
-         <i class="material-icons tiny">delete</i>
-        <% end %>
-        <%= link_to('resend', resend_private_deal_room_deal_room_invitation_path(@deal_room, invitation ) , method: :put ) %>
-      </li>
-    <% end %>
-  </ul>
-  <% else %>
-    <p>There have been no invitations created for this deal room.</p>
-  <% end%>
-<% end%>
