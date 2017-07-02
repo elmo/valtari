@@ -14,15 +14,18 @@
                <%= upload.user.full_name %>
                <%= image_tag(upload.user.avatar.url) if upload.user.avatar.size > 0  %>
            </td>
-           <td><%=  upload.original_file_name %> </td>
+           <td><%= upload.original_file_name %> </td>
            <td>
               <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload) do %>
+                 download
                  <i class="material-icons tiny">swap_vert</i>
               <% end %>
-              <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
-                  method: :delete,
-                  data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
-                 <i class="material-icons tiny">delete</i>
+              <% if upload.user == current_user %>
+                <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
+                    method: :delete,
+                    data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
+                   <i class="material-icons tiny">delete</i>
+                <% end %>
               <% end %>
            </td>
         </tr>

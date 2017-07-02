@@ -47,6 +47,10 @@ class DealRoomInvitation < ApplicationRecord
     update_attributes(status: STATUS_ACCECPTED)
   end
 
+  def accepted?
+    status == STATUS_ACCECPTED
+  end
+
   private
 
   def send_invitation_by_email
