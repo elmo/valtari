@@ -2,7 +2,7 @@ class DealRoomAuthorization < ApplicationRecord
   belongs_to :user
   belongs_to :deal_room
   after_create :log_activity
-  after_create :accept_invitation
+  scope :accepted_and_invited_by, -> (deal_room, user) { where(user_id: deal_room.deal_room_invitations.accepted.collect(&:user_id)  ) }
 
   private
 

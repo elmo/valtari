@@ -9,6 +9,7 @@ class DealRoomInvitation < ApplicationRecord
   after_create :send_invitation_by_email
   after_create :log_activity
   scope :invited_by, -> (user) { where(inviting_user_id: user.id) }
+  scope :accepted, -> {where(status: STATUS_ACCECPTED) }
 
 
   extend FriendlyId
