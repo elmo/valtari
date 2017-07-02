@@ -55,7 +55,7 @@ class DealRoomInvitation < ApplicationRecord
   private
 
   def set_group
-    self.group = user.email.split('@').last
+    self.group = user.email.split('@').last.gsub(/\W/, '')
   end
 
   def send_invitation_by_email

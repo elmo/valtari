@@ -95,6 +95,7 @@ Rails.application.routes.draw do
             put 'resend'
           end
        end
+       resources :groups, only: [:show]
        resources :deal_room_authorizations, only: [:index, :destroy]
        resources :deal_room_ndas, only: [:new,:create]
        resources :deal_room_activities, only: [:index]

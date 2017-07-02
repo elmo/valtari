@@ -1,7 +1,10 @@
 class DealRoomUpload < ApplicationRecord
   belongs_to :deal_room
   belongs_to :user
+  before_validation :set_group
   scope :by_user, -> (user) { where(user: user) }
+  scope :within_group, -> (group) { where(group: group) }
+
   mount_uploader :upload, UploadUploader
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -12,6 +15,10 @@ class DealRoomUpload < ApplicationRecord
   end
 
   private
+
+  def set_group
+    self.group = user.email.split('@').last.gsub(/\W/, '')
+  end
 
   def log_activity
     deal_room.deal_room_activities.create(

@@ -9,9 +9,8 @@ class DealRoomAuthorization < ApplicationRecord
   private
 
   def set_group
-    self.group = user.email.split('@').last
+    self.group = user.email.split('@').last.gsub(/\W/, '')
   end
-
 
   def accept_invitation
     deal_room.deal_room_invitations.where(user: user).each {|invitation| invitation.accepted! }
