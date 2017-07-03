@@ -1,2 +1,8 @@
 <%= render partial: '/private/deal_rooms/about' %>
 <%= render partial: '/private/deal_rooms/owners/groups' %>
+<div class="row">
+  <div class="col m8 s12">
+    <%= render partial: '/private/deal_room_invitations/form' -%>
+    <%= render partial: '/private/deal_room_invitations/index', locals: { invitations: @deal_room.deal_room_invitations } -%>
+  </div>
+</div>

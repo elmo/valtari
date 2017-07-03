@@ -5,8 +5,8 @@ class DealRoomInvitation < ApplicationRecord
   validates_presence_of :email
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :inviter, presence: true
-  before_validation :set_group
   before_validation :find_or_create_user_for_deal_room
+  before_validation :set_group
   after_create :send_invitation_by_email
   after_create :log_activity
   scope :invited_by, -> (user) { where(inviting_user_id: user.id) }
@@ -55,7 +55,7 @@ class DealRoomInvitation < ApplicationRecord
   private
 
   def set_group
-    self.group = user.email.split('@').last.gsub(/\W/, '')
+    self.group = self.user.email.split('@').last.gsub(/\W/, '')
   end
 
   def send_invitation_by_email
