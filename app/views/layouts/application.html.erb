@@ -10,10 +10,7 @@
   </head>
 
   <body>
-    <% if current_user.present? %>
-      <main class="logged-in">
-      <% else %><main>
-    <% end %>
+      <main class="<%= (current_user.present?) ? 'logged-in' : '' -%>">
       <%= render partial: '/shared/user_account_navigation' %>
       <%= render partial: '/shared/flash' %>
       <div class="container <%= (request.path =~ /admin/) ? 'wide' : '' -%>">
@@ -52,6 +49,6 @@
       ga('send', 'pageview');
 
     </script>
-    
+
   </body>
 </html>

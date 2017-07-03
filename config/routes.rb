@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount PostgresqlLoStreamer::Engine => 'event_photo', as: 'event_photo'
   mount PostgresqlLoStreamer::Engine => 'asset_data', as: 'asset_data'
   mount PostgresqlLoStreamer::Engine => 'deal_room_upload', as: 'deal_room_upload'
+  mount PostgresqlLoStreamer::Engine => 'user_avatar', as: 'avatar'
 
   mount Judge::Engine => '/judge'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
@@ -94,10 +95,11 @@ Rails.application.routes.draw do
             put 'resend'
           end
        end
-       resources :deal_room_authorizations, only: [:destroy]
+       resources :groups, only: [:show]
+       resources :deal_room_authorizations, only: [:index, :destroy]
        resources :deal_room_ndas, only: [:new,:create]
        resources :deal_room_activities, only: [:index]
-       resources :deal_room_users, only: [:index, :edit, :update]
+       resources :deal_room_users, only: [:index, :edit, :update,:show]
     end
     resources :sessions, only: [:new, :create]
     resources :cim_inquiries, only: [:new,:create,:show]

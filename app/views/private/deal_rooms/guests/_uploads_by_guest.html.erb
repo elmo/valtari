@@ -1,0 +1,12 @@
+<% @deal_room_uploads = @deal_room.deal_room_uploads.by_user(current_user).page(params[:guest_uploads]).per(10) %>
+<h5>Your uploads  (<%= @deal_room_uploads.count -%>)</h5>
+ <div id="deal-room-guest-uploads">
+     <p>These files have been uploaded by you or any member of your time that you have invited.</p>
+   <%= render partial: "/private/deal_room_uploads/index", locals: { uploads: @deal_room_uploads, page_param: :guest_uploads } %>
+ </div>
+
+ <div>
+   <h5>Upload a new file</h5>
+   <p> Any file that you upload to this deal room will only be available to for view and download to the owner of this deal room: <%= @deal_room.user.full_name -%> and any member that you have invited to this group.</p>
+   <%= render partial: "/private/deal_room_uploads/form" %>
+ </div>

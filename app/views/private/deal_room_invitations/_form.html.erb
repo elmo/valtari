@@ -1,8 +1,19 @@
-<%= simple_form_for([:private, @deal_room, DealRoomInvitation.new ]) do |f| %>
+<h3>Invite a new user</h3>
+
+<p>Enter the email address of a person with whom you would like to collaborate on this deal.</p>
+
+<% if current_user != @deal_room.user %>
+<p>
+NOTE: The email address must be in the same domain of your email address, i.e, <b><%= current_user.email.split('@').last -%></b>.
+</p>
+<% end %>
+
+
+<%= simple_form_for([:private, @deal_room, DealRoomInvitation.new] ) do |f| %>
   <div class="form-inputs">
     <%= f.input :email -%>
   </div>
   <div class="form-actions">
-    <%= f.button :submit  %>
+    <%= f.button :submit, "Send invitation" %>
   </div>
 <% end %>

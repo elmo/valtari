@@ -36,6 +36,10 @@ class DealRoom < ApplicationRecord
     Base64.encode64(email)[0..5].upcase
   end
 
+  def distinct_groups
+    deal_room_authorizations.pluck(:group).uniq
+  end
+
  private
 
  def create_deal_room_authorization

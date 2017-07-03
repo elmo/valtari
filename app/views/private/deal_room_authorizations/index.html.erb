@@ -1,0 +1,29 @@
+<h1>Authorized Users</h1>
+<% if @deal_room_authorizations.any? %>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Revoke</th>
+   </thead>
+   <tbody>
+    <% @deal_room_authorizations.each do |authorization| %>
+      <tr>
+       <td><%= authorization.user.full_name %>
+           <%= link_to 'view', private_deal_room_deal_room_user_path(@deal_room, authorization.user) -%> </td>
+       <td><%= authorization.user.email -%></td>
+       <td>
+           <%= link_to(private_deal_room_deal_room_authorization_path( @deal_room, authorization),
+                       method: :delete,
+                       data: {confirm: "Are you sure that you want to delete this authorization?" } ) do %>
+         <i class="material-icons tiny">delete</i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+ </table>
+ <%= paginate(@deal_room_authorizations) -%>
+<% else %>
+  <p>There are no authorized users for this deal room.</p>
+<% end%>

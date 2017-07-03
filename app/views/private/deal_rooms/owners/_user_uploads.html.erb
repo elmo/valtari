@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col s12" id="user-<%=user.id-%>-uploads">
+  <% @deal_room_uploads = @deal_room.deal_room_uploads.by_user(user) %>
+  <h3>Uploads(<%= @deal_room_uploads.count -%>) </h3>
+  <% @deal_room.deal_room_uploads.by_user(user).each do |upload| %>
+    <p>
+      <%= format_date_and_time(upload.created_at) -%>
+      <%= upload.original_file_name -%>
+      <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload) do %>
+         <i class="material-icons tiny">swap_vert</i>
+       <% end %>
+       <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
+         method: :delete,
+         data: { contrim: "Are you sure that you'd like to delete this file?" } do %>
+           <i class="material-icons tiny">delete</i>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
+

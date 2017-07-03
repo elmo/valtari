@@ -1,5 +1,6 @@
-<%= simple_form_for([:private, @deal_room ,@deal_room_upload ||= DealRoomUpload.new ], multipart: true ) do |f| %>
+<%= simple_form_for([:private, @deal_room ,@deal_room_upload ||= DealRoomUpload.new(group: @group) ], multipart: true ) do |f| %>
   <%= f.error_notification %>
+  <%= f.hidden_field :group-%>
   <%= f.file_field :upload, multiple: true  %>
   <%= f.button :submit, 'Save' %>
 <% end %>

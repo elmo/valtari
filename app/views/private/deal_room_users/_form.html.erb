@@ -1,5 +1,6 @@
 <%= simple_form_for(:user, url: private_deal_room_deal_room_user_path(@deal_room, @user), method: :put ) do |f| %>
   <%= f.input :first_name, required: true  -%>
   <%= f.input :last_name, required: true -%>
+  <%= f.file_field :avatar -%>
   <%= f.submit 'Update', class: 'btn' -%>
 <% end %>

@@ -1,51 +1,5 @@
-<div class="row">
-  <div class="col m6 s12">
-      <h3><%= @deal_room.name -%></h3>
-  </div>
-</div>
-
-<div class="row">
-   <div class="col m6 s12">
-   <% if  @deal_room.owned_by?(user: current_user)  %>
-     <%= link_to 'Edit', edit_private_deal_room_path(@deal_room) %>
-     <%= link_to 'All My Deal Rooms', private_deal_rooms_path %>
-   <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col m6 s12">
-   <h3>Invited Users</h3>
-     <%= render partial: '/private/deal_room_invitations/index' -%>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col s12">
-     <h3>Uploaded Files </h3>
-     <%= render partial: '/private/deal_room_uploads/index' -%>
-   </div>
-</div>
-
-<% if @deal_room.owned_by?(user: current_user)   %>
-<div class="row">
-  <div class="col s12">
-     <h3>Activity Log</h3>
-    <%= link_to 'All', private_deal_room_deal_room_activities_path(@deal_room) -%>
-     <%= render partial: '/private/deal_room_activities/index' -%>
-   </div>
-</div>
-
-<% end %>
-
-<% if @deal_room.owned_by?(user: current_user)   %>
-
-<div class="row">
-  <div class="col s12">
-    <h3>Authorized Users</h3>
-    <%= render partial: '/private/deal_rooms/users' -%>
-  </div>
-</div>
-
+<% if @deal_room.owned_by?(user: current_user) %>
+  <%= render partial: "/private/deal_rooms/owners/show" %>
+<% else %>
+  <%= render partial: "/private/deal_rooms/guests/show" %>
 <% end %>

@@ -1,7 +1,7 @@
 <div class="card-title">General</div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-    
+
     <div class="row">
       <div class="col l6 s12">
         <%= f.input :email  %>
@@ -23,8 +23,12 @@
         <%= f.input :headline %>
       </div>
     </div>
-    
+
     <%= f.input :location %>
     <%= f.input :profile_url %>
+
+    <%= f.label :avatar, "Upload a new avatar" %>
+    <%= f.file_field :avatar %>
+
     <%= f.button :submit, "Update" %>
   <% end %>
