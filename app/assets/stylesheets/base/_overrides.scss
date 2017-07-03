@@ -2,16 +2,26 @@
 * a{
   color:$link-blue
 }
+
+.container .row {
+    margin-left: -0.78rem;
+    margin-right: -0.78rem;
+}
+
 .btn {
   text-transform: none;
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
    @extend .blue, .darken-1;
+   &:hover{
+    filter: brightness(103%);
+    box-shadow: none
+   }
 }
 
 form input.btn {
-    margin: 1em .5em;
+    margin: 1em 0.1em;
 }
 
 //Nav
@@ -107,24 +117,6 @@ nav ul{
     left:12%;
     right:0
   }
-}
-
-// Adds hover effect for btns
-.btn:hover:before {
-  opacity:1;
-}
-
-.btn:before {
-    content: '';
-    opacity: 0;
-    background-color: rgba(255,255,255,.09);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    transition: opacity .2s;
-    z-index: -1;
 }
 
 

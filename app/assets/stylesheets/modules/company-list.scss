@@ -72,6 +72,7 @@ section{
 	overflow-x: auto
 }
 h4 {
+	display:inline-block;
 	span{
 		color: #aaa;
     	font-weight: 200;
@@ -79,8 +80,6 @@ h4 {
     }
     a{
     	color: #7bb1e1;
-    }
-    &.inline-block{
     }
 }
 .input-small{
@@ -94,7 +93,7 @@ h4 {
 .go-to-edit{
 	margin: 0 1em;
 }
-.go-to-list{
+.right-corner{
 	float: right;
 	padding-top: 18px;
 	padding-right: 20px

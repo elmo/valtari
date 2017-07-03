@@ -200,6 +200,23 @@ a.company-name{
   }
 }
 
+.btn{
+  &.reference{
+    color: $link-blue;
+    text-align: left;
+    font-weight: 400;
+    padding: 0 12px;
+  }
+  &.edit{
+    color: #3e3d4c;
+    font-size: 1.2rem;
+  }
+  &.delete{
+    color: #3e3d4c;
+    font-size:1.2rem;
+  }
+}
+
 .admin-btn{
   background-color: #57556f
 }

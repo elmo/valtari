@@ -16,11 +16,11 @@ main {
 
 body footer.page-footer{
   margin-top:0;
-  background: #e0e7f0;
-  color: #5191e4;
+  background: #f9f9f9;
   .footer-copyright{
+    text-align: center;
     background: none;
-    color:#5191e4
+    color: #5f5f5f
   }
 }
 /*
@@ -39,7 +39,7 @@ abbr[title] {
 // --------- WHITE SPACE AROUND PAGE CONTENT ---------
 .margin-top-bottom {
   margin-top: 2%;
-  margin-bottom: 7%;
+  margin-bottom: 2%;
   &.extra{margin-top: 5%}
 }
 
