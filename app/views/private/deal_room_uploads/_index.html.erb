@@ -32,5 +32,9 @@
       <% end %>
     </tbody>
   </table>
-   <%= paginate(uploads, param_name: page_param ) %>
-<% end%>
+   <%= paginate(uploads, param_name: "page" ) %>
+<% else  %>
+  <p>
+   There are no uploads.
+  </p>
+<% end %>

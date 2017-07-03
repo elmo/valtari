@@ -8,9 +8,9 @@ class Private::DealRoomUploadsController < Private::PrivateController
     @deal_room_upload = @deal_room.deal_room_uploads.new(deal_room_upload_params)
     respond_to do |format|
       params[:deal_room_upload]['upload'].each do  |upload|
-        @deal_room.deal_room_uploads.create!(upload: upload, original_file_name: upload.original_filename, user: current_user)
+        @deal_room.deal_room_uploads.create!(upload: upload, original_file_name: upload.original_filename, user: current_user, group: deal_room_upload_params[:group] )
       end
-      format.html { redirect_to private_deal_room_path(@deal_room), notice: 'Upload was successfully saved.' }
+      format.html { redirect_back( fallback_location: private_deal_room_path(@deal_room), notice: 'Upload was successfully saved.' ) }
       format.js
     end
   end
@@ -43,7 +43,7 @@ class Private::DealRoomUploadsController < Private::PrivateController
   end
 
   def deal_room_upload_params
-    params.require(:deal_room_upload).permit( { uploads: [] } )
+    params.require(:deal_room_upload).permit(:group, uploads: [] )
   end
 
 

@@ -1,11 +1,13 @@
-<% @deal_room_authorizations = @deal_room.deal_room_authorizations.within_group(params[:id])  -%>
-<% @deal_room_invitations = @deal_room.deal_room_invitations.within_group(params[:id])  -%>
-<% @deal_room_uploads= @deal_room.deal_room_uploads.within_group(params[:id])  -%>
+<% @deal_room_authorizations = @deal_room.deal_room_authorizations.within_group(@group).page(params[:page]).per(10)  -%>
+<% @deal_room_invitations = @deal_room.deal_room_invitations.within_group(@group).page(params[:page]).per(10)  -%>
+<% @deal_room_uploads= @deal_room.deal_room_uploads.within_group(@group).page(params[:page]).per(10) -%>
 <%= render partial: '/private/deal_rooms/about' -%>
 <h3>Group: <%= params[:id] -%> </h3>
 <div class="row">
   <div class="col m8 s12">
     <%= render partial: '/private/deal_room_uploads/index', locals: { uploads: @deal_room_uploads } -%>
+    <h5>Upload a file to this group</h5>
+    <%= render partial: '/private/deal_room_uploads/form' %>
   </div>
   <div class="col m4 s12">
     <%= render partial: '/private/deal_room_authorizations/index', locals: { authorizations: @deal_room_authorizations } %>

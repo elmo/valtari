@@ -17,7 +17,7 @@ class DealRoomUpload < ApplicationRecord
   private
 
   def set_group
-    self.group = user.email.split('@').last.gsub(/\W/, '')
+    self.group = user.email.split('@').last.gsub(/\W/, '') if group.blank?
   end
 
   def log_activity
