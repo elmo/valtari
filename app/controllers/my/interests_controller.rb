@@ -8,7 +8,7 @@ class My::InterestsController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to businesses_path, notice: 'Your interests have successfully updated.' }
+        format.html { redirect_to businesses_path, notice: 'Your interests were successfully updated.' }
       else
         format.html { render :edit }
       end

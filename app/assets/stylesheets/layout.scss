@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   .row{ margin-bottom: 6px }
   .user-nav.wide{ display: none }
+  .row.one-px { margin-bottom: 1px; }
 }
 
 @media only screen and (min-width: 601px){
