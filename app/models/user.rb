@@ -168,4 +168,8 @@ class User < ApplicationRecord
     [first_name, last_name].join(' ')
   end
 
+  def to_group
+    email.split('@').last.split('.').first
+  end
+
 end
