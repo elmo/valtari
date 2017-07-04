@@ -2,7 +2,7 @@
   <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
       <div class="card">
-        <div class="card-content">  
+        <div class="card-content">
           <div class="row">
 			<%= render partial: '/private/deal_rooms/about' %>
           </div>
@@ -16,14 +16,14 @@
   <div class="margin-top-bottom">
   	<div class="col s12 l4 offset-l2">
       <div class="card">
-        <div class="card-content">	
+        <div class="card-content">
 		  <%= render partial: '/private/deal_room_invitations/form' -%>
         </div>
 	  </div>
 	</div>
     <div class="col s12 l4">
       <div class="card">
-        <div class="card-content">  
+        <div class="card-content">
 			<%= render partial: '/private/deal_rooms/owners/groups' %>
 		</div>
 	  </div>
@@ -35,7 +35,7 @@
   <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
       <div class="card">
-        <div class="card-content">	
+        <div class="card-content">
 			<%= render partial: '/private/deal_room_invitations/index', locals: { invitations: @deal_room.deal_room_invitations } -%>
         </div>
 	  </div>
