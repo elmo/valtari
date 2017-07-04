@@ -11,8 +11,14 @@
 
   <div class="chip">
  	 <%= avatar_image(@deal_room.user, 'tiny-image') %>
-  	Admin: <%= @deal_room.user.full_name -%>
+  	   <%= @deal_room.user.full_name -%>
 	</div>
   <br />
+  Invitations:
+  <%= @deal_room.deal_room_invitations.count -%>
+  Users:
+  <%= @deal_room.deal_room_authorizations.count -%>
+  Files:
+  <%= @deal_room.deal_room_uploads.count -%>
 </div>
 
