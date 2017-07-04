@@ -1,14 +1,8 @@
 <div class="row">
   <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
-      <div class="card">
-        <div class="card-content">
-          <div class="row">
-			<%= render partial: '/private/deal_rooms/about' %>
-          </div>
-		</div>
+		  <%= render partial: '/private/deal_rooms/about' %>
 	  </div>
-	</div>
   </div>
 </div>
 
@@ -17,17 +11,19 @@
   	<div class="col s12 l4 offset-l2">
       <div class="card">
         <div class="card-content">
-		  <%= render partial: '/private/deal_room_invitations/form' -%>
+		      <%= render partial: '/private/deal_room_invitations/form' -%>
         </div>
 	  </div>
 	</div>
+  <% if @deal_room.distinct_groups.any? %>
     <div class="col s12 l4">
       <div class="card">
         <div class="card-content">
-			<%= render partial: '/private/deal_rooms/owners/groups' %>
-		</div>
+			    <%= render partial: '/private/deal_rooms/owners/groups' %>
+		    </div>
+	    </div>
 	  </div>
-	</div>
+  <% end %>
   </div>
 </div>
 
@@ -37,7 +33,7 @@
       <div class="card">
         <div class="card-content">
             <h4>Upload files for all deal room particiants</h4>
-            <%= link_to 'View all', private_deal_room_deal_room_uploads_path(@deal_room) -%>
+            <%= link_to 'View all', private_deal_room_deal_room_uploads_path(@deal_room), class: 'right-corner' -%>
             <%= render partial: '/private/deal_room_uploads/form' %>
             <%= render partial: '/private/deal_room_uploads/index', locals: {uploads: @deal_room.deal_room_uploads.page(params[:page]).per(5)  } %>
         </div>

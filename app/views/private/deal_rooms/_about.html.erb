@@ -1,15 +1,15 @@
-<div class="col s6">
-  <h3><%= link_to @deal_room.name, private_deal_room_path(@deal_room) -%></h3>
+<div class="col s7">
+  <h3><%= link_to @deal_room.name, private_deal_room_path(@deal_room), class: 'title-link' -%></h3>
   <b><%= @deal_room.company_name -%></b>
   <% if current_user == @deal_room.user %>
      <%= link_to 'Edit', edit_private_deal_room_path(@deal_room) -%>
   <% end %>
 </div>
 
-<div class="col s6">
+<div class="col s5">
   <br />
 
-  <div class="chip">
+  <div class="chip margin-bottom">
  	 <%= avatar_image(@deal_room.user, 'tiny-image') %>
   	   <%= @deal_room.user.full_name -%>
 	</div>

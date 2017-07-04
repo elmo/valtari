@@ -204,8 +204,8 @@ a.company-name{
   &.reference{
     color: $link-blue;
     text-align: left;
-    font-weight: 400;
-    padding: 0 12px;
+    font-weight: 500;
+    padding: 0 20px;
   }
   &.edit{
     color: #3e3d4c;
@@ -390,4 +390,8 @@ ul.ui-autocomplete {
 
 .tiny-image {
   height: 40px;
+}
+
+.title-link{
+  color: inherit
 }
