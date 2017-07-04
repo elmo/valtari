@@ -42,6 +42,9 @@
 	&.add{ display: block; width: auto; font-size: .8em; color: white; background: none; margin: 0 0 -1.5em -2.6em;
 		.material-icons{ float: left; padding: 0 2px 0 0} 
 	}
+	&.margin-bottom{
+		margin: 0 0 1.3em 0;
+	}
 }
 .text-link{
 	color: #8ca0b4;
