@@ -1,5 +1,5 @@
 
-<div class="col s4">
+<div class="col s6">
   <h3><%= @deal_room.name -%></h3>
   <b><%= @deal_room.company_name -%></b>
   <% if current_user == @deal_room.user %>
@@ -7,9 +7,16 @@
   <% end %>
 </div>
 
-<div class="col s4">
+<div class="col s6">
   <br />
-  <%= avatar_image(@deal_room.user, 'tiny-image') %><br />
- Room owner: <%= @deal_room.user.full_name -%>
+
+  <div class="chip">
+ 	 <%= avatar_image(@deal_room.user, 'tiny-image') %>
+  	Admin: <%= @deal_room.user.full_name -%>
+	</div>
+
+
+  <br />
+  
 </div>
 
