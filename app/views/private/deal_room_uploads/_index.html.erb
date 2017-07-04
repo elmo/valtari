@@ -1,4 +1,12 @@
 <% if uploads.any? -%>
+
+  <% if action_name == "index" %>
+    <%= form_tag private_deal_room_deal_room_uploads_path(@deal_room), id: "invitations-search" , class: 'search-bar', role: 'search',  method: :get do %>
+      <%= text_field_tag :q, params[:q], type: "search", placeholder: "Search" %>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
+  <% end %>
+
   <table>
     <thead>
       <th>Date</th>
@@ -32,7 +40,7 @@
       <% end %>
     </tbody>
   </table>
-   <%= paginate(uploads, param_name: "page" ) %>
+   <%= paginate(uploads, param_name: "page" ) if action_name == 'index' %>
 <% else  %>
   <p>
    There are no uploads.

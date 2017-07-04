@@ -4,6 +4,12 @@ class Private::DealRoomUploadsController < Private::PrivateController
   before_action :set_deal_room
   before_action :set_deal_room_upload, only: [:show, :destroy]
 
+  def index
+    @group = params[:group]
+    scope = @deal_room.deal_room_uploads
+    @deal_room_uploads = scope.page(params[:page]).per(10)
+  end
+
   def create
     @deal_room_upload = @deal_room.deal_room_uploads.new(deal_room_upload_params)
     respond_to do |format|
