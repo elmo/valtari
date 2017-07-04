@@ -33,7 +33,7 @@ class DealRoom < ApplicationRecord
   end
 
   def self.password_for_email(email:)
-    Base64.encode64(email)[0..5].upcase
+    Digest::MD5.hexdigest(email)[0..5].upcase
   end
 
   def distinct_groups

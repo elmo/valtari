@@ -25,7 +25,7 @@ class Cim < ApplicationRecord
       user.authorized_for_cim!(cim: self)
     else
       user = User.new(email: email)
-      user.password = password_for_email(email: email)
+      user.password = DealRoom.password_for_email(email: email)
       user.password_confirmation = user.password
       user.cim = true
       user.save
@@ -33,10 +33,6 @@ class Cim < ApplicationRecord
     end
     user.send_cim_invitation(cim: self)
     user
-  end
-
-  def password_for_email(email:)
-    Base64.encode64(email)[0..5].upcase
   end
 
   def authorized_users

@@ -24,15 +24,11 @@ class DealRoomInvitation < ApplicationRecord
     u = User.where(email: email).first
     if !u.present?
       u = User.new(email: email)
-      u.password = password_for_email(email: email)
+      u.password = DealRoom.password_for_email(email: email)
       u.password_confirmation = u.password
       u.save
     end
     self.user = u
-  end
-
-  def password_for_email(email:)
-    SecureRandom.hex(3).upcase
   end
 
   def slug_candidates
