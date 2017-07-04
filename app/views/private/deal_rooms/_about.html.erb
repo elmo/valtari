@@ -1,24 +1,26 @@
-<div class="col s7">
-  <h3><%= link_to @deal_room.name, private_deal_room_path(@deal_room), class: 'title-link' -%></h3>
-  <b><%= @deal_room.company_name -%></b>
-  <% if current_user == @deal_room.user %>
-     <%= link_to 'Edit', edit_private_deal_room_path(@deal_room) -%>
-  <% end %>
+<div class="vdr-header">
+  <span class="vdr-title">Virtual Data Room</span>
+
+  <div class="col s7">
+    <h3><%= link_to @deal_room.name, private_deal_room_path(@deal_room), class: 'title-link' -%> </h3>
+    <b><%= @deal_room.company_name -%></b>
+    <% if current_user == @deal_room.user %>
+       <%= link_to 'Edit', edit_private_deal_room_path(@deal_room) -%>
+    <% end %>
+  </div>
+
+  <div class="col s5">
+    <br />
+
+    <div class="chip">
+   	 <%= avatar_image(@deal_room.user, 'tiny-image') %>
+     <span>Admin:</span> <%= @deal_room.user.full_name -%>
+  	</div>
+    <br />
+
+    <div class="chip"><%= @deal_room.deal_room_invitations.count -%> <span>Invitations</span></div>
+    <div class="chip"><%= @deal_room.deal_room_authorizations.count -%> <span>Users</span></div>
+    <div class="chip"><%= @deal_room.deal_room_uploads.count -%> <span>Files</span></div>
+  </div>
+
 </div>
-
-<div class="col s5">
-  <br />
-
-  <div class="chip margin-bottom">
- 	 <%= avatar_image(@deal_room.user, 'tiny-image') %>
-  	   <%= @deal_room.user.full_name -%>
-	</div>
-  <br />
-  Invitations:
-  <%= @deal_room.deal_room_invitations.count -%>
-  Users:
-  <%= @deal_room.deal_room_authorizations.count -%>
-  Files:
-  <%= @deal_room.deal_room_uploads.count -%>
-</div>
-

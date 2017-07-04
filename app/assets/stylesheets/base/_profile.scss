@@ -32,7 +32,7 @@
 	}
 }
 .chip{
-	background: rgba(140, 160, 180, 0.27);
+	background: rgb(227, 227, 234);
 	margin: 0 0 .3em 0;
 	color: #333;
 	white-space: nowrap;
@@ -44,6 +44,13 @@
 	}
 	&.margin-bottom{
 		margin: 0 0 1.3em 0;
+	}
+	span{
+		font-weight: 300
+	}
+	&.in-table{
+		background: rgba(140, 160, 180, 0.1);
+		margin-top: 4px
 	}
 }
 .text-link{

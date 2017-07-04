@@ -8,27 +8,6 @@
 
 <div class="row">
   <div class="margin-top-bottom">
-  	<div class="col s12 l4 offset-l2">
-      <div class="card">
-        <div class="card-content">
-		      <%= render partial: '/private/deal_room_invitations/form' -%>
-        </div>
-	  </div>
-	</div>
-  <% if @deal_room.distinct_groups.any? %>
-    <div class="col s12 l4">
-      <div class="card">
-        <div class="card-content">
-			    <%= render partial: '/private/deal_rooms/owners/groups' %>
-		    </div>
-	    </div>
-	  </div>
-  <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
       <div class="card">
         <div class="card-content">
@@ -44,12 +23,35 @@
 
 <div class="row">
   <div class="margin-top-bottom">
+    <div class="col s12 l4 offset-l2">
+      <div class="card">
+        <div class="card-content">
+          <%= render partial: '/private/deal_room_invitations/form' -%>
+        </div>
+    </div>
+  </div>
+  <% if @deal_room.distinct_groups.any? %>
+    <div class="col s12 l4">
+      <div class="card">
+        <div class="card-content">
+          <%= render partial: '/private/deal_rooms/owners/groups' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<% if @deal_room.deal_room_invitations.any? %>
+<div class="row">
+  <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
       <div class="card">
         <div class="card-content">
-			<%= render partial: '/private/deal_room_invitations/index', locals: { invitations: @deal_room.deal_room_invitations } -%>
+			    <%= render partial: '/private/deal_room_invitations/index', locals: { invitations: @deal_room.deal_room_invitations } -%>
         </div>
+	    </div>
 	  </div>
-	</div>
   </div>
 </div>
+<% end %>
