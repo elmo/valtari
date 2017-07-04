@@ -19,8 +19,10 @@
         <tr>
            <td><%= format_date_and_time(upload.created_at) %> </td>
            <td>
-               <%= avatar_image(upload.user, 'tiny-image') %><br />
-               <%= upload.user.full_name %>
+               <div class="chip in-table">
+                <%= avatar_image(upload.user, 'tiny-image') %> <span>
+                <%= upload.user.full_name %></span>
+               </div>
            </td>
            <td><%= upload.original_file_name %> </td>
            <td>

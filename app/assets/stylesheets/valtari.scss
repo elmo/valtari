@@ -204,7 +204,8 @@ a.company-name{
   &.reference{
     color: $link-blue;
     text-align: left;
-    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     padding: 0 20px;
   }
   &.edit{
@@ -394,4 +395,19 @@ ul.ui-autocomplete {
 
 .title-link{
   color: inherit
+}
+
+.vdr-header{
+  padding:0 8px;
+  margin-bottom: -10px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .vdr-title{
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .6rem;
+  }
 }
