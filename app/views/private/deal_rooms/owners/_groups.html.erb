@@ -1,13 +1,17 @@
+<% @groups = @deal_room.distinct_groups %>
+<h3>Groups (<%= @groups.size %>)</h3>
 <table>
   <thead>
      <th>Group</th>
-     <th>Users</th>
+     <th>Members</th>
+     <th>Files</th>
   </thead>
-<% @deal_room.distinct_groups.each do |group|%>
+<% @groups.each do |group|%>
   <tbody>
      <tr>
       <td><%= link_to group, private_deal_room_group_path(@deal_room, CGI.escape(group) ) -%></td>
       <td><%= @deal_room.deal_room_authorizations.within_group(group).count -%></td>
+      <td><%= @deal_room.deal_room_uploads.within_group(group).count -%></td>
      </tr>
   </tbody>
 <% end %>
