@@ -7,6 +7,9 @@ class Private::DealRoomInvitationsController < Private::PrivateController
 
   def index
     scope = @deal_room.deal_room_invitations
+    if params[:q].present?
+       scope = scope.where( ["lower(email) like ? ", '%' + params[:q].downcase + '%'] )
+    end
     scope = scope.invited_by(current_user) if @deal_room.owned_by?(user: current_user)
     @deal_room_invitations = scope.page(params[:page]).per(10)
   end
