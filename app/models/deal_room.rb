@@ -6,11 +6,12 @@ class DealRoom < ApplicationRecord
   has_many :deal_room_authorizations
   has_many :deal_room_invitations
   has_many :deal_room_activities
-
   after_create :create_deal_room_authorization
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   accepts_nested_attributes_for :deal_room_uploads
+
+  resourcify
 
   def to_param
     slug
