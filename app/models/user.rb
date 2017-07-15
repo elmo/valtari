@@ -163,6 +163,42 @@ class User < ApplicationRecord
     CimMailer.invitation(user: self, cim: cim).deliver
   end
 
+   def own!(obj)
+     add_role :owner, obj
+   end
+
+   def owns?(obj)
+     has_role?(:owner, obj)
+   end
+
+   def disown!(obj)
+     remove_role(:owner, obj)
+   end
+
+   def license!(obj)
+     add_role :license, obj
+   end
+
+   def licensed?(obj)
+     has_role?(:license, obj)
+   end
+
+   def unlicensed!(obj)
+     remove_role(:license, obj)
+   end
+
+   def guest!(obj)
+     add_role :guest, obj
+   end
+
+   def guest?(obj)
+     has_role?(:guest, obj)
+   end
+
+   def unguest!(obj)
+     remove_role(:guest, obj)
+   end
+
   def full_name
     return nil if first_name.blank? or last_name.blank?
     [first_name, last_name].join(' ')

@@ -1,0 +1,6 @@
+<h4>Your comment:</h4>
+   <%= simple_form_for([:private, notable, Note.new]) do |f| %>
+     <%= f.error_notification %>
+     <%= f.input :body -%>
+    <%= f.button :submit %>
+ <% end %>

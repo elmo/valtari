@@ -55,3 +55,15 @@
   </div>
 </div>
 <% end %>
+
+<div class="row">
+  <div class="margin-top-bottom">
+    <div class="col s12 l8 offset-l2">
+      <div class="card">
+        <div class="card-content">
+           <%= render partial: '/private/notes/index', locals: { notable: @deal_room, notes: @deal_room.notes } -%>
+        </div>
+	    </div>
+	  </div>
+  </div>
+</div>

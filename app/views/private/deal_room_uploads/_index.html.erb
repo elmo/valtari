@@ -1,49 +1,29 @@
-<% if uploads.any? -%>
-
   <% if action_name == "index" %>
+    <h4>Search</h4>
     <%= form_tag private_deal_room_deal_room_uploads_path(@deal_room), id: "invitations-search" , class: 'search-bar', role: 'search',  method: :get do %>
       <%= text_field_tag :q, params[:q], type: "search", placeholder: "Search" %>
       <%= submit_tag "Search", class: "btn" %>
     <% end %>
   <% end %>
 
+<% if uploads.any? -%>
   <table>
     <thead>
       <th>Date</th>
       <th>Uploaded by</th>
       <th>File Name</th>
+      <th>Notes</th>
       <th></th>
     </thead>
     <tbody>
       <% uploads.each do |upload| %>
-        <tr>
-           <td><%= format_date_and_time(upload.created_at) %> </td>
-           <td>
-               <div class="chip in-table">
-                <%= avatar_image(upload.user, 'tiny-image') %> <span>
-                <%= upload.user.full_name %></span>
-               </div>
-           </td>
-           <td><%= upload.original_file_name %> </td>
-           <td>
-              <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload), target: '_blank' do %>
-                <i class="ion-ios-download" data-pack="ios" data-tags="save, export"></i>
-              <% end %>
-              <% if upload.user == current_user %>
-                <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
-                    method: :delete,
-                    data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
-                   <i class="ion-backspace-outline" data-pack="ios" data-tags="save, export"></i
-                <% end %>
-              <% end %>
-           </td>
-        </tr>
+      <%= render partial: '/private/deal_room_uploads/deal_room_upload', locals: { upload: upload } %>
       <% end %>
     </tbody>
   </table>
    <%= paginate(uploads, param_name: "page" ) if action_name == 'index' %>
 <% else  %>
   <p>
-   There are no uploads.
+   There are no uploaded files <%= params[:q].present? ? "matching your query" : '' -%>.
   </p>
 <% end %>

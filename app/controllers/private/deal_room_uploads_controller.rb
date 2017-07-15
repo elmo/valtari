@@ -7,6 +7,7 @@ class Private::DealRoomUploadsController < Private::PrivateController
   def index
     @group = params[:group]
     scope = @deal_room.deal_room_uploads
+    scope = scope.where( ["lower(original_file_name) like ? ", '%' + params[:q].downcase + '%'] ) if params[:q].present?
     @deal_room_uploads = scope.page(params[:page]).per(10)
   end
 

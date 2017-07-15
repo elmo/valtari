@@ -11,7 +11,12 @@
     <div class="col s12 l8 offset-l2">
       <div class="card">
         <div class="card-content">
-           <%= render partial: "/private/deal_room_authorizations/index", locals: {deal_room: @deal_room,  deal_room_authorizations: @deal_room_authorizations } %>
+          <h3>Discussing: </h3>
+           <table>
+           <%= render partial: '/private/deal_room_uploads/deal_room_upload', locals: {upload: @notable } -%>
+           </table>
+           <br />
+           <%= render partial: "/private/notes/index", locals: {notes: @notes, notable: @notable }%>
         </div>
       </div>
     </div>
