@@ -27,14 +27,13 @@
            <td><%= upload.original_file_name %> </td>
            <td>
               <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload), target: '_blank' do %>
-                 download
-                 <i class="material-icons tiny">swap_vert</i>
+                <i class="ion-ios-download" data-pack="ios" data-tags="save, export"></i>
               <% end %>
               <% if upload.user == current_user %>
                 <%= link_to private_deal_room_deal_room_upload_path(@deal_room, upload),
                     method: :delete,
                     data: {contrim: "Are you sure that you'd like to delete this file?" } do %>
-                   <i class="material-icons tiny">delete</i>
+                   <i class="ion-backspace-outline" data-pack="ios" data-tags="save, export"></i
                 <% end %>
               <% end %>
            </td>
