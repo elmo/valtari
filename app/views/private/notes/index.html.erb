@@ -1,7 +1,6 @@
 <div class="row">
   <div class="margin-top-bottom">
     <div class="col s12 l8 offset-l2">
-      <% @deal_room = @notable %>
       <%= render partial: '/private/deal_rooms/about' %>
     </div>
   </div>
@@ -12,6 +11,11 @@
     <div class="col s12 l8 offset-l2">
       <div class="card">
         <div class="card-content">
+          <h3>Discussing: </h3>
+           <table>
+           <%= render partial: '/private/deal_room_uploads/deal_room_upload', locals: {upload: @notable } -%>
+           </table>
+           <br />
            <%= render partial: "/private/notes/index", locals: {notes: @notes, notable: @notable }%>
         </div>
       </div>

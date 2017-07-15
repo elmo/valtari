@@ -1,6 +1,7 @@
 class DealRoomUpload < ApplicationRecord
   belongs_to :deal_room
   belongs_to :user
+  has_many :notes, as: :notable
   before_validation :set_group
   scope :by_user, -> (user) { where(user: user) }
   scope :within_group, -> (group) { where(group: group) }
