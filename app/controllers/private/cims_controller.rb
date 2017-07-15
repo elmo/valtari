@@ -21,10 +21,10 @@ class Private::CimsController < Private::PrivateController
   end
 
   def teaser
-  @cim_inquiry = CimInquiry.new
-   respond_to do |format|
-     format.html {render tempate: 'teaser', layout: 'cim-teaser'}
-   end
+    @cim_inquiry = CimInquiry.new
+    respond_to do |format|
+      format.html {render tempate: 'teaser', layout: 'cim-teaser'}
+    end
   end
 
   def new

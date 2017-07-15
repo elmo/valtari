@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin/site#index', as: :admin
   get '/suggest' => 'suggestions#index', as: :suggest
   get '/x/:id' => 'shortener/shortened_urls#show', as: :shortened
-  get '/secure/modern/cim' => 'private/cims#teaser'
+  get '/secure/example' => 'private/cims#teaser'
 
   resources :businesses, only: [:index, :show]
   resources :campaigns, only: [:index,:show]
