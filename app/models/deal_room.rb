@@ -6,6 +6,7 @@ class DealRoom < ApplicationRecord
   has_many :deal_room_authorizations
   has_many :deal_room_invitations
   has_many :deal_room_activities
+  has_many :notes, as: :notable
   after_create :create_deal_room_authorization
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

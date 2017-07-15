@@ -21,6 +21,11 @@
     <div class="chip"><%= @deal_room.deal_room_invitations.count -%> <span>Invitations</span></div>
     <div class="chip"><%= @deal_room.deal_room_authorizations.count -%> <span>Users</span></div>
     <div class="chip"><%= @deal_room.deal_room_uploads.count -%> <span>Files</span></div>
+    <div class="chip">
+       <%= link_to polymorphic_url([:private, @deal_room, Note])  do %>
+        <%= @deal_room.notes.count %><span>Notes</span>
+       <% end %>
+    </div>
   </div>
 
 </div>

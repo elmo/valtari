@@ -90,6 +90,7 @@ Rails.application.routes.draw do
   namespace :private  do
     resources :deal_rooms do
        resources :deal_room_uploads
+       resources :notes
        resources :deal_room_invitations do
           member do
             put 'resend'

@@ -1,0 +1,8 @@
+<h4>Notes (<%= notable.notes.count -%>)</h4>
+<%= link_to 'See All', polymorphic_url([:private, notable, Note]) -%>
+  <div id="notable-<%=notable.id-%>-notes">
+    <% notes.each do |note| %>
+      <%= render partial: '/private/notes/note', locals: { notable: notable, note: note } -%>
+    <% end %>
+  </div>
+<%= render partial: '/private/notes/form', locals: { notable: notable} -%>
