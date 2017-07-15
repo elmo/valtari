@@ -411,3 +411,29 @@ ul.ui-autocomplete {
     font-size: .6rem;
   }
 }
+
+.upload-container{
+  tbody{
+    font-size:0.86rem
+  }
+  .chip{
+    img{
+      height: 24px;
+      width: 24px;
+    }
+    &.in-table{
+      margin-top: 7px;
+      height: 25px;
+      overflow: hidden;
+      line-height: 26px;
+    }
+  }
+  i{ 
+    font-size: 2.05rem;
+    line-height: 34px
+     }
+  i.ion-ios-download{
+    font-size: 2.4rem;
+    padding-right:8px
+  }
+} 
