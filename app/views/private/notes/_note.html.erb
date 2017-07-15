@@ -2,7 +2,7 @@
   <%= avatar_image(note.user, 'tiny-image') %>
   <% if current_user == note.user %>
     <%= best_in_place note, :body, url:  private_deal_room_note_path(notable, note)  -%>
-    <%= link_to private_deal_room_note_path(notable, note), method: :delete  do %>
+    <%= link_to polymorphic_url([:private, @notable, note]), method: :delete  do %>
       <i class="material-icons">delete</i>
     <% end %>
     </div>

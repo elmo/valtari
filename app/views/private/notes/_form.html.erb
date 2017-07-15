@@ -1,5 +1,4 @@
-<h4>Add your note</h4>
-  <p> Add a note to this deal room. All invited participants will be able to see your notes.</p>
+<h4>Your comment:</h4>
    <%= simple_form_for([:private, notable, Note.new]) do |f| %>
      <%= f.error_notification %>
      <%= f.input :body -%>

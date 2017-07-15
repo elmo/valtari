@@ -1,4 +1,4 @@
-<h4>Notes (<%= notable.notes.count -%>)</h4>
+<h4>Comments(<%= notable.notes.count -%>)</h4>
 <%= link_to 'See All', polymorphic_url([:private, notable, Note]) -%>
   <div id="notable-<%=notable.id-%>-notes">
     <% notes.each do |note| %>

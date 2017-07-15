@@ -55,7 +55,10 @@ class Private::NotesController < Private::PrivateController
 
     def set_notable
       @notable = DealRoom.friendly.find(params[:deal_room_id]) if params[:deal_room_id].present?
-      @notable = DealRoomUpload.find(params[:deal_room_upload_id]) if params[:deal_room_upload_id].present?
+      if params[:deal_room_upload_id].present?
+        @notable = DealRoomUpload.friendly.find(params[:deal_room_upload_id])
+        @deal_room = @notable.deal_room
+      end
     end
 
     def set_note
