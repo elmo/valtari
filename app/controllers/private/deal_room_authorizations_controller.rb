@@ -7,6 +7,7 @@ class Private::DealRoomAuthorizationsController < Private::PrivateController
 
 
   def index
+   #deal_room_authorizations = deal_room.deal_room_authorizations.accepted_and_invited_by(deal_room, current_user).page(params[:authorization_page]).per(20)
     scope = @deal_room.deal_room_authorizations.includes(:user)
     @deal_room_authorizations = scope.page(params[:page]).per(10)
   end
