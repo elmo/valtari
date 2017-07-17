@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   mount Judge::Engine => '/judge'
   devise_for :users,  controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
 
-  root to: "home#splash"
+  #root to: "home#splash"
+  root to: "private/deal_rooms#index"
   get '/home' => 'home#index', as: :home
   get '/knowledge' => 'home#knowledge', as: :knowledge
   get '/dashboard' => 'my/dashboard#home', as: :my_dashboard
@@ -110,7 +111,6 @@ Rails.application.routes.draw do
     resources :cims do
       collection do
         get 'welcome'
-        get 'teaser'
       end
       resources :cim_accesses, only: [:index]
       resources :cim_assets, only: [:new, :create, :destroy, :show]
