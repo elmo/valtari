@@ -5,13 +5,14 @@ class ApplicationController < ActionController::Base
   helper_method :resource_name, :resource, :devise_mapping
 
   def after_sign_in_path_for(resource)
-   if resource.deal_room_invitations.any?
-     private_deal_room_path(resource.deal_room_invitations.last.deal_room)
-   elsif resource.authorized_cims.any?
-     after_cim_sign_in_path_for(resource)
-   else
-    businesses_path
-   end
+   private_deal_rooms_path
+   #if resource.deal_room_invitations.any?
+   #  private_deal_room_path(resource.deal_room_invitations.last.deal_room)
+   #elsif resource.authorized_cims.any?
+   #  after_cim_sign_in_path_for(resource)
+   #else
+   # businesses_path
+   # end
   end
 
   def after_sign_up_path_for(resource)
